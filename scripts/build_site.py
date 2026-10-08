@@ -5,7 +5,7 @@ can be hosted on GitHub Pages. It is generated from the same course content as
 the full platform:
 
     python scripts/build_site.py            # writes ./dist
-    python scripts/build_site.py --out /tmp/site
+    python scripts/build_site.py --out .    # writes the repository root, which GitHub Pages serves from main
 
 Progress and incident reports in the browser edition are stored in the
 visitor's own browser (localStorage). Email reminders, supervisor notifications
@@ -78,9 +78,8 @@ def load_top10():
 
 
 def build(out_dir):
-    if os.path.isdir(out_dir):
-        shutil.rmtree(out_dir)
-    os.makedirs(out_dir)
+    """Write the five site files into out_dir (other files there are left alone)."""
+    os.makedirs(out_dir, exist_ok=True)
     data = {
         "generated": date.today().isoformat(),
         "divisions": DIVISIONS,

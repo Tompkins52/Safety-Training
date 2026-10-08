@@ -1,10 +1,11 @@
 name: Publish browser edition
 
-# Builds the browser edition (static site) from the course content and pushes
-# it to the gh-pages branch. GitHub Pages serves that branch at
-# https://tompkins52.github.io/Safety-Training/
-# One-time setup: repository Settings > Pages > Source "Deploy from a branch",
-# branch "gh-pages", folder "/ (root)".
+# Builds the browser edition (static site) from the course content whenever
+# the content changes, commits the result to the root of main (index.html,
+# app.js, data.js, styles.css) and also pushes it to the gh-pages branch.
+# GitHub Pages serves https://tompkins52.github.io/Safety-Training/ from
+# either branch (Settings > Pages > Deploy from a branch > main or gh-pages,
+# folder "/ (root)").
 
 on:
   push:
@@ -34,6 +35,13 @@ jobs:
           python-version: "3.12"
       - run: pip install markdown
       - run: python scripts/build_site.py --out dist
+      - name: Commit the built site to the root of main
+        run: |
+          python scripts/build_site.py --out .
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html app.js data.js styles.css .nojekyll
+          git diff --cached --quiet || (git commit -m "Rebuild browser edition" && git push)
       - name: Push to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:

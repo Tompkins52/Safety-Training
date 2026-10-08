@@ -19,7 +19,7 @@ There are two editions of the platform in this repository.
 | Supervisor completion and incident notices | "Email my record" and "Email this report" buttons | Yes, automatic |
 | Employee accounts, assignments by division, compliance reports | No | Yes |
 
-**Browser edition.** Open https://tompkins52.github.io/Safety-Training/ on any phone or computer. First-time setup for the repository owner: Settings > Pages > Source "Deploy from a branch" > branch `gh-pages`, folder `/ (root)` > Save. The site is rebuilt automatically whenever course content changes on `main`.
+**Browser edition.** Open https://tompkins52.github.io/Safety-Training/ on any phone or computer. GitHub Pages serves it from the root of `main` (the files `index.html`, `app.js`, `data.js` and `styles.css` are generated; the source is in `site/`). The site is rebuilt automatically whenever course content changes on `main`. If Pages is ever switched off: Settings > Pages > Source "Deploy from a branch" > branch `main`, folder `/ (root)` > Save.
 
 **Full platform, try it in five minutes.** Open the repository on GitHub, click **Code > Codespaces > Create codespace on main**, wait for the setup to finish, and the platform opens in a new browser tab with demo accounts loaded (see below). Codespaces is free for personal GitHub accounts within the monthly allowance.
 
@@ -122,8 +122,9 @@ The training content is an awareness-level annual refresher. It summarizes the s
 ## Project layout
 
 ```
-site/            browser edition (index.html, app.js, extra.css); built by scripts/build_site.py
-scripts/         build_site.py writes the browser edition to dist/
+site/            browser edition source (index.html, app.js, extra.css)
+scripts/         build_site.py writes the browser edition (to the repo root for GitHub Pages, or to dist/)
+index.html, app.js, data.js, styles.css   generated browser edition served by GitHub Pages; do not edit by hand
 app/
   blueprints/      auth, dashboard and team pages, training and quizzes, incidents, admin
   services/        assignments and grading, notifications, mailer, content loader
