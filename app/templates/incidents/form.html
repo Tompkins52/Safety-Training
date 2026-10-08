@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+{% block title %}{% if editing %}Edit {{ incident.incident_number }}{% else %}Report an incident{% endif %} · {{ app_name }}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <h1>{% if editing %}Edit incident {{ incident.incident_number }}{% else %}Report an incident{% endif %}</h1>
+    <p class="muted">Report every injury, property damage event and vehicle incident, including near misses, as soon as possible. Facts only; the investigation and causes are recorded separately by a supervisor or the safety administrator.</p>
+  </div>
+</div>
+
+<form method="post" class="card form-grid" id="incident-form">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+  <h2 class="span-2">Incident</h2>
+  <label>Incident type <span class="req">*</span>
+    <select name="incident_type" id="incident_type" required>
+      <option value="">Select a type</option>
+      {% for key, label in incident_types.items() %}<option value="{{ key }}" {% if incident.incident_type == key %}selected{% endif %}>{{ label }}</option>{% endfor %}
+    </select>
+  </label>
+  <label>Date and time of incident <span class="req">*</span>
+    <input type="datetime-local" name="occurred_at" value="{{ incident.occurred_at.strftime('%Y-%m-%dT%H:%M') if incident.occurred_at else '' }}" required>
+  </label>
+  <label>Location <span class="req">*</span>
+    <input type="text" name="location" value="{{ incident.location or '' }}" placeholder="Street address, intersection, facility or job site" required>
+  </label>
+  <label>Division
+    <select name="division_id">
+      <option value="">Not division specific</option>
+      {% for d in divisions %}<option value="{{ d.id }}" {% if incident.division_id == d.id %}selected{% endif %}>{{ d.name }}</option>{% endfor %}
+    </select>
+  </label>
+  <label>Severity
+    <select name="severity">
+      {% for key, label in severities.items() %}<option value="{{ key }}" {% if incident.severity == key %}selected{% endif %}>{{ label }}</option>{% endfor %}
+    </select>
+  </label>
+  <label>Work activity at the time
+    <input type="text" name="work_activity" value="{{ incident.work_activity or '' }}" placeholder="e.g., replacing a service drop, mowing a right of way">
+  </label>
+  <label>Equipment or vehicle involved
+    <input type="text" name="equipment_involved" value="{{ incident.equipment_involved or '' }}">
+  </label>
+  <label>Weather and conditions
+    <input type="text" name="weather_conditions" value="{{ incident.weather_conditions or '' }}" placeholder="e.g., rain, dark, icy surface">
+  </label>
+  <label class="span-2">What happened <span class="req">*</span>
+    <textarea name="description" rows="5" required placeholder="Describe the sequence of events in order. Who, what, when, where and how.">{{ incident.description or '' }}</textarea>
+  </label>
+  <label>Employees involved
+    <textarea name="employees_involved" rows="2" placeholder="Names and job titles">{{ incident.employees_involved or '' }}</textarea>
+  </label>
+  <label>Witnesses
+    <textarea name="witnesses" rows="2" placeholder="Names and contact information">{{ incident.witnesses or '' }}</textarea>
+  </label>
+  <label class="span-2">Immediate actions taken
+    <textarea name="immediate_actions" rows="3" placeholder="First aid given, scene secured, equipment tagged out, supervisor notified, 911 called">{{ incident.immediate_actions or '' }}</textarea>
+  </label>
+
+  <div class="span-2 type-fields" data-type="injury">
+    <h2>Personal injury details</h2>
+    <div class="form-grid nested">
+      <label>Injured person <span class="req">*</span><input type="text" name="injured_person" value="{{ incident.injured_person or '' }}"></label>
+      <label>Job title<input type="text" name="injured_job_title" value="{{ incident.injured_job_title or '' }}"></label>
+      <label>Body part affected<input type="text" name="body_part" value="{{ incident.body_part or '' }}" placeholder="e.g., left hand, lower back"></label>
+      <label>Nature of injury<input type="text" name="injury_nature" value="{{ incident.injury_nature or '' }}" placeholder="e.g., laceration, strain, burn, fracture"></label>
+      <label>Treatment
+        <select name="treatment">
+          <option value="">Select</option>
+          {% for key, label in treatments.items() %}<option value="{{ key }}" {% if incident.treatment == key %}selected{% endif %}>{{ label }}</option>{% endfor %}
+        </select>
+      </label>
+      <label>Treatment provider<input type="text" name="treatment_provider" value="{{ incident.treatment_provider or '' }}" placeholder="Clinic or hospital name"></label>
+      <label>Days away from work<input type="number" min="0" name="days_away" value="{{ incident.days_away if incident.days_away is not none else '' }}"></label>
+      <label>Days of restricted duty<input type="number" min="0" name="days_restricted" value="{{ incident.days_restricted if incident.days_restricted is not none else '' }}"></label>
+      <label>OSHA recordable?
+        <select name="osha_recordable">
+          <option value="">Not yet determined</option>
+          <option value="yes" {% if incident.osha_recordable %}selected{% endif %}>Yes</option>
+          <option value="no" {% if incident.osha_recordable is sameas false %}selected{% endif %}>No</option>
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <div class="span-2 type-fields" data-type="property_damage">
+    <h2>Property damage details</h2>
+    <div class="form-grid nested">
+      <label>Property damaged <span class="req">*</span><input type="text" name="property_description" value="{{ incident.property_description or '' }}" placeholder="e.g., mailbox, water main, transformer, fence"></label>
+      <label>Property owner
+        <select name="property_owner">
+          <option value="">Select</option>
+          {% for key, label in property_owners.items() %}<option value="{{ key }}" {% if incident.property_owner == key %}selected{% endif %}>{{ label }}</option>{% endfor %}
+        </select>
+      </label>
+      <label>Estimated cost ($)<input type="number" step="0.01" min="0" name="estimated_cost" value="{{ incident.estimated_cost if incident.estimated_cost is not none else '' }}"></label>
+      <label class="span-2">Description of damage<textarea name="damage_description" rows="3">{{ incident.damage_description or '' }}</textarea></label>
+    </div>
+  </div>
+
+  <div class="span-2 type-fields" data-type="vehicle">
+    <h2>Vehicle incident details</h2>
+    <div class="form-grid nested">
+      <label>Vehicle / unit number <span class="req">*</span><input type="text" name="vehicle_unit" value="{{ incident.vehicle_unit or '' }}"></label>
+      <label>Driver <span class="req">*</span><input type="text" name="driver_name" value="{{ incident.driver_name or '' }}"></label>
+      <label>Police report number<input type="text" name="police_report_number" value="{{ incident.police_report_number or '' }}"></label>
+      <label>Estimated vehicle damage ($)<input type="number" step="0.01" min="0" name="vehicle_damage_estimate" value="{{ incident.vehicle_damage_estimate if incident.vehicle_damage_estimate is not none else '' }}"></label>
+      <label>Post-incident drug and alcohol test
+        <select name="drug_alcohol_test">
+          <option value="">Select</option>
+          {% for key, label in drug_tests.items() %}<option value="{{ key }}" {% if incident.drug_alcohol_test == key %}selected{% endif %}>{{ label }}</option>{% endfor %}
+        </select>
+      </label>
+      <label>Seat belt in use?
+        <select name="seat_belt_used">
+          <option value="">Unknown</option>
+          <option value="yes" {% if incident.seat_belt_used %}selected{% endif %}>Yes</option>
+          <option value="no" {% if incident.seat_belt_used is sameas false %}selected{% endif %}>No</option>
+        </select>
+      </label>
+      <label class="span-2">Other party (name, vehicle, insurance, contact)<textarea name="other_party" rows="3">{{ incident.other_party or '' }}</textarea></label>
+    </div>
+  </div>
+
+  <div class="form-actions span-2">
+    <button class="btn btn-primary btn-lg" type="submit">{% if editing %}Save changes{% else %}Submit report{% endif %}</button>
+    <a class="btn btn-ghost" href="{{ url_for('incidents.detail', incident_id=incident.id) if editing else url_for('incidents.index') }}">Cancel</a>
+  </div>
+</form>
+{% endblock %}

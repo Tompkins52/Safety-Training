@@ -1,0 +1,170 @@
+{
+  "slug": "machine-guarding",
+  "title": "Machine Guarding",
+  "standard": "29 CFR 1910.212",
+  "standard_title": "Machine Guarding, general requirements (general industry)",
+  "category": "osha_top10",
+  "top10_rank": 10,
+  "divisions": ["electric", "environmental", "public"],
+  "duration_minutes": 30,
+  "renewal_months": 12,
+  "summary": "Machine guarding keeps hands, fingers, hair and clothing out of the moving parts of shop, plant and field equipment. This course covers the general guarding requirement in 29 CFR 1910.212, the types of guards and safeguarding devices, the special rules for fans and abrasive wheel grinders, and the habits that keep guards in place. Examples come from fleet and sign shops, treatment plants, transfer stations and tree and mowing crews.",
+  "objectives": [
+    "Identify the four main mechanical hazards: the point of operation, ingoing nip points, rotating parts, and flying chips and sparks.",
+    "Explain why a guard must keep every part of the body out of the danger zone during the operating cycle.",
+    "Distinguish fixed, interlocked, adjustable and self-adjusting guards from safeguarding devices such as presence sensing and two-hand controls.",
+    "Apply the specific rules for fan blade guards, anchoring fixed machinery and bench grinder work rests and tongue guards.",
+    "Recognize common guarding failures on public works equipment and know what to do when a guard is missing or damaged."
+  ],
+  "sections": [
+    {
+      "heading": "The general requirement",
+      "body": "29 CFR 1910.212 is short, but it applies to almost every machine in a public works shop or plant. It says that **one or more methods of machine guarding** must be provided to protect the operator and other employees in the area from hazards such as those created by:\n\n- the **point of operation**, where the machine actually cuts, shapes, bores or forms the material,\n- **ingoing nip points**, where a belt meets a pulley, a chain meets a sprocket, or two rollers turn toward each other,\n- **rotating parts** such as shafts, couplings, flywheels, chucks and fan blades, and\n- **flying chips and sparks** thrown off by grinding, cutting and drilling.\n\nThe guard must do its job without creating a new hazard. A guard with a sharp edge or a pinch point of its own does not meet the standard.\n\nThe word \"machine\" covers more than big production equipment. A bench grinder, a drill press, a pedestal fan, a pump coupling and the belt drive on a blower are all machines with parts that can injure."
+    },
+    {
+      "heading": "Why this standard is on the Top 10",
+      "body": "Machine guarding sits on OSHA's most frequently cited list every year, and the citations follow a predictable pattern:\n\n- **Missing or removed guards.** A guard was taken off for maintenance or because it was in the way and never went back on. Belt and coupling guards leaning against the wall next to the machine are a classic finding.\n- **Unguarded bench grinders.** Work rests set too far from the wheel, tongue guards missing or opened too far, and side guards removed are common items on any shop inspection.\n- **Exposed belts and pulleys.** Blowers, compressors, conveyors and shop equipment with open belt drives within reach.\n- **Point of operation exposure.** Shears, presses and saws where fingers can reach the cutting or forming zone during the cycle.\n- **Guards that are too open or too short.** Covers that leave gaps big enough for a hand or that stop short of the nip point.\n\nPublic works shops are small and busy, and equipment is often older. That is where guards go missing and stay missing."
+    },
+    {
+      "heading": "The point of operation and the danger zone",
+      "body": "The **point of operation** is the area on a machine where work is actually performed on the material. On a drill press it is where the bit enters the stock. On a metal shear it is the blade. On a band saw it is the exposed blade above the table.\n\nThe standard sets a simple test for point of operation guarding: the guard or device must **prevent the operator from having any part of the body in the danger zone during the operating cycle**. If a finger, hand or arm can reach the hazard while the machine can move, the guarding is not adequate.\n\nSpecial hand tools for placing and removing material may be used, but they are an addition to guarding, not a substitute for it.\n\nThe standard names several machines that usually need point of operation guarding, including guillotine cutters, shears, power presses, milling machines, power saws, jointers and forming rolls. Sign shops and fleet shops have several of these."
+    },
+    {
+      "heading": "Types of guards and safeguarding devices",
+      "body": "**Guards** are physical barriers.\n\n- **Fixed guards** are permanent parts of the machine, such as a bolted belt cover or a coupling guard. They are the simplest and most reliable, and they are preferred whenever the operator does not need access during operation.\n- **Interlocked guards** shut the machine off when the guard is opened. The machine cannot restart until the guard is back in place. Many balers and chippers use interlocks on access doors.\n- **Adjustable guards** can be positioned to fit different sizes of stock, such as a band saw blade guard lowered to just above the work.\n- **Self-adjusting guards** move out of the way as the stock is fed and return when it is removed, like the lower blade guard on a circular saw.\n\n**Devices** control access another way.\n\n- **Presence sensing devices** use light curtains, laser scanners or pressure mats to stop the machine when a person enters the zone.\n- **Two-hand controls** require both hands on buttons away from the point of operation during the hazardous part of the cycle.\n- **Pullbacks** attach to the operator's wrists and pull the hands away as the machine cycles.\n- **Restraints** tie the hands back so they cannot reach the danger zone at all.\n\nWhenever possible, a guard must be **affixed to the machine**. If that is not possible, it may be secured elsewhere, but it still must stay in place during operation."
+    },
+    {
+      "heading": "Fans, anchoring and bench grinders",
+      "body": "Three specific rules come up constantly in public works inspections.\n\n**Fan blades.** When the periphery of a fan blade is less than **7 feet above the floor or working level**, the blades must be guarded, and the openings in the guard may be no larger than **one half inch**. Pedestal fans in shops and air movers in plants fall under this rule.\n\n**Anchoring fixed machinery.** Machines designed for a fixed location must be **securely anchored** so they cannot walk or tip. A pedestal grinder that wobbles under load is a citation and a hazard.\n\n**Abrasive wheel grinders.** 29 CFR 1910.215 adds specific rules for bench and pedestal grinders:\n\n- The **work rest** must be kept adjusted to within **one eighth inch** of the wheel so the work cannot be pulled into the gap and jammed against the wheel.\n- The **tongue guard** (the adjustable spark guard at the top of the wheel housing) must be kept within **one quarter inch** of the wheel.\n- The side guards must cover the spindle, nut and flange, leaving only the working portion of the wheel exposed.\n- Every new wheel gets a **ring test** before mounting. Tap the wheel lightly with a nonmetallic tool. A sound wheel rings clearly; a cracked wheel sounds dull and must be scrapped.\n- Wheels must be rated for the grinder's speed. Stand to the side and let a new wheel run for a minute before use.\n\nAs the wheel wears down, the gaps grow. Readjust the work rest and tongue guard with the grinder off and unplugged."
+    },
+    {
+      "heading": "Keep guards on, and what to do when they are not",
+      "body": "Guarding only works when it is in place. These rules apply to everyone:\n\n- **Never remove or bypass a guard while the machine is running.** If a guard must come off for maintenance, the machine is locked out first and the guard goes back on before the lockout is released.\n- **Never tie back, block or defeat an interlock.** A taped-down interlock switch turns an interlocked guard into no guard at all.\n- **Inspect before you start.** Check that the guard is present, secure and not cracked, bent or missing fasteners.\n- **Report and tag.** A machine with a missing or damaged guard is tagged out of service and reported to a supervisor. Do not use it until the guard is repaired or replaced.\n\n**Operator training** is part of guarding. Before using a machine, you should know its hazards, how the guards protect you, how to check that they are working and what to do if they are not. Loose clothing, gloves near rotating parts, long hair and jewelry add risk around any rotating machinery and should be controlled before the machine is started.\n\nReplacing a guard is cheap. A finger is not."
+    },
+    {
+      "heading": "What this means for Public Works crews",
+      "body": "**Fleet and sign shops.** Bench grinders need the work rest and tongue guard adjusted every time the wheel wears. Drill presses need chuck and belt guards in place and stock clamped so it cannot spin. Band saws need the blade guard set just above the work. Metal shears need point of operation guarding or devices that keep fingers out of the blade. Tire machines have bead breakers and turntables that can crush and pinch, so hands stay clear while the machine moves.\n\n**Water, wastewater and solid waste.** Pump couplings, belt and chain drives on blowers and conveyors, and clarifier drives must have fixed guards that cover the nip points and the rotating shaft. Guards removed during a rebuild go back on before the equipment returns to service. Balers and compactors at transfer stations rely on interlocked access doors and point of operation guarding, and no one reaches into the chamber or clears a jam while the machine has power.\n\n**Streets, forestry and electric field crews.** Chipper infeed chutes, feed control bars and discharge guards must be in place and working, and operators stay at the side of the infeed with no loose clothing. Mower decks need discharge chutes and belt covers, and the PTO shaft on tractors and trailed equipment needs its spinning shield intact. Portable generators, compressors and line truck hydraulic pumps have belts, fans and couplings that need the same attention as shop equipment.\n\nAcross all three divisions, the simplest habit is the most effective: if the guard is not on, the machine does not run."
+    }
+  ],
+  "key_takeaways": [
+    "Every machine needs one or more guarding methods that protect the operator and nearby employees from the point of operation, nip points, rotating parts, and flying chips and sparks.",
+    "Point of operation guarding must keep every part of the body out of the danger zone during the operating cycle.",
+    "Fixed guards are preferred, guards should be attached to the machine where possible, and no guard may create a hazard of its own.",
+    "Fan blades within 7 feet of the floor must be guarded with openings no larger than one half inch, and fixed machines must be anchored.",
+    "On bench grinders, keep the work rest within one eighth inch and the tongue guard within one quarter inch of the wheel, and ring test every new wheel.",
+    "Guards are never removed or bypassed while a machine is running, and a machine with a missing or damaged guard is tagged out until it is fixed.",
+    "The most common citations are missing or removed guards, unguarded bench grinders and exposed belts and pulleys."
+  ],
+  "questions": [
+    {
+      "text": "Which of the following is one of the hazards that 29 CFR 1910.212 says machine guarding must protect against?",
+      "options": [
+        "Noise above 85 decibels",
+        "Ingoing nip points",
+        "Poor lighting at the workstation",
+        "Slippery floors around the machine"
+      ],
+      "answer": 1,
+      "explanation": "The standard names the point of operation, ingoing nip points, rotating parts, and flying chips and sparks as the hazards guarding must address. Noise, lighting and floors are covered by other standards."
+    },
+    {
+      "text": "What is the test for whether point of operation guarding is adequate?",
+      "options": [
+        "The guard is painted a warning color",
+        "The guard slows the operator's hands enough to react",
+        "The guard prevents any part of the operator's body from being in the danger zone during the operating cycle",
+        "The operator has signed a form acknowledging the hazard"
+      ],
+      "answer": 2,
+      "explanation": "The standard requires that the guarding device keep every part of the body out of the danger zone while the machine cycles. If a hand can reach the hazard, the guard does not meet the rule."
+    },
+    {
+      "text": "A baler door shuts the machine off when it is opened and will not let it restart until the door is closed. What type of guard is this?",
+      "options": [
+        "Interlocked guard",
+        "Self-adjusting guard",
+        "Adjustable guard",
+        "Fixed guard"
+      ],
+      "answer": 0,
+      "explanation": "An interlocked guard cuts power or stops the machine when the guard is opened and prevents restart until it is back in place."
+    },
+    {
+      "text": "A pedestal fan in the fleet shop has blades about 5 feet above the floor. What does the standard require?",
+      "options": [
+        "No guard is required because the fan is portable",
+        "A guard with openings no larger than one inch",
+        "A guard only if the fan is within 3 feet of a workstation",
+        "A guard with openings no larger than one half inch"
+      ],
+      "answer": 3,
+      "explanation": "When the fan blade periphery is less than 7 feet above the floor or working level, the blades must be guarded and the guard openings may be no larger than one half inch."
+    },
+    {
+      "text": "How close must the work rest on a bench grinder be kept to the wheel?",
+      "options": [
+        "Within one half inch",
+        "Within one quarter inch",
+        "Within one eighth inch",
+        "Within one inch"
+      ],
+      "answer": 2,
+      "explanation": "1910.215 requires the work rest to be adjusted to within one eighth inch of the wheel so work cannot be pulled into the gap. The tongue guard is the component kept within one quarter inch."
+    },
+    {
+      "text": "Before mounting a new grinding wheel, what should you do?",
+      "options": [
+        "Soak the wheel in water to cool it",
+        "Tap it lightly with a nonmetallic tool and listen for a clear ring",
+        "Run it at double speed for one minute to test strength",
+        "File the edges smooth to remove burrs"
+      ],
+      "answer": 1,
+      "explanation": "The ring test checks for cracks. A sound wheel rings clearly when tapped; a dull sound means the wheel is cracked and must be discarded."
+    },
+    {
+      "text": "A guard must be removed to replace a belt on a blower. What is the correct sequence?",
+      "options": [
+        "Remove the guard while the blower is running so you can see the belt track, then lock out",
+        "Lock out the blower, remove the guard, replace the belt, reinstall the guard, then release the lockout",
+        "Lock out the blower, replace the belt and reinstall the guard at the next scheduled shutdown",
+        "Have a second person stand by the stop button while the guard is off and the blower runs"
+      ],
+      "answer": 1,
+      "explanation": "Guards are never removed while a machine is running. The machine is locked out first, and the guard goes back on before the lockout is released and the machine returns to service."
+    },
+    {
+      "text": "Which of these is a safeguarding device rather than a guard?",
+      "options": [
+        "A bolted coupling cover on a pump",
+        "A hinged belt cover with a spring latch",
+        "A fixed mesh enclosure around a conveyor drive",
+        "A two-hand control that requires both hands on buttons during the press cycle"
+      ],
+      "answer": 3,
+      "explanation": "Guards are physical barriers. Two-hand controls, presence sensing devices, pullbacks and restraints are devices that keep the operator's hands out of the danger zone without a barrier."
+    },
+    {
+      "text": "You notice the coupling guard on a wastewater plant pump is missing. What should you do?",
+      "options": [
+        "Tag the pump out of service and report it to a supervisor before anyone uses it",
+        "Operate the pump carefully and stay at least arm's length from the coupling",
+        "Hang a caution sign and keep the pump running until the next maintenance day",
+        "Cover the coupling with a rag so nothing gets caught"
+      ],
+      "answer": 0,
+      "explanation": "A machine with a missing or damaged guard is taken out of service and reported. It should not run until the guard is repaired or replaced."
+    },
+    {
+      "text": "Which of these is among the most common machine guarding citations in shops like fleet and sign shops?",
+      "options": [
+        "Missing operator manuals",
+        "Grinding wheels stored in a locked cabinet",
+        "Exposed belts and pulleys on compressors and other equipment",
+        "Guards painted a color other than yellow"
+      ],
+      "answer": 2,
+      "explanation": "Exposed belts and pulleys, along with missing or removed guards and unguarded bench grinders, are the most frequent findings under the machine guarding standard."
+    }
+  ]
+}

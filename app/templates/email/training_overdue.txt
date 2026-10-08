@@ -1,0 +1,12 @@
+Hello {{ user.first_name }},
+
+Your annual safety training is OVERDUE by {{ days_overdue }} day{% if days_overdue != 1 %}s{% endif %}:
+
+  Course:   {{ course.title }}{% if course.standard %} ({{ course.standard }}){% endif %}
+  Was due:  {{ assignment.due_date.strftime('%B %d, %Y') }}
+
+Please complete it as soon as possible: {{ link }}
+
+Your supervisor{% if user.supervisor %}, {{ user.supervisor.full_name }},{% endif %} can see this training as overdue on the team report.
+
+{{ org_name }}

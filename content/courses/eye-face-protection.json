@@ -1,0 +1,176 @@
+{
+  "slug": "eye-face-protection",
+  "title": "Eye and Face Protection",
+  "standard": "29 CFR 1926.102",
+  "standard_title": "Personal Protective and Lifesaving Equipment, eye and face protection (construction)",
+  "category": "osha_top10",
+  "top10_rank": 9,
+  "divisions": [
+    "electric",
+    "environmental",
+    "public"
+  ],
+  "duration_minutes": 25,
+  "renewal_months": 12,
+  "summary": "Eye and Face Protection, 29 CFR 1926.102, requires employers to ensure that employees wear the right eye and face protection whenever work exposes them to flying particles, molten metal, chemicals, gases, vapors or harmful light. This course covers the ANSI Z87.1 marking requirement, the main types of protection and when each is used, prescription and over-the-glasses options, hazard assessment, care and replacement, and the public works tasks that most often lead to eye injuries and citations.",
+  "objectives": [
+    "State the employer duty under 1926.102 and the six hazard categories that trigger it.",
+    "Identify ANSI Z87.1 compliant eye and face protection by its markings.",
+    "Match safety glasses, goggles, face shields, welding protection and arc rated shields to the hazards they control.",
+    "Explain why a face shield is worn over safety glasses or goggles and never alone.",
+    "Select the correct welding filter shade and the right option for employees who wear prescription lenses.",
+    "Inspect, clean and replace eye and face protection and recognize the conditions most often cited."
+  ],
+  "sections": [
+    {
+      "heading": "The employer duty and the hazards that trigger it",
+      "body": "Under 29 CFR 1926.102 the employer must **ensure** that each employee uses appropriate eye or face protection when exposed to hazards from:\n- **Flying particles** from grinding, chipping, cutting, drilling and sawing\n- **Molten metal** from welding, brazing and torch cutting\n- **Liquid chemicals**, including splashes when pouring, mixing or spraying\n- **Acids or caustic liquids** such as battery acid and sodium hydroxide\n- **Chemical gases or vapors** that irritate or burn the eyes\n- **Potentially injurious light radiation** from welding arcs, cutting torches, lasers and ultraviolet lamps\n\nEnsure is the key word. It is not enough to hand out safety glasses or post a sign. Supervisors must make sure protection is worn whenever the hazard is present. The general industry rule at 1910.133 says the same thing in nearly the same words, so the duty follows you whether the work is classified as construction or maintenance.\n\nMost eye injuries come from small, fast particles that strike before the worker can blink, and many happen to people standing near the work rather than doing it. The protection zone is the hazard area, not just the person holding the tool."
+    },
+    {
+      "heading": "Why this standard is on the Top 10",
+      "body": "Eye and face protection stays on OSHA's most cited list because the violation is easy to see. An inspector walking a jobsite or a shop does not need a monitor or a records review. If someone is **grinding, chipping or cutting without eye protection**, the citation writes itself.\n\nThe most common findings are:\n- Employees grinding, cutting, chipping or drilling with no eye protection at all\n- Employees wearing ordinary prescription glasses or sunglasses instead of safety eyewear\n- **Face shields used without safety glasses or goggles underneath**\n- Side shields missing from safety glasses\n- Welding helpers and bystanders exposed to arc flash with no filter lenses\n- Eyewear so scratched or fogged that workers push it up on their heads\n\nEvery one of these is a supervision and habit problem more than an equipment problem. The equipment is cheap and usually in the truck."
+    },
+    {
+      "heading": "The ANSI Z87.1 marking",
+      "body": "Protective eye and face devices must comply with the **ANSI/ISEA Z87.1** consensus standard. OSHA incorporates specific editions of Z87.1 by reference in 1926.102 and 1910.133 and also accepts devices that the employer can show are at least as protective. In practice, look for the **Z87** marking molded or stamped on the frame and lens.\n\nCommon markings:\n- **Z87** means the device meets the basic impact requirements.\n- **Z87+** means the device passed the **high impact** tests, which is what you want for grinding, chipping, chainsaw and chipper work.\n- **D3** indicates splash and droplet protection, **D4** dust and **D5** fine dust.\n- **W** followed by a number is a welding filter shade. **U** followed by a number is an ultraviolet filter.\n- **Z87-2** on prescription frames means the frame meets the standard.\n\nOrdinary eyeglasses, reading glasses and sunglasses are not safety eyewear even if the lenses are polycarbonate. They do not carry the marking, lack side protection, and can shatter into the eye on impact. If it does not say Z87, it does not count."
+    },
+    {
+      "heading": "Types of protection and what each is for",
+      "body": "**Safety glasses with side shields** are the baseline for flying particle hazards: grinding, drilling, sawing, mowing, trimming, hammering and most shop work. Side shields are required when particles can come from the side, which is nearly always. Wraparound frames provide them built in.\n\n**Goggles** seal around the eyes. **Impact goggles** with direct vents are for heavy particle work. **Chemical splash goggles** with indirect vents or no vents are for pouring, mixing and transferring liquids, and for dusty work. Goggles fit over most prescription glasses.\n\n**Face shields** protect the whole face from large particles, splash and spray, but they are **secondary protection**. A face shield is always worn **over safety glasses or goggles**, never alone, because particles and liquid can get around and under the shield. Use them for grinding, chipping, chainsaw and chipper work, pressure washing and chemical transfer.\n\n**Welding helmets and goggles** with filter lenses protect against arc flash, sparks and molten metal. The lens shade must match the process. OSHA gives minimum shades in Table E-1 of 1926.102: roughly shade 10 to 12 for common arc welding and shade 3 to 6 for gas welding and oxygen cutting. Start darker and go lighter until you can see the work. A welding helmet is worn over safety glasses.\n\n**Laser protection** must be rated for the specific wavelength and power of the laser in use, as marked on the eyewear.\n\n**Arc rated face shields and balaclavas** protect against the heat of an electrical arc flash. They come from the electrical safety rules rather than 1926.102, but they are worn with safety glasses underneath for the same reason."
+    },
+    {
+      "heading": "Prescription lenses and fit",
+      "body": "Employees who wear corrective lenses have three compliant choices:\n- **Prescription safety glasses** with Z87-2 marked frames, impact rated lenses and side shields. This is the most comfortable option for daily wear and many employers pay for a pair through a safety eyewear program.\n- **Over-the-glasses (OTG) safety glasses** or goggles designed to fit over regular eyeglasses without disturbing them. These work well for visitors, occasional tasks and employees waiting on a prescription pair.\n- **Safety goggles or a full face respirator** that fit over regular glasses, where the task also calls for a seal.\n\nContact lenses are not protection on their own, and employees should tell their supervisor they wear them so first aid responders know.\n\nFit matters for every type. Eyewear that slides down, pinches or fogs will end up on top of someone's head. Try different frame sizes, use anti-fog lenses, add a retention strap for overhead work, and make sure goggles seal without gaps."
+    },
+    {
+      "heading": "Hazard assessment, care and replacement",
+      "body": "The PPE rules require a **hazard assessment** of each task to decide what protection is needed. Walk through the job and ask: Can anything fly, splash, spray or arc toward the face? From which direction? Can it reach anyone nearby? Then choose protection that fully controls the hazard, combining devices when one hazard calls for a seal and another calls for face coverage.\n\nGood eyewear care:\n- **Clean** lenses daily with water or lens cleaner and a soft cloth. Dry wiping grinds dust into the lens.\n- **Inspect** before each use for cracks, deep scratches, loose or missing side shields, stretched straps and pitted welding lenses. Pits and scratches weaken the lens and scatter light.\n- **Replace** eyewear that is cracked, badly scratched or fogged beyond cleaning, and replace any device that has taken a hard hit even if damage is not visible.\n- **Store** eyewear in a case or clean pouch, not loose in a toolbox or on the dash.\n- **Disinfect** shared face shields and goggles between users.\n\nKeep spare safety glasses in every truck and shop so a scratched pair is never a reason to skip protection."
+    },
+    {
+      "heading": "What this means for Public Works crews",
+      "body": "**Public Services.** Fleet and sign shop work is where most eye injuries happen: bench and angle **grinding**, cutoff wheels, wire brushing, chiseling and blowing off parts with compressed air. Z87+ safety glasses are the minimum, with a face shield added for grinding and cutoff work. Welders need the right filter shade, and helpers need protection against arc flash and chipping slag. **Forestry** crews running chainsaws and chippers need high impact safety glasses plus a face screen on the helmet, because chips fly fast and from all directions. Streets crews **cutting concrete and asphalt** need Z87+ glasses and a face shield when the saw throws slurry. **Pressure washing** throws grit back at the face, so wear glasses and a shield. Battery service means **acid**, so goggles and a face shield when checking, filling or jump starting.\n\n**Environmental Services.** Water and wastewater operators handling **chlorine, sodium hypochlorite, caustic soda and ferric chloride** need chemical splash goggles, and a face shield when pouring or connecting lines. Know where the eyewash is before you open the valve. Collections and solid waste crews face splash from sewage and hydraulic lines, and grinding or cutting pipe in the field.\n\n**Electric Services.** Line crews and substation technicians need safety glasses for every task because of flying debris and hardware overhead. Energized work above the arc flash threshold requires an **arc rated face shield and balaclava** or arc flash hood, with safety glasses underneath. Substation battery banks call for goggles and a face shield during maintenance. Meter technicians need safety glasses whenever a meter socket is opened.\n\nThe rule is the same in every division: if a task can send anything toward your face, protection is on before the work starts, and face shields always go over glasses."
+    }
+  ],
+  "key_takeaways": [
+    "The employer must ensure eye and face protection is used whenever employees are exposed to flying particles, molten metal, liquid chemicals, acids or caustics, chemical gases or vapors, or harmful light radiation.",
+    "Only devices marked Z87 under ANSI Z87.1 count as protective eyewear, and Z87+ means high impact rated.",
+    "Safety glasses with side shields are the baseline, goggles seal out splash and dust, and face shields add coverage for the whole face.",
+    "A face shield is secondary protection and is always worn over safety glasses or goggles, never alone.",
+    "Welding filter shades must match the process, starting from the minimums in Table E-1 of 1926.102.",
+    "Employees who need corrective lenses must use prescription safety glasses or over-the-glasses protection, because ordinary eyeglasses are not safety eyewear.",
+    "Inspect eyewear before each use and replace anything cracked, deeply scratched or struck hard.",
+    "The most common citations are employees grinding, chipping or cutting without eye protection and face shields worn without glasses underneath."
+  ],
+  "questions": [
+    {
+      "text": "A mechanic is using an angle grinder with a cutoff wheel. What is the correct eye and face protection?",
+      "options": [
+        "A face shield alone, because it covers the whole face",
+        "Ordinary prescription glasses with a face shield",
+        "Z87+ safety glasses with side shields, plus a face shield over them",
+        "Chemical splash goggles alone"
+      ],
+      "answer": 2,
+      "explanation": "Grinding and cutoff work produces high speed particles, so high impact safety glasses are the primary protection and a face shield is added over them for face coverage. A face shield is never worn alone."
+    },
+    {
+      "text": "What does the marking Z87+ on a pair of safety glasses mean?",
+      "options": [
+        "The lenses are prescription",
+        "The device passed the high impact tests of ANSI Z87.1",
+        "The lenses filter welding radiation",
+        "The glasses are approved for laser work"
+      ],
+      "answer": 1,
+      "explanation": "Z87+ marks eyewear that passed the high impact requirements of ANSI Z87.1, which is what grinding, chipping and chainsaw work call for. Plain Z87 means basic impact only."
+    },
+    {
+      "text": "Which of these is NOT one of the hazards listed in 1926.102 that requires eye or face protection?",
+      "options": [
+        "Flying particles",
+        "Liquid chemicals",
+        "Potentially injurious light radiation",
+        "Loud noise"
+      ],
+      "answer": 3,
+      "explanation": "The standard lists flying particles, molten metal, liquid chemicals, acids or caustic liquids, chemical gases or vapors, and injurious light radiation. Noise is covered by the hearing conservation rules, not eye and face protection."
+    },
+    {
+      "text": "Why must a face shield be worn over safety glasses or goggles rather than by itself?",
+      "options": [
+        "Particles and liquids can travel around and under the shield and reach the eyes",
+        "Face shields are not rated for any impact",
+        "The standard only recognizes face shields for welding",
+        "Face shields fog too quickly to be used alone"
+      ],
+      "answer": 0,
+      "explanation": "A face shield is secondary protection. Its open bottom and sides let particles, dust and splash reach the eyes, so primary eye protection must be worn underneath."
+    },
+    {
+      "text": "An employee who wears prescription eyeglasses needs to run a chipper for the afternoon. Which option complies with the standard?",
+      "options": [
+        "Wearing the prescription glasses, since they are polycarbonate",
+        "Wearing the prescription glasses with the chipper face screen down",
+        "Wearing over-the-glasses safety glasses or goggles with the face screen, or Z87-2 prescription safety glasses",
+        "Removing the glasses and working without them"
+      ],
+      "answer": 2,
+      "explanation": "Ordinary eyeglasses are not safety eyewear, and a face screen alone is secondary protection. The employee needs prescription safety glasses or over-the-glasses protection under the screen."
+    },
+    {
+      "text": "A water plant operator is connecting a hose to a tote of sodium hypochlorite. What is the right protection?",
+      "options": [
+        "Safety glasses with side shields only",
+        "Chemical splash goggles, with a face shield added for pouring or connecting lines",
+        "A welding helmet with a shade 5 lens",
+        "A dust mask and sunglasses"
+      ],
+      "answer": 1,
+      "explanation": "Corrosive liquids call for splash goggles that seal around the eyes, and a face shield over them when the task can spray or splash. Safety glasses alone leave gaps for liquid to enter."
+    },
+    {
+      "text": "Where does OSHA list the minimum filter lens shade numbers for welding and cutting?",
+      "options": [
+        "Section 8 of the Safety Data Sheet",
+        "The NIOSH respirator certification",
+        "Appendix D of 1910.134",
+        "Table E-1 of 1926.102"
+      ],
+      "answer": 3,
+      "explanation": "Table E-1 in 1926.102 gives the minimum protective shade for each welding and cutting operation. Welders start with the minimum or darker and adjust lighter until they can see the work."
+    },
+    {
+      "text": "When should safety glasses be replaced?",
+      "options": [
+        "Only when the lenses crack completely",
+        "Once every five years regardless of condition",
+        "When they are cracked, deeply scratched, fogged beyond cleaning, or have taken a hard impact",
+        "Only when a supervisor notices damage"
+      ],
+      "answer": 2,
+      "explanation": "Scratches and pits weaken the lens and scatter light, and an impact can damage a lens without visible signs, so eyewear is inspected before each use and replaced when its condition is in doubt."
+    },
+    {
+      "text": "A line crew is about to perform energized work above the arc flash threshold. What face protection is required?",
+      "options": [
+        "An arc rated face shield or arc flash hood worn over safety glasses",
+        "A standard polycarbonate face shield worn alone",
+        "Chemical splash goggles",
+        "A welding helmet with a shade 10 lens"
+      ],
+      "answer": 0,
+      "explanation": "Arc flash exposure requires an arc rated face shield with balaclava or an arc flash hood, with safety glasses underneath. Standard face shields can melt and are not arc rated."
+    },
+    {
+      "text": "Which situation is the most common reason employers are cited under the eye and face protection standard?",
+      "options": [
+        "Safety glasses stored in a toolbox",
+        "Employees observed grinding, chipping or cutting without eye protection",
+        "Eyewash stations more than 10 seconds away",
+        "Welding lenses one shade lighter than Table E-1"
+      ],
+      "answer": 1,
+      "explanation": "The citation inspectors write most often is for employees seen grinding, chipping or cutting without eye protection, followed by face shields worn without safety glasses underneath. Both are visible on a short walk through a shop or jobsite."
+    }
+  ]
+}

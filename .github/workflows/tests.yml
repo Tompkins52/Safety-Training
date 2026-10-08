@@ -1,0 +1,27 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python -m pytest -q tests
+      - name: Validate course content files
+        run: |
+          python - <<'EOF'
+          import glob, json
+          for path in sorted(glob.glob("content/courses/*.json")):
+              d = json.load(open(path, encoding="utf-8"))
+              assert len(d["questions"]) == 10, f"{path}: expected 10 questions"
+              for q in d["questions"]:
+                  assert len(q["options"]) == 4 and 0 <= q["answer"] <= 3, f"{path}: bad question"
+              print("ok", d["slug"])
+          EOF

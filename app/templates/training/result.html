@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Quiz results · {{ app_name }}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <p class="eyebrow">Quiz results</p>
+    <h1>{{ course.title }}</h1>
+  </div>
+</div>
+
+<section class="card result-banner {{ 'pass' if attempt.passed else 'fail' }}">
+  <div class="result-score">{{ attempt.score }}<span>/{{ attempt.total }}</span></div>
+  <div>
+    {% if attempt.passed %}
+      <h2>Passed with {{ attempt.percent }}%</h2>
+      <p>Your completion has been recorded{% if assignment.user.supervisor %} and your supervisor, {{ assignment.user.supervisor.full_name }}, has been notified{% endif %}.
+      {% if assignment.course.renewal_months %}This module renews in {{ assignment.course.renewal_months }} months.{% endif %}</p>
+      <p><a class="btn btn-primary" href="{{ url_for('training.certificate', assignment_id=assignment.id) }}">View certificate</a>
+         <a class="btn btn-ghost" href="{{ url_for('training.my_training') }}">Back to my training</a></p>
+    {% else %}
+      <h2>Not yet: {{ attempt.percent }}% ({{ config.QUIZ_PASS_PERCENT }}% needed)</h2>
+      <p>Review the questions you missed below, re-read the related sections, then try again.</p>
+      <p><a class="btn btn-primary" href="{{ url_for('training.quiz', assignment_id=assignment.id) }}">Retake the quiz</a>
+         <a class="btn btn-ghost" href="{{ url_for('training.course', assignment_id=assignment.id) }}">Review the training</a></p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="card">
+  <h2>Answer review</h2>
+  {% for row in review %}
+  <div class="review-item {{ 'correct' if row.correct else 'incorrect' }}">
+    <p class="review-q"><span class="qnum">{{ loop.index }}</span> {{ row.question.text }}</p>
+    <p class="small">Your answer: <strong>{% if row.chosen is not none %}{{ row.question.options[row.chosen] }}{% else %}(blank){% endif %}</strong>
+      {% if row.correct %}<span class="badge badge-ok">Correct</span>{% else %}<span class="badge badge-danger">Incorrect</span>{% endif %}</p>
+    {% if not row.correct %}
+    <p class="small">Correct answer: <strong>{{ row.question.options[row.question.answer_index] }}</strong></p>
+    {% endif %}
+    {% if row.question.explanation %}<p class="small muted">{{ row.question.explanation }}</p>{% endif %}
+  </div>
+  {% endfor %}
+</section>
+{% endblock %}

@@ -1,0 +1,179 @@
+{
+  "slug": "pole-top-rescue",
+  "title": "Pole Top Rescue",
+  "standard": "29 CFR 1910.269",
+  "standard_title": "Electric Power Generation, Transmission, and Distribution (rescue, first aid and CPR, emergency procedures)",
+  "category": "rescue",
+  "top10_rank": null,
+  "divisions": [
+    "electric",
+    "public"
+  ],
+  "duration_minutes": 30,
+  "renewal_months": 12,
+  "summary": "When a line worker is shocked or injured at the top of a pole, the crew on site has minutes to get them down and start CPR. This refresher covers the regulatory basis for rescue training under 29 CFR 1910.269, scene size up, clearing an energized contact, rescuer PPE, rigging and lowering, and crew roles. It supports, but does not replace, hands on timed drills using the department's written procedure and equipment.",
+  "objectives": [
+    "Explain why pole top rescue must be completed within about four minutes and where 1910.269 requires rescue, first aid and CPR training.",
+    "Perform a scene size up that identifies energized conductors, downed lines, fire, traffic and pole condition before climbing.",
+    "Describe how to clear an energized contact and what PPE a rescuer must wear.",
+    "List the steps of a pole top rescue in order, from the call for help through CPR and AED use on the ground.",
+    "Describe how the handline is rigged and how descent is controlled.",
+    "Assign crew roles for two and three person crews and explain the purpose of regular timed drills."
+  ],
+  "sections": [
+    {
+      "heading": "Why rescue training is required",
+      "body": "A line worker who is shocked, injured or unresponsive at the top of a pole cannot wait for the fire department. Electrical contact can stop the heart or breathing. **Brain injury begins within minutes without oxygen**, so the industry goal is to have the victim **on the ground with CPR started within about four minutes** of the incident. Only the crew on site can meet that clock.\n\nOSHA builds rescue into the electric power standard:\n\n- **1910.269(a)(2)** requires employees to be trained in the emergency procedures that apply to their work, and names **pole top and manhole rescue** as examples.\n- **1910.269(b)** requires persons trained in **first aid and CPR** where employees work on or near exposed lines or equipment, so a field crew can begin care immediately.\n- Trained means practiced. Many utilities and public power systems **drill pole top rescue at least annually**, with a timer running.\n\nThis course is a **refresher**. It does not replace hands on, timed drills with the department's written procedure and rescue equipment. Where this course and the department's written procedure differ, **the department's procedure governs**."
+    },
+    {
+      "heading": "Scene size up",
+      "body": "Rushing into a scene with an energized conductor turns one victim into two. Look before you climb.\n\n- **Energized conductors**. Is the victim still in contact with a line or equipment? Are the conductors still energized? Did anything burn down or fall?\n- **Downed lines** on the ground, on the truck, on a fence or in a tree. Assume they are energized.\n- **Fire** on the pole, in a transformer or in nearby brush.\n- **Traffic**. Set cones or get a flagger.\n- **Weather**. Lightning, wind and ice change how you climb and rig.\n- **Unstable pole**. A pole that was struck, is burning or has a broken crossarm may not hold a second climber. Check it before you climb.\n\nCall out what you see so the whole crew hears it, then assign roles."
+    },
+    {
+      "heading": "Calling for help and clearing the contact",
+      "body": "Getting help moving is the first action, not the last. One person calls **911**, then **dispatch**, and asks the **system operator** to de-energize the circuit and hold it. Give the location, the number of victims and whether CPR is in progress. Keep the radio open.\n\n**Never touch a victim who is still in contact with an energized source.** The current that injured them will pass through you. Break the contact first, in one of these ways:\n\n- Have the system operator **de-energize the circuit** and confirm it.\n- Use a **hot stick or other insulated tool** rated for the voltage to move the conductor or the victim.\n- Open a cutout or switch where that is within your training and the department procedure allows.\n\nRescuer PPE is not optional because it is an emergency. Wear a **hard hat**, **eye protection**, **rubber gloves and sleeves of the proper voltage class** for the lines involved, and **climbers with a body belt and fall protection** as required by 1910.269(g)(2). If your rubber gloves are in the truck, get them. Thirty seconds is cheaper than a second victim."
+    },
+    {
+      "heading": "Reaching and assessing the victim",
+      "body": "Climb with your normal technique and your fall protection attached. Hurrying is how rescuers cut out and fall. Watch for the victim's tools and loose conductors as you go.\n\n**Position yourself above or beside the victim**, depending on how they are hanging and what your department procedure calls for. Above lets you rig over a crossarm or through a rescue block and use your weight to control the line. Beside lets you reach the victim's belt. Either way, keep yourself and the handline clear of energized parts.\n\nAssess quickly:\n\n- **Responsiveness**. Speak to the victim. Tap the shoulder.\n- **Breathing**. Look at the chest and listen for a few seconds. Do not spend time looking for a pulse at the top of a pole.\n- **Bleeding or burns** that will matter during lowering. Lowering comes first.\n\nIf the victim is not breathing, your only job is to get them to the ground fast. Rescue breaths on the pole are not practical and delay what will actually save them."
+    },
+    {
+      "heading": "Rigging the handline",
+      "body": "The handline carries the victim's weight to the ground. Rig it once, rig it right.\n\n- Pass the handline **over a crossarm or through a rescue block** above the victim, as close to directly over them as possible so they do not swing into the pole or a conductor.\n- Attach the line to the victim using a **rescue sling** or the victim's own body belt D ring or strap, exactly as your department procedure specifies. Check the knot or clip by eye and by hand.\n- Take up slack so the line holds most of the victim's weight **before** you release their fall protection. A victim released with slack in the line drops and may pull you off the pole.\n- Keep the handline **clear of energized parts**. A rope laid across a hot phase becomes a conductor when it is wet.\n- Make sure the line is long enough to reach the ground with rope to spare for the person controlling descent.\n\nOnly after the line is secure and holding do you cut or unbuckle the victim's belt or lanyard. Cut the strap, never the rope."
+    },
+    {
+      "heading": "Rescue sequence",
+      "body": "Every department writes its own version, and that written procedure governs. The common order is:\n\n1. **Size up the scene.** Energized lines, downed conductors, fire, traffic, pole condition.\n2. **Call for help.** 911, dispatch, system operator to de-energize. Assign roles.\n3. **Clear the contact.** De-energize or use insulated tools. Do not touch the victim until the source is clear.\n4. **Put on PPE.** Hard hat, eye protection, rubber gloves and sleeves, climbers, belt and fall protection.\n5. **Climb to the victim** and position above or beside them, clear of energized parts.\n6. **Assess.** Check responsiveness and breathing in a few seconds.\n7. **Rig the handline** over a crossarm or through a rescue block, attach it to the victim, take up slack.\n8. **Release the victim's fall protection** once the line is holding.\n9. **Lower the victim.** The rescuer controls descent from the pole, or a ground person takes the line, as the department procedure specifies. Lower smoothly and guide the victim away from the pole.\n10. **On the ground, start CPR and use the AED** right away if the victim is not breathing normally. Continue until EMS takes over.\n11. **Descend and support** the ground team. Tell EMS the voltage and the nature of the contact.\n\nThe target is step 10 within about four minutes."
+    },
+    {
+      "heading": "Crew roles, aerial lifts and the ground",
+      "body": "Rescue works best when nobody has to think about who does what.\n\n- **Two person crew**: one climbs and rigs, one calls for help, manages traffic, handles the rope end if the procedure calls for it, and starts CPR the moment the victim touches down.\n- **Three person crew**: add a ground person who controls traffic, meets EMS and stages the AED while the second person takes the victim.\n\nIf a **bucket truck or aerial lift** is on site and can reach the victim safely, it is often faster and easier on the victim than climbing. The same rules apply: clear the contact first, keep boom clearance from energized parts, and wear your rubber goods. A **ladder** can sometimes reach a victim on a short pole, but only when it can be set on firm ground, footed and clear of conductors. Do not waste time positioning a truck that cannot get to the pole. Climb.\n\nOnce the victim is on the ground, **start CPR** if they are not breathing normally and attach the **AED** as soon as it arrives. Treat burns and bleeding after circulation is handled. Electrical contact victims can go into cardiac arrest minutes after they appear fine, so keep the AED on and someone watching until EMS takes over."
+    },
+    {
+      "heading": "Drills and the department procedure",
+      "body": "Reading about rescue does not make anyone ready to do it. The skills that matter under stress are the ones your hands know: finding the rescue block, tying the sling, controlling a loaded handline, cutting a strap one handed with gloves on.\n\n- Drill **at least annually** with a **rescue mannequin** of realistic weight, in gloves and sleeves.\n- **Time every drill** from the alarm to the mannequin on the ground, and record it. Four minutes is the goal. Talk through what slowed you down.\n- Rotate roles so every crew member has rigged and lowered.\n- Drill the variations: victim hanging head down, victim on the far side of the crossarm, two person crew, night, rain.\n- Inspect rescue equipment with the other climbing gear and keep it in the same place on every truck.\n\nThis course is a refresher on the principles behind pole top rescue. **The department's written procedure, the equipment on the truck, and hands on timed drills govern how you actually do it.** If anything here differs from that procedure, follow the procedure and tell your supervisor."
+    }
+  ],
+  "key_takeaways": [
+    "The goal is the victim on the ground with CPR started within about four minutes, because brain injury begins within minutes without oxygen.",
+    "1910.269(a)(2) requires training in emergency procedures such as pole top rescue, and 1910.269(b) requires first aid and CPR trained persons on the crew.",
+    "Size up the scene first: energized conductors, downed lines, fire, traffic, weather and the condition of the pole.",
+    "Never touch a victim still in contact with an energized source; de-energize or clear the contact with insulated tools first.",
+    "Wear hard hat, eye protection, rubber gloves and sleeves of the right class, climbers and fall protection before you climb.",
+    "Rig the handline over a crossarm or through a rescue block, take up slack, and only then release the victim's fall protection.",
+    "Start CPR and attach the AED as soon as the victim is on the ground, and keep the AED on until EMS takes over.",
+    "The department's written procedure and timed drills with a rescue mannequin govern; this course is only a refresher."
+  ],
+  "questions": [
+    {
+      "text": "Why does the electric utility industry set a goal of having a pole top victim on the ground with CPR started within about four minutes?",
+      "options": [
+        "Because the system operator can only hold a circuit out for four minutes",
+        "Because brain injury begins within minutes when a person is not breathing or has no pulse",
+        "Because most rescue handlines are only rated for four minutes of load",
+        "Because EMS response time in most areas is four minutes"
+      ],
+      "answer": 1,
+      "explanation": "Brain injury begins within minutes without oxygen, so the crew on site must get the victim down and start CPR fast. EMS and the system operator cannot act quickly enough to meet that clock."
+    },
+    {
+      "text": "Which paragraph of 1910.269 specifically names pole top and manhole rescue as examples of emergency procedures employees must be trained in?",
+      "options": [
+        "1910.269(a)(2)",
+        "1910.269(b)",
+        "1910.269(g)(2)",
+        "1910.269(l)"
+      ],
+      "answer": 0,
+      "explanation": "1910.269(a)(2) requires training in the emergency procedures that apply to an employee's work and gives pole top and manhole rescue as examples. Paragraph (b) covers first aid and CPR trained persons."
+    },
+    {
+      "text": "You arrive at a pole where a coworker is slumped in his belt and a primary conductor is lying across his shoulder. What should you do first?",
+      "options": [
+        "Climb immediately and pull the conductor off with your gloved hand",
+        "Throw the handline over the crossarm so you can lower him as soon as you reach him",
+        "Call for the circuit to be de-energized and clear the contact with an insulated tool before touching him",
+        "Begin rescue breathing from the pole as soon as you reach him"
+      ],
+      "answer": 2,
+      "explanation": "Never touch a victim who is still in contact with an energized source. The contact must be cleared by de-energizing the circuit or by using a hot stick or other properly rated insulated tool, or the rescuer becomes the second victim."
+    },
+    {
+      "text": "Which of these is the correct PPE for a rescuer climbing to a victim on a distribution pole?",
+      "options": [
+        "Hard hat and leather gloves, because speed matters more than rubber goods during a rescue",
+        "Rubber gloves only, since sleeves slow down climbing",
+        "Climbers and body belt without a fall protection lanyard, to save time",
+        "Hard hat, eye protection, rubber gloves and sleeves of the proper class, climbers, belt and fall protection"
+      ],
+      "answer": 3,
+      "explanation": "An emergency does not remove the hazards. The rescuer needs rubber gloves and sleeves rated for the voltage, a hard hat, eye protection, and climbers with a belt and fall protection as required by 1910.269(g)(2)."
+    },
+    {
+      "text": "When should the rescuer release the victim's fall protection from the pole?",
+      "options": [
+        "Before rigging the handline, so the victim can be repositioned",
+        "Only after the handline is attached and holding most of the victim's weight",
+        "As soon as the rescuer reaches the victim, to speed up the descent",
+        "After the victim has been lowered a few feet to test the line"
+      ],
+      "answer": 1,
+      "explanation": "The handline must be attached and the slack taken up so it is holding the victim before the victim's belt or lanyard is released. Releasing a victim with slack in the line causes a drop that can pull the rescuer off the pole."
+    },
+    {
+      "text": "Where should the handline be passed before it is attached to the victim?",
+      "options": [
+        "Over a crossarm or through a rescue block as close to directly above the victim as possible",
+        "Around the victim's chest and then down to the ground person",
+        "Over the nearest conductor, since it provides the highest anchor point",
+        "Through the rescuer's own D ring so the rescuer can hold the victim's weight directly"
+      ],
+      "answer": 0,
+      "explanation": "Rigging over a crossarm or through a rescue block above the victim lets the line carry the weight and keeps the victim from swinging into the pole or conductors. The line must stay clear of energized parts."
+    },
+    {
+      "text": "In a two person crew, what is the ground person's most important job once the victim starts coming down?",
+      "options": [
+        "Climbing the pole to help guide the victim past the crossarm",
+        "Photographing the scene for the incident report",
+        "Driving the truck closer so the bucket can be used",
+        "Being ready to start CPR and attach the AED the moment the victim reaches the ground"
+      ],
+      "answer": 3,
+      "explanation": "The point of the four minute goal is to start CPR as fast as possible. The ground person stages the AED, handles the rope if the procedure calls for it, and begins CPR immediately on touchdown."
+    },
+    {
+      "text": "A victim of electrical contact is lowered to the ground, is breathing, and says he feels fine. What should the crew do?",
+      "options": [
+        "Let him return to work once he can stand without help",
+        "Have him sit in the truck and drive him home",
+        "Keep the AED attached and someone watching him until EMS takes over, because cardiac arrest can occur minutes later",
+        "Cancel the ambulance so EMS is available for other calls"
+      ],
+      "answer": 2,
+      "explanation": "Electrical contact victims can go into cardiac arrest minutes after they appear fine. Keep the AED on, keep monitoring, and let EMS evaluate and transport."
+    },
+    {
+      "text": "When may a bucket truck be used instead of climbing to reach a pole top victim?",
+      "options": [
+        "Only when the victim is unresponsive",
+        "When the truck is already on site and can reach the victim safely while keeping clearance from energized parts",
+        "Whenever a truck is within ten minutes of the scene",
+        "Never, because pole top rescue must be done by a climber"
+      ],
+      "answer": 1,
+      "explanation": "An aerial lift that is already on site and can safely reach the victim is often faster and easier on the victim. If a truck cannot be positioned quickly, the rescuer should climb rather than lose time."
+    },
+    {
+      "text": "What is the purpose of running timed pole top rescue drills with a rescue mannequin at least annually?",
+      "options": [
+        "To satisfy the warranty terms for climbing equipment",
+        "To replace the need for CPR and first aid certification",
+        "To build the hands on skills and crew coordination needed to meet the four minute goal under stress",
+        "To allow the department to skip the written rescue procedure"
+      ],
+      "answer": 2,
+      "explanation": "Rescue skills are physical and fade without practice. Timed drills with a realistic weight in gloves and sleeves show whether the crew can meet the four minute goal and reveal what slows them down."
+    }
+  ]
+}

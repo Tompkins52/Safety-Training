@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}About · {{ app_name }}{% endblock %}
+{% block content %}
+<div class="page-head"><div><h1>About this platform</h1></div></div>
+<section class="card narrow">
+  <h2>{{ app_name }}</h2>
+  <p>An annual safety training and incident management platform for {{ org_name }}, covering the Electric Services, Environmental Services and Public Services divisions.</p>
+  <ul>
+    <li>Annual training modules for OSHA's Top 10 most frequently cited standards, plus pole top rescue and bucket truck rescue for the Electric Services and Public Services divisions.</li>
+    <li>A 10-question quiz at the end of every module, with completion certificates.</li>
+    <li>Automatic email reminders 30 days before training is due, a second reminder at 7 days, overdue notices, and completion notices to direct supervisors.</li>
+    <li>Incident reporting for personal injury, property damage and vehicle incidents, with investigation of direct cause, root cause, contributing factor type (behavioral, engineered or environmental) and corrective actions, and a printable incident report.</li>
+  </ul>
+  <h3>Credits</h3>
+  <p><strong>Training content and platform developed by Lorenzo McCoy and Mark Tompkins.</strong></p>
+  <p class="muted small">Version {{ app_version }}. Training content summarizes OSHA standards for awareness-level annual refresher training. It does not replace the text of the standards, the department's written programs and procedures, or hands-on training and drills required by those programs.</p>
+</section>
+{% endblock %}

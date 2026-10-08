@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Compliance report · {{ app_name }}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div><h1>Compliance report</h1><p class="muted">Latest assignment per employee and course. Green is completed in the current cycle, amber is due within 30 days, red is overdue.</p></div>
+  <div class="actions">
+    <form method="get" class="inline-form">
+      <select name="division" onchange="this.form.submit()">
+        <option value="">All divisions</option>
+        {% for d in divisions %}<option value="{{ d.id }}" {% if division_id == d.id %}selected{% endif %}>{{ d.name }}</option>{% endfor %}
+      </select>
+    </form>
+    <a class="btn btn-secondary" href="{{ url_for('admin.reports_export', division=division_id or '') }}">Export CSV</a>
+    <a class="btn btn-primary" href="{{ url_for('admin.assign') }}">Assign training</a>
+  </div>
+</div>
+
+{% if overdue %}
+<section class="card">
+  <h2>Overdue ({{ overdue|length }})</h2>
+  <table class="table compact">
+    <thead><tr><th>Employee</th><th>Division</th><th>Supervisor</th><th>Course</th><th>Due</th><th class="num">Days overdue</th><th>Last reminder</th></tr></thead>
+    <tbody>
+    {% for a in overdue %}
+      <tr>
+        <td><a href="{{ url_for('admin.employee_edit', user_id=a.user.id) }}">{{ a.user.full_name }}</a></td>
+        <td>{{ a.user.division.name if a.user.division else '' }}</td>
+        <td>{{ a.user.supervisor.full_name if a.user.supervisor else '' }}</td>
+        <td>{{ a.course.title }}</td>
+        <td>{{ a.due_date|date }}</td>
+        <td class="num">{{ -a.days_until_due }}</td>
+        <td>{{ (a.overdue_last_reminded_at or a.reminder_7_sent_at or a.reminder_30_sent_at)|date }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endif %}
+
+<section class="card">
+  <h2>Training matrix</h2>
+  <div class="table-scroll">
+  <table class="table matrix">
+    <thead>
+      <tr><th class="sticky-col">Employee</th>{% for c in courses %}<th class="rotate"><span>{{ c.title }}</span></th>{% endfor %}</tr>
+    </thead>
+    <tbody>
+    {% for row in matrix %}
+      <tr>
+        <td class="sticky-col"><a href="{{ url_for('admin.employee_edit', user_id=row.user.id) }}">{{ row.user.full_name }}</a><br><small class="muted">{{ row.user.division.name if row.user.division else 'No division' }}</small></td>
+        {% for cell in row.cells %}
+          {% set a = cell.assignment %}
+          {% if a is none %}
+            <td class="cell {{ 'na' if not cell.applies else 'none' }}" title="{{ 'Not applicable to this division' if not cell.applies else 'Not assigned' }}">{{ '' if not cell.applies else 'not assigned' }}</td>
+          {% elif a.is_completed %}
+            <td class="cell ok" title="Completed {{ a.completed_at|date }} ({{ a.percent }}%){% if cell.next_due %}, next due {{ cell.next_due|date }}{% endif %}">{{ a.completed_at|date('%m/%d/%y') }}</td>
+          {% elif a.is_overdue %}
+            <td class="cell danger" title="Overdue since {{ a.due_date|date }}">Overdue</td>
+          {% elif a.is_due_soon %}
+            <td class="cell warn" title="Due {{ a.due_date|date }}">Due {{ a.due_date|date('%m/%d') }}</td>
+          {% else %}
+            <td class="cell neutral" title="Due {{ a.due_date|date }}">Due {{ a.due_date|date('%m/%d/%y') }}</td>
+          {% endif %}
+        {% endfor %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</section>
+{% endblock %}

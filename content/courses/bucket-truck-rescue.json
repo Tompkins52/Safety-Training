@@ -1,0 +1,179 @@
+{
+  "slug": "bucket-truck-rescue",
+  "title": "Bucket Truck (Aerial Lift) Rescue",
+  "standard": "29 CFR 1910.269 / 29 CFR 1910.67",
+  "standard_title": "Aerial lifts and electric power work (rescue, first aid and CPR, emergency procedures)",
+  "category": "rescue",
+  "top10_rank": null,
+  "divisions": [
+    "electric",
+    "public"
+  ],
+  "duration_minutes": 30,
+  "renewal_months": 12,
+  "summary": "A worker who is shocked, injured or unresponsive in a bucket needs to be brought to the ground and given CPR within minutes, and the truck itself may be energized. This refresher covers the regulatory basis under 29 CFR 1910.269 and 1910.67, scene size up, de-energizing, using the lower controls, backup lowering methods, bucket to bucket rescue and removing the victim. It supports, but does not replace, hands on drills with the department's trucks, written procedures and manufacturer instructions.",
+  "objectives": [
+    "Identify the situations that require a bucket truck rescue and the OSHA paragraphs that require rescue, first aid and CPR training.",
+    "Recognize the hazards of an energized truck, including step and touch potential, and explain when the truck must not be touched.",
+    "Describe how to bring a bucket down with the lower controls and what to do when the lower controls fail.",
+    "Explain how a second bucket truck and a rescue strap and rope are used to reach and move a victim.",
+    "List the rescue sequence in order, from scene size up through CPR and AED use on the ground.",
+    "Describe crew roles and the purpose of regular timed drills on the department's own trucks."
+  ],
+  "sections": [
+    {
+      "heading": "Why rescue training is required",
+      "body": "Most overhead work is done from a bucket. That makes it the most likely place for a line worker to be hurt and a place a coworker cannot simply walk over to help. Situations that call for a rescue include:\n\n- The operator is **shocked**, **injured**, **unresponsive** or has a **medical emergency** such as a heart attack or heat illness.\n- The **bucket or boom contacts an energized line** and the truck itself may be energized.\n- **Boom or hydraulic failure** strands the bucket in the air.\n- A **truck fire** starts below the operator.\n\nOSHA ties rescue training to this work. **1910.269(a)(2)** requires training in the emergency procedures that apply to the job. **1910.269(b)** requires persons trained in **first aid and CPR** where employees work on or near exposed lines or equipment. **1910.67** sets the rules for aerial lifts, including **lower controls that can override the upper controls** and a **body belt and lanyard attached to the boom or basket** whenever a worker is in the bucket (1910.67(c)(2)). **1926.453** carries the same aerial lift requirements for construction work.\n\nThis course is a **refresher**. It does not replace hands on drills with the department's own trucks, written procedures and manufacturer instructions, which govern where they differ."
+    },
+    {
+      "heading": "Scene size up",
+      "body": "Look before you touch anything. The hazards in a bucket truck rescue are the ones that create a second victim.\n\n- **Energized lines**. Is the bucket, boom or a conductor still in contact? Is the circuit still energized?\n- **An energized truck**. If the boom touched a line, the truck body, outriggers and anything bonded to it can be energized. Nothing may look different.\n- **Step and touch potential**. Current flowing from an energized truck into the earth creates a voltage gradient on the ground around it. Walking toward the truck, or touching it from the ground, can be fatal.\n- **Traffic**. Bucket trucks work in the road. Close the lane or get a flagger.\n- **Fire or smoke** at the truck, the boom tip or the pole.\n- **Weather and footing**, especially at night or on ice.\n\nSay what you see out loud and assign roles before anyone moves."
+    },
+    {
+      "heading": "Calling for help and de-energizing",
+      "body": "One person calls **911** and **dispatch** and asks the **system operator** to de-energize and hold the circuit. Give the location, the number of victims, whether the truck may be energized and whether CPR is in progress.\n\nWhen contact is involved, de-energizing the circuit is the most important step. Until it is done:\n\n- **Do not touch the truck, the outriggers or anything connected to it.** Do not climb on it. Do not grab the lower controls.\n- Keep everyone back. If you must move away from the truck, shuffle or hop with your feet together to limit step potential.\n- Do not try to pull a conductor off the boom with your hands.\n- If the department has a written procedure for approaching an energized vehicle, follow it exactly. If it does not, wait for confirmation that the circuit is dead.\n\nIf the circuit was never involved, such as a medical emergency, go directly to the lower controls.\n\nRescuer PPE: **rubber gloves and sleeves of the proper class**, **hard hat**, **eye protection** and **fall protection** for anyone entering a bucket. Put your gloves on before you reach for a control."
+    },
+    {
+      "heading": "First choice: lower the bucket from the ground",
+      "body": "The fastest and safest rescue is usually the one where nobody climbs. Every articulating or extensible boom lift built to carry people must have **lower controls that can override the upper controls**, and the rule against operating them without the occupant's permission has an exception for emergencies (1910.67(c)(2)). A rescue is exactly what they are for.\n\n- Start the truck or engage the PTO if needed.\n- Operate the lower controls to **bring the bucket down and in** to a safe landing spot, keeping the boom clear of the lines. Watch the boom tip, not the controls.\n- Move smoothly. A jerky movement can throw a slumped victim against the edge or out of the bucket.\n- Land the bucket where the ground crew can reach the victim, then release their fall protection and lift them out.\n\n**Only when it is safe.** If the truck or boom may still be energized, do not touch the lower controls or the truck until the line is de-energized or the department's energized vehicle approach procedure has been followed."
+    },
+    {
+      "heading": "When the lower controls fail",
+      "body": "Hydraulic systems fail, engines stall and electrical contact can burn out control circuits. Every operator should know how to bring their own truck's boom down without the main system, following the **manufacturer's procedure** for that model. The common options are:\n\n- **Emergency hydraulic pump**, electric or 12 volt, that runs off the truck battery and powers the lower controls at reduced speed.\n- **Hand pump** at the pedestal or turret for trucks so equipped.\n- **Auxiliary power** from a second engine or a backup power unit.\n- **Controlled bleed-down** on trucks with a manual lowering valve, which lets the boom come down slowly under gravity. It works only on some units and only as the manual allows.\n\nPractice these on the truck you drive. Find out where the hand pump handle is stored during a drill, not with a coworker unresponsive overhead.\n\nIf none of these will bring the bucket down, or the truck cannot be touched, the next option is **a second bucket truck**. Position it where its boom can reach the victim while keeping clearance from the lines. Only a qualified operator in full PPE goes up."
+    },
+    {
+      "heading": "Bucket to bucket rescue and removing the victim",
+      "body": "When a second truck is used, the rescuer works from their own bucket.\n\n- Bring the rescue bucket alongside or slightly below the victim's bucket so the victim can be moved across without a high lift over the rail.\n- Attach a **rescue strap and rope** to the victim's harness D ring or body belt before releasing anything. The victim's own fall protection stays connected until the rescue strap is holding them.\n- Work the victim across, keeping their head and airway clear. Secure them in the rescue bucket and bring both buckets down.\n- If the victim must be lowered by rope instead, rig the rope to a rated point on the boom, never to the bucket liner or a rail.\n\nLifting a victim out of a bucket is hard. An unresponsive adult in a harness is dead weight in a tight space.\n\n- Reposition the victim upright, facing you, with their arms over the rail if possible.\n- Keep their fall protection connected **until** the rescue strap or the ground crew has them.\n- Lift with the legs and a second rescuer where possible, then bring the victim over the rail to the ground or a tailgate.\n\nOnce the victim is down, **start CPR** if they are not breathing normally and attach the **AED** as soon as it arrives."
+    },
+    {
+      "heading": "Rescue sequence",
+      "body": "The department's written procedure and the truck manufacturer's instructions govern. The common order is:\n\n1. **Size up the scene.** Energized lines, energized truck, step and touch potential, traffic, fire.\n2. **Call for help.** 911, dispatch, system operator to de-energize. Assign roles.\n3. **Put on PPE.** Rubber gloves and sleeves, hard hat, eye protection, fall protection for anyone entering a bucket.\n4. **Confirm the truck is safe to touch.** If contact occurred, wait for de-energization or follow the energized vehicle approach procedure.\n5. **Lower the bucket with the lower controls**, keeping the boom clear of the lines.\n6. **If the lower controls fail**, use the emergency pump, hand pump, auxiliary power or controlled bleed-down per the manufacturer.\n7. **If the bucket still cannot be lowered**, bring in a second bucket truck and do a bucket to bucket rescue with a rescue strap and rope.\n8. **Remove the victim**, keeping their fall protection connected until they are secured.\n9. **Start CPR and attach the AED** if the victim is not breathing normally. Continue until EMS takes over.\n10. **Brief EMS** on the voltage, the contact and when it happened."
+    },
+    {
+      "heading": "Drills and the department procedure",
+      "body": "Crew roles should be decided before the emergency, not during it.\n\n- **Two person crew**: one calls for help and manages traffic, then goes to the lower controls or the second truck. The other prepares to receive the victim and start CPR.\n- **Three person crew**: add a person who controls traffic, meets EMS and stages the AED while the second runs the controls and the third receives the victim.\n\nDrill with the trucks you actually drive. Each model stores its emergency pump handle, bleed-down valve and auxiliary power switch in a different place, and one truck's procedure can damage another.\n\n- Run **timed drills** at least annually with a rescue mannequin in the bucket, including one where the lower controls are declared failed.\n- Time from the alarm to CPR started. Four minutes is the goal.\n- Practice bucket to bucket rescue when two trucks are available.\n- After every drill, check that the rescue strap, rope and AED are on the truck and in good condition.\n\nThis course is a refresher on the principles behind bucket truck rescue. **The department's written procedure, the manufacturer's instructions for each truck, and hands on drills govern how the rescue is actually done.** Where they differ from this course, follow them."
+    }
+  ],
+  "key_takeaways": [
+    "1910.269(a)(2) requires emergency procedure training, 1910.269(b) requires first aid and CPR trained persons, and 1910.67 requires lower controls that override the upper controls and a body belt and lanyard in the bucket.",
+    "If the boom or bucket contacted a line, the whole truck may be energized; do not touch it until the circuit is de-energized or the department's energized vehicle approach procedure is followed.",
+    "Step and touch potential around an energized truck can be fatal; keep people back and shuffle with feet together if you must move away.",
+    "Call 911, dispatch and the system operator first, and get the circuit de-energized.",
+    "The first choice is to bring the bucket down with the lower controls, smoothly, keeping the boom clear of the lines.",
+    "If the lower controls fail, use the emergency pump, hand pump, auxiliary power or controlled bleed-down exactly as the manufacturer describes.",
+    "Use a second bucket truck and a rescue strap and rope when the primary unit cannot be lowered, and keep the victim's fall protection connected until they are secured.",
+    "Start CPR and attach the AED as soon as the victim is on the ground, and drill the whole sequence on your own trucks at least annually."
+  ],
+  "questions": [
+    {
+      "text": "Which OSHA requirement says an aerial lift must have lower controls capable of overriding the upper controls?",
+      "options": [
+        "1910.67(c)(2)",
+        "1910.269(b)",
+        "1910.269(a)(2)",
+        "1926.451(f)(6)"
+      ],
+      "answer": 0,
+      "explanation": "1910.67(c)(2) requires lower controls that can override the upper controls and allows them to be used without the occupant's permission in an emergency. 1910.269(b) covers first aid and CPR and 1910.269(a)(2) covers emergency procedure training."
+    },
+    {
+      "text": "A bucket truck boom has contacted a primary conductor and the operator is slumped in the bucket. The truck looks normal. What should the ground crew do first?",
+      "options": [
+        "Run to the lower controls and bring the bucket down",
+        "Pull the outrigger pads to break the truck's connection to the ground",
+        "Stay back from the truck, call for the circuit to be de-energized, and treat the truck as energized until it is confirmed dead",
+        "Have one person climb the boom to reach the operator"
+      ],
+      "answer": 2,
+      "explanation": "After a line contact the truck body, outriggers and anything bonded to them may be energized even though nothing looks different. Nobody touches the truck until the circuit is de-energized or the department's energized vehicle approach procedure is followed."
+    },
+    {
+      "text": "What is step potential around an energized truck?",
+      "options": [
+        "The height of the step a rescuer must climb to reach the pedestal controls",
+        "The voltage difference between a rescuer's two feet caused by current flowing from the truck into the ground",
+        "The chance that the bucket will drop one step when the hydraulics fail",
+        "The voltage carried on the truck's access steps only"
+      ],
+      "answer": 1,
+      "explanation": "Current flowing from an energized truck into the earth creates a voltage gradient on the ground. A person walking normally has one foot at a higher voltage than the other, and current flows through the body. Shuffling or hopping with feet together limits this."
+    },
+    {
+      "text": "Which action is the first choice for getting an unresponsive operator out of a bucket when the truck is confirmed safe to touch?",
+      "options": [
+        "Positioning a second bucket truck beside the first",
+        "Lowering the victim by rope from the bucket",
+        "Climbing the boom to reach the operator",
+        "Bringing the bucket down with the lower controls at the truck"
+      ],
+      "answer": 3,
+      "explanation": "The lower controls are the fastest and safest option because nobody has to leave the ground. The second truck and rope methods are used only when the bucket cannot be lowered."
+    },
+    {
+      "text": "The engine stalls during a rescue and the lower controls do nothing. What should the rescuer do next?",
+      "options": [
+        "Use the emergency hydraulic pump, hand pump, auxiliary power or controlled bleed-down according to the manufacturer's procedure for that truck",
+        "Disconnect the hydraulic line at the pedestal so the boom can drop",
+        "Rock the truck by moving the outriggers to shake the boom loose",
+        "Wait for the fire department ladder truck"
+      ],
+      "answer": 0,
+      "explanation": "Trucks are built with backup lowering methods for exactly this situation, and the manufacturer's procedure describes how each one works on that model. Improvised methods can drop the boom or injure the victim."
+    },
+    {
+      "text": "When a second bucket truck is used to reach a victim, when should the victim's own fall protection be disconnected from the first boom?",
+      "options": [
+        "As soon as the rescue bucket is within reach, so the victim can be pulled across quickly",
+        "Before the rescue bucket arrives, to save time",
+        "Only after a rescue strap and rope attached to the victim's harness or belt is holding them",
+        "It should never be disconnected; the victim is lowered while still attached to the first boom"
+      ],
+      "answer": 2,
+      "explanation": "The victim must always be attached to something that will hold them. The rescue strap and rope are attached and holding before the original fall protection is released."
+    },
+    {
+      "text": "Where should a rope be rigged if a victim must be lowered from a bucket by rope?",
+      "options": [
+        "To the fiberglass bucket liner",
+        "To a rated attachment point on the boom",
+        "To the bucket's top rail",
+        "To the victim's tool bag strap"
+      ],
+      "answer": 1,
+      "explanation": "The bucket liner and rail are not rated to carry a person's weight on a rope. A rated point on the boom is the only acceptable anchor."
+    },
+    {
+      "text": "Before reaching for the lower controls during a rescue, what PPE must the rescuer put on?",
+      "options": [
+        "Leather work gloves and a reflective vest",
+        "A face shield only",
+        "Hearing protection and safety toe boots",
+        "Rubber gloves and sleeves of the proper class, hard hat and eye protection"
+      ],
+      "answer": 3,
+      "explanation": "The truck or controls may be energized even after the scene looks safe. Rubber gloves and sleeves rated for the voltage, a hard hat and eye protection are required, and anyone entering a bucket also needs fall protection."
+    },
+    {
+      "text": "In the rescue sequence, what is the correct order of these three steps?",
+      "options": [
+        "Lower the bucket, then call for help, then confirm the truck is safe to touch",
+        "Confirm the truck is safe to touch, then call for help, then lower the bucket",
+        "Call for help, then confirm the truck is safe to touch, then lower the bucket",
+        "Lower the bucket, then confirm the truck is safe to touch, then call for help"
+      ],
+      "answer": 2,
+      "explanation": "Help and de-energization are requested right after scene size up. The crew then confirms the truck is safe to touch, and only then operates the lower controls to bring the bucket down."
+    },
+    {
+      "text": "Why should bucket truck rescue drills be run on the department's own trucks rather than only in a classroom?",
+      "options": [
+        "Because OSHA requires every drill to be filmed from the bucket",
+        "Because each truck model stores its emergency pump, bleed-down valve and auxiliary power in different places and uses a different procedure",
+        "Because the classroom cannot simulate traffic noise",
+        "Because the AED only works when connected to a truck battery"
+      ],
+      "answer": 1,
+      "explanation": "Backup lowering methods differ from truck to truck, and using the wrong procedure can damage the unit or drop the boom. Timed drills on the actual trucks build the muscle memory the crew will need."
+    }
+  ]
+}

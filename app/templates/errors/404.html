@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block title %}Not found · {{ app_name }}{% endblock %}
+{% block content %}
+<div class="auth-card"><h1>Page not found</h1><p class="muted">The page you asked for does not exist or was removed.</p><a class="btn btn-primary" href="{{ url_for('main.dashboard') if current_user.is_authenticated else url_for('auth.login') }}">Go home</a></div>
+{% endblock %}

@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% block title %}Dashboard · {{ app_name }}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <h1>Welcome, {{ current_user.first_name }}</h1>
+    <p class="muted">
+      {{ current_user.job_title or current_user.role_label }}{% if current_user.division %} · {{ current_user.division.name }}{% endif %}
+      {% if current_user.supervisor %} · Supervisor: {{ current_user.supervisor.full_name }}{% endif %}
+    </p>
+  </div>
+  <div class="actions">
+    <a class="btn btn-secondary" href="{{ url_for('incidents.new') }}">Report an incident</a>
+    <a class="btn btn-primary" href="{{ url_for('training.my_training') }}">My training</a>
+  </div>
+</div>
+
+{% if current_user.is_admin and org_stats %}
+<section class="stat-grid">
+  <div class="stat"><span class="stat-value">{{ org_stats.employees }}</span><span class="stat-label">Active employees</span></div>
+  <div class="stat {{ 'stat-danger' if org_stats.overdue }}"><span class="stat-value">{{ org_stats.overdue }}</span><span class="stat-label">Overdue trainings</span></div>
+  <div class="stat {{ 'stat-warn' if org_stats.due_soon }}"><span class="stat-value">{{ org_stats.due_soon }}</span><span class="stat-label">Due within 30 days</span></div>
+  <div class="stat"><span class="stat-value">{{ org_stats.completed_12mo }}</span><span class="stat-label">Completed, last 12 months</span></div>
+  <div class="stat {{ 'stat-warn' if org_stats.open_incidents }}"><span class="stat-value">{{ org_stats.open_incidents }}</span><span class="stat-label">Open incidents</span></div>
+  <div class="stat"><span class="stat-value">{{ org_stats.incidents_12mo }}</span><span class="stat-label">Incidents, last 12 months</span></div>
+</section>
+
+<section class="card">
+  <div class="card-head"><h2>Division overview</h2><a class="btn btn-sm btn-ghost" href="{{ url_for('admin.reports') }}">Full compliance report</a></div>
+  <table class="table">
+    <thead><tr><th>Division</th><th class="num">Employees</th><th class="num">Open trainings</th><th class="num">Overdue</th><th class="num">On track</th><th class="num">Open incidents</th></tr></thead>
+    <tbody>
+    {% for row in org_stats.divisions %}
+      <tr>
+        <td>{{ row.division.name }}</td>
+        <td class="num">{{ row.employees }}</td>
+        <td class="num">{{ row.open }}</td>
+        <td class="num">{% if row.overdue %}<span class="badge badge-danger">{{ row.overdue }}</span>{% else %}0{% endif %}</td>
+        <td class="num"><div class="meter"><div class="meter-fill {{ 'ok' if row.on_track_pct >= 90 else ('warn' if row.on_track_pct >= 70 else 'danger') }}" style="width: {{ row.on_track_pct }}%"></div></div> {{ row.on_track_pct }}%</td>
+        <td class="num">{{ row.open_incidents }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endif %}
+
+<div class="grid-2">
+  <section class="card">
+    <div class="card-head"><h2>My training</h2><a class="btn btn-sm btn-ghost" href="{{ url_for('training.my_training') }}">See all</a></div>
+    {% if not overdue and not due_soon and not upcoming %}
+      <p class="muted">No training is assigned to you right now.</p>
+    {% endif %}
+    {% if overdue %}
+      <h3 class="section-label danger">Overdue</h3>
+      <ul class="list">
+      {% for a in overdue %}
+        <li><a href="{{ url_for('training.course', assignment_id=a.id) }}">{{ a.course.title }}</a>
+          <span class="badge badge-danger">Due {{ a.due_date|date }}</span></li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+    {% if due_soon %}
+      <h3 class="section-label warn">Due within 30 days</h3>
+      <ul class="list">
+      {% for a in due_soon %}
+        <li><a href="{{ url_for('training.course', assignment_id=a.id) }}">{{ a.course.title }}</a>
+          <span class="badge badge-warn">Due {{ a.due_date|date }}{% if a.days_until_due == 0 %} (today){% else %} ({{ a.days_until_due }} days){% endif %}</span></li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+    {% if upcoming %}
+      <h3 class="section-label">Scheduled</h3>
+      <ul class="list">
+      {% for a in upcoming[:6] %}
+        <li><a href="{{ url_for('training.course', assignment_id=a.id) }}">{{ a.course.title }}</a>
+          <span class="badge badge-neutral">Due {{ a.due_date|date }}</span></li>
+      {% endfor %}
+      {% if upcoming|length > 6 %}<li class="muted">and {{ upcoming|length - 6 }} more</li>{% endif %}
+      </ul>
+    {% endif %}
+    {% if completed %}
+      <h3 class="section-label ok">Recently completed</h3>
+      <ul class="list">
+      {% for a in completed %}
+        <li>{{ a.course.title }} <span class="badge badge-ok">{{ a.completed_at|date }} · {{ a.percent }}%</span>
+          <a class="small" href="{{ url_for('training.certificate', assignment_id=a.id) }}">Certificate</a></li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  </section>
+
+  <section class="card">
+    <div class="card-head"><h2>Incidents</h2><a class="btn btn-sm btn-secondary" href="{{ url_for('incidents.new') }}">Report</a></div>
+    {% set incident_list = recent_incidents if current_user.is_admin else my_incidents %}
+    {% if incident_list %}
+      <table class="table compact">
+        <thead><tr><th>Number</th><th>Type</th><th>Date</th><th>Status</th></tr></thead>
+        <tbody>
+        {% for inc in incident_list %}
+          <tr>
+            <td><a href="{{ url_for('incidents.detail', incident_id=inc.id) }}">{{ inc.incident_number }}</a></td>
+            <td>{{ inc.type_label }}</td>
+            <td>{{ inc.occurred_at|date }}</td>
+            <td><span class="badge badge-{{ 'ok' if inc.status == 'closed' else ('warn' if inc.status == 'under_investigation' else 'danger') }}">{{ inc.status_label }}</span></td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p class="muted">{% if current_user.is_admin %}No incidents have been reported.{% else %}You have not reported any incidents.{% endif %}
+        Use <strong>Report an incident</strong> for any injury, property damage or vehicle incident, including near misses.</p>
+    {% endif %}
+  </section>
+</div>
+
+{% if current_user.is_supervisor and team_rows is defined %}
+<section class="card">
+  <div class="card-head"><h2>My team</h2><a class="btn btn-sm btn-ghost" href="{{ url_for('main.team') }}">Team details</a></div>
+  {% if team_rows %}
+  <table class="table">
+    <thead><tr><th>Employee</th><th>Title</th><th class="num">Open</th><th class="num">Due in 30 days</th><th class="num">Overdue</th><th class="num">Completed (12 mo)</th></tr></thead>
+    <tbody>
+    {% for row in team_rows %}
+      <tr>
+        <td><span class="dot dot-{{ row.status }}"></span> {{ row.user.full_name }}</td>
+        <td>{{ row.user.job_title or '' }}</td>
+        <td class="num">{{ row.open }}</td>
+        <td class="num">{{ row.due_soon }}</td>
+        <td class="num">{% if row.overdue %}<span class="badge badge-danger">{{ row.overdue }}</span>{% else %}0{% endif %}</td>
+        <td class="num">{{ row.completed_12mo }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="muted">No employees report to you yet. The safety administrator sets each employee's supervisor under Admin &rsaquo; Employees.</p>
+  {% endif %}
+</section>
+{% endif %}
+{% endblock %}

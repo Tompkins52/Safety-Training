@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Course catalog · {{ app_name }}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div><h1>Course catalog</h1><p class="muted">Annual training modules. Each module ends with a 10-question quiz; a score of 80% or better records completion.</p></div>
+</div>
+
+<section class="card">
+  <h2>OSHA Top 10 most cited standards</h2>
+  {% if top10 %}
+    {% set latest = top10[0] %}
+    <p class="muted">Fiscal year {{ latest.fiscal_year }} ({{ latest.status }}), {{ latest.period }}. Source: <a href="{{ latest.source }}" target="_blank" rel="noopener">OSHA</a>.</p>
+    <table class="table compact">
+      <thead><tr><th class="num">Rank</th><th>Standard</th><th>Title</th><th class="num">Citations</th><th>Training module</th></tr></thead>
+      <tbody>
+      {% for s in latest.standards %}
+        {% set match = courses|selectattr('slug', 'equalto', s.course_slug)|list %}
+        <tr><td class="num">{{ s.rank }}</td><td>{{ s.standard }}</td><td>{{ s.title }}</td><td class="num">{{ '{:,}'.format(s.citations) if s.citations else '' }}</td>
+          <td>{% if match %}{{ match[0].title }}{% else %}<span class="muted">not yet in catalog</span>{% endif %}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    {% if top10|length > 1 %}
+    <details class="mt">
+      <summary>Earlier years</summary>
+      {% for year in top10[1:] %}
+        <p class="small"><strong>FY {{ year.fiscal_year }}</strong> ({{ year.status }}): {% for s in year.standards %}{{ s.rank }}. {{ s.title }}{% if not loop.last %}; {% endif %}{% endfor %}</p>
+      {% endfor %}
+    </details>
+    {% endif %}
+  {% else %}
+    <p class="muted">The Top 10 list file (content/osha_top10.json) was not found.</p>
+  {% endif %}
+</section>
+
+<section class="card">
+  <h2>Modules</h2>
+  <table class="table">
+    <thead><tr><th>Module</th><th>Standard</th><th>Category</th><th>Applies to</th><th class="num">Est. time</th><th class="num">Renews every</th></tr></thead>
+    <tbody>
+    {% for c in courses %}
+      <tr>
+        <td><strong>{{ c.title }}</strong><br><small class="muted">{{ c.summary }}</small></td>
+        <td>{{ c.standard or '' }}</td>
+        <td>{% if c.top10_rank %}Top 10 #{{ c.top10_rank }}{% else %}{{ c.category_label }}{% endif %}</td>
+        <td>{% for d in c.divisions %}{{ d.name }}{% if not loop.last %}, {% endif %}{% endfor %}</td>
+        <td class="num">{{ c.duration_minutes }} min</td>
+        <td class="num">{{ c.renewal_months }} months</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

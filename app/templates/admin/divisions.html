@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Divisions · {{ app_name }}{% endblock %}
+{% block content %}
+<div class="page-head"><div><h1>Divisions</h1><p class="muted">Employees belong to one division. Each course lists the divisions it applies to.</p></div></div>
+<div class="grid-2">
+  <section class="card">
+    <h2>Current divisions</h2>
+    <table class="table compact">
+      <thead><tr><th>Code</th><th>Name</th><th class="num">Active employees</th><th class="num">Courses</th></tr></thead>
+      <tbody>
+      {% for d in divisions %}
+        <tr>
+          <td><code>{{ d.code }}</code></td>
+          <td>
+            <form method="post" action="{{ url_for('admin.division_rename', division_id=d.id) }}" class="inline-form">
+              <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+              <input type="text" name="name" value="{{ d.name }}" class="inline-input">
+              <button class="btn btn-sm btn-ghost" type="submit">Rename</button>
+            </form>
+          </td>
+          <td class="num">{{ d.users|selectattr('is_active_employee')|list|length }}</td>
+          <td class="num">{{ d.courses|length }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </section>
+  <section class="card">
+    <h2>Add a division</h2>
+    <form method="post" class="form-stack">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <label>Code <small class="muted">(short, lowercase, no spaces)</small><input type="text" name="code" required pattern="[a-z0-9-]+" placeholder="e.g., fleet"></label>
+      <label>Name<input type="text" name="name" required placeholder="e.g., Fleet Services"></label>
+      <button class="btn btn-primary" type="submit">Add division</button>
+    </form>
+    <p class="small muted mt">After adding a division, open each course under Courses and tick the new division so it is included in assignments.</p>
+  </section>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "email/_base.html" %}{% block body %}
+<p>Incident <strong>{{ incident.incident_number }}</strong> ({{ incident.type_label }}) has been closed.</p>
+<table cellpadding="4" style="font-size:15px;">
+  <tr><td><strong>Occurred</strong></td><td>{{ incident.occurred_at.strftime('%B %d, %Y') }}</td></tr>
+  <tr><td><strong>Location</strong></td><td>{{ incident.location }}</td></tr>
+  <tr><td><strong>Direct cause</strong></td><td>{{ incident.direct_cause }}</td></tr>
+  <tr><td><strong>Root cause</strong></td><td>{{ incident.root_cause }}</td></tr>
+  <tr><td><strong>Contributing factor</strong></td><td>{{ incident.contributing_factor_label }}</td></tr>
+  <tr><td><strong>Corrective actions</strong></td><td>{{ incident.corrective_actions|length }}</td></tr>
+</table>
+<p><a href="{{ link }}" style="display:inline-block;background:#1b2a41;color:#fff;padding:10px 18px;border-radius:4px;text-decoration:none;">View the final report</a></p>
+{% endblock %}

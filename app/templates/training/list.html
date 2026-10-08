@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}My training · {{ app_name }}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div><h1>My training</h1><p class="muted">Complete each module and pass its 10-question quiz by the due date. You will receive an email reminder 30 days before each due date.</p></div>
+</div>
+
+<section class="card">
+  <h2>Assigned</h2>
+  {% if open_items %}
+  <table class="table">
+    <thead><tr><th>Module</th><th>Standard</th><th>Due</th><th>Status</th><th class="num">Attempts</th><th></th></tr></thead>
+    <tbody>
+    {% for a in open_items %}
+      <tr>
+        <td><strong>{{ a.course.title }}</strong><br><small class="muted">{{ a.course.duration_minutes }} min · {{ a.course.questions|length }} question quiz</small></td>
+        <td>{{ a.course.standard or '' }}</td>
+        <td>{{ a.due_date|date }}<br><small class="muted">{% if a.is_overdue %}{{ -a.days_until_due }} days overdue{% elif a.days_until_due == 0 %}today{% else %}in {{ a.days_until_due }} days{% endif %}</small></td>
+        <td><span class="badge badge-{{ a.status_class }}">{{ a.display_status }}</span></td>
+        <td class="num">{{ a.attempts }}{% if a.best_score is not none %} <small class="muted">(best {{ a.best_score }}/{{ a.total_questions }})</small>{% endif %}</td>
+        <td class="actions-cell"><a class="btn btn-sm btn-primary" href="{{ url_for('training.course', assignment_id=a.id) }}">{% if a.status == 'in_progress' %}Continue{% else %}Start{% endif %}</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="muted">Nothing is assigned to you right now.</p>
+  {% endif %}
+</section>
+
+<section class="card">
+  <h2>Completed</h2>
+  {% if history %}
+  <table class="table compact">
+    <thead><tr><th>Module</th><th>Completed</th><th class="num">Score</th><th class="num">Cycle</th><th></th></tr></thead>
+    <tbody>
+    {% for a in history %}
+      <tr>
+        <td>{{ a.course.title }}</td>
+        <td>{{ a.completed_at|date }}</td>
+        <td class="num">{{ a.score }}/{{ a.total_questions }} ({{ a.percent }}%)</td>
+        <td class="num">{{ a.cycle }}</td>
+        <td class="actions-cell"><a class="btn btn-sm btn-ghost" href="{{ url_for('training.course', assignment_id=a.id) }}">Review</a> <a class="btn btn-sm btn-ghost" href="{{ url_for('training.certificate', assignment_id=a.id) }}">Certificate</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="muted">No completed training yet.</p>
+  {% endif %}
+</section>
+{% endblock %}

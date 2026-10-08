@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Employees · {{ app_name }}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div><h1>Employees</h1><p class="muted">Accounts, divisions and reporting lines. The supervisor set here receives completion notices.</p></div>
+  <div class="actions">
+    <a class="btn btn-ghost" href="{{ url_for('admin.employees', inactive='0' if show_inactive else '1') }}">{% if show_inactive %}Hide inactive{% else %}Show inactive{% endif %}</a>
+    <a class="btn btn-primary" href="{{ url_for('admin.employee_new') }}">Add employee</a>
+  </div>
+</div>
+<section class="card">
+  <table class="table">
+    <thead><tr><th>Name</th><th>Email</th><th>Emp. no.</th><th>Division</th><th>Title</th><th>Role</th><th>Supervisor</th><th class="num">Open</th><th class="num">Overdue</th><th></th></tr></thead>
+    <tbody>
+    {% for u in users %}
+      {% set open_items = u.open_assignments() %}
+      <tr class="{{ 'inactive' if not u.is_active_employee }}">
+        <td>{{ u.full_name }}{% if not u.is_active_employee %} <span class="badge badge-neutral">inactive</span>{% endif %}</td>
+        <td>{{ u.email }}</td>
+        <td>{{ u.employee_number or '' }}</td>
+        <td>{{ u.division.name if u.division else '' }}</td>
+        <td>{{ u.job_title or '' }}</td>
+        <td>{{ role_labels[u.role] }}</td>
+        <td>{{ u.supervisor.full_name if u.supervisor else '' }}</td>
+        <td class="num">{{ open_items|length }}</td>
+        <td class="num">{% set od = open_items|selectattr('is_overdue')|list %}{% if od %}<span class="badge badge-danger">{{ od|length }}</span>{% else %}0{% endif %}</td>
+        <td class="actions-cell"><a class="btn btn-sm btn-ghost" href="{{ url_for('admin.employee_edit', user_id=u.id) }}">Edit</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

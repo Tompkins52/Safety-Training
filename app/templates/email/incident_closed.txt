@@ -1,0 +1,12 @@
+Incident {{ incident.incident_number }} ({{ incident.type_label }}) has been closed.
+
+  Occurred:            {{ incident.occurred_at.strftime('%B %d, %Y') }}
+  Location:            {{ incident.location }}
+  Direct cause:        {{ incident.direct_cause }}
+  Root cause:          {{ incident.root_cause }}
+  Contributing factor: {{ incident.contributing_factor_label }}
+  Corrective actions:  {{ incident.corrective_actions|length }}
+
+View the final report: {{ link }}
+
+{{ org_name }}

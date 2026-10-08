@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% block title %}Investigation {{ incident.incident_number }} · {{ app_name }}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <p class="eyebrow">{{ incident.type_label }} · <a href="{{ url_for('incidents.detail', incident_id=incident.id) }}">{{ incident.incident_number }}</a></p>
+    <h1>Investigation</h1>
+    <p class="muted">{{ incident.occurred_at|datetime }} · {{ incident.location }} · reported by {{ incident.reported_by.full_name }}</p>
+  </div>
+  <div class="actions">
+    <span class="badge badge-{{ 'ok' if incident.status == 'closed' else ('warn' if incident.status == 'under_investigation' else 'danger') }}">{{ incident.status_label }}</span>
+  </div>
+</div>
+
+<div class="card muted-box">
+  <p class="small"><strong>What happened:</strong> {{ incident.description }}</p>
+</div>
+
+<form method="post" class="card form-grid">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <h2 class="span-2">Causes</h2>
+  <label>Investigator
+    <select name="investigator_id">
+      {% for u in investigators %}<option value="{{ u.id }}" {% if (incident.investigator_id or current_user.id) == u.id %}selected{% endif %}>{{ u.full_name }} ({{ u.role_label }})</option>{% endfor %}
+    </select>
+  </label>
+  <label>Investigation date
+    <input type="date" name="investigation_date" value="{{ (incident.investigation_date or today()).strftime('%Y-%m-%d') }}">
+  </label>
+  <label class="span-2">Direct cause <span class="req">*</span>
+    <small class="muted">The immediate unsafe act or condition that produced the injury or damage. What directly caused it?</small>
+    <textarea name="direct_cause" rows="3" placeholder="e.g., The operator stepped off the ladder's top cap and lost balance.">{{ incident.direct_cause or '' }}</textarea>
+  </label>
+  <label class="span-2">Root cause <span class="req">*</span>
+    <small class="muted">The underlying management, system or process failure that allowed the direct cause to exist. Keep asking why until a fixable cause appears.</small>
+    <textarea name="root_cause" rows="3" placeholder="e.g., No ladder tall enough was on the truck and the crew had no way to request one in the field.">{{ incident.root_cause or '' }}</textarea>
+  </label>
+  <label>Contributing factor type <span class="req">*</span>
+    <select name="contributing_factor_type">
+      <option value="">Select</option>
+      {% for key, label in factors.items() %}<option value="{{ key }}" {% if incident.contributing_factor_type == key %}selected{% endif %}>{{ label }}</option>{% endfor %}
+    </select>
+  </label>
+  {% if incident.incident_type == 'vehicle' %}
+  <label>Preventability determination
+    <select name="preventability">
+      {% for key, label in preventability.items() %}<option value="{{ key }}" {% if incident.preventability == key %}selected{% endif %}>{{ label }}</option>{% endfor %}
+    </select>
+  </label>
+  {% elif incident.incident_type == 'injury' %}
+  <label>OSHA recordable?
+    <select name="osha_recordable">
+      <option value="">Not yet determined</option>
+      <option value="yes" {% if incident.osha_recordable %}selected{% endif %}>Yes</option>
+      <option value="no" {% if incident.osha_recordable is sameas false %}selected{% endif %}>No</option>
+    </select>
+  </label>
+  {% else %}
+  <div></div>
+  {% endif %}
+  <label class="span-2">Contributing factor details
+    <textarea name="contributing_factor_detail" rows="3" placeholder="Describe the behavioral, engineered or environmental factor and how it contributed.">{{ incident.contributing_factor_detail or '' }}</textarea>
+  </label>
+  <label class="span-2">Lessons learned
+    <textarea name="lessons_learned" rows="3">{{ incident.lessons_learned or '' }}</textarea>
+  </label>
+  <div class="form-actions span-2">
+    <button class="btn btn-primary" type="submit">Save investigation</button>
+    <a class="btn btn-ghost" href="{{ url_for('incidents.detail', incident_id=incident.id) }}">Back to incident</a>
+  </div>
+</form>
+
+<section class="card" id="actions">
+  <h2>Corrective actions</h2>
+  <p class="muted small">Each action should remove or control the cause. Prefer engineering controls and procedure changes over reminders to be careful.</p>
+  {% if incident.corrective_actions %}
+  <table class="table compact">
+    <thead><tr><th>Action</th><th>Responsible</th><th>Target</th><th>Status</th><th></th></tr></thead>
+    <tbody>
+    {% for a in incident.corrective_actions %}
+      <tr>
+        <td>{{ a.description }}{% if a.notes %}<br><small class="muted">{{ a.notes }}</small>{% endif %}</td>
+        <td>{{ a.responsible_name or '' }}</td>
+        <td>{{ a.target_date|date }}{% if a.is_overdue %} <span class="badge badge-danger">Overdue</span>{% endif %}</td>
+        <td>
+          <form method="post" action="{{ url_for('incidents.update_action', incident_id=incident.id, action_id=a.id) }}" class="inline-form">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <select name="status" onchange="this.form.submit()">
+              {% for key, label in action_statuses.items() %}<option value="{{ key }}" {% if a.status == key %}selected{% endif %}>{{ label }}</option>{% endfor %}
+            </select>
+            {% if a.completed_on %}<small class="muted">done {{ a.completed_on|date }}</small>{% endif %}
+          </form>
+        </td>
+        <td class="actions-cell">
+          <form method="post" action="{{ url_for('incidents.update_action', incident_id=incident.id, action_id=a.id) }}" class="inline-form" onsubmit="return confirm('Remove this corrective action?');">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="delete" value="1">
+            <button class="btn btn-sm btn-ghost" type="submit">Remove</button>
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+  <form method="post" action="{{ url_for('incidents.add_action', incident_id=incident.id) }}" class="form-grid mt">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label class="span-2">New corrective action<input type="text" name="description" placeholder="e.g., Add a 28 ft extension ladder to each service truck and update the truck inventory checklist" required></label>
+    <label>Responsible person<input type="text" name="responsible_name"></label>
+    <label>Target date<input type="date" name="target_date"></label>
+    <div class="form-actions span-2"><button class="btn btn-secondary" type="submit">Add action</button></div>
+  </form>
+</section>
+
+<section class="card">
+  <h2>Status</h2>
+  <form method="post" action="{{ url_for('incidents.set_status', incident_id=incident.id) }}" class="inline-form">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    {% if incident.status != 'closed' %}
+      <p class="small muted">Closing requires a direct cause, a root cause and a contributing factor type. The reporter and their supervisor are notified when an incident is closed.</p>
+      <button class="btn btn-primary" name="status" value="closed" type="submit" onclick="return confirm('Close this incident?');">Close incident</button>
+      {% if incident.status == 'reported' %}<button class="btn btn-ghost" name="status" value="under_investigation" type="submit">Mark under investigation</button>{% endif %}
+    {% else %}
+      <p class="small muted">Closed {{ incident.closed_at|datetime }}{% if incident.closed_by %} by {{ incident.closed_by.full_name }}{% endif %}.</p>
+      <button class="btn btn-ghost" name="status" value="under_investigation" type="submit">Reopen</button>
+    {% endif %}
+  </form>
+</section>
+{% endblock %}

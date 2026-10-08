@@ -1,0 +1,9 @@
+Flask>=3.0,<4
+Flask-SQLAlchemy>=3.1,<4
+Flask-Login>=0.6.3,<1
+Flask-WTF>=1.2,<2
+APScheduler>=3.10,<4
+Markdown>=3.5,<4
+python-dotenv>=1.0,<2
+gunicorn>=21,<24
+pytest>=8,<9

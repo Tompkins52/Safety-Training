@@ -1,0 +1,171 @@
+{
+  "slug": "fall-protection-general",
+  "title": "Fall Protection: General Requirements",
+  "standard": "29 CFR 1926.501",
+  "standard_title": "Fall Protection, general requirements (construction)",
+  "category": "osha_top10",
+  "top10_rank": 1,
+  "divisions": ["electric", "environmental", "public"],
+  "duration_minutes": 35,
+  "renewal_months": 12,
+  "summary": "Falls are the leading cause of death in construction, and fall protection is the most frequently cited OSHA standard year after year. This course explains when fall protection is required on public works jobs, what hazards trigger it, how guardrails, safety nets and personal fall arrest systems work, and what has to be in place before anyone ties off. It applies to every division because every division has crews working on edges, roofs, tanks, structures and equipment.",
+  "objectives": [
+    "Identify the height triggers for fall protection in construction work (6 feet) and general industry work (4 feet) and tell which one applies to a task.",
+    "Recognize the fall hazards named in 1926.501 that show up on public works jobs, including open edges, leading edges, holes, excavations, roofs, tanks and structures.",
+    "Describe the three main fall protection systems and explain why guardrails are the first choice.",
+    "List the components of a personal fall arrest system and state the limits on anchorage strength, free fall distance and arresting force.",
+    "Inspect fall arrest equipment before each use and know when a component must be removed from service.",
+    "Explain swing fall and why a rescue plan must be in place before anyone ties off."
+  ],
+  "sections": [
+    {
+      "heading": "When fall protection is required",
+      "body": "OSHA's construction standard, **29 CFR 1926.501**, requires fall protection whenever an employee works on a surface with an unprotected side or edge **6 feet or more** above a lower level. The employer must first confirm the surface can hold the workers, then provide a guardrail system, a safety net system or a personal fall arrest system (PFAS).\n\nPublic works crews also do **general industry** work covered by **29 CFR 1910.28** (walking-working surfaces), which uses a **4 foot** trigger. The task decides which rule applies:\n\n- Building, altering, repairing or demolishing a structure, such as replacing a culvert headwall or re-roofing a pump house, is construction. The 6 foot trigger applies.\n- Routine maintenance and operations, such as inspecting a clarifier walkway or changing a light on the shop mezzanine, is general industry. The 4 foot trigger applies.\n\nWhen in doubt, use the stricter 4 foot trigger. Above **dangerous equipment**, such as an open tank or the auger in a salt spreader, guards are required at any height."
+    },
+    {
+      "heading": "Why this standard is on the Top 10",
+      "body": "Fall protection has held the top spot on OSHA's list of most frequently cited standards for more than a decade. Inspectors cite 1926.501 so often because the hazard is easy to see and easy to prove. A worker on an edge with no guardrail and no harness is a citation on sight.\n\nThe paragraphs cited most often include:\n\n- **(b)(13) Residential construction.** Workers on roofs and floor decks with no protection at all.\n- **(b)(1) Unprotected sides and edges.** Open edges of floors, decks, platforms and loading areas.\n- **(b)(10) and (b)(11) Roofing work.** Low-slope and steep roofs with no system in place.\n- **(b)(4) Holes.** Uncovered floor holes and unguarded skylights.\n\nThe common thread is not missing equipment. Most crews own harnesses and guardrail parts. The gear stayed in the truck because the job was 'only going to take a minute.' Short tasks are where most of our exposure is, and where the citations come from."
+    },
+    {
+      "heading": "Fall hazards you will meet in public works",
+      "body": "These are the situations in the standard that show up on municipal jobs.\n\n- **Unprotected sides and edges.** Any open edge 6 feet or more above the next level: a bridge deck under repair, a retaining wall top or a lift station roof.\n- **Leading edges.** An edge that moves as work advances, such as deck forms on a culvert or bridge. If guardrails, nets and PFAS are truly infeasible, a written fall protection plan under 1926.502(k) is required. Inconvenient does not mean infeasible.\n- **Holes and skylights.** Any hole more than 6 feet above a lower level needs a **cover**, a guardrail or PFAS. Covers must hold twice the expected load, be secured so they cannot slide, and be marked HOLE or COVER. A skylight, an open tank or vault hatch, and the gap left when a grate is pulled are all holes.\n- **Excavations.** Edges 6 feet or more deep need guardrails, fences or barricades when the edge is hidden from view. Wells, pits and shafts that deep need guardrails, barricades or covers.\n- **Roofs.** Low-slope roofs allow guardrails, nets, PFAS, or a warning line combined with one of those. Steep roofs require guardrails with toeboards, nets or PFAS.\n- **Bridges, structures and tanks.** Water tower catwalks, clarifier bridges and digester tops have fixed railings for a reason. When a railing comes off for a repair, replacement protection goes in first.\n- **Poles and bucket trucks.** Pole work and aerial lift work have their own rules under 29 CFR 1910.269, 1926 Subpart V and 1926.453. Tie off in the bucket every time, and use fall protection whenever you climb or change position on a pole."
+    },
+    {
+      "heading": "The three main systems",
+      "body": "The standard names three conventional systems.\n\n- **Guardrail systems** are the first choice because they protect everyone in the area without any action by the worker. The top rail sits **42 inches, plus or minus 3 inches**, above the walking surface and must withstand a 200 pound force. A midrail goes about halfway up. Add toeboards when people work below.\n- **Safety net systems** catch a worker after a fall. Nets go as close as practical under the work surface and never more than 30 feet below it. They are rare in public works.\n- **Personal fall arrest systems** stop a fall that has already started. They depend on correct equipment, a sound anchor and a trained worker, and fit short tasks where a guardrail cannot be built.\n\nA **warning line** keeps workers back from the edge on low-slope roofs, and a **controlled access zone** limits who can enter an area where conventional protection is not in use. Both have strict conditions and are used only under a competent person.\n\nRemember the order of preference. First, remove the exposure by working from the ground or a lift platform with rails. Second, guard the edge. Third, rely on personal equipment."
+    },
+    {
+      "heading": "Personal fall arrest systems: components and limits",
+      "body": "A PFAS has three parts, often called the ABCs:\n\n- **A, Anchorage.** The anchor must hold at least **5,000 pounds per worker** attached, or be designed, installed and used under the supervision of a **qualified person** as part of a complete system with a safety factor of at least two. A guardrail, a conduit run or a vent pipe is not an anchor.\n- **B, Body support.** Only a **full body harness** is allowed. Body belts are not accepted for fall arrest.\n- **C, Connectors.** A **lanyard** or self-retracting lifeline connects the harness to the anchor. Lanyards need a 5,000 pound breaking strength, and snaphooks must be self-locking. A **deceleration device**, such as a shock-absorbing lanyard or self-retracting lifeline, limits the force on your body.\n\nThe system as a whole must meet these limits:\n\n- **Free fall of no more than 6 feet**, and the worker must not contact a lower level.\n- Maximum arresting force of **1,800 pounds** with a full body harness.\n- Deceleration distance of **no more than 3.5 feet**.\n\nAdd it up before you tie off. A 6 foot lanyard, 3.5 feet of deceleration, the worker's height below the D-ring and a safety margin can mean more than 17 feet of clearance below the anchor. If the next level is closer, use a self-retracting lifeline anchored overhead or a different system."
+    },
+    {
+      "heading": "Inspection, swing fall and rescue",
+      "body": "**Inspect before each use.** Check webbing for cuts, burns, frays, chemical damage and sun fading. Check stitching, D-rings, buckles and snaphook gates. Check the shock pack on a lanyard for a deployed indicator and a self-retracting lifeline for smooth retraction and a working brake. Any system that has caught a fall comes out of service until a competent person inspects it and clears it as undamaged. Anything defective gets tagged and removed.\n\n**Swing fall.** If you anchor off to the side and fall, you swing like a pendulum back under the anchor. You can hit a wall or structure with full force, and the swing adds fall distance. Anchor as close to directly overhead as you can.\n\n**Rescue.** The employer must provide for **prompt rescue** or make sure workers can rescue themselves. Hanging in a harness restricts blood flow in the legs, and a person can pass out in a short time. Before anyone ties off, the crew must know how a fallen worker will get down: a bucket truck on site, a rescue kit with a descent device, or a ladder that reaches the worker. Calling 911 and waiting is not a rescue plan. Never work tied off alone."
+    },
+    {
+      "heading": "What this means for Public Works crews",
+      "body": "**Electric Services.** Substation steel, transformer tops and capacitor racks put technicians above 4 feet during maintenance and above 6 feet on construction projects. In a bucket, attach the lanyard to the anchor on the boom or basket, never to the bucket lip. Meter technicians on commercial rooftops face unguarded edges and skylights; treat them like any other roof.\n\n**Environmental Services.** Water and wastewater plants are full of open tanks, hatches, clarifier bridges and digester roofs, and a fall into a tank is also a drowning hazard. Pulling a grate or railing to lift a pump creates a hole; cover it or guard it right away. Solid waste crews face fall hazards at the transfer station tipping floor and on top of roll-off containers.\n\n**Public Services.** Bridge deck repairs, culvert headwalls and retaining walls are construction work with the 6 foot trigger. Signal technicians tie off in the bucket every time. Facilities staff on flat roofs need a warning line, guardrail or PFAS. Forestry crews in aerial lifts tie off, and climbing arborists follow ANSI Z133. Fleet mechanics on top of plow trucks and tanker bodies are above 4 feet; use the shop's fall arrest rail or a platform with rails.\n\nIn every division, ask the same question: what will stop me if I slip right now? If the answer is nothing, stop and set up protection."
+    }
+  ],
+  "key_takeaways": [
+    "Construction work needs fall protection at 6 feet, general industry work needs it at 4 feet, and public works crews do both kinds of work.",
+    "Guardrails are the first choice because they protect everyone in the area without any action by the worker.",
+    "A hole is anything you can fall through, including skylights, open hatches and the gap left when a grate is pulled, and it needs a cover, a guardrail or PFAS.",
+    "Anchor points must hold 5,000 pounds per worker or be engineered by a qualified person with a safety factor of two.",
+    "Only a full body harness is allowed in a fall arrest system, free fall is limited to 6 feet, and the worker must never contact a lower level.",
+    "Inspect every component before each use and remove anything that has caught a fall or shows damage.",
+    "Anchor overhead to limit swing fall, and have a rescue plan in place before anyone ties off."
+  ],
+  "questions": [
+    {
+      "text": "Under the construction standard 1926.501, at what height above a lower level is fall protection required at an unprotected edge?",
+      "options": [
+        "4 feet",
+        "10 feet",
+        "6 feet",
+        "8 feet"
+      ],
+      "answer": 2,
+      "explanation": "The construction trigger in 1926.501 is 6 feet. The 4 foot figure is the general industry trigger under 1910.28."
+    },
+    {
+      "text": "A facilities worker is doing routine maintenance on a shop mezzanine with an open edge. Which height trigger applies?",
+      "options": [
+        "4 feet, because routine maintenance is general industry work under 1910.28",
+        "6 feet, because all public works field work is construction",
+        "10 feet, because mezzanines are storage areas",
+        "No trigger applies to indoor work"
+      ],
+      "answer": 0,
+      "explanation": "Routine maintenance and operations are general industry work, so the 4 foot trigger in 1910.28 applies. The 6 foot trigger is for construction tasks such as building, altering or repairing a structure."
+    },
+    {
+      "text": "According to the course, what is the most common reason crews get cited under 1926.501?",
+      "options": [
+        "They do not own guardrail components",
+        "Harnesses are too expensive for small departments",
+        "Inspectors cannot tell construction from maintenance",
+        "Equipment stays in the truck for tasks that will 'only take a minute'"
+      ],
+      "answer": 3,
+      "explanation": "Most crews own the equipment. Citations happen when it is not used, usually on short tasks that the crew expected to finish quickly."
+    },
+    {
+      "text": "Which statement about hole covers is correct?",
+      "options": [
+        "Covers only need to hold the weight of one worker",
+        "Covers must hold twice the expected load, be secured against sliding, and be marked HOLE or COVER",
+        "A piece of plywood laid over the opening is enough if everyone on the crew knows it is there",
+        "Skylights do not count as holes because they have glass or plastic panels"
+      ],
+      "answer": 1,
+      "explanation": "Covers must support at least twice the load that could be placed on them, be secured so they cannot be displaced, and be marked so people know what they are. A skylight is treated as a hole."
+    },
+    {
+      "text": "Why are guardrail systems the preferred fall protection system?",
+      "options": [
+        "They protect everyone in the area without any action by the worker",
+        "They are the cheapest system to buy",
+        "They are the only system allowed on roofs",
+        "They do not require a competent person"
+      ],
+      "answer": 0,
+      "explanation": "A guardrail is a passive system. It works for every person who walks near the edge, whether or not they remembered to clip in."
+    },
+    {
+      "text": "What strength must a fall arrest anchorage have if it has not been engineered by a qualified person?",
+      "options": [
+        "1,800 pounds per worker",
+        "3,000 pounds per worker",
+        "5,000 pounds per worker",
+        "10,000 pounds total"
+      ],
+      "answer": 2,
+      "explanation": "An anchorage must support at least 5,000 pounds per worker attached, unless it is designed and used under a qualified person as part of a system with a safety factor of at least two. The 1,800 pound figure is the limit on arresting force."
+    },
+    {
+      "text": "What is the maximum free fall distance allowed for a personal fall arrest system?",
+      "options": [
+        "3.5 feet",
+        "6 feet",
+        "10 feet",
+        "12 feet"
+      ],
+      "answer": 1,
+      "explanation": "A PFAS must be rigged so the worker cannot free fall more than 6 feet or contact a lower level. The 3.5 foot figure is the maximum deceleration distance, not the free fall limit."
+    },
+    {
+      "text": "What should happen to a lanyard that has arrested a fall?",
+      "options": [
+        "Return it to service if the webbing looks fine",
+        "Keep using it until the shock pack is fully deployed",
+        "Use it only for positioning from now on",
+        "Remove it from service until a competent person inspects it and determines it is undamaged"
+      ],
+      "answer": 3,
+      "explanation": "Any PFAS component subjected to impact loading must be removed from service immediately and may not be used again unless a competent person inspects it and finds it undamaged."
+    },
+    {
+      "text": "What is the best way to reduce the swing fall hazard?",
+      "options": [
+        "Use a longer lanyard so the swing is slower",
+        "Tie off to a guardrail near the edge",
+        "Anchor as close to directly overhead as possible",
+        "Wear a body belt instead of a harness"
+      ],
+      "answer": 2,
+      "explanation": "Swing fall happens when the anchor is off to the side. Anchoring directly overhead keeps the worker from swinging into walls or structure and keeps the fall distance shorter."
+    },
+    {
+      "text": "Which of these meets the standard's requirement to provide for prompt rescue?",
+      "options": [
+        "Calling 911 after a fall and waiting for help",
+        "Having a bucket truck, rescue kit or ladder on site with a crew that knows how to use it before anyone ties off",
+        "Instructing the fallen worker to unclip and climb down",
+        "Working alone so no one else is exposed"
+      ],
+      "answer": 1,
+      "explanation": "The employer must provide for prompt rescue or make sure workers can rescue themselves. That means the method and equipment are in place and the crew knows the plan before the work starts."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Notifications · {{ app_name }}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div><h1>Notifications</h1>
+    <p class="muted">Email delivery is <strong>{% if mail_enabled %}on ({{ mail_server }}){% else %}off: messages are logged here but not sent{% endif %}</strong>.
+      The daily reminder job is {% if scheduler_enabled %}scheduled at {{ scheduler_time }} inside the web process{% else %}disabled in this process; run <code>flask run-notifications</code> from cron{% endif %}.</p></div>
+  <div class="actions">
+    <form method="post" action="{{ url_for('admin.notifications_run') }}" class="inline-form">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <button class="btn btn-secondary" type="submit">Run reminder job now</button>
+    </form>
+  </div>
+</div>
+<form method="get" class="filter-bar card">
+  <label>Kind
+    <select name="kind">
+      <option value="">All</option>
+      {% for key, label in kinds.items() %}<option value="{{ key }}" {% if kind == key %}selected{% endif %}>{{ label }}</option>{% endfor %}
+    </select>
+  </label>
+  <button class="btn btn-secondary" type="submit">Filter</button>
+</form>
+<section class="card">
+  {% if entries %}
+  <table class="table compact">
+    <thead><tr><th>Sent</th><th>Kind</th><th>Recipient</th><th>Subject</th><th>Delivery</th></tr></thead>
+    <tbody>
+    {% for e in entries %}
+      <tr>
+        <td>{{ e.sent_at|datetime }}</td>
+        <td>{{ e.kind_label }}</td>
+        <td>{{ e.recipient_email }}</td>
+        <td><details><summary>{{ e.subject }}</summary><pre class="mail-body">{{ e.body }}</pre></details></td>
+        <td>{% if e.delivered %}<span class="badge badge-ok">Sent</span>{% else %}<span class="badge badge-neutral">Logged</span> <small class="muted">{{ e.detail }}</small>{% endif %}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="muted">No notifications yet.</p>
+  {% endif %}
+</section>
+{% endblock %}

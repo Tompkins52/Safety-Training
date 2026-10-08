@@ -1,0 +1,175 @@
+{
+  "slug": "lockout-tagout",
+  "title": "Control of Hazardous Energy (Lockout/Tagout)",
+  "standard": "29 CFR 1910.147",
+  "standard_title": "Control of Hazardous Energy, lockout/tagout (general industry)",
+  "category": "osha_top10",
+  "top10_rank": 3,
+  "divisions": ["electric", "environmental", "public"],
+  "duration_minutes": 35,
+  "renewal_months": 12,
+  "summary": "Lockout/tagout protects workers from the unexpected startup of machines or the release of stored energy while they service or maintain equipment. This course explains the energy control program required by 29 CFR 1910.147, the roles of authorized and affected employees, and the step-by-step sequence for locking out, verifying zero energy and safely restoring equipment to service. Examples come from treatment plants, solid waste operations, fleet shops, traffic signal work and electric service work.",
+  "objectives": [
+    "Explain the purpose of lockout/tagout and name the types of hazardous energy found in public works equipment.",
+    "Describe the roles of authorized, affected and other employees under an energy control program.",
+    "Perform the lockout sequence in order, including releasing stored energy and verifying zero energy before work begins.",
+    "Explain when tags alone may be used and why a tag gives less protection than a lock.",
+    "Apply the rules for group lockout, shift changes and removing a lock when its owner is unavailable.",
+    "Identify the training, retraining and annual inspection requirements that keep an energy control program current."
+  ],
+  "sections": [
+    {
+      "heading": "What lockout/tagout is for",
+      "body": "**Lockout/tagout (LOTO)** keeps a machine from starting, energizing or releasing stored energy while someone is servicing or maintaining it. 29 CFR 1910.147 covers servicing and maintenance in general industry where unexpected startup or the release of stored energy could injure an employee.\n\nThe hazard is easy to picture. A pump restarts while a mechanic has a hand inside the volute. A baler ram cycles while someone clears a jam. A dump body drifts down on a technician underneath it. In each case the energy was still there, or came back, while a person was in the danger zone.\n\nThe standard does not apply to cord-and-plug equipment when the plug is pulled and stays under the exclusive control of the person doing the work. Everything else that involves reaching into, under or behind a machine for servicing is covered."
+    },
+    {
+      "heading": "Why this standard is on the Top 10",
+      "body": "Lockout/tagout appears on OSHA's list of most frequently cited standards year after year. Inspectors usually find the same problems:\n\n- **No machine-specific procedures.** A general policy exists, but no written steps for each machine say which energy sources to isolate and how to verify zero energy.\n- **No periodic inspection.** Procedures were never inspected at least annually, or no certification of the inspection exists.\n- **Training gaps.** Authorized employees were never trained or retrained, or affected employees were never told what the locks and tags mean.\n- **Procedures not used.** Locks and tags exist, but crews clear jams with only the stop button pressed.\n- **No program at all.** Smaller shops and plants sometimes have nothing on paper.\n\nPublic works departments face every one of these risks because crews maintain so many different machines across plants, shops and field equipment."
+    },
+    {
+      "heading": "Types of hazardous energy",
+      "body": "Energy that can hurt you is not limited to electricity. Before any servicing task, identify every source and how much of it there is.\n\n- **Electrical:** motors, control circuits, generators, and capacitors that hold a charge after power is off.\n- **Mechanical:** rotating shafts, flywheels, blades and belts that keep moving after shutdown.\n- **Hydraulic:** pressurized fluid in refuse truck packers, dump bodies, plow lifts and loader arms.\n- **Pneumatic:** compressed air in shop lines, air brakes and actuators.\n- **Chemical:** chlorine, sulfur dioxide, caustics and fuels in piping and tanks.\n- **Thermal:** steam, hot water, engine parts and exhaust.\n- **Gravity:** raised dump bodies, plow blades, buckets, gates and anything that can fall or drift down.\n- **Stored energy:** compressed springs, charged capacitors, pressure trapped in lines and accumulators, and elevated parts.\n\nA machine often has more than one source. A refuse truck has the engine, hydraulics, air brakes and a tailgate that gravity will close."
+    },
+    {
+      "heading": "The energy control program and who does what",
+      "body": "The standard requires a written **energy control program** with three parts: energy control procedures, employee training and periodic inspections.\n\n**Written procedures** must be specific to each machine or group of similar machines. Each one states the steps to shut down, isolate, block and secure the equipment, the steps for placing, removing and transferring locks and tags, and how to test that isolation worked. A general policy on the wall does not meet this requirement.\n\nThree groups of people are defined:\n\n- **Authorized employees** apply locks and tags and perform the servicing. Only they may lock out equipment.\n- **Affected employees** operate the equipment or work in the area where it is serviced. They must know what the locks and tags mean and never try to restart locked-out equipment.\n- **Other employees** work where LOTO may be used. They are told never to restart locked-out equipment.\n\nAn **energy isolating device** is a physical device such as a disconnect switch, circuit breaker, line valve or block. Push buttons, selector switches, emergency stops and other control circuit devices are **not** energy isolating devices and cannot be used for lockout."
+    },
+    {
+      "heading": "The lockout sequence, step by step",
+      "body": "Follow the written procedure in order. Skipping a step is how injuries happen.\n\n- **1. Notify** affected employees that the equipment will be shut down and locked out.\n- **2. Prepare for shutdown.** Know the types and magnitude of energy and how each source is controlled.\n- **3. Shut down** the equipment using its normal stopping procedure.\n- **4. Isolate** every energy source: open the disconnect, close and chain the valve, pull the fuses as the procedure directs.\n- **5. Apply locks and tags** to each isolating device. Each authorized employee applies a personal lock.\n- **6. Release or restrain stored energy.** Bleed pressure, let moving parts stop, discharge capacitors, lower or block raised parts. If energy can build back up, keep checking until the job is done.\n- **7. Verify zero energy.** Try to start the machine with the normal controls, test with a meter where appropriate and confirm that nothing moves. Return the controls to off afterward.\n\nOnly then does work begin.\n\nTo **restore service**, remove tools, replace guards and confirm everyone is clear. Each person removes their own lock, affected employees are notified, and then the equipment is reenergized. If the machine must be energized briefly for testing, clear the area, remove the locks, test, then deenergize and reapply the locks before continuing work."
+    },
+    {
+      "heading": "Locks, tags, group lockout and shift changes",
+      "body": "**Lockout is the rule.** When an energy isolating device can accept a lock, it must be locked. A **tagout** alone is allowed only when the device cannot be locked, or when the employer can show that tags plus extra measures give protection equal to a lock, such as removing a fuse, blocking a controlling switch or removing a valve handle.\n\nA tag is a warning, not a restraint. It must be legible, durable, attached with a self-locking, nonreusable fastener, and it must name the person who placed it. Treat a tag as seriously as a lock and never remove or bypass one.\n\n**Group lockout.** When a crew works together, one authorized employee takes primary responsibility, usually with a group lockbox. The keys to the isolation locks go in the box, and each crew member adds a personal lock to the box when work starts and removes it when they finish.\n\n**Shift changes.** The program must have a procedure for handing off locks between off-going and on-coming employees so protection never lapses.\n\n**Lock removal when the owner is unavailable.** Only the person who applied a lock may remove it. If that employee is not at the facility, the lock may be removed only under a documented procedure: verify the employee is not on site, make every reasonable effort to contact them, and make sure they know the lock is gone before they return to work."
+    },
+    {
+      "heading": "Inspections, training and retraining",
+      "body": "**Periodic inspection.** Each energy control procedure must be inspected at least annually by an authorized employee who is not using that procedure at the time. The inspector watches the procedure being used, corrects any deviations and reviews responsibilities with each authorized employee. The inspection is **certified** in writing with the equipment, the date, the employees included and the inspector's name.\n\n**Training.** Authorized employees learn to recognize hazardous energy, its type and magnitude, and how to isolate and control it. Affected employees learn the purpose and use of the procedure. All other employees learn that locked or tagged equipment is never to be restarted. The employer certifies training with each employee's name and the date.\n\n**Retraining** is required when job assignments change, when equipment or processes change in a way that creates a new hazard, when procedures change, or when an inspection shows an employee is not following the procedure."
+    },
+    {
+      "heading": "What this means for Public Works crews",
+      "body": "**Environmental Services.** Wastewater and water plants have pumps, clarifier drives, blowers, screens and chemical feed systems. Lock out the motor disconnect, close and tag the suction and discharge valves, bleed pressure and block any rake arm or gate that gravity can move. At solid waste transfer stations, the conveyor and baler carry electrical, hydraulic and gravity energy. Clear jams only after full lockout, never with the machine merely stopped by a button.\n\n**Public Services.** Refuse trucks, snowplows and dump trucks hold hydraulic pressure and raised loads. Lower the body or plow, or install the manufacturer's body prop or pin, bleed the hydraulics and remove the key before working underneath. Chipper discs and drums coast after shutdown. Wait for them to stop and disable the engine before clearing the throat or changing knives. Traffic signal cabinets, facility generators and automatic transfer switches need the feeder breaker and the generator source locked out, because a transfer switch can start the generator and energize a bus on its own.\n\n**Electric Services.** Work on electric power generation, transmission and distribution installations follows 29 CFR 1910.269(d) and (m), which rely on clearances, system operator tags and protective grounds, rather than 1910.147. The sequence is the same in spirit: notify, deenergize, isolate, lock or tag, then test and ground before touching. Shop equipment, hydraulic tools and building systems still fall under 1910.147."
+    }
+  ],
+  "key_takeaways": [
+    "Lockout/tagout exists to prevent unexpected startup or the release of stored energy while equipment is being serviced or maintained.",
+    "Every machine needs a written, machine-specific procedure that names the energy sources, the isolating devices and how to verify zero energy.",
+    "Only authorized employees apply locks and tags, and only the person who applied a lock may remove it, except under a documented absent-employee procedure.",
+    "Never start work until stored energy is released or restrained and you have tried to start the machine to prove it is dead.",
+    "Push buttons and emergency stops are not energy isolating devices; a lock belongs on the disconnect, breaker or valve.",
+    "Use a lock whenever the device can accept one; a tag alone is allowed only when the device cannot be locked or extra measures give equal protection.",
+    "Each procedure must be inspected at least annually and the inspection certified, and training must be refreshed whenever jobs, equipment or procedures change."
+  ],
+  "questions": [
+    {
+      "text": "What is the main purpose of lockout/tagout under 29 CFR 1910.147?",
+      "options": [
+        "To make sure machines are repaired only by licensed contractors",
+        "To document equipment downtime for maintenance records",
+        "To prevent unexpected startup or the release of stored energy while equipment is serviced",
+        "To keep operators from running equipment above its rated speed"
+      ],
+      "answer": 2,
+      "explanation": "The standard exists to keep machines from energizing, starting up or releasing stored energy while someone is performing servicing or maintenance."
+    },
+    {
+      "text": "Which of these counts as an energy isolating device?",
+      "options": [
+        "A manually operated disconnect switch",
+        "The emergency stop button on the control panel",
+        "A selector switch turned to off",
+        "A push button labeled stop"
+      ],
+      "answer": 0,
+      "explanation": "Energy isolating devices physically block the flow of energy, such as disconnects, breakers, line valves and blocks. Push buttons, selector switches and emergency stops are control circuit devices and cannot be used for lockout."
+    },
+    {
+      "text": "After locks are applied and stored energy is released, what must happen before work begins?",
+      "options": [
+        "The supervisor signs the work order",
+        "Affected employees are sent home",
+        "The equipment is cleaned and lubricated",
+        "The authorized employee tries to start the equipment to verify it is deenergized"
+      ],
+      "answer": 3,
+      "explanation": "Verification is the last step before work starts. Trying the normal start controls, and testing with a meter where appropriate, proves the isolation actually worked."
+    },
+    {
+      "text": "When is a tag alone allowed instead of a lock?",
+      "options": [
+        "Whenever the job will take less than one hour",
+        "When the energy isolating device cannot accept a lock, or when tagout plus extra measures gives protection equal to a lock",
+        "When the authorized employee prefers tags",
+        "When the machine has been serviced before without incident"
+      ],
+      "answer": 1,
+      "explanation": "Lockout is required whenever the device can be locked. Tagout alone is limited to devices that cannot accept a lock, or to cases where the employer shows that extra measures make tagout as protective as a lock."
+    },
+    {
+      "text": "How often must each energy control procedure be inspected, and who performs the inspection?",
+      "options": [
+        "At least annually, by an authorized employee who is not using that procedure at the time",
+        "Every five years, by an outside consultant",
+        "Monthly, by the affected employees who operate the machine",
+        "Only after an injury, by the plant manager"
+      ],
+      "answer": 0,
+      "explanation": "The standard requires a periodic inspection at least annually by an authorized employee other than those using the procedure, and the inspection must be certified in writing."
+    },
+    {
+      "text": "A mechanic locked out a pump and left for the day with the lock still on. What is required before anyone else removes that lock?",
+      "options": [
+        "Nothing, as long as the shift supervisor has a master key",
+        "A second mechanic applies a new lock and cuts the old one",
+        "The affected operator confirms the pump is needed back in service",
+        "Verify the mechanic is not on site, make every reasonable effort to contact them, and ensure they know the lock is gone before they return to work, following a documented procedure"
+      ],
+      "answer": 3,
+      "explanation": "Only the person who applied a lock may remove it. The exception requires a documented procedure that includes verifying the employee is not at the facility, trying to contact them and informing them before they resume work."
+    },
+    {
+      "text": "A dump body is raised and the truck is shut off with the key removed. What hazardous energy is still present?",
+      "options": [
+        "Thermal energy from the hydraulic fluid",
+        "Gravity, because the body can drift or fall if the hydraulics bleed down",
+        "No hazardous energy remains once the engine is off",
+        "Chemical energy in the fuel tank"
+      ],
+      "answer": 1,
+      "explanation": "A raised body or plow is stored gravitational energy. It must be lowered or secured with the body prop or pin before anyone works underneath."
+    },
+    {
+      "text": "An operator runs the clarifier drive but never performs maintenance on it. Under the standard, this person is which type of employee?",
+      "options": [
+        "Authorized employee",
+        "Qualified employee",
+        "Affected employee",
+        "Competent person"
+      ],
+      "answer": 2,
+      "explanation": "An affected employee operates or uses the equipment being serviced, or works in the area where it is serviced. They must understand the procedure but do not apply locks."
+    },
+    {
+      "text": "In a group lockout, how does each crew member stay protected?",
+      "options": [
+        "Each member places a personal lock on the group lockbox when starting work and removes it when finished",
+        "The lead worker's single lock covers everyone on the crew",
+        "Each member keeps a copy of the lockbox key in their pocket",
+        "The crew signs a sign-in sheet instead of using locks"
+      ],
+      "answer": 0,
+      "explanation": "Group lockout gives one authorized employee primary responsibility, but every member still attaches a personal lock to the group device or lockbox so no one can reenergize the equipment while they are exposed."
+    },
+    {
+      "text": "A line crew is deenergizing a distribution circuit to replace a pole. Which standard governs that hazardous energy control work?",
+      "options": [
+        "29 CFR 1910.147 only",
+        "29 CFR 1910.212",
+        "29 CFR 1910.178",
+        "29 CFR 1910.269(d) and (m)"
+      ],
+      "answer": 3,
+      "explanation": "Electric power generation, transmission and distribution work follows 1910.269(d) and (m) rather than 1910.147, though the sequence of notify, deenergize, isolate, lock or tag and test is the same in spirit."
+    }
+  ]
+}

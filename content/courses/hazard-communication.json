@@ -1,0 +1,161 @@
+{
+  "slug": "hazard-communication",
+  "title": "Hazard Communication (HazCom)",
+  "standard": "29 CFR 1910.1200",
+  "standard_title": "Hazard Communication (general industry)",
+  "category": "osha_top10",
+  "top10_rank": 2,
+  "divisions": ["electric", "environmental", "public"],
+  "duration_minutes": 30,
+  "renewal_months": 12,
+  "summary": "Hazard Communication, 29 CFR 1910.1200, gives every employee the right to know the hazards of the chemicals they work with and how to protect themselves. This course covers the written program, chemical inventory, Safety Data Sheets, GHS labels and pictograms, secondary container labeling and training requirements, with examples drawn from water and wastewater plants, fleet shops, streets, forestry and electric operations. It also explains the gaps that most often lead to HazCom citations and how crews can close them.",
+  "objectives": [
+    "Explain the employee right to know and the five working parts of a hazard communication program.",
+    "Locate and read the key sections of a Safety Data Sheet for hazard, first aid, handling and PPE information.",
+    "Identify the six elements of a GHS label and the meaning of each of the nine pictograms.",
+    "Apply workplace labeling rules to secondary and portable containers.",
+    "Recognize the hazardous chemicals common to your division and where to find their SDSs.",
+    "Describe when HazCom training is required and the most common reasons for citations."
+  ],
+  "sections": [
+    {
+      "heading": "Your right to know",
+      "body": "The Hazard Communication standard, often called **HazCom** or the **Right to Know** rule, is built on a simple idea: you have the right to know what chemicals you work with, what harm they can cause, and how to protect yourself. Manufacturers and importers must classify the hazards of their products and pass that information along through **labels** and **Safety Data Sheets (SDS)**. Your employer must then pass it on to you. HazCom covers any hazardous chemical you could be exposed to at work or in a foreseeable emergency.\n\nThe standard has five working parts:\n- A written hazard communication program\n- A chemical inventory\n- Labels and other warnings\n- Safety Data Sheets\n- Employee training"
+    },
+    {
+      "heading": "Why this standard is on the Top 10",
+      "body": "HazCom sits near the top of OSHA's most frequently cited standards list year after year. The rule is simple. The paperwork and daily habits it requires slip when crews are busy.\n\nThe citations inspectors write most often fall into four groups:\n- **No written program.** The department cannot produce one, or it has a generic template that never says who is responsible locally.\n- **No SDS available.** A chemical is in use but its SDS cannot be found, or it is locked in an office the night shift cannot reach.\n- **No training, or no record of it.** Employees cannot say what a pictogram means or where the SDS file is.\n- **Unlabeled containers.** Spray bottles, parts washer tanks, gas cans and brine totes with no label, a faded label or one that just says cleaner.\n\nEvery one of these is preventable with a working program and regular attention."
+    },
+    {
+      "heading": "The written program, chemical inventory and training",
+      "body": "Employers with hazardous chemicals in the workplace must have a **written hazard communication program**. It describes how the department handles labels, SDSs and training. It must include a **list of the hazardous chemicals** known to be present, using the same product identifier that appears on the label and the SDS so all three match. It must also explain how employees learn about the hazards of **non-routine tasks**, such as cleaning a clarifier, and about chemicals in **unlabeled pipes**.\n\nKeep the inventory current. A new product goes on the list, with its SDS on file, before it is used.\n\n**Training** is required:\n- At the time of **initial assignment** to a job where hazardous chemicals are present.\n- Whenever a **new chemical hazard** the employee has not been trained on is introduced into the work area.\n\nTraining covers where chemicals are used, where the program, chemical list and SDSs are kept, how to detect a release, the hazards, the protective measures, and how to read labels and SDSs. Keep training records."
+    },
+    {
+      "heading": "Safety Data Sheets",
+      "body": "A **Safety Data Sheet (SDS)** is the detailed reference for a chemical product. Every SDS follows the same **16-section format**, so once you learn where to look you can find what you need on any sheet:\n- Section 1: Identification\n- Section 2: Hazard(s) identification\n- Section 3: Composition and ingredients\n- Section 4: First-aid measures\n- Section 5: Fire-fighting measures\n- Section 6: Accidental release measures\n- Section 7: Handling and storage\n- Section 8: Exposure controls and personal protection\n- Section 9: Physical and chemical properties\n- Section 10: Stability and reactivity\n- Section 11: Toxicological information\n- Section 12: Ecological information\n- Section 13: Disposal considerations\n- Section 14: Transport information\n- Section 15: Regulatory information\n- Section 16: Other information\n\nFor daily work, four sections matter most. **Section 2** gives the hazard classification, signal word, pictograms and hazard statements. **Section 4** tells you what to do right away if someone is splashed, breathes vapors or swallows the product. **Section 7** covers handling and storage. **Section 8** lists exposure limits and the gloves, eye protection and respirator you need. Section 10 lists incompatible materials.\n\nSDSs must be **readily accessible during each work shift** to employees in their work areas. A shop binder, a control room computer or a phone app all work, as long as everyone can reach the sheet without delay or permission. Electronic systems need a backup for outages. If you cannot find an SDS, tell your supervisor."
+    },
+    {
+      "heading": "Reading GHS labels",
+      "body": "HazCom uses the **Globally Harmonized System (GHS)** so labels look the same no matter who made the product. Every shipped container must carry a label with six elements:\n- **Product identifier.** The name or code that matches the SDS and the inventory.\n- **Signal word.** **Danger** for the more severe hazards, **Warning** for the less severe. A label carries only one.\n- **Hazard statements.** Standard phrases that describe the hazard, such as \"Causes severe skin burns and eye damage.\"\n- **Precautionary statements.** Standard phrases on prevention, response, storage and disposal.\n- **Pictograms.** Black symbols on a white background inside a red diamond.\n- **Supplier information.** Name, address and phone number of the manufacturer or importer.\n\nRead the label before you open a container for the first time, and again if you have not used the product in a while. Never remove or deface a supplier label.\n\nOne exception: pesticides and herbicides are labeled under EPA rules, so their labels look different. They are still covered by HazCom for SDSs, the inventory and training."
+    },
+    {
+      "heading": "The nine pictograms",
+      "body": "Pictograms give you the hazard at a glance. Learn all nine:\n- **Health Hazard** (silhouette with a starburst on the chest): carcinogens, reproductive toxins, respiratory sensitizers, target organ toxicity.\n- **Flame**: flammable liquids, gases and solids. Gasoline, acetylene, many aerosols.\n- **Exclamation Mark**: irritants, skin sensitizers, products harmful if swallowed, inhaled or absorbed. Many cleaners and deicers.\n- **Gas Cylinder**: gases under pressure. Chlorine, oxygen, SF6, welding gases.\n- **Corrosion**: skin burns and eye damage, or corrosive to metals. Sodium hypochlorite, battery acid, caustic soda.\n- **Exploding Bomb**: explosives, self-reactives and organic peroxides.\n- **Flame Over Circle**: oxidizers, which can cause or intensify fire. Calcium hypochlorite, concentrated hydrogen peroxide.\n- **Environment** (dead tree and fish): toxic to aquatic life. OSHA does not require this one, but it matters near streams and storm drains.\n- **Skull and Crossbones**: acute toxicity. Fatal or toxic in small amounts by swallowing, skin contact or inhalation. Chlorine gas, some pesticides.\n\nA product can carry more than one pictogram."
+    },
+    {
+      "heading": "Secondary container labeling",
+      "body": "Most unlabeled containers OSHA finds are not supplier drums. They are the spray bottles, buckets and small tanks that crews fill themselves. These **secondary containers** need labels too.\n\nA workplace label must carry at least the **product identifier** plus words, pictures or symbols that give general information about the hazards. The simplest approach is to copy the supplier label.\n\nThere is one narrow exception. A **portable container** you fill from a labeled container does not need a label if the contents are for your **immediate use** and stay in your control. Once it is set down for someone else or stored, it needs a label.\n\nGood habits:\n- Never put a chemical in a food or drink container.\n- Label the container before you fill it.\n- Replace labels that are faded, torn or soaked through.\n- If no one knows what is in a container, do not sniff it or guess. Tag it and report it."
+    },
+    {
+      "heading": "What this means for Public Works crews",
+      "body": "**Environmental Services.** Water and wastewater plants handle some of the most hazardous chemicals in the city. **Chlorine gas** in cylinders is acutely toxic and under pressure. **Sodium hypochlorite** (bleach, usually 10 to 15 percent) is corrosive and releases chlorine gas if it contacts acid. Know where the SDSs and eyewashes are, and never mix chemicals. Solid waste and stormwater crews find unknown containers dumped at curbs and outfalls. Treat them as hazardous until identified.\n\n**Public Services.** Fleet shops stock fuels, brake cleaner, parts washer solvent, degreasers, antifreeze, paint and welding gases. Update the SDS file when a vendor changes products. Streets crews use asphalt products, cold patch and crack sealer, which carry burn and vapor hazards. Forestry crews apply herbicides, where the EPA label and the SDS both matter. Snow and ice crews handle rock salt, calcium chloride and brine, which irritate skin and eyes.\n\n**Electric Services.** Substations hold lead-acid batteries with corrosive sulfuric acid, so an eyewash and acid resistant PPE must be close by. Transformer oil is combustible, and older units may contain PCBs. SF6 breakers contain gas under pressure. Line trucks carry solvents and sealants, and those small cans need labels and SDSs just like shop drums.\n\nFor every division the questions are the same: Do you know what the product is? Where is its SDS right now? Is the container labeled? If any answer is no, fix it first."
+    }
+  ],
+  "key_takeaways": [
+    "You have the right to know the hazards of every chemical you work with, and the department must back that up with a written program, a chemical list, labels, SDSs and training.",
+    "Every SDS has the same 16 sections, and Sections 2, 4, 7 and 8 answer most field questions about hazards, first aid, handling and PPE.",
+    "SDSs must be readily accessible to you in your work area during every shift, not locked in an office.",
+    "A GHS label has six elements: product identifier, signal word, hazard statements, precautionary statements, pictograms and supplier information.",
+    "Danger marks the more severe hazards and Warning the less severe, and the nine pictograms show the type of hazard at a glance.",
+    "Secondary containers need a label with the product identifier and hazard information unless the container is for your immediate use and stays in your control.",
+    "Training is required at initial assignment and whenever a new chemical hazard enters your work area.",
+    "The most common HazCom citations, no written program, no SDS, no training and unlabeled containers, are all preventable."
+  ],
+  "questions": [
+    {
+      "text": "How many sections are on a Safety Data Sheet in the format required by the HazCom standard?",
+      "options": ["8", "12", "16", "20"],
+      "answer": 2,
+      "explanation": "HazCom requires a 16-section SDS in a fixed order, which makes it easy to find the same information on any sheet."
+    },
+    {
+      "text": "Which signal word on a GHS label indicates the more severe hazard?",
+      "options": ["Caution", "Danger", "Warning", "Hazardous"],
+      "answer": 1,
+      "explanation": "Danger is reserved for the more severe hazards and Warning for the less severe. A label carries only one signal word."
+    },
+    {
+      "text": "A mechanic pours brake cleaner from a labeled drum into a small unlabeled can. When does that can need a label?",
+      "options": [
+        "Never, portable containers are always exempt from labeling",
+        "Only if the can holds more than one gallon",
+        "Only if the brake cleaner is flammable",
+        "If it is set down for another worker, passed to another shift or stored instead of used right away"
+      ],
+      "answer": 3,
+      "explanation": "The portable container exception applies only when the contents are for the immediate use of the person who filled it. Once the container leaves that person's control, it needs a workplace label."
+    },
+    {
+      "text": "Which item must be included in the written hazard communication program?",
+      "options": [
+        "A list of the hazardous chemicals known to be present in the workplace",
+        "A copy of every employee's medical records",
+        "Purchase receipts for every chemical bought that year",
+        "The phone number of the nearest OSHA area office"
+      ],
+      "answer": 0,
+      "explanation": "The written program must include a chemical inventory that uses the same product identifiers found on labels and SDSs, along with how the department handles labels, SDSs, training, non-routine tasks and unlabeled pipes."
+    },
+    {
+      "text": "What does the skull and crossbones pictogram tell you about a product?",
+      "options": [
+        "It is corrosive to metal",
+        "It is an oxidizer that can intensify a fire",
+        "It is a gas stored under pressure",
+        "It can be fatal or toxic in small amounts if swallowed, inhaled or absorbed through the skin"
+      ],
+      "answer": 3,
+      "explanation": "The skull and crossbones marks acute toxicity, meaning the product can cause death or serious harm from a small exposure. Chlorine gas and some pesticides carry it."
+    },
+    {
+      "text": "When must an employee receive HazCom training?",
+      "options": [
+        "Only once, at the time of hire",
+        "At initial assignment and whenever a new chemical hazard is introduced into the work area",
+        "Only after an exposure incident or spill",
+        "Once every five years"
+      ],
+      "answer": 1,
+      "explanation": "The standard requires training at initial assignment and again whenever a new hazard the employee has not been trained on enters the work area. Annual refreshers are good practice, but those two events are the triggers in the rule."
+    },
+    {
+      "text": "Which of these meets the requirement for Safety Data Sheet access?",
+      "options": [
+        "SDSs are kept in a locked office and provided on written request",
+        "SDSs are stored at city hall and sent to the plant when needed",
+        "SDSs are available to employees in their work area during every shift, with a backup if the electronic system fails",
+        "SDSs are kept only by the chemical supplier, who will send one on request"
+      ],
+      "answer": 2,
+      "explanation": "SDSs must be readily accessible during each work shift to employees when they are in their work areas. Electronic access is fine as long as there are no barriers to immediate access and there is a backup."
+    },
+    {
+      "text": "What hazard does the flame over circle pictogram represent?",
+      "options": ["Oxidizer", "Flammable liquid", "Explosive", "Gas under pressure"],
+      "answer": 0,
+      "explanation": "The flame over circle marks oxidizers, which can cause or intensify a fire. The plain flame marks flammables, the exploding bomb marks explosives and the gas cylinder marks gases under pressure."
+    },
+    {
+      "text": "A worker at the water plant is splashed with a chemical. Which SDS section tells you what to do right away?",
+      "options": [
+        "Section 2, Hazard identification",
+        "Section 4, First-aid measures",
+        "Section 9, Physical and chemical properties",
+        "Section 14, Transport information"
+      ],
+      "answer": 1,
+      "explanation": "Section 4 of every SDS gives first-aid measures for skin, eye, inhalation and ingestion exposures. Section 2 describes the hazards but not the immediate response."
+    },
+    {
+      "text": "At a wastewater plant, what happens if sodium hypochlorite is accidentally mixed with an acid?",
+      "options": [
+        "The two neutralize into a harmless salt solution",
+        "It forms a stronger disinfectant that is safe to use",
+        "It releases toxic chlorine gas",
+        "Nothing, because sodium hypochlorite is not reactive"
+      ],
+      "answer": 2,
+      "explanation": "Sodium hypochlorite reacts with acids to release chlorine gas, which is acutely toxic. Section 10 of the SDS lists incompatible materials like this, which is why chemicals are never mixed or stored carelessly."
+    }
+  ]
+}

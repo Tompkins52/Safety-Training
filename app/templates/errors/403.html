@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block title %}Not allowed · {{ app_name }}{% endblock %}
+{% block content %}
+<div class="auth-card"><h1>Not allowed</h1><p class="muted">Your account does not have access to that page.</p><a class="btn btn-primary" href="{{ url_for('main.dashboard') }}">Back to dashboard</a></div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}{{ course.title }} · {{ app_name }}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <p class="eyebrow">{% if course.top10_rank %}OSHA Top 10 · #{{ course.top10_rank }}{% else %}{{ course.category_label }} training{% endif %}{% if course.standard %} · {{ course.standard }}{% endif %}</p>
+    <h1>{{ course.title }}</h1>
+    <p class="muted">{{ course.summary }}</p>
+  </div>
+  <div class="actions">
+    {% if assignment.is_completed %}
+      <span class="badge badge-ok">Completed {{ assignment.completed_at|date }}</span>
+      <a class="btn btn-secondary" href="{{ url_for('training.certificate', assignment_id=assignment.id) }}">Certificate</a>
+    {% else %}
+      <span class="badge badge-{{ assignment.status_class }}">Due {{ assignment.due_date|date }}</span>
+      <a class="btn btn-primary" href="#quiz">Go to quiz</a>
+    {% endif %}
+  </div>
+</div>
+
+<div class="course-layout">
+  <aside class="course-toc no-print">
+    <div class="card sticky">
+      <h3>Contents</h3>
+      <ol>
+        <li><a href="#objectives">Learning objectives</a></li>
+        {% for s in course.sections %}<li><a href="#section-{{ loop.index }}">{{ s.heading }}</a></li>{% endfor %}
+        <li><a href="#takeaways">Key takeaways</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+      </ol>
+      <p class="small muted">About {{ course.duration_minutes }} minutes. Quiz: {{ course.questions|length }} questions, {{ config.QUIZ_PASS_PERCENT }}% to pass.</p>
+    </div>
+  </aside>
+
+  <article class="course-body card">
+    <section id="objectives">
+      <h2>Learning objectives</h2>
+      <ul>{% for o in course.objectives %}<li>{{ o }}</li>{% endfor %}</ul>
+    </section>
+    {% for s in course.sections %}
+    <section id="section-{{ loop.index }}" class="course-section">
+      <h2>{{ loop.index }}. {{ s.heading }}</h2>
+      <div class="prose">{{ s.body|markdown }}</div>
+    </section>
+    {% endfor %}
+    <section id="takeaways" class="takeaways">
+      <h2>Key takeaways</h2>
+      <ul>{% for t in course.key_takeaways %}<li>{{ t }}</li>{% endfor %}</ul>
+    </section>
+    <section id="quiz" class="quiz-callout">
+      <h2>Quiz</h2>
+      {% if assignment.is_completed %}
+        <p>You passed this module on {{ assignment.completed_at|date }} with {{ assignment.score }}/{{ assignment.total_questions }} ({{ assignment.percent }}%).</p>
+      {% elif assignment.user_id == current_user.id %}
+        <p>{{ course.questions|length }} questions. You need {{ config.QUIZ_PASS_PERCENT }}% to pass, and you can retake the quiz if needed.{% if assignment.attempts %} Attempts so far: {{ assignment.attempts }} (best {{ assignment.best_score }}/{{ assignment.total_questions }}).{% endif %}</p>
+        <a class="btn btn-primary btn-lg" href="{{ url_for('training.quiz', assignment_id=assignment.id) }}">Start the quiz</a>
+      {% else %}
+        <p class="muted">This assignment belongs to {{ assignment.user.full_name }}.</p>
+      {% endif %}
+    </section>
+  </article>
+</div>
+{% endblock %}

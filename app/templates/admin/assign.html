@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Assign training · {{ app_name }}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div><h1>Assign training</h1><p class="muted">Creates an assignment for every active employee who does not already have an open one for the course. Nothing is duplicated, so this is safe to run at any time, for example at the start of each training year or after adding employees.</p></div>
+</div>
+<form method="post" class="card form-grid">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <label>Due date <span class="req">*</span><input type="date" name="due_date" value="{{ default_due.strftime('%Y-%m-%d') }}" required>
+    <small class="muted">Employees get a reminder {{ config.REMINDER_DAYS_BEFORE_DUE }} days before this date, again {{ config.SECOND_REMINDER_DAYS_BEFORE_DUE }} days before, and every {{ config.OVERDUE_REMINDER_EVERY_DAYS }} days once overdue.</small></label>
+  <label class="checkbox self-end"><input type="checkbox" name="notify"> Email each employee now that training has been assigned</label>
+  <fieldset>
+    <legend>Divisions <small class="muted">(none selected = all)</small></legend>
+    {% for d in divisions %}<label class="checkbox"><input type="checkbox" name="divisions" value="{{ d.id }}"> {{ d.name }}</label>{% endfor %}
+  </fieldset>
+  <fieldset>
+    <legend>Courses <small class="muted">(none selected = all applicable)</small></legend>
+    {% for c in courses %}<label class="checkbox"><input type="checkbox" name="courses" value="{{ c.id }}"> {{ c.title }} <small class="muted">({% for d in c.divisions %}{{ d.name }}{% if not loop.last %}, {% endif %}{% endfor %})</small></label>{% endfor %}
+  </fieldset>
+  <div class="form-actions span-2">
+    <button class="btn btn-primary btn-lg" type="submit">Create assignments</button>
+  </div>
+</form>
+<section class="card">
+  <h2>How the annual cycle works</h2>
+  <ol class="small">
+    <li>Use this page (or <code>flask assign-annual</code>) to give every employee an assignment for each course that applies to their division, with one due date.</li>
+    <li>The daily job emails each employee {{ config.REMINDER_DAYS_BEFORE_DUE }} days before the due date, and again at {{ config.SECOND_REMINDER_DAYS_BEFORE_DUE }} days and when overdue.</li>
+    <li>When an employee passes the quiz, their direct supervisor is emailed{% if config.AUTO_RENEW_ASSIGNMENTS %} and next year's assignment is created automatically, due {{ config.DEFAULT_RENEWAL_MONTHS }} months after completion{% endif %}.</li>
+    <li>New hires: add them under Employees with "Assign all training now" ticked.</li>
+  </ol>
+</section>
+{% endblock %}

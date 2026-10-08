@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}{% if creating %}Add employee{% else %}{{ user.full_name }}{% endif %} · {{ app_name }}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div><h1>{% if creating %}Add employee{% else %}{{ user.full_name }}{% endif %}</h1></div>
+  {% if not creating %}
+  <div class="actions">
+    <form method="post" action="{{ url_for('admin.employee_reset_password', user_id=user.id) }}" class="inline-form" onsubmit="return confirm('Generate a new temporary password for this employee?');">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <button class="btn btn-ghost" type="submit">Reset password</button>
+    </form>
+  </div>
+  {% endif %}
+</div>
+
+<form method="post" class="card form-grid">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <label>First name <span class="req">*</span><input type="text" name="first_name" value="{{ user.first_name or '' }}" required></label>
+  <label>Last name <span class="req">*</span><input type="text" name="last_name" value="{{ user.last_name or '' }}" required></label>
+  <label>Email <span class="req">*</span><input type="email" name="email" value="{{ user.email or '' }}" required></label>
+  <label>Employee number<input type="text" name="employee_number" value="{{ user.employee_number or '' }}"></label>
+  <label>Job title<input type="text" name="job_title" value="{{ user.job_title or '' }}"></label>
+  <label>Hire date<input type="date" name="hire_date" value="{{ user.hire_date.strftime('%Y-%m-%d') if user.hire_date else '' }}"></label>
+  <label>Division
+    <select name="division_id">
+      <option value="">None (administrative)</option>
+      {% for d in divisions %}<option value="{{ d.id }}" {% if user.division_id == d.id %}selected{% endif %}>{{ d.name }}</option>{% endfor %}
+    </select>
+  </label>
+  <label>Direct supervisor
+    <select name="supervisor_id">
+      <option value="">None</option>
+      {% for s in supervisors if s.id != user.id %}<option value="{{ s.id }}" {% if user.supervisor_id == s.id %}selected{% endif %}>{{ s.full_name }} ({{ role_labels[s.role] }})</option>{% endfor %}
+    </select>
+  </label>
+  <label>Role
+    <select name="role">
+      {% for r in roles %}<option value="{{ r }}" {% if user.role == r %}selected{% endif %}>{{ role_labels[r] }}</option>{% endfor %}
+    </select>
+  </label>
+  <label class="checkbox self-end"><input type="checkbox" name="is_active" {% if user.is_active_employee %}checked{% endif %}> Active employee (can sign in and receives assignments)</label>
+  {% if creating %}
+  <label>Temporary password <small class="muted">(leave blank to generate one)</small><input type="text" name="password" minlength="10" autocomplete="off"></label>
+  <div class="span-2 checkbox-stack">
+    <label class="checkbox"><input type="checkbox" name="assign_now" checked> Assign all training for the division now</label>
+    <label>Due date for that training<input type="date" name="due_date" value="{{ default_due.strftime('%Y-%m-%d') }}"></label>
+    <label class="checkbox"><input type="checkbox" name="notify"> Email the employee that training was assigned</label>
+  </div>
+  {% endif %}
+  <div class="form-actions span-2">
+    <button class="btn btn-primary" type="submit">{% if creating %}Create account{% else %}Save changes{% endif %}</button>
+    <a class="btn btn-ghost" href="{{ url_for('admin.employees') }}">Cancel</a>
+  </div>
+</form>
+
+{% if not creating %}
+<section class="card">
+  <h2>Training record</h2>
+  {% if assignments %}
+  <table class="table compact">
+    <thead><tr><th>Module</th><th class="num">Cycle</th><th>Assigned</th><th>Due</th><th>Status</th><th>Completed</th><th class="num">Score</th><th class="num">Attempts</th><th>Reminders</th></tr></thead>
+    <tbody>
+    {% for a in assignments %}
+      <tr>
+        <td>{{ a.course.title }}</td>
+        <td class="num">{{ a.cycle }}</td>
+        <td>{{ a.assigned_on|date }}</td>
+        <td>{{ a.due_date|date }}</td>
+        <td><span class="badge badge-{{ a.status_class }}">{{ a.display_status }}</span></td>
+        <td>{{ a.completed_at|date }}</td>
+        <td class="num">{% if a.score is not none %}{{ a.score }}/{{ a.total_questions }}{% endif %}</td>
+        <td class="num">{{ a.attempts }}</td>
+        <td class="small muted">{% if a.reminder_30_sent_at %}30d {{ a.reminder_30_sent_at|date }}{% endif %}{% if a.reminder_7_sent_at %} · 7d {{ a.reminder_7_sent_at|date }}{% endif %}{% if a.overdue_last_reminded_at %} · overdue {{ a.overdue_last_reminded_at|date }}{% endif %}{% if a.supervisor_notified_at %} · supervisor notified{% endif %}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="muted">No assignments. Use <a href="{{ url_for('admin.assign') }}">Assign training</a> to create them.</p>
+  {% endif %}
+</section>
+{% endif %}
+{% endblock %}

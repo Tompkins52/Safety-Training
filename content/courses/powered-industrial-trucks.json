@@ -1,0 +1,176 @@
+{
+  "slug": "powered-industrial-trucks",
+  "title": "Powered Industrial Trucks (Forklifts)",
+  "standard": "29 CFR 1910.178",
+  "standard_title": "Powered Industrial Trucks (general industry)",
+  "category": "osha_top10",
+  "top10_rank": 7,
+  "divisions": ["electric", "environmental", "public"],
+  "duration_minutes": 35,
+  "renewal_months": 12,
+  "summary": "Forklifts, telehandlers and powered pallet jacks move heavy loads in public works warehouses, parts rooms, material yards and plants, and they tip over, strike pedestrians and drop loads when operated carelessly. This course covers the training, evaluation and certification rules in 29 CFR 1910.178, daily inspections, the stability triangle and load handling, safe travel and parking, and refueling and charging. The content supports the hands-on training and workplace evaluation that every operator must complete.",
+  "objectives": [
+    "Identify which equipment counts as a powered industrial truck and which does not.",
+    "Describe the three parts of operator training and when refresher training and reevaluation are required.",
+    "Perform a pre-operation inspection and explain why a defective truck is removed from service.",
+    "Explain the stability triangle, load center and capacity plate, and how they relate to tipovers.",
+    "Apply safe practices for traveling, pedestrians, ramps, blind corners, raising people and parking.",
+    "Follow the rules for refueling, propane cylinder handling and battery charging areas."
+  ],
+  "sections": [
+    {
+      "heading": "What counts as a powered industrial truck",
+      "body": "29 CFR 1910.178 covers **powered industrial trucks**: mobile, power-propelled trucks used to carry, push, pull, lift, stack or tier material. In public works that includes:\n\n- **Counterbalanced forklifts**, sit-down and stand-up, electric or engine powered.\n- **Rough terrain forklifts** and **telehandlers** used in material yards and at plants.\n- **Powered pallet jacks** and walkie stackers, whether ridden or walked behind.\n- **Order pickers** and other trucks that lift the operator with the load.\n\nThe standard does **not** cover vehicles intended for earth moving or over-the-road hauling. Loaders, backhoes, skid steers and dump trucks fall under other rules even when they happen to move a pallet. Manual pallet jacks with no motor are also outside the standard.\n\nEvery truck has a **designation** (such as LP, LPS, E, ES, EE, EX, G, GS, D or DS) based on its power source and built-in safeguards. Only trucks with the right designation may operate in hazardous locations where flammable gases, vapors or dusts may be present, such as digester and gas handling areas at treatment plants."
+    },
+    {
+      "heading": "Why this standard is on the Top 10",
+      "body": "Powered industrial trucks appear on OSHA's most cited list every year, and the reasons are consistent:\n\n- **Operators not trained or evaluated.** People who drive a forklift a few times a month are often never formally trained, or were trained years ago and never reevaluated.\n- **No certification records.** Training happened, but no record shows the operator's name, the training and evaluation dates and who conducted them.\n- **Missing refresher training** after an accident, a near miss or an observed unsafe act.\n- **Defective trucks kept in service.** Worn forks, dead horns, bad brakes, leaking hydraulics and missing seat belts on trucks still in daily use.\n- **No daily inspection.** Trucks are started and driven without anyone checking them.\n- **Unsafe operation.** Speeding, carrying loads high, riders on the forks and forks left raised when parked.\n\nPublic works departments are exposed because forklift use is often occasional, spread across many sites and done by staff whose main job is something else."
+    },
+    {
+      "heading": "Operator training, evaluation and certification",
+      "body": "No one may operate a powered industrial truck until they have completed training and been evaluated. Trainees may operate only under the direct supervision of a trained, experienced person and where it does not endanger others.\n\nTraining has **three required parts**:\n\n- **Formal instruction**, such as classroom time, videos, written material or online modules like this course.\n- **Practical training**, where a trainer demonstrates and the operator performs exercises on the actual type of truck.\n- **An evaluation of the operator's performance in the workplace**, handling real loads in the real environment.\n\nTraining covers truck-related topics (controls, capacity, stability, inspection, refueling) and workplace-related topics (surfaces, ramps, pedestrians, narrow aisles, hazardous locations and the loads handled), and it must match the truck types the operator will use.\n\nEach operator's performance must be **evaluated at least once every three years**. **Refresher training** and a new evaluation are required sooner when:\n\n- the operator is involved in an accident or near miss,\n- the operator is observed operating unsafely,\n- an evaluation shows the operator is not driving safely,\n- the operator is assigned to a different type of truck, or\n- workplace conditions change in a way that affects safe operation.\n\nThe employer must **certify** that each operator has been trained and evaluated. The record includes the operator's name, the date of training, the date of evaluation and the identity of the person who did the training or evaluation. Under federal child labor rules, operators must be at least **18 years old**."
+    },
+    {
+      "heading": "Pre-operation inspection",
+      "body": "The standard requires every truck to be examined **before it is placed in service and at least daily**, and after each shift when it runs around the clock. In practice, check it before every shift using the checklist for the truck type. A typical walkaround covers:\n\n- tires, wheels and lug nuts,\n- forks for cracks, bends, wear at the heel and a secure locking pin,\n- mast, chains and hoses for damage and leaks,\n- fluid levels, and fuel or battery condition,\n- overhead guard, load backrest and seat belt,\n- data plate present and readable.\n\nThen a seated check with the truck running: horn, lights, backup alarm, brakes, parking brake, steering, lift and tilt controls, and gauges.\n\nIf any defect affects safety, the truck is **taken out of service** and tagged until it is repaired. A truck that is defective or in any way unsafe does not run, and repairs are done only by authorized personnel."
+    },
+    {
+      "heading": "Stability, load center and capacity",
+      "body": "A forklift stays upright as long as its combined center of gravity stays inside the **stability triangle**, the area between the two front wheels and the pivot point of the rear axle. Lifting a load, tilting the mast forward, turning sharply or driving on a slope all move the center of gravity toward the edge of that triangle. Push it outside and the truck tips.\n\nThe **capacity plate** (data plate) on every truck states how much it can lift at a rated **load center**, usually 24 inches from the face of the forks, at a stated height. Capacity drops when:\n\n- the load center is farther out because the load is long or sits away from the backrest,\n- the mast is raised high or tilted forward,\n- attachments such as a drum clamp, jib or rotator are added.\n\nNever exceed the plate, and never add counterweight to lift more. Modifications and attachments need the manufacturer's approval and an updated plate.\n\nHandle loads this way:\n\n- Center the load, seat it against the backrest and tilt the mast back slightly.\n- Travel with the forks low, about 4 to 6 inches off the floor.\n- Raise and lower only when stopped.\n- Avoid sudden starts, stops and turns, especially with the load raised."
+    },
+    {
+      "heading": "Traveling, pedestrians, ramps and raising people",
+      "body": "- **Speed.** Drive at a speed that lets you stop safely, and slow down on wet or uneven surfaces and in congested areas.\n- **Pedestrians.** Pedestrians have the right of way. Keep a safe distance, make eye contact and never let anyone walk or stand under raised forks.\n- **Blind corners, doorways and aisle crossings.** Slow down, **sound the horn** and look in the direction of travel.\n- **Visibility.** If the load blocks your view, travel in reverse with the load trailing, except when going up a ramp.\n- **Ramps and grades.** With a load, drive **with the load upgrade**: forward going up and in reverse going down. Travel straight up and down, never turn on a grade, and keep the forks low with the mast tilted back.\n- **Seat belt.** Wear it every time on a sit-down truck. In a tipover, stay in the seat, hold the wheel, brace your feet and lean away from the fall. Jumping is how operators get crushed.\n- **Riders and raising people.** No passengers. Never lift a person on the forks, a pallet or a bucket. People may be elevated only on a **manufacturer-approved work platform** secured to the forks, with the operator at the controls, fall protection for the person on the platform and the truck not moving."
+    },
+    {
+      "heading": "Refueling, propane, charging and parking",
+      "body": "**Refueling and charging areas** must be set up for the purpose: adequate ventilation, no open flames or smoking, fire protection nearby and spill control. Engines are shut off during refueling.\n\n**Propane (LP) cylinders.** Close the cylinder valve before changing cylinders. Wear eye protection and gloves because escaping propane can cause frostbite. Check the O-ring and connections, and seat the cylinder with the relief valve pointing up. Store spare cylinders outdoors or in an approved cage, away from exits and heat.\n\n**Battery charging.** Park, set the brake and turn the truck off before connecting the charger. Keep the vent caps in place, charge with the compartment open, and keep sparks and flames away because charging produces hydrogen gas. Know where the eyewash is before you need it.\n\n**Parking an unattended truck** means forks fully lowered, controls in neutral, parking brake set and power shut off. A truck is unattended when the operator is 25 feet or more away, or whenever the operator cannot see it. Even within 25 feet and in view, the load goes down, the controls go to neutral and the brake is set. Never park where you block an aisle, exit, fire equipment or electrical panel."
+    },
+    {
+      "heading": "What this means for Public Works crews",
+      "body": "**Electric Services.** Transformers, cable reels, pole hardware and meter stock are heavy, awkward loads. Use the right attachment for reels, verify the transformer weight against the capacity plate at the real load center, and keep the load low on the way out of the yard. Yard surfaces are often gravel and uneven, so slow down.\n\n**Environmental Services.** Telehandlers at treatment plants move chemical totes, pump assemblies and spare parts across rough ground and into tight pump rooms. Confirm the truck's designation is allowed in any area with methane or flammable vapors. Powered pallet jacks at the scale house and plant storerooms are covered too, including the training rule.\n\n**Public Services.** The central warehouse and parts rooms see the most forklift traffic, often mixed with walk-in customers from other divisions. Mark pedestrian lanes, sound the horn at aisle ends and keep forks down when staged. Sign shops handle long bundles of posts and sheeting that push the load center out. Facilities crews using powered pallet jacks at community buildings still need training, inspection and a certification record.\n\nAcross all three divisions: if you were never trained and evaluated on that type of truck, you do not drive it."
+    }
+  ],
+  "key_takeaways": [
+    "Powered industrial trucks include forklifts, telehandlers, powered pallet jacks and order pickers, but not earth moving equipment or manual pallet jacks.",
+    "No one operates a truck without formal instruction, practical training and a workplace evaluation, and operators must be at least 18.",
+    "Operators are reevaluated at least every three years, and sooner after an accident, near miss, unsafe operation, a change in truck type or a change in conditions.",
+    "The employer keeps a certification record with the operator's name, training date, evaluation date and the trainer or evaluator's identity.",
+    "Inspect the truck before every shift and take any truck with a safety defect out of service until it is repaired.",
+    "Stay inside the stability triangle: respect the capacity plate and load center, keep the load low and tilted back, and drive with the load upgrade on ramps.",
+    "Wear the seat belt, sound the horn at blind corners, give pedestrians the right of way and never lift people without an approved platform.",
+    "Park with forks down, controls in neutral, brake set and power off, and handle propane and battery charging only in areas set up for it."
+  ],
+  "questions": [
+    {
+      "text": "Which of these is covered by 29 CFR 1910.178?",
+      "options": [
+        "A skid steer loader moving a pallet of salt",
+        "A manual pallet jack in the parts room",
+        "A battery-powered walkie pallet jack at the facilities storeroom",
+        "A dump truck hauling road gravel"
+      ],
+      "answer": 2,
+      "explanation": "Powered pallet jacks are powered industrial trucks and fall under the standard. Earth moving equipment, over-the-road trucks and manual pallet jacks do not."
+    },
+    {
+      "text": "What are the three required parts of powered industrial truck operator training?",
+      "options": [
+        "Formal instruction, practical training and an evaluation of performance in the workplace",
+        "A written test, a driving test at a training center and a license from the state",
+        "Watching a video, signing an acknowledgment and completing a probation period",
+        "Classroom time, a physical exam and a supervisor's recommendation"
+      ],
+      "answer": 0,
+      "explanation": "The standard requires formal instruction, practical training on the truck and an evaluation of the operator's performance in the actual workplace before operating without supervision."
+    },
+    {
+      "text": "How often must an operator's performance be evaluated if no accidents or changes occur?",
+      "options": [
+        "Every year",
+        "At least once every three years",
+        "Every five years",
+        "Only when first hired"
+      ],
+      "answer": 1,
+      "explanation": "The standard requires an evaluation of each operator's performance at least once every three years, with refresher training sooner when specific events occur."
+    },
+    {
+      "text": "An operator has a near miss when a load slides off the forks. What does the standard require?",
+      "options": [
+        "A written warning placed in the personnel file",
+        "A new state operator's license",
+        "Nothing, as long as no one was hurt",
+        "Refresher training and a new evaluation"
+      ],
+      "answer": 3,
+      "explanation": "An accident or near miss is one of the events that triggers refresher training and reevaluation, along with unsafe operation, a new truck type and changed workplace conditions."
+    },
+    {
+      "text": "During the pre-shift check, the horn on a forklift does not work. What should the operator do?",
+      "options": [
+        "Take the truck out of service and tag it until the horn is repaired",
+        "Drive slowly and shout at blind corners until the next scheduled service",
+        "Use the truck only in the yard where there are fewer pedestrians",
+        "Note the problem on the checklist and continue the shift"
+      ],
+      "answer": 0,
+      "explanation": "Any defect that affects safe operation means the truck is removed from service until it is repaired. The horn is required for warning pedestrians at blind corners and doorways."
+    },
+    {
+      "text": "Which action moves a forklift's center of gravity toward the edge of the stability triangle?",
+      "options": [
+        "Lowering the forks to travel height",
+        "Tilting the mast back with the load seated against the backrest",
+        "Raising a load high and tilting the mast forward",
+        "Driving slowly in a straight line on level ground"
+      ],
+      "answer": 2,
+      "explanation": "Raising the load and tilting forward shift the combined center of gravity up and forward, toward the front edge of the triangle, where the truck can tip forward."
+    },
+    {
+      "text": "You are driving a loaded forklift down a ramp. How should you travel?",
+      "options": [
+        "Forward, with the forks raised to clear the slope",
+        "In reverse, with the load upgrade and forks low",
+        "Forward, turning slightly to slow the descent",
+        "In reverse, with the mast tilted forward"
+      ],
+      "answer": 1,
+      "explanation": "On a grade the load always points upgrade. Going down, that means backing down with the forks low and the mast tilted back."
+    },
+    {
+      "text": "A coworker needs to reach a light fixture 12 feet up. What is the only acceptable way to lift them with a forklift?",
+      "options": [
+        "Standing on a pallet strapped to the forks",
+        "Standing on the forks while holding the mast",
+        "Sitting in a bucket chained to the carriage",
+        "On a manufacturer-approved work platform secured to the forks, with the operator at the controls"
+      ],
+      "answer": 3,
+      "explanation": "People may be elevated only on an approved work platform that is secured to the truck, with the operator staying at the controls and the person on the platform protected from falling."
+    },
+    {
+      "text": "An operator walks 40 feet from a forklift to check a parts bin. What is required before leaving the truck?",
+      "options": [
+        "Only that the engine is left idling so it restarts easily",
+        "Forks lowered, controls in neutral, parking brake set and power shut off",
+        "Forks raised to keep them off the floor and the horn tapped twice",
+        "The key left in the ignition so a coworker can move the truck"
+      ],
+      "answer": 1,
+      "explanation": "A truck is unattended when the operator is 25 feet or more away or out of sight of it. An unattended truck must have the forks fully lowered, controls neutral, brake set and power off."
+    },
+    {
+      "text": "Which item must be in the employer's operator certification record?",
+      "options": [
+        "The operator's driver's license number",
+        "The serial number of each truck the operator has driven",
+        "The operator's insurance carrier",
+        "The identity of the person who performed the training or evaluation"
+      ],
+      "answer": 3,
+      "explanation": "The certification must include the operator's name, the training date, the evaluation date and the identity of the person who conducted the training or evaluation."
+    }
+  ]
+}

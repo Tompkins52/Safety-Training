@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Incidents · {{ app_name }}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div><h1>Incidents</h1><p class="muted">Personal injury, property damage and vehicle incidents, including near misses.{% if not current_user.is_supervisor %} You see the incidents you reported.{% elif not current_user.is_admin %} You see incidents in your division and from your team.{% endif %}</p></div>
+  <div class="actions"><a class="btn btn-primary" href="{{ url_for('incidents.new') }}">Report an incident</a></div>
+</div>
+
+<form method="get" class="filter-bar card">
+  <label>Type
+    <select name="type">
+      <option value="">All</option>
+      {% for key, label in incident_types.items() %}<option value="{{ key }}" {% if filters.type == key %}selected{% endif %}>{{ label }}</option>{% endfor %}
+    </select>
+  </label>
+  <label>Status
+    <select name="status">
+      <option value="">All</option>
+      {% for key, label in statuses.items() %}<option value="{{ key }}" {% if filters.status == key %}selected{% endif %}>{{ label }}</option>{% endfor %}
+    </select>
+  </label>
+  {% if current_user.is_supervisor %}
+  <label>Division
+    <select name="division">
+      <option value="">All</option>
+      {% for d in divisions %}<option value="{{ d.id }}" {% if filters.division == d.id %}selected{% endif %}>{{ d.name }}</option>{% endfor %}
+    </select>
+  </label>
+  {% endif %}
+  <button class="btn btn-secondary" type="submit">Filter</button>
+  <a class="btn btn-ghost" href="{{ url_for('incidents.index') }}">Clear</a>
+</form>
+
+<section class="card">
+  {% if incidents %}
+  <table class="table">
+    <thead><tr><th>Number</th><th>Type</th><th>Occurred</th><th>Location</th><th>Division</th><th>Severity</th><th>Reported by</th><th>Status</th><th></th></tr></thead>
+    <tbody>
+    {% for inc in incidents %}
+      <tr>
+        <td><a href="{{ url_for('incidents.detail', incident_id=inc.id) }}"><strong>{{ inc.incident_number }}</strong></a></td>
+        <td>{{ inc.type_label }}</td>
+        <td>{{ inc.occurred_at|datetime }}</td>
+        <td>{{ inc.location }}</td>
+        <td>{{ inc.division.name if inc.division else '' }}</td>
+        <td>{{ inc.severity_label.split(' (')[0] }}</td>
+        <td>{{ inc.reported_by.full_name }}</td>
+        <td><span class="badge badge-{{ 'ok' if inc.status == 'closed' else ('warn' if inc.status == 'under_investigation' else 'danger') }}">{{ inc.status_label }}</span></td>
+        <td class="actions-cell"><a class="btn btn-sm btn-ghost" href="{{ url_for('incidents.print_report', incident_id=inc.id) }}">Print</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="muted">No incidents match.</p>
+  {% endif %}
+</section>
+{% endblock %}

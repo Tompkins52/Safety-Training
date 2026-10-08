@@ -1,0 +1,13 @@
+{% extends "email/_base.html" %}{% block body %}
+<p>A new <strong>{{ incident.type_label|lower }}</strong> report has been submitted.</p>
+<table cellpadding="4" style="font-size:15px;">
+  <tr><td><strong>Incident no.</strong></td><td>{{ incident.incident_number }}</td></tr>
+  <tr><td><strong>Occurred</strong></td><td>{{ incident.occurred_at.strftime('%B %d, %Y %I:%M %p') }}</td></tr>
+  <tr><td><strong>Location</strong></td><td>{{ incident.location }}</td></tr>
+  <tr><td><strong>Division</strong></td><td>{{ incident.division.name if incident.division else 'Not specified' }}</td></tr>
+  <tr><td><strong>Severity</strong></td><td>{{ incident.severity_label }}</td></tr>
+  <tr><td><strong>Reported by</strong></td><td>{{ incident.reported_by.full_name }}</td></tr>
+</table>
+<p style="white-space:pre-wrap;border-left:3px solid #e5e7eb;padding-left:12px;">{{ incident.description }}</p>
+<p><a href="{{ link }}" style="display:inline-block;background:#1b2a41;color:#fff;padding:10px 18px;border-radius:4px;text-decoration:none;">Open the incident</a></p>
+{% endblock %}

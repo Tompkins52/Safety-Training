@@ -1,0 +1,175 @@
+{
+  "slug": "fall-protection-training",
+  "title": "Fall Protection: Training Requirements",
+  "standard": "29 CFR 1926.503",
+  "standard_title": "Fall Protection, training requirements (construction)",
+  "category": "osha_top10",
+  "top10_rank": 8,
+  "divisions": ["electric", "environmental", "public"],
+  "duration_minutes": 25,
+  "renewal_months": 12,
+  "summary": "Owning fall protection equipment is not enough. OSHA requires every worker who might be exposed to a fall hazard to be trained by a competent person, and it requires the employer to prove that training happened with a written record. This course explains who must be trained, what the training must cover, when retraining is required, and how this platform and your hands-on sessions together create the record OSHA expects to see.",
+  "objectives": [
+    "State who must receive fall protection training under 1926.503 and what the training program must enable workers to do.",
+    "List the subject areas the training must cover, from recognizing fall hazards to the correct use of each protection system.",
+    "Explain the difference between a competent person and a qualified person and describe the role each plays in fall protection.",
+    "Identify the three items that must appear on the written training certification record.",
+    "Recognize the three situations that require retraining and apply them to real changes on a public works crew.",
+    "Describe how this course, the platform record and your hands-on session together document compliance."
+  ],
+  "sections": [
+    {
+      "heading": "Who must be trained",
+      "body": "Section **1926.503(a)(1)** requires the employer to provide a training program for **each employee who might be exposed to fall hazards**. The word is 'might.' You do not have to work at height every day to be covered. If your job could put you on a roof, a bridge deck, a tank top, an open excavation edge or an aerial lift even once a year, you must be trained before that exposure happens.\n\nThe program has two goals. It must enable each employee to **recognize the hazards of falling**, and it must train each employee in the **procedures to follow to minimize those hazards**. Knowing that a harness exists is not the same as knowing when it is required, how to inspect it, where to anchor it and how far you will fall if it has to work.\n\nOur department renews this course every 12 months so the record never goes stale."
+    },
+    {
+      "heading": "Why this standard is on the Top 10",
+      "body": "The training standard usually gets cited in the same inspection as the general requirements standard, 1926.501. An inspector sees a worker on an edge without protection, asks when fall protection is required and how the equipment is used, and gets a vague answer. Then the inspector asks for the training record. There is none, or it is years old and does not cover the equipment in use.\n\nThe paragraphs cited most often are:\n\n- **(a)(1)** No training program at all for exposed workers.\n- **(b)(1)** No written certification record, or a record missing the name, date or signature.\n- **(c)** Failure to retrain after a change in equipment or after a worker showed they did not understand the system.\n\nThe fix is a program that covers the required topics, delivered by a competent person, with a dated and signed record for every exposed worker. That is what this course and your hands-on session are built to produce."
+    },
+    {
+      "heading": "What the training must cover",
+      "body": "Under **1926.503(a)(2)**, each employee must be trained, as needed for their work, in these areas:\n\n- The **nature of fall hazards** in the work area: open edges, holes, leading edges, excavations, roofs, tanks and structures.\n- Correct procedures for **erecting, maintaining, disassembling and inspecting** the fall protection systems to be used.\n- The **use and operation** of guardrail systems, personal fall arrest systems, safety net systems, warning line systems, safety monitoring systems, controlled access zones and any other protection to be used.\n- Each employee's **role in a safety monitoring system**, when one is used.\n- Limits on using mechanical equipment during roofing work on low-slope roofs.\n- Correct procedures for the **handling and storage of equipment and materials** and for the **erection of overhead protection**.\n- Each employee's **role in a fall protection plan**, when a plan is used instead of conventional systems.\n- The standards in **Subpart M** itself.\n\nThe phrase 'as needed' matters. A fleet mechanic who only uses the shop's overhead fall arrest rail does not need to know how to rig a safety net. A bridge crew that erects temporary guardrails does. Training has to match the systems your crew actually uses, which is why the hands-on portion is done by division."
+    },
+    {
+      "heading": "Competent person and qualified person",
+      "body": "OSHA's construction standards use two terms that are often mixed up. The difference affects who can train you and who can design your anchor.\n\nA **competent person** is someone who can identify existing and predictable fall hazards in the work area **and** has the **authority to take prompt corrective action** to eliminate them. Both parts are required. A crew member who can spot a missing guardrail but cannot stop the job is not a competent person. The standard requires fall protection training to be given **by a competent person qualified in the subject areas** being taught. The competent person also inspects fall arrest equipment that has caught a fall before it returns to service, serves as the monitor in a safety monitoring system, and supervises the implementation of a fall protection plan where one is used.\n\nA **qualified person** has a recognized degree, certificate or professional standing, or extensive knowledge, training and experience, and has demonstrated the ability to solve problems in the subject. A qualified person designs engineered anchorages that do not meet the 5,000 pound rule on their own, certifies horizontal lifeline systems and prepares fall protection plans.\n\nOne person can hold both roles, but the roles come from knowledge and authority, not job title. Your division safety lead will tell you who serves as competent person on your crew."
+    },
+    {
+      "heading": "The written certification record",
+      "body": "Section **1926.503(b)** requires the employer to verify training with a **written certification record**. The record must contain three things:\n\n- The **name or other identity** of the employee trained.\n- The **date or dates** of the training.\n- The **signature** of the person who conducted the training, or the signature of the employer.\n\nIf the employer relies on training a worker received from a previous employer, the record must show the date the employer **determined that prior training was adequate**. A new hire's old wallet card is not a record until a competent person here has reviewed what it covered and signed off.\n\nThe employer must keep the **latest** certification. A record that cannot be found is treated the same as training that never happened."
+    },
+    {
+      "heading": "When retraining is required",
+      "body": "Section **1926.503(c)** requires retraining whenever the employer has reason to believe a trained worker **does not have the understanding and skill** the standard requires. The standard lists three situations, and the list is not meant to be complete:\n\n- **Changes in the workplace** make previous training obsolete. Examples: the plant adds a new elevated walkway, a crew is assigned to a bridge project for the first time, or a facility gets a new roof hatch and skylights.\n- **Changes in the types of fall protection systems or equipment** make previous training obsolete. Examples: the division switches from shock-absorbing lanyards to self-retracting lifelines, buys a new style of harness, or installs a horizontal lifeline on the water tower.\n- **Inadequacies in a worker's knowledge or use** of fall protection show the worker has not retained the understanding or skill. Examples: a supervisor sees someone tied off to a guardrail, wearing a harness with loose leg straps, or working an edge with the gear still in the truck.\n\nRetraining is not punishment. It means the system has a gap, and the fix is more training, documented with a new dated and signed record."
+    },
+    {
+      "heading": "How this course and the annual platform satisfy the record",
+      "body": "This platform records your name, the date you completed each course, your quiz score and the attestation of the department safety officer who serves as the employer's signature. That gives the three items 1926.503(b) requires, kept as the latest record and available to an inspector on request.\n\nOnline training alone does not finish the job. OSHA has said in interpretation letters that computer-based training can be part of a program, but it must be paired with **hands-on practice** and a chance to **ask a trainer questions**. The hands-on portion is where you put on a harness, inspect a lanyard, set up the guardrails your crew uses, and show your competent person you can do it. Your division schedules that session, and its date and the trainer's signature are entered on your record next to this course.\n\nIf you change divisions, start using a different system, or your supervisor sees a problem, you will be assigned this course again along with a new hands-on session. If you are handed equipment you have not been trained on, say so before you use it."
+    },
+    {
+      "heading": "What this means for Public Works crews",
+      "body": "**Electric Services.** Line crews and substation technicians are trained on bucket truck fall protection and pole climbing under 1910.269 and Subpart V, and that covers much of what 1926.503 requires. The gap is usually in work that does not feel like line work: meter technicians on commercial rooftops and substation crews on steel during a construction project. Those exposures need to show up on the same record.\n\n**Environmental Services.** Plant operators, collection crews and solid waste staff rotate through many sites and systems: tank hatches, clarifier bridges, vault entries and transfer station edges. When a crew is assigned to a facility it has not worked before, that is a change in the workplace. Ask your supervisor whether retraining is needed before the first shift, not after.\n\n**Public Services.** Streets and bridge crews erect and take down temporary guardrails, so their training must include erecting, maintaining and disassembling those systems, not just using them. Signal technicians and forestry crews tie off in buckets. Facilities staff on roofs need to know warning lines and roof anchor use. Fleet mechanics who use the shop fall arrest rail need the retraining trigger explained: a new trolley or lanyard type means a new session.\n\nIn every division, the supervisor's job is to notice the triggers and request retraining. The worker's job is to speak up when a system is unfamiliar. The record is what proves both jobs were done."
+    }
+  ],
+  "key_takeaways": [
+    "Every employee who might be exposed to a fall hazard must be trained before that exposure, not just workers who are at height every day.",
+    "Training must enable workers to recognize fall hazards and to follow the procedures that minimize them, including erecting, inspecting and using the systems their crew actually uses.",
+    "Fall protection training must be delivered by a competent person who is qualified in the subject areas being taught.",
+    "A competent person can identify hazards and has authority to correct them; a qualified person has the credentials or experience to design and engineer solutions.",
+    "The written certification record must contain the employee's name, the training date and the signature of the trainer or employer, and the latest record must be kept.",
+    "Retraining is required when the workplace changes, when the types of systems or equipment change, or when a worker shows they have not retained the knowledge or skill.",
+    "This platform supplies the written record, and the hands-on session with your competent person supplies the practice and the chance to ask questions."
+  ],
+  "questions": [
+    {
+      "text": "Under 1926.503, which employees must receive fall protection training?",
+      "options": [
+        "Only employees who work at height on a daily basis",
+        "Each employee who might be exposed to fall hazards",
+        "Only supervisors and designated competent persons",
+        "Only employees who use personal fall arrest systems"
+      ],
+      "answer": 1,
+      "explanation": "The standard covers each employee who might be exposed to fall hazards. Occasional exposure counts, and the training must happen before the exposure."
+    },
+    {
+      "text": "What must the training program enable each employee to do?",
+      "options": [
+        "Design anchorages that meet the 5,000 pound requirement",
+        "Write the department's fall protection plan",
+        "Pass a written test on Subpart M once every five years",
+        "Recognize fall hazards and follow the procedures that minimize them"
+      ],
+      "answer": 3,
+      "explanation": "Section 1926.503(a)(1) states the program must enable workers to recognize the hazards of falling and train them in the procedures to follow to minimize those hazards."
+    },
+    {
+      "text": "Which of the following is a required training topic under 1926.503(a)(2)?",
+      "options": [
+        "Correct procedures for erecting, maintaining, disassembling and inspecting the fall protection systems to be used",
+        "The purchase price and warranty terms of fall protection equipment",
+        "How to file an OSHA complaint about a contractor",
+        "The history of the Subpart M rulemaking"
+      ],
+      "answer": 0,
+      "explanation": "The standard specifically lists erecting, maintaining, disassembling and inspecting the systems to be used, along with the nature of fall hazards and the use and operation of each type of system."
+    },
+    {
+      "text": "Who is permitted to conduct fall protection training under the standard?",
+      "options": [
+        "Any employee with at least one year of field experience",
+        "The equipment vendor's sales representative",
+        "A competent person qualified in the subject areas being taught",
+        "Any licensed professional engineer"
+      ],
+      "answer": 2,
+      "explanation": "Section 1926.503(a)(2) requires training by a competent person qualified in the areas covered. Experience or a license alone does not meet that requirement."
+    },
+    {
+      "text": "Which three items must appear on the written certification record?",
+      "options": [
+        "Employee name, job title and division",
+        "Employee name or identity, training date, and signature of the trainer or employer",
+        "Training date, quiz score and equipment serial numbers",
+        "Trainer name, course length and location of training"
+      ],
+      "answer": 1,
+      "explanation": "Section 1926.503(b)(1) requires the name or other identity of the employee, the date or dates of training, and the signature of the person who conducted the training or of the employer."
+    },
+    {
+      "text": "Which training certification must the employer maintain?",
+      "options": [
+        "The latest certification for each employee",
+        "Every certification ever issued, going back to hire date",
+        "Only certifications issued within the last 30 days",
+        "Only certifications for employees who use personal fall arrest systems"
+      ],
+      "answer": 0,
+      "explanation": "The standard requires the latest training certification to be maintained. Older records may be kept, but the current one is what must be available."
+    },
+    {
+      "text": "A division replaces its shock-absorbing lanyards with self-retracting lifelines. What does the standard require?",
+      "options": [
+        "Nothing, because both devices connect to the same harness D-ring",
+        "A note in the equipment log but no training change",
+        "Retraining only for workers who ask for it",
+        "Retraining, because a change in the type of equipment makes previous training obsolete"
+      ],
+      "answer": 3,
+      "explanation": "Section 1926.503(c)(2) lists changes in the types of fall protection systems or equipment as a retraining trigger. Self-retracting lifelines have different inspection, anchoring and clearance rules than lanyards."
+    },
+    {
+      "text": "A supervisor sees a trained worker tied off to a guardrail. What does the standard call for?",
+      "options": [
+        "A written warning in the personnel file",
+        "Removing the worker from fall protection duties permanently",
+        "Retraining, because the worker has shown an inadequacy in knowledge or use of the system",
+        "Replacing the guardrail with a stronger one"
+      ],
+      "answer": 2,
+      "explanation": "Section 1926.503(c)(3) requires retraining when a worker's knowledge or use of fall protection shows they have not retained the required understanding or skill. A guardrail is not an approved anchorage."
+    },
+    {
+      "text": "What is the key difference between a competent person and a qualified person?",
+      "options": [
+        "A competent person can identify fall hazards and has authority to correct them; a qualified person has the credentials or extensive experience to design and engineer solutions",
+        "A competent person must be a professional engineer; a qualified person must be a supervisor",
+        "A qualified person conducts training; a competent person only inspects harnesses",
+        "There is no difference; OSHA uses the terms interchangeably"
+      ],
+      "answer": 0,
+      "explanation": "The competent person's role rests on hazard recognition plus authority to act. The qualified person's role rests on credentials or demonstrated expertise, such as designing an engineered anchorage."
+    },
+    {
+      "text": "According to the course, how do this platform and your hands-on session together satisfy the training requirement?",
+      "options": [
+        "Completing the online quiz alone satisfies every part of the standard",
+        "The hands-on session replaces the need for any written record",
+        "The platform records name, date and the employer's attestation, and the hands-on session with a competent person adds practice and the chance to ask questions",
+        "The platform record is only valid if printed and kept in the truck"
+      ],
+      "answer": 2,
+      "explanation": "The platform supplies the three items the written record requires, while the hands-on session supplies the practice and trainer access that OSHA expects to accompany computer-based training."
+    }
+  ]
+}

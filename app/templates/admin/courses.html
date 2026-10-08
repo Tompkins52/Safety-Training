@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Courses · {{ app_name }}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div><h1>Courses</h1><p class="muted">Training content lives in <code>content/courses/*.json</code>. Edit the files, then reload. Division mapping and active status are managed here.</p></div>
+  <div class="actions">
+    <form method="post" action="{{ url_for('admin.courses_reload') }}" class="inline-form" onsubmit="return confirm('Reload all course content and quiz questions from the content folder?');">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <button class="btn btn-secondary" type="submit">Reload content from files</button>
+    </form>
+  </div>
+</div>
+<section class="card">
+  <table class="table">
+    <thead><tr><th>Course</th><th>Standard</th><th>Category</th><th>Divisions</th><th class="num">Questions</th><th class="num">Renews</th><th>Status</th><th></th></tr></thead>
+    <tbody>
+    {% for c in courses %}
+      <tr class="{{ 'inactive' if not c.is_active }}">
+        <td><strong>{{ c.title }}</strong><br><small class="muted"><code>{{ c.slug }}</code></small></td>
+        <td>{{ c.standard or '' }}</td>
+        <td>{% if c.top10_rank %}Top 10 #{{ c.top10_rank }}{% else %}{{ c.category_label }}{% endif %}</td>
+        <td>{% for d in c.divisions %}<span class="badge badge-neutral">{{ d.name }}</span> {% endfor %}</td>
+        <td class="num">{{ c.questions|length }}</td>
+        <td class="num">{{ c.renewal_months }} mo</td>
+        <td>{% if c.is_active %}<span class="badge badge-ok">Active</span>{% else %}<span class="badge badge-neutral">Inactive</span>{% endif %}</td>
+        <td class="actions-cell"><a class="btn btn-sm btn-ghost" href="{{ url_for('admin.course_edit', course_id=c.id) }}">Settings</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

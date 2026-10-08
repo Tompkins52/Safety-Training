@@ -1,0 +1,15 @@
+services:
+  web:
+    build: .
+    container_name: safety-training
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      # Timestamps shown in the app use the container's local time.
+      TZ: ${TIMEZONE:-America/Chicago}
+    volumes:
+      - ./instance:/app/instance
+      - ./content:/app/content
+    restart: unless-stopped

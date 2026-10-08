@@ -1,0 +1,41 @@
+{
+  "_comment": "OSHA's Top 10 most frequently cited standards, by federal fiscal year. The platform shows the newest year on the course catalog and uses 'course_slug' to link each standard to a training module. Update this file each fall when OSHA announces the new list at the NSC Safety Congress and Expo (preliminary) and again when OSHA finalizes the counts. See docs/updating-osha-top10.md.",
+  "years": [
+    {
+      "fiscal_year": 2026,
+      "status": "preliminary",
+      "period": "Oct. 1, 2025 to Aug. 31, 2026",
+      "source": "https://www.osha.gov/top10citedstandards",
+      "standards": [
+        {"rank": 1, "standard": "29 CFR 1926.501", "title": "Fall Protection, general requirements (construction)", "citations": 4041, "course_slug": "fall-protection-general"},
+        {"rank": 2, "standard": "29 CFR 1910.1200", "title": "Hazard Communication (general industry)", "citations": 1961, "course_slug": "hazard-communication"},
+        {"rank": 3, "standard": "29 CFR 1910.147", "title": "Control of Hazardous Energy, lockout/tagout (general industry)", "citations": 1863, "course_slug": "lockout-tagout"},
+        {"rank": 4, "standard": "29 CFR 1926.451", "title": "Scaffolding (construction)", "citations": 1725, "course_slug": "scaffolding"},
+        {"rank": 5, "standard": "29 CFR 1926.1053", "title": "Ladders (construction)", "citations": 1659, "course_slug": "ladders"},
+        {"rank": 6, "standard": "29 CFR 1910.134", "title": "Respiratory Protection (general industry)", "citations": 1608, "course_slug": "respiratory-protection"},
+        {"rank": 7, "standard": "29 CFR 1910.178", "title": "Powered Industrial Trucks (general industry)", "citations": 1379, "course_slug": "powered-industrial-trucks"},
+        {"rank": 8, "standard": "29 CFR 1926.503", "title": "Fall Protection, training requirements (construction)", "citations": 1273, "course_slug": "fall-protection-training"},
+        {"rank": 9, "standard": "29 CFR 1926.102", "title": "Eye and Face Protection (construction)", "citations": 1120, "course_slug": "eye-face-protection"},
+        {"rank": 10, "standard": "29 CFR 1910.212", "title": "Machine Guarding (general industry)", "citations": 1072, "course_slug": "machine-guarding"}
+      ]
+    },
+    {
+      "fiscal_year": 2025,
+      "status": "final",
+      "period": "Oct. 1, 2024 to Sept. 30, 2025",
+      "source": "https://www.safetyandhealthmagazine.com (OSHA final FY 2025 data)",
+      "standards": [
+        {"rank": 1, "standard": "29 CFR 1926.501", "title": "Fall Protection, general requirements (construction)", "citations": 6992, "course_slug": "fall-protection-general"},
+        {"rank": 2, "standard": "29 CFR 1910.1200", "title": "Hazard Communication (general industry)", "citations": 3010, "course_slug": "hazard-communication"},
+        {"rank": 3, "standard": "29 CFR 1926.1053", "title": "Ladders (construction)", "citations": 2842, "course_slug": "ladders"},
+        {"rank": 4, "standard": "29 CFR 1910.147", "title": "Control of Hazardous Energy, lockout/tagout (general industry)", "citations": 2562, "course_slug": "lockout-tagout"},
+        {"rank": 5, "standard": "29 CFR 1910.134", "title": "Respiratory Protection (general industry)", "citations": 2294, "course_slug": "respiratory-protection"},
+        {"rank": 6, "standard": "29 CFR 1926.451", "title": "Scaffolding (construction)", "citations": 2286, "course_slug": "scaffolding"},
+        {"rank": 7, "standard": "29 CFR 1926.503", "title": "Fall Protection, training requirements (construction)", "citations": 2216, "course_slug": "fall-protection-training"},
+        {"rank": 8, "standard": "29 CFR 1910.178", "title": "Powered Industrial Trucks (general industry)", "citations": 2150, "course_slug": "powered-industrial-trucks"},
+        {"rank": 9, "standard": "29 CFR 1926.102", "title": "Eye and Face Protection (construction)", "citations": 1965, "course_slug": "eye-face-protection"},
+        {"rank": 10, "standard": "29 CFR 1910.212", "title": "Machine Guarding (general industry)", "citations": 1498, "course_slug": "machine-guarding"}
+      ]
+    }
+  ]
+}

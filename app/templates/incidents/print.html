@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}Incident report {{ incident.incident_number }}{% endblock %}
+{% block body_class %}print-page{% endblock %}
+{% block content %}
+<div class="no-print page-head">
+  <div><h1>Printable incident report</h1></div>
+  <div class="actions"><button class="btn btn-primary" onclick="window.print()">Print</button> <a class="btn btn-ghost" href="{{ url_for('incidents.detail', incident_id=incident.id) }}">Back</a></div>
+</div>
+
+<div class="report">
+  <header class="report-head">
+    <div>
+      <h1>{{ org_name }}</h1>
+      <h2>Incident Report</h2>
+    </div>
+    <div class="report-id">
+      <div><span>Incident no.</span><strong>{{ incident.incident_number }}</strong></div>
+      <div><span>Type</span><strong>{{ incident.type_label }}</strong></div>
+      <div><span>Status</span><strong>{{ incident.status_label }}</strong></div>
+    </div>
+  </header>
+
+  <section class="report-section">
+    <h3>1. Incident information</h3>
+    <table class="report-table">
+      <tr><th>Date and time of incident</th><td>{{ incident.occurred_at|datetime }}</td><th>Date reported</th><td>{{ incident.reported_at|datetime }}</td></tr>
+      <tr><th>Location</th><td>{{ incident.location }}</td><th>Division</th><td>{{ incident.division.name if incident.division else '' }}</td></tr>
+      <tr><th>Reported by</th><td>{{ incident.reported_by.full_name }}{% if incident.reported_by.job_title %}, {{ incident.reported_by.job_title }}{% endif %}</td><th>Severity</th><td>{{ incident.severity_label }}</td></tr>
+      <tr><th>Work activity</th><td>{{ incident.work_activity or '' }}</td><th>Equipment / vehicle</th><td>{{ incident.equipment_involved or '' }}</td></tr>
+      <tr><th>Weather and conditions</th><td colspan="3">{{ incident.weather_conditions or '' }}</td></tr>
+    </table>
+    <h4>Description of what happened</h4>
+    <p class="pre box">{{ incident.description }}</p>
+    <table class="report-table">
+      <tr><th>Employees involved</th><td class="pre">{{ incident.employees_involved or '' }}</td></tr>
+      <tr><th>Witnesses</th><td class="pre">{{ incident.witnesses or '' }}</td></tr>
+      <tr><th>Immediate actions taken</th><td class="pre">{{ incident.immediate_actions or '' }}</td></tr>
+    </table>
+  </section>
+
+  <section class="report-section">
+    <h3>2. {{ incident.type_label }} details</h3>
+    <table class="report-table">
+    {% if incident.incident_type == 'injury' %}
+      <tr><th>Injured person</th><td>{{ incident.injured_person or '' }}</td><th>Job title</th><td>{{ incident.injured_job_title or '' }}</td></tr>
+      <tr><th>Body part</th><td>{{ incident.body_part or '' }}</td><th>Nature of injury</th><td>{{ incident.injury_nature or '' }}</td></tr>
+      <tr><th>Treatment</th><td>{{ incident.treatment_label }}</td><th>Provider</th><td>{{ incident.treatment_provider or '' }}</td></tr>
+      <tr><th>Days away from work</th><td>{{ incident.days_away if incident.days_away is not none else '' }}</td><th>Days restricted</th><td>{{ incident.days_restricted if incident.days_restricted is not none else '' }}</td></tr>
+      <tr><th>OSHA recordable</th><td colspan="3">{% if incident.osha_recordable is none %}Not yet determined{% elif incident.osha_recordable %}Yes{% else %}No{% endif %}</td></tr>
+    {% elif incident.incident_type == 'property_damage' %}
+      <tr><th>Property damaged</th><td>{{ incident.property_description or '' }}</td><th>Owner</th><td>{{ incident.property_owner_label }}</td></tr>
+      <tr><th>Estimated cost</th><td colspan="3">{{ incident.estimated_cost|money }}</td></tr>
+      <tr><th>Description of damage</th><td colspan="3" class="pre">{{ incident.damage_description or '' }}</td></tr>
+    {% elif incident.incident_type == 'vehicle' %}
+      <tr><th>Vehicle / unit</th><td>{{ incident.vehicle_unit or '' }}</td><th>Driver</th><td>{{ incident.driver_name or '' }}</td></tr>
+      <tr><th>Seat belt in use</th><td>{% if incident.seat_belt_used is none %}Unknown{% elif incident.seat_belt_used %}Yes{% else %}No{% endif %}</td><th>Police report no.</th><td>{{ incident.police_report_number or '' }}</td></tr>
+      <tr><th>Drug / alcohol test</th><td>{{ incident.drug_test_label }}</td><th>Damage estimate</th><td>{{ incident.vehicle_damage_estimate|money }}</td></tr>
+      <tr><th>Preventability</th><td colspan="3">{{ incident.preventability_label }}</td></tr>
+      <tr><th>Other party</th><td colspan="3" class="pre">{{ incident.other_party or '' }}</td></tr>
+    {% endif %}
+    </table>
+  </section>
+
+  <section class="report-section">
+    <h3>3. Investigation</h3>
+    <table class="report-table">
+      <tr><th>Investigator</th><td>{{ incident.investigator.full_name if incident.investigator else '' }}</td><th>Investigation date</th><td>{{ incident.investigation_date|date }}</td></tr>
+      <tr><th>Contributing factor type</th><td colspan="3">
+        <span class="check">{% if incident.contributing_factor_type == 'behavioral' %}X{% else %}&nbsp;{% endif %}</span> Behavioral &nbsp;&nbsp;
+        <span class="check">{% if incident.contributing_factor_type == 'engineering' %}X{% else %}&nbsp;{% endif %}</span> Engineered &nbsp;&nbsp;
+        <span class="check">{% if incident.contributing_factor_type == 'environmental' %}X{% else %}&nbsp;{% endif %}</span> Environmental
+      </td></tr>
+    </table>
+    <h4>Direct cause</h4><p class="pre box">{{ incident.direct_cause or '' }}</p>
+    <h4>Root cause</h4><p class="pre box">{{ incident.root_cause or '' }}</p>
+    <h4>Contributing factor details</h4><p class="pre box">{{ incident.contributing_factor_detail or '' }}</p>
+    <h4>Lessons learned</h4><p class="pre box">{{ incident.lessons_learned or '' }}</p>
+  </section>
+
+  <section class="report-section">
+    <h3>4. Corrective actions</h3>
+    <table class="report-table grid">
+      <thead><tr><th>#</th><th>Action</th><th>Responsible</th><th>Target date</th><th>Status</th><th>Completed</th></tr></thead>
+      <tbody>
+      {% for a in incident.corrective_actions %}
+        <tr><td>{{ loop.index }}</td><td>{{ a.description }}{% if a.notes %}<br><small>{{ a.notes }}</small>{% endif %}</td><td>{{ a.responsible_name or '' }}</td><td>{{ a.target_date|date }}</td><td>{{ a.status_label }}</td><td>{{ a.completed_on|date }}</td></tr>
+      {% else %}
+        <tr><td>1</td><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>2</td><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </section>
+
+  <section class="report-section signatures">
+    <h3>5. Review and signatures</h3>
+    <div class="sig-row">
+      <div><span class="line"></span>Employee / reporter &nbsp; <small>Date</small></div>
+      <div><span class="line"></span>Supervisor &nbsp; <small>Date</small></div>
+      <div><span class="line"></span>Safety administrator &nbsp; <small>Date</small></div>
+    </div>
+    {% if incident.closed_at %}<p class="small">Closed {{ incident.closed_at|datetime }}{% if incident.closed_by %} by {{ incident.closed_by.full_name }}{% endif %}.</p>{% endif %}
+  </section>
+  <footer class="report-foot">{{ app_name }} · Printed {{ now|datetime }} · {{ incident.incident_number }}</footer>
+</div>
+{% endblock %}

@@ -1,0 +1,180 @@
+{
+  "slug": "scaffolding",
+  "title": "Scaffolding",
+  "standard": "29 CFR 1926.451",
+  "standard_title": "Scaffolding, general requirements (construction)",
+  "category": "osha_top10",
+  "top10_rank": 4,
+  "divisions": [
+    "electric",
+    "environmental",
+    "public"
+  ],
+  "duration_minutes": 35,
+  "renewal_months": 12,
+  "summary": "Scaffolds put public works crews at height over pump stations, clarifiers, bridge decks, substation structures and facility walls. This course covers the parts of 29 CFR 1926.451 that matter most in the field: capacity, planking, foundations, access, guardrails, power line clearance and the competent person inspection. It also reviews the mistakes that draw the most OSHA citations so you can spot them before anyone climbs.",
+  "objectives": [
+    "Explain the capacity rules for scaffolds, suspension ropes and guardrails.",
+    "Describe how a scaffold platform must be planked, supported and restrained from tipping.",
+    "Identify acceptable means of access and the fall protection required above 10 feet.",
+    "Apply the minimum clearance distances between scaffolds and energized power lines.",
+    "Recognize when a competent person must inspect a scaffold and when work must stop for weather.",
+    "Spot the most commonly cited scaffold violations on a public works job."
+  ],
+  "sections": [
+    {
+      "heading": "Why this standard is on the Top 10",
+      "body": "Scaffold violations appear on OSHA's list of most frequently cited standards year after year. Scaffolds are often set up quickly, by crews who do it a few times a year, for a job that lasts a day or two. That is exactly when guardrails get skipped and nobody is named as the **competent person**.\n\nThe citations inspectors write most often are:\n\n- Missing or incomplete **guardrails** on platforms more than 10 feet up.\n- Improper **planking**: gaps, short overlaps, or levels that are not fully decked.\n- Unsafe **access**: climbing cross braces or frames instead of using a ladder or stair.\n- No **competent person inspection** before the shift.\n- Poor **foundations**, such as legs resting on blocks or soft ground.\n\nPublic works crews face the same hazards when they repair a bridge wall or repaint a treatment building. Although 1926.451 is a construction standard, OSHA's general industry rule at 1910.27(a) requires scaffolds used in general industry to meet the same requirements, so these rules apply to maintenance jobs too."
+    },
+    {
+      "heading": "Capacity and platform construction",
+      "body": "Every scaffold and every scaffold component must support its own weight plus at least **4 times the maximum intended load** without failing (1926.451(a)(1)). The maximum intended load is everyone on the platform plus their tools and materials. On suspension scaffolds, each rope and its hardware must support at least **6 times** the maximum intended load (1926.451(a)(4)).\n\nPlatforms must be built so nobody can step through or off the edge (1926.451(b)):\n\n- Each working level must be **fully planked or decked** between the front uprights and the guardrail supports.\n- Gaps between planks, and between the platform and the uprights, may be no more than **1 inch** wide.\n- Platforms and walkways must be at least **18 inches wide**.\n- Each plank end must extend at least **6 inches** past the centerline of its support unless cleated or hooked, and no more than **12 inches** on platforms 10 feet or shorter, or **18 inches** on longer platforms, unless the overhang is guarded.\n- Where planks overlap to make a long platform, the overlap must be at least **12 inches** and must sit over a support.\n- Use scaffold-grade planks or manufactured decks."
+    },
+    {
+      "heading": "Foundations, stability and tipping",
+      "body": "A scaffold is only as good as what it stands on. Supported scaffold legs and frames must rest on **base plates** and **mud sills** or another firm foundation (1926.451(c)(2)). Footings must be level, sound, rigid and able to carry the loaded scaffold without settling. Never set a leg on bricks, blocks, boxes, barrels or other unstable objects. Legs must be plumb and braced so the scaffold cannot sway.\n\nTall, narrow scaffolds tip. When the **height to base width ratio is more than 4 to 1** (counting outriggers, if used), the scaffold must be restrained with **guys, ties or braces** to the structure (1926.451(c)(1)):\n\n- Install the first tie at the closest horizontal member to the 4 to 1 height. A scaffold 5 feet wide needs its first tie at about 20 feet.\n- Repeat ties every 20 feet or less going up for scaffolds 3 feet wide or narrower, and every 26 feet or less for wider scaffolds, with ties at each end and no more than 30 feet apart.\n- A cantilevered or other off-center load also requires ties, braces or outriggers."
+    },
+    {
+      "heading": "Safe access",
+      "body": "If the platform is more than **2 feet** above or below the point of access, crews need a proper way up (1926.451(e)(1)). Acceptable means include portable, hook-on or attachable ladders, stair towers, ramps and walkways, built-in frame ladders designed for climbing, or direct access from another scaffold or structure.\n\n**Cross braces are never a means of access.** Climbing the X braces is one of the most common violations inspectors see, and many scaffold falls happen getting on and off.\n\nAccess rules worth remembering:\n\n- Hook-on and attachable ladders need their bottom rung no more than 24 inches above the supporting level.\n- Frame rungs may be climbed only if the manufacturer designed that frame as a ladder.\n- Ladders, boxes, barrels and other makeshift devices may not be used on top of a platform to gain height (1926.451(f)(14) and (f)(15))."
+    },
+    {
+      "heading": "Fall protection, guardrails and falling objects",
+      "body": "Each employee on a scaffold platform more than **10 feet above a lower level** must be protected from falling (1926.451(g)(1)). For most supported scaffolds that means a **guardrail system**. Where guardrails are not practical, a personal fall arrest system tied to a proper anchorage is used.\n\nGuardrail requirements (1926.451(g)(4)):\n\n- **Toprail** between **38 and 45 inches** above the platform on supported scaffolds placed in service after January 1, 2000, able to withstand 200 pounds of force.\n- **Midrail** about halfway between the toprail and the platform, able to withstand 150 pounds.\n- Guardrails on all open sides and ends.\n- Cross bracing may serve as a midrail if the braces cross between 20 and 30 inches above the platform, or as a toprail if they cross between 38 and 48 inches, but not both.\n\nHard hats are required on and around scaffolds. Where objects could fall on people below, add **toeboards** at least **3.5 inches** high with no more than a quarter inch gap at the platform (1926.451(h)), or use screens, nets, canopies or a barricaded zone below."
+    },
+    {
+      "heading": "Power line clearance",
+      "body": "Scaffolds are usually metal, and the people on them handle conductive pipe and tools. Before erecting, moving or working from a scaffold near overhead lines, apply the clearance table in 1926.451(f)(6):\n\n- **Uninsulated lines** up to 50 kV: at least **10 feet**.\n- **Insulated lines** under 300 volts: at least **3 feet**.\n- **Insulated lines** 300 volts to 50 kV: at least **10 feet**.\n- Any line over 50 kV: 10 feet plus 0.4 inch for each kV over 50, or two times the length of the line insulator, and never less than 10 feet.\n\nThe distance applies to the scaffold and to any conductive material handled on it. Treat every line as uninsulated and energized unless the utility has confirmed otherwise. The weatherproof covering on many distribution conductors is not insulation.\n\nCrews may work closer only after the utility or system operator has **de-energized the lines, relocated them or installed protective coverings**. For Electric Services, that means a documented hold from the system operator. For Environmental and Public Services crews, call the utility and get the answer before the first frame goes up."
+    },
+    {
+      "heading": "Inspection, training, mobile scaffolds and weather",
+      "body": "A **competent person** must inspect the scaffold for visible defects **before each work shift** and after any event that could affect its structural integrity, such as a vehicle strike, a storm or an overload (1926.451(f)(3)). A competent person can identify scaffold hazards and has authority to correct them. Damaged parts must be repaired, replaced or removed from service right away. Scaffolds may be erected, moved, dismantled or altered only under a competent person's direction.\n\n**Training** (1926.454): everyone who works from a scaffold must be trained by a qualified person on the electrical, fall and falling object hazards, the fall protection in use, material handling and the maximum intended load. Erectors, dismantlers and inspectors need training from a competent person.\n\n**Mobile scaffolds** (1926.452(w)): lock the casters before anyone climbs. Push from near the base, never more than 5 feet up, and warn everyone on the platform first. Riding is allowed only when the surface is within 3 degrees of level and free of holes, the height to base ratio during the move is 2 to 1 or less, and nobody is on a part that extends past the wheels.\n\n**Weather**: no scaffold work during storms or high winds unless the competent person decides it is safe and workers are protected by personal fall arrest or wind screens (1926.451(f)(12)). Clear snow and ice before use."
+    },
+    {
+      "heading": "What this means for Public Works crews",
+      "body": "Public works scaffold jobs tend to be short and varied. Examples:\n\n- **Environmental Services**: replacing clarifier weirs, repairing a pump station roof, painting digester walls, working over an open channel. Surfaces are wet and a fall may end in water or a tank, so the rescue plan belongs in the job briefing.\n- **Public Services**: bridge rail and culvert headwall repair, replacing lights in a fleet garage or gym, exterior painting, sign and signal work from a rolling tower. Mobile scaffolds on sloped aprons tip easily. Level them with screw jacks and lock the casters.\n- **Electric Services**: substation structure painting and bus work with equipment de-energized and grounded, and support for contractors building new structures. Clearance rules and the system operator's hold control the job.\n\nBefore anyone climbs, ask five questions. Who is the competent person, and did they inspect it this shift? Is every level fully planked with proper overlap? Is there a ladder or stair, not a cross brace? Are guardrails up above 10 feet? How far is the nearest energized line? If any answer is wrong, fix it on the ground. Rented scaffolds are no exception; your competent person still owns the inspection."
+    }
+  ],
+  "key_takeaways": [
+    "Scaffolds must support at least 4 times the maximum intended load, and suspension ropes at least 6 times.",
+    "Platforms must be fully planked, at least 18 inches wide, with gaps of no more than 1 inch and plank ends extending 6 to 12 inches past the support.",
+    "Legs rest on base plates and mud sills on level, sound footing, never on blocks, boxes or barrels.",
+    "Tie, guy or brace any scaffold taller than 4 times its base width.",
+    "Get on and off with a ladder, stair tower or ramp; cross braces are never access.",
+    "Above 10 feet, use guardrails with a toprail 38 to 45 inches high and a midrail, or personal fall arrest, plus toeboards where objects could fall on people.",
+    "Stay at least 10 feet from uninsulated lines up to 50 kV, and farther for higher voltages, unless the utility has de-energized, moved or covered them.",
+    "A competent person inspects every scaffold before each shift and after anything that could damage it."
+  ],
+  "questions": [
+    {
+      "text": "A scaffold and each of its components must be able to support its own weight plus at least how many times the maximum intended load?",
+      "options": [
+        "2 times",
+        "3 times",
+        "4 times",
+        "6 times"
+      ],
+      "answer": 2,
+      "explanation": "1926.451(a)(1) requires every scaffold and scaffold component to support, without failure, its own weight plus at least 4 times the maximum intended load. The 6 times figure applies to suspension ropes and their hardware."
+    },
+    {
+      "text": "Which platform meets the planking requirements of 1926.451(b)?",
+      "options": [
+        "A fully decked platform 20 inches wide with no gap wider than 1 inch between planks",
+        "A platform with a 3 inch gap left open along the uprights so tools can be passed up",
+        "A 16 inch wide platform made of two planks laid side by side",
+        "A platform where the planks overlap by 8 inches midway between the supports"
+      ],
+      "answer": 0,
+      "explanation": "Platforms must be fully planked and at least 18 inches wide, with gaps of no more than 1 inch. Overlaps must be at least 12 inches and must occur over a support."
+    },
+    {
+      "text": "Which of these is an acceptable foundation for a supported scaffold leg?",
+      "options": [
+        "A stack of two concrete blocks on packed gravel",
+        "An empty 55 gallon drum turned upside down",
+        "A wood pallet laid flat on asphalt",
+        "A base plate on a mud sill set on level, compacted ground"
+      ],
+      "answer": 3,
+      "explanation": "1926.451(c)(2) requires legs to bear on base plates and mud sills or another firm, level, rigid foundation. Blocks, drums, pallets and other unstable objects may not be used."
+    },
+    {
+      "text": "A supported scaffold is 5 feet wide at the base with no outriggers. At about what height must it first be tied, guyed or braced to prevent tipping?",
+      "options": [
+        "10 feet",
+        "20 feet",
+        "26 feet",
+        "30 feet"
+      ],
+      "answer": 1,
+      "explanation": "A height to base width ratio of more than 4 to 1 requires restraint. Four times 5 feet is 20 feet, so the first tie goes at the closest horizontal member to that height."
+    },
+    {
+      "text": "A crew needs to reach a platform 6 feet above the ground. Which means of access is allowed under 1926.451(e)?",
+      "options": [
+        "A hook-on ladder with its bottom rung no more than 24 inches above the supporting level",
+        "The cross braces, as long as the worker faces the scaffold",
+        "The end frame, since any horizontal member can serve as a rung",
+        "A 5 gallon bucket placed next to the lowest frame member"
+      ],
+      "answer": 0,
+      "explanation": "Portable, hook-on and attachable ladders, stair towers, ramps and built-in access designed for climbing are acceptable. Cross braces are never a means of access, and frame members may be climbed only when designed as ladder rungs."
+    },
+    {
+      "text": "On a supported scaffold placed in service after January 1, 2000, the top edge of the toprail must be installed how high above the platform?",
+      "options": [
+        "30 to 36 inches",
+        "36 to 42 inches",
+        "38 to 45 inches",
+        "42 to 48 inches"
+      ],
+      "answer": 2,
+      "explanation": "1926.451(g)(4)(ii) sets the toprail height at 38 to 45 inches for supported scaffolds placed in service after January 1, 2000, with a midrail about halfway between the toprail and the platform."
+    },
+    {
+      "text": "A toeboard used to protect people below a scaffold from falling objects must be at least how tall?",
+      "options": [
+        "2 inches",
+        "3.5 inches",
+        "4 inches",
+        "6 inches"
+      ],
+      "answer": 1,
+      "explanation": "1926.451(h)(4)(ii) requires toeboards at least 3.5 inches high, securely fastened at the outer edge of the platform with no more than a quarter inch gap above the walking surface."
+    },
+    {
+      "text": "A crew is setting up a frame scaffold under an uninsulated 12.47 kV distribution line. What is the minimum clearance that must be kept between the scaffold, or any conductive material handled on it, and the line?",
+      "options": [
+        "3 feet",
+        "6 feet",
+        "8 feet",
+        "10 feet"
+      ],
+      "answer": 3,
+      "explanation": "For uninsulated lines up to 50 kV, 1926.451(f)(6) requires at least 10 feet of clearance. The 3 foot distance applies only to insulated lines under 300 volts."
+    },
+    {
+      "text": "When must a competent person inspect a scaffold for visible defects?",
+      "options": [
+        "Before each work shift and after any occurrence that could affect its structural integrity",
+        "Once when it is first erected and again when it is dismantled",
+        "Weekly, or whenever a worker reports a problem",
+        "Only after a storm, vehicle strike or other damaging event"
+      ],
+      "answer": 0,
+      "explanation": "1926.451(f)(3) requires inspection before each work shift and after any event that could affect the scaffold's integrity. Erection-only or weekly checks do not meet the rule."
+    },
+    {
+      "text": "Workers may ride a mobile scaffold while it is being moved only if certain conditions are met. Which is one of them?",
+      "options": [
+        "The crew leader gives a verbal warning after the move begins",
+        "The scaffold is pushed from a point at least 6 feet above the ground for better leverage",
+        "The surface is within 3 degrees of level and free of pits, holes and obstructions",
+        "The height to base width ratio during the move is no more than 4 to 1"
+      ],
+      "answer": 2,
+      "explanation": "1926.452(w)(6) allows riding only when the surface is within 3 degrees of level and free of holes and obstructions, the height to base ratio during the move is 2 to 1 or less, and no one is on a part that extends past the wheels."
+    }
+  ]
+}

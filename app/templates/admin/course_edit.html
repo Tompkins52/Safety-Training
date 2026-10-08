@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}{{ course.title }} settings · {{ app_name }}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div><p class="eyebrow">{{ course.standard or course.category_label }}</p><h1>{{ course.title }}</h1><p class="muted">{{ course.summary }}</p></div>
+</div>
+<div class="grid-2">
+  <form method="post" class="card form-stack">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <h2>Settings</h2>
+    <fieldset>
+      <legend>Applies to divisions</legend>
+      {% for d in divisions %}
+      <label class="checkbox"><input type="checkbox" name="divisions" value="{{ d.id }}" {% if d in course.divisions %}checked{% endif %}> {{ d.name }}</label>
+      {% endfor %}
+    </fieldset>
+    <label>Renewal interval (months)<input type="number" name="renewal_months" min="1" max="60" value="{{ course.renewal_months }}"></label>
+    <label class="checkbox"><input type="checkbox" name="is_active" {% if course.is_active %}checked{% endif %}> Active (included in assignments)</label>
+    <div class="form-actions">
+      <button class="btn btn-primary" type="submit">Save</button>
+      <a class="btn btn-ghost" href="{{ url_for('admin.courses') }}">Cancel</a>
+    </div>
+  </form>
+  <section class="card">
+    <h2>Quiz questions ({{ course.questions|length }})</h2>
+    <ol class="small">
+    {% for q in course.questions %}
+      <li>{{ q.text }}<br><span class="muted">Answer: {{ q.options[q.answer_index] }}</span></li>
+    {% endfor %}
+    </ol>
+    <p class="small muted">To change questions or content, edit <code>content/courses/{{ course.slug }}.json</code> and reload content.</p>
+  </section>
+</div>
+{% endblock %}

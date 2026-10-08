@@ -1,0 +1,180 @@
+{
+  "slug": "respiratory-protection",
+  "title": "Respiratory Protection",
+  "standard": "29 CFR 1910.134",
+  "standard_title": "Respiratory Protection (general industry)",
+  "category": "osha_top10",
+  "top10_rank": 6,
+  "divisions": [
+    "electric",
+    "environmental",
+    "public"
+  ],
+  "duration_minutes": 35,
+  "renewal_months": 12,
+  "summary": "Respiratory Protection, 29 CFR 1910.134, sets the rules for selecting, fitting, using and caring for respirators whenever engineering controls cannot keep airborne hazards below safe levels. This course explains required versus voluntary use, the written program, medical evaluation, fit testing, seal checks, cartridge change schedules and IDLH atmospheres, with examples from fleet shops, concrete cutting, water and wastewater plants, sewers and older facilities. It also covers the program gaps that most often draw citations.",
+  "objectives": [
+    "Distinguish required respirator use from voluntary use and explain what Appendix D requires.",
+    "Describe the elements of a written respiratory protection program and the role of the program administrator.",
+    "Select the right type of NIOSH approved respirator, filter or cartridge for a given hazard using assigned protection factors.",
+    "Explain why medical evaluation must come before fit testing and why fit testing is repeated at least annually.",
+    "Perform a user seal check and identify conditions, such as facial hair, that defeat the seal.",
+    "Recognize IDLH atmospheres and the respirators required for confined space and emergency entry."
+  ],
+  "sections": [
+    {
+      "heading": "When respirators are required, and when use is voluntary",
+      "body": "Silica dust, welding fume, chlorine and sewer gas can damage your lungs or take your life, in minutes or over years. The standard puts **engineering controls first**: local exhaust, wet cutting and ventilation. When those cannot keep exposures below the **permissible exposure limit (PEL)**, the employer must provide respirators and run a full program.\n\nRespirator use falls into two categories:\n- **Required use.** The employer has determined a respirator is necessary to protect your health. Every part of the standard applies.\n- **Voluntary use.** Exposures are below the limits but an employee wants to wear a respirator anyway. The employer must make sure the respirator will not itself create a hazard and must give the employee **Appendix D**. If the voluntary respirator is more than a **filtering facepiece** (a disposable dust mask such as an N95), the employee also needs a medical evaluation and the respirator must be maintained under a written program.\n\nAppendix D tells voluntary users to follow the manufacturer instructions, use a NIOSH certified respirator only for what it is designed for, and never share it."
+    },
+    {
+      "heading": "Why this standard is on the Top 10",
+      "body": "Respiratory Protection is on OSHA's most cited list every year. Inspectors rarely find a crew with no respirators. They find respirators handed out without the program behind them.\n\nThe most common citations are:\n- **No medical evaluation.** An employee was fit tested or assigned a respirator before a health care professional cleared them to wear one.\n- **No fit test.** Tight fitting respirators were issued without an initial fit test, or the annual fit test lapsed.\n- **No written program.** The department has respirators in the stockroom but no written program, or no one named to run it.\n\nOther frequent findings include no training, no hazard evaluation, voluntary users who never received Appendix D, and tight fitting respirators worn over beards."
+    },
+    {
+      "heading": "The written program and the administrator",
+      "body": "Wherever respirators are required, the employer must have a **written respiratory protection program** with worksite specific procedures, run by a trained **program administrator** who oversees it and evaluates how well it works.\n\nThe program must cover:\n- Respirator selection\n- Medical evaluations\n- Fit testing\n- Routine and emergency use procedures\n- Cleaning, storing, inspecting, repairing and discarding respirators\n- Air quality for atmosphere supplying respirators\n- Training in hazards and in respirator use and limitations\n- Regular evaluation of the program\n\nThe administrator should check with users regularly and review the program whenever work processes or chemicals change. The employer pays for required respirators, medical evaluations, fit tests and training."
+    },
+    {
+      "heading": "Hazard evaluation and respirator selection",
+      "body": "The employer must **identify and evaluate** the hazard before choosing a respirator: measure or estimate the exposure, identify the contaminant and its form, and check for oxygen deficiency. If exposure cannot be reasonably estimated, the atmosphere is treated as **IDLH**.\n\nOnly **NIOSH approved** respirators may be used. There are two families:\n- **Air purifying respirators (APR)** clean the air through filters or cartridges. They never add oxygen, so they cannot be used where oxygen is below 19.5 percent or in IDLH atmospheres.\n- **Atmosphere supplying respirators** deliver clean air from a tank or compressor: SCBA and supplied air respirators.\n\n**Particulate filters** are rated by letter and number. **N** means not oil resistant, **R** oil resistant and **P** oil proof. The number is the minimum efficiency: 95, 99 or 99.97 percent (labeled 100). An **N95** handles most dusts. A **P100** is the choice for silica, lead, asbestos and welding fume. **Chemical cartridges** are color coded by contaminant. Match the cartridge to the SDS.\n\nThe **assigned protection factor (APF)** is how much a properly fitted respirator reduces exposure. A half mask APR has an APF of 10, a full facepiece APR 50 and a pressure demand SCBA 10,000. Pick a respirator with an APF high enough for the measured exposure."
+    },
+    {
+      "heading": "Medical evaluation, fit testing and the seal",
+      "body": "Wearing a respirator is work for your heart and lungs. Before anyone is fit tested or wears a required respirator, they must have a **medical evaluation**. It begins with the Appendix C questionnaire, reviewed by a physician or other licensed health care professional. The employer is told only whether the person can wear the respirator and under what limits.\n\nAfter medical clearance comes the **fit test**. Every tight fitting respirator, including N95 filtering facepieces, must be fit tested before first use, at least **every 12 months**, whenever a different make, model or size is used, and whenever a change in the face could affect the fit. **Qualitative** fit testing uses a test agent such as Bitrex or saccharin; you pass if you cannot taste or smell it. **Quantitative** fit testing uses an instrument to measure leakage.\n\nFit testing proves the respirator can seal. The **user seal check** proves it did seal **this time**. Do one every time you put a tight fitting respirator on. Positive pressure: cover the exhalation valve and breathe out gently; the facepiece should bulge with no leaks. Negative pressure: cover the inlets and breathe in; the facepiece should collapse and stay collapsed.\n\n**Facial hair** between the sealing surface and the skin is not allowed with a tight fitting respirator. Stubble is enough to break the seal. Employees who cannot shave need a loose fitting PAPR hood or helmet."
+    },
+    {
+      "heading": "Care, cleaning, storage and cartridge changes",
+      "body": "**Clean and disinfect** reusable respirators as often as needed to keep them sanitary: after each day for one user, after each use when shared, and after every fit test.\n\n**Inspect** before each use and during cleaning for cracks, tears, stiff valves and missing parts. Emergency respirators and SCBA are inspected monthly.\n\n**Store** respirators away from damage, contamination, dust, sunlight, extreme temperatures and moisture. A sealed bag in a clean locker works. A dusty dashboard does not.\n\nChemical cartridges do not last forever, and smell is not a reliable warning. The employer must set a **change schedule** based on objective information, such as manufacturer service life data and the measured exposure, or use cartridges with an **end of service life indicator (ESLI)**. Replace particulate filters when breathing becomes harder.\n\nEmployees must be allowed to leave the work area to wash the facepiece, replace a cartridge or filter, or whenever they smell or taste the contaminant."
+    },
+    {
+      "heading": "IDLH atmospheres and confined spaces",
+      "body": "An atmosphere **immediately dangerous to life or health (IDLH)** could kill, permanently harm or disable your ability to escape. Oxygen below 19.5 percent is IDLH. So is a manhole with hydrogen sulfide, a chlorine room after a leak, or any space where the hazard is unknown.\n\nIDLH entry requires a **full facepiece pressure demand SCBA** or a pressure demand supplied air respirator with an auxiliary self contained air supply. At least one trained standby person must be outside, in contact with the entrant, equipped with the same respirator and retrieval gear, and must call for help before entering to rescue.\n\nFor Public Works the IDLH rule meets the confined space rule most often in **wastewater and stormwater work**: manholes, wet wells, lift stations and vaults. Hydrogen sulfide deadens the sense of smell at dangerous levels, and methane displaces oxygen. Air purifying respirators, including cartridge masks sold for sewer gas, are **never** acceptable for entry into an atmosphere that is or may be IDLH. Test the air before and during entry, ventilate, and follow the confined space program. Operators who respond to a chlorine leak need SCBA, not a cartridge respirator, because leak concentrations are unknown."
+    },
+    {
+      "heading": "What this means for Public Works crews",
+      "body": "**Public Services.** The fleet shop is where most required respirator use happens. **Welding fume** on galvanized or painted metal, **sandblasting** and spray painting all call for an exposure evaluation and often a respirator. Streets and sign shop crews who **cut, grind or core concrete or asphalt** are exposed to **respirable crystalline silica**. Wet cutting and vacuum shrouds come first. Facilities staff disturbing insulation or floor tile in **older buildings** must assume **asbestos** until a survey proves otherwise.\n\n**Environmental Services.** Water and wastewater plants face **chlorine**, sulfur dioxide and ammonia in daily work and SCBA level hazards during leaks. Collections crews face **sewer gases** in manholes and lift stations. Forestry crews applying **pesticides and herbicides** must use the respirator shown on the EPA product label.\n\n**Electric Services.** Line and substation crews meet respirator hazards less often: cutting concrete pads and vault lids, battery room acid mist, lead paint on older structures and SF6 by-products after a breaker fault. Underground vaults carry the same gas hazards as a manhole.\n\nIn every division the sequence is the same: evaluate the hazard, control it at the source, then choose a respirator. Medical clearance comes before fit testing, fit testing before use, and a seal check before every use."
+    }
+  ],
+  "key_takeaways": [
+    "Engineering controls come first, and respirators are required only when those controls cannot keep exposures below the permissible exposure limit.",
+    "Voluntary users of filtering facepieces must receive the Appendix D information, and voluntary users of any other respirator also need a medical evaluation and basic maintenance rules.",
+    "A written, worksite specific program run by a trained program administrator is required wherever respirators are required.",
+    "Only NIOSH approved respirators may be used, matched to the hazard with the right filter or cartridge and an assigned protection factor high enough for the exposure.",
+    "Medical evaluation comes before fit testing, and fit testing comes before first use and at least every 12 months after that.",
+    "A user seal check is done every time a tight fitting respirator is put on, and facial hair in the seal area is not allowed.",
+    "Air purifying respirators never add oxygen and are never used in IDLH atmospheres, including manholes, wet wells and chlorine leaks, where SCBA or supplied air with escape bottle is required.",
+    "The most common citations, no medical evaluation, no fit test and no written program, all come from handing out respirators without the program behind them."
+  ],
+  "questions": [
+    {
+      "text": "An employee wants to wear a disposable N95 while sweeping the shop, even though exposure is below the permissible limit. What must the employer do?",
+      "options": [
+        "Nothing, because voluntary use is outside the standard",
+        "Provide the Appendix D information and make sure the respirator will not itself create a hazard",
+        "Require a quantitative fit test before the employee can wear it",
+        "Prohibit the use, because respirators are allowed only when required"
+      ],
+      "answer": 1,
+      "explanation": "Voluntary use of a filtering facepiece requires the employer to give the employee Appendix D and to confirm the respirator will not create a hazard. Medical evaluation and a written program are required for voluntary use only when the respirator is more than a filtering facepiece."
+    },
+    {
+      "text": "What is the correct order of steps before an employee uses a tight fitting respirator for the first time?",
+      "options": [
+        "Fit test, then medical evaluation, then user seal check",
+        "User seal check, then fit test, then medical evaluation",
+        "Medical evaluation, then fit test, then user seal check each time it is worn",
+        "Medical evaluation and fit test are both optional if the employee has worn respirators before"
+      ],
+      "answer": 2,
+      "explanation": "The standard requires medical clearance before fit testing, fit testing before first use, and a user seal check every time the respirator is put on."
+    },
+    {
+      "text": "How often must fit testing be repeated for an employee who continues to use the same respirator?",
+      "options": [
+        "At least every 12 months",
+        "Every 6 months",
+        "Every 2 years",
+        "Only when the employee changes jobs"
+      ],
+      "answer": 0,
+      "explanation": "Fit testing is required before first use, at least annually, and whenever the respirator model or size changes or a change in the wearer's face could affect the fit."
+    },
+    {
+      "text": "Which filter is the right choice for respirable crystalline silica, lead or asbestos work where the highest level of particulate filtration is needed?",
+      "options": [
+        "N95",
+        "R95",
+        "Organic vapor cartridge",
+        "P100"
+      ],
+      "answer": 3,
+      "explanation": "A P100 filter is the most efficient particulate class (99.97 percent) and is oil proof, making it the standard choice for the most toxic particulates. An organic vapor cartridge does not filter particles."
+    },
+    {
+      "text": "A collections crew needs to enter a manhole where the gas meter reads 17 percent oxygen. What respirator is required?",
+      "options": [
+        "A half mask with acid gas cartridges",
+        "A full facepiece air purifying respirator with P100 filters",
+        "A full facepiece pressure demand SCBA, or supplied air with an auxiliary escape cylinder",
+        "An N95 filtering facepiece with a user seal check"
+      ],
+      "answer": 2,
+      "explanation": "Oxygen below 19.5 percent is IDLH. Air purifying respirators cannot add oxygen, so IDLH entry requires pressure demand SCBA or a pressure demand supplied air respirator with an auxiliary self contained air supply."
+    },
+    {
+      "text": "What is the assigned protection factor of a properly fitted half mask air purifying respirator?",
+      "options": [
+        "5",
+        "10",
+        "50",
+        "1,000"
+      ],
+      "answer": 1,
+      "explanation": "A half mask APR has an APF of 10, meaning it should reduce exposure to one tenth of the airborne concentration when properly fitted and used. A full facepiece APR has an APF of 50."
+    },
+    {
+      "text": "Which statement about facial hair and respirators is correct?",
+      "options": [
+        "A short, neatly trimmed beard is acceptable under a half mask if the fit test is passed",
+        "Facial hair matters only for full facepiece respirators",
+        "Facial hair is acceptable as long as the employee does a user seal check",
+        "Facial hair that comes between the sealing surface and the face is not allowed with any tight fitting respirator"
+      ],
+      "answer": 3,
+      "explanation": "The standard prohibits tight fitting respirators on employees with facial hair that interferes with the seal or the valves. Employees who cannot shave need a loose fitting hood or helmet style PAPR."
+    },
+    {
+      "text": "What must a cartridge change schedule be based on?",
+      "options": [
+        "The user's sense of smell or taste for the contaminant",
+        "Objective information such as manufacturer service life data and measured exposure, or an end of service life indicator",
+        "A fixed rule of one new cartridge per month",
+        "Whether the cartridge looks dirty"
+      ],
+      "answer": 1,
+      "explanation": "Smell is not a reliable warning for many chemicals, so the employer must base the change schedule on objective data or use cartridges with an end of service life indicator."
+    },
+    {
+      "text": "Who is told the full results of an employee's respirator medical evaluation?",
+      "options": [
+        "The employee, who receives a written recommendation, while the employer is told only whether the employee can wear the respirator and any limits",
+        "The supervisor, who keeps a copy in the employee's personnel file",
+        "The program administrator and the safety committee",
+        "The employer, who must post the results with the written program"
+      ],
+      "answer": 0,
+      "explanation": "The health care professional gives the employee a written recommendation and tells the employer only whether the employee is medically able to use the respirator and under what limits. The medical details stay confidential."
+    },
+    {
+      "text": "A streets crew is dry cutting a concrete curb with a gas powered saw. What should happen first under the respiratory protection approach?",
+      "options": [
+        "Issue N95 respirators to the crew and continue dry cutting",
+        "Issue P100 respirators without a fit test because the job is short",
+        "Switch to wet cutting or a vacuum shroud to control the silica dust at the source, then evaluate whether a respirator is still needed",
+        "Have the crew hold their breath while making the cut"
+      ],
+      "answer": 2,
+      "explanation": "The standard requires engineering controls such as wet cutting or dust collection first. A respirator is selected only after the remaining exposure has been evaluated, and then only after medical clearance and fit testing."
+    }
+  ]
+}

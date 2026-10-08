@@ -1,0 +1,11 @@
+Hello {{ supervisor.first_name }},
+
+{{ user.full_name }} has completed the annual safety training module:
+
+  Course:    {{ course.title }}{% if course.standard %} ({{ course.standard }}){% endif %}
+  Completed: {{ assignment.completed_at.strftime('%B %d, %Y %I:%M %p') }}
+  Score:     {{ assignment.score }} of {{ assignment.total_questions }} ({{ assignment.percent }}%) in {{ assignment.attempts }} attempt{% if assignment.attempts != 1 %}s{% endif %}
+
+Team training status: {{ link }}
+
+{{ org_name }}

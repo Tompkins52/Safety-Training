@@ -1,0 +1,15 @@
+A new {{ incident.type_label|lower }} report has been submitted.
+
+  Incident no.: {{ incident.incident_number }}
+  Occurred:     {{ incident.occurred_at.strftime('%B %d, %Y %I:%M %p') }}
+  Location:     {{ incident.location }}
+  Division:     {{ incident.division.name if incident.division else 'Not specified' }}
+  Severity:     {{ incident.severity_label }}
+  Reported by:  {{ incident.reported_by.full_name }}
+
+Description:
+{{ incident.description }}
+
+Review the report and begin the investigation: {{ link }}
+
+{{ org_name }}

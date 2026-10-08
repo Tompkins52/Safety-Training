@@ -1,0 +1,11 @@
+Hello {{ user.first_name }},
+
+New safety training has been assigned to you:
+
+  Course:   {{ course.title }}{% if course.standard %} ({{ course.standard }}){% endif %}
+  Due date: {{ assignment.due_date.strftime('%B %d, %Y') }}
+  Time:     about {{ course.duration_minutes }} minutes, plus a {{ course.questions|length }} question quiz
+
+Sign in to complete it: {{ link }}
+
+{{ org_name }}

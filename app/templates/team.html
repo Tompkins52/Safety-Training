@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}My team · {{ app_name }}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div><h1>My team</h1><p class="muted">Training status for the employees who report to you. You receive an email each time one of them completes a course.</p></div>
+</div>
+
+<section class="card">
+  <h2>Compliance</h2>
+  {% if rows %}
+  <table class="table">
+    <thead><tr><th>Employee</th><th>Division</th><th>Title</th><th class="num">Open</th><th class="num">Due in 30 days</th><th class="num">Overdue</th><th class="num">Completed (12 mo)</th><th>Overdue courses</th></tr></thead>
+    <tbody>
+    {% for row in rows %}
+      <tr>
+        <td><span class="dot dot-{{ row.status }}"></span> {{ row.user.full_name }}<br><small class="muted">{{ row.user.email }}</small></td>
+        <td>{{ row.user.division.name if row.user.division else '' }}</td>
+        <td>{{ row.user.job_title or '' }}</td>
+        <td class="num">{{ row.open }}</td>
+        <td class="num">{{ row.due_soon }}</td>
+        <td class="num">{% if row.overdue %}<span class="badge badge-danger">{{ row.overdue }}</span>{% else %}0{% endif %}</td>
+        <td class="num">{{ row.completed_12mo }}</td>
+        <td class="small">{% for a in row.user.assignments if a.is_overdue %}{{ a.course.title }} (due {{ a.due_date|date }}){% if not loop.last %}; {% endif %}{% endfor %}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="muted">No employees report to you yet.</p>
+  {% endif %}
+</section>
+
+<section class="card">
+  <h2>Recent completions</h2>
+  {% if recent_completions %}
+  <table class="table compact">
+    <thead><tr><th>Employee</th><th>Course</th><th>Completed</th><th class="num">Score</th><th class="num">Attempts</th></tr></thead>
+    <tbody>
+    {% for a in recent_completions %}
+      <tr><td>{{ a.user.full_name }}</td><td>{{ a.course.title }}</td><td>{{ a.completed_at|datetime }}</td><td class="num">{{ a.score }}/{{ a.total_questions }} ({{ a.percent }}%)</td><td class="num">{{ a.attempts }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="muted">No completions yet.</p>
+  {% endif %}
+</section>
+{% endblock %}

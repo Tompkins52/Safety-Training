@@ -1,0 +1,13 @@
+Hello {{ user.first_name }},
+
+This is a reminder that your annual safety training is due {% if days_left == 0 %}today{% else %}in {{ days_left }} day{% if days_left != 1 %}s{% endif %}{% endif %}:
+
+  Course:   {{ course.title }}{% if course.standard %} ({{ course.standard }}){% endif %}
+  Due date: {{ assignment.due_date.strftime('%B %d, %Y') }}
+  Time:     about {{ course.duration_minutes }} minutes, plus a {{ course.questions|length }} question quiz
+
+Sign in to complete it: {{ link }}
+
+If you have questions, contact your supervisor{% if user.supervisor %}, {{ user.supervisor.full_name }}{% endif %}.
+
+{{ org_name }}

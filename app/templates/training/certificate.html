@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Certificate · {{ course.title }}{% endblock %}
+{% block body_class %}print-page{% endblock %}
+{% block content %}
+<div class="no-print page-head">
+  <div><h1>Certificate of completion</h1></div>
+  <div class="actions"><button class="btn btn-primary" onclick="window.print()">Print</button> <a class="btn btn-ghost" href="{{ url_for('training.my_training') }}">Back</a></div>
+</div>
+
+<div class="certificate">
+  <div class="cert-border">
+    <p class="cert-org">{{ org_name }}</p>
+    <h1 class="cert-title">Certificate of Completion</h1>
+    <p class="cert-lead">This certifies that</p>
+    <p class="cert-name">{{ assignment.user.full_name }}</p>
+    <p class="cert-lead">{% if assignment.user.job_title %}{{ assignment.user.job_title }}, {% endif %}{% if assignment.user.division %}{{ assignment.user.division.name }}{% endif %}</p>
+    <p class="cert-lead">has successfully completed the annual safety training module</p>
+    <p class="cert-course">{{ course.title }}</p>
+    {% if course.standard %}<p class="cert-std">{{ course.standard }}{% if course.standard_title %} · {{ course.standard_title }}{% endif %}</p>{% endif %}
+    <div class="cert-meta">
+      <div><span>Completed</span><strong>{{ assignment.completed_at|date('%B %d, %Y') }}</strong></div>
+      <div><span>Quiz score</span><strong>{{ assignment.score }} of {{ assignment.total_questions }} ({{ assignment.percent }}%)</strong></div>
+      <div><span>Valid through</span><strong>{{ valid_through|date('%B %d, %Y') }}</strong></div>
+      <div><span>Certificate no.</span><strong>{{ assignment.certificate_number }}</strong></div>
+    </div>
+    <div class="cert-sign">
+      <div><span class="line"></span>Employee signature</div>
+      <div><span class="line"></span>Supervisor{% if assignment.user.supervisor %}: {{ assignment.user.supervisor.full_name }}{% endif %}</div>
+    </div>
+    <p class="cert-foot">{{ app_name }} · {{ credits }}</p>
+  </div>
+</div>
+{% endblock %}

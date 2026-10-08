@@ -1,0 +1,176 @@
+{
+  "slug": "ladders",
+  "title": "Ladders",
+  "standard": "29 CFR 1926.1053",
+  "standard_title": "Ladders (construction)",
+  "category": "osha_top10",
+  "top10_rank": 5,
+  "divisions": ["electric", "environmental", "public"],
+  "duration_minutes": 30,
+  "renewal_months": 12,
+  "summary": "Ladders are on nearly every public works truck and in every shop, which is why ladder violations stay on OSHA's Top 10 list every year. This course covers how to pick the right ladder, inspect it, set it up at the correct angle, climb it safely and know when a ladder is the wrong tool. It also explains the rules for fixed ladders on tanks and structures and the training required under 1926.1060.",
+  "objectives": [
+    "Select a ladder with the correct duty rating and material for the task, including nonconductive ladders near electrical hazards.",
+    "Inspect a ladder before use, identify defects that require removal from service, and tag the ladder so no one else uses it.",
+    "Set up an extension ladder at the 4 to 1 angle with the side rails extending at least 3 feet above the landing or secured with a grab device.",
+    "Apply the use rules in 1926.1053(b), including three points of contact, facing the ladder and staying off the top steps.",
+    "Recognize when fixed ladders on tanks and structures require cages, wells or personal fall arrest systems.",
+    "Describe the ladder training required under 1926.1060 and how it is documented."
+  ],
+  "sections": [
+    {
+      "heading": "Choosing the right ladder",
+      "body": "Ladder safety starts before you climb. Three choices decide whether the ladder can do the job.\n\n**Duty rating.** Every portable ladder carries a label with its duty rating, the maximum load it can carry, including you, your tools and your materials. Ratings run from Type III (200 pounds) up to Type IAA (375 pounds). The department buys Type IA (300 pounds) and IAA ladders for field work. Add up your body weight, tool belt and whatever you are carrying before you choose.\n\n**Material.** Near any electrical hazard, use a **nonconductive fiberglass ladder**. Section 1926.1053(b)(12) requires nonconductive side rails when the employee or the ladder could contact exposed energized equipment. **Never use a metal ladder near energized lines or equipment**, including service drops, street light poles, signal cabinets and anything in a substation. Aluminum conducts, and so does wet wood.\n\n**Type.** A stepladder is for free-standing work, fully opened with the spreaders locked, never leaned against a wall. An extension ladder is for reaching a landing or wall. Either must be long enough to work from without standing on the top steps."
+    },
+    {
+      "heading": "Why this standard is on the Top 10",
+      "body": "Ladder citations are common because ladders are everywhere and the mistakes are visible from the street.\n\nThe paragraphs cited most often under 1926.1053 are:\n\n- **(b)(1)** Side rails not extending at least 3 feet above the upper landing, with no grab device or securing in its place.\n- **(b)(4)** Ladders used for something other than their designed purpose, such as a closed stepladder leaned against a wall.\n- **(b)(13)** Workers standing on the top step or cap of a stepladder.\n- **(b)(16)** Defective ladders left in service instead of being tagged and removed.\n- **(b)(22)** Workers carrying loads that could cause them to lose their balance.\n\nNone of these take special equipment to fix. They take the extra minute to pick the right ladder, set it correctly and tie it off. Ladder falls are usually short falls, and short falls still break bones and end careers."
+    },
+    {
+      "heading": "Inspection and removing defective ladders",
+      "body": "Section 1926.1053(b)(15) requires a competent person to inspect ladders periodically and after any event that could affect their safe use, such as being dropped or run over. Every user should also look the ladder over before each climb. Check for:\n\n- Cracked, split, bent or dented side rails.\n- Missing, loose, bent or broken rungs, cleats or steps.\n- Worn or missing nonslip feet.\n- Loose rivets, bolts or hinges, spreaders that do not lock, and rung locks that do not hold.\n- Oil, grease, mud or ice on rungs or rails.\n- Fiberglass that is chalky, cracked or shows exposed fibers, which weakens the rail and reduces its insulating value.\n\nUnder 1926.1053(b)(16), a ladder with a structural defect must be **immediately marked as defective or tagged 'Do Not Use'** and **withdrawn from service** until it is repaired to its original design or discarded. Do not set it back on the truck rack for the next shift to grab. Tag it, pull it and tell your supervisor. Do not make field repairs with tape, wire or scrap lumber."
+    },
+    {
+      "heading": "Setting up the ladder",
+      "body": "Most ladder falls happen because the ladder moved. The setup rules exist to keep it still.\n\n- **The 4 to 1 angle.** Set a non-self-supporting ladder so the horizontal distance from the foot to the top support is **one quarter of the working length**. For a ladder reaching 16 feet up, the feet go 4 feet out.\n- **Extend 3 feet above the landing.** Side rails must **extend at least 3 feet above an upper landing**. If the ladder is too short, it must be **secured at the top to a rigid support** with a **grab rail or grab device** installed so you have something to hold while stepping on and off.\n- **Firm, level footing.** Section 1926.1053(b)(6) requires stable and level surfaces unless the ladder is secured against displacement. Use leg levelers on slopes.\n- **Never on boxes, barrels or other unstable bases.** The general industry rule, 1910.23(c), says this directly. Get a longer ladder.\n- **Secure the ladder.** Tie it off at the top, have someone foot the bottom, or both. In a passageway, doorway or driveway, secure or barricade it.\n- **Keep the top and bottom clear** so you can step on and off without tripping."
+    },
+    {
+      "heading": "Climbing and working from a ladder",
+      "body": "Once the ladder is set, the rules in 1926.1053(b) govern how you use it.\n\n- **Face the ladder** going up and coming down.\n- **Keep three points of contact**: two hands and one foot, or two feet and one hand, on the ladder when climbing. Use at least one hand to grasp the ladder at all times.\n- **Do not carry loads that could cause you to lose your balance.**\n- **Keep your belt buckle between the rails.** Leaning out tips the ladder. Climb down and move it instead.\n- **Stay off the top of a stepladder.** The **top or top step** of a stepladder shall not be used as a step.\n- **Stay off the top rungs of an extension ladder.** Never stand above the highest standing level marked on the manufacturer's label. OSHA's ladder safety guidance is not to stand on the top three rungs of a straight or extension ladder. Need more height? Get a longer ladder.\n- **Do not exceed the maximum intended load**, which includes everything on the ladder with you.\n- **Do not move, shift or extend a ladder while anyone is on it.**\n- **Use ladders only for their designed purpose**, never as a scaffold plank or ramp, and **do not tie ladders together** unless they are designed for it."
+    },
+    {
+      "heading": "Fixed ladders on tanks, towers and structures",
+      "body": "Public works facilities are full of fixed ladders: water towers, clarifiers, digesters, wet wells and shop mezzanines. Most are general industry walking-working surfaces, so **29 CFR 1910.23** (ladders) and **1910.28** (duty to have fall protection) apply alongside the construction rule.\n\n- Under 1926.1053(a)(19), a fixed ladder with a length of climb of **24 feet or more** must have a ladder safety device, a self-retracting lifeline, or a cage or well with the ladder broken into sections. Under 1910.28(b)(9), a fixed ladder extending **more than 24 feet** above a lower level must have a personal fall arrest system, a ladder safety system, a cage or a well. Cages and wells are being phased out: a ladder installed or replaced since November 19, 2018 needs a **ladder safety system or PFAS**, and every fixed ladder over 24 feet must have one by **November 18, 2036**.\n- A ladder safety system uses a sleeve that locks onto a rail or cable if you fall. Be trained on the sleeve before you clip in.\n\nA cage will not stop a fall. It only keeps you close to the ladder if you slip. Do not treat it as fall protection."
+    },
+    {
+      "heading": "Training under 1926.1060",
+      "body": "Section **29 CFR 1926.1060** requires the employer to provide a training program for each employee using ladders and stairways. The program must enable each worker to recognize ladder and stairway hazards and know the procedures that minimize them. Training must be given by a **competent person** and must cover, as applicable:\n\n- The nature of fall hazards in the work area.\n- Correct procedures for erecting, maintaining and disassembling the fall protection systems used.\n- Proper construction, use, placement and care in handling of all ladders and stairways.\n- The **maximum intended load-carrying capacity** of the ladders used.\n- The standards in Subpart X themselves.\n\nRetraining is required as necessary so that workers keep the understanding the standard calls for. Unlike 1926.503, this section does not spell out a written certification record. The department documents it anyway, through this platform. Your completion record here, plus the ladder portion of your division's hands-on session, is your training record."
+    },
+    {
+      "heading": "What this means for Public Works crews",
+      "body": "**Electric Services.** Fiberglass only, no exceptions. Line crews, substation technicians and meter technicians work around energized conductors, service drops, meter bases and padmount transformers every day. Keep the ladder and anything you carry outside the minimum approach distance, and never lean a ladder against a conductor, guy wire or pole-mounted enclosure.\n\n**Environmental Services.** Plant operators climb fixed ladders on clarifiers, digesters and elevated tanks, many of them over 24 feet. Know which ladders have a safety system and bring the right sleeve. Collection crews using portable ladders in manholes and vaults are also under confined space rules; the ladder is the escape route, so it must be secured and clear.\n\n**Public Services.** Signal and streetlight technicians near energized equipment follow the same fiberglass rule as Electric. Facilities staff working through a roof hatch must have the ladder extend 3 feet above the hatch or be secured with a grab bar. Forestry crews never set a ladder near overhead lines. Fleet mechanics working on truck bodies and plows should use a platform ladder or rolling stairs when a task takes more than a minute.\n\nFor everyone: if the ladder in the truck is the wrong one, go get the right one. The trip back to the shop is cheaper than the fall."
+    }
+  ],
+  "key_takeaways": [
+    "Choose a ladder with a duty rating that covers you plus your tools and materials, and use nonconductive fiberglass anywhere there is an electrical hazard.",
+    "Never use a metal ladder near energized lines or equipment.",
+    "Inspect every ladder before use, and tag and remove any ladder with a structural defect so no one else climbs it.",
+    "Set extension ladders at a 4 to 1 angle on firm, level footing, extend the rails at least 3 feet above the landing or secure the ladder with a grab device, and never set a ladder on boxes or barrels.",
+    "Face the ladder, keep three points of contact, keep your belt buckle between the rails, and do not carry loads that could throw off your balance.",
+    "Do not stand on the top step or cap of a stepladder, or above the highest standing level marked on an extension ladder.",
+    "Fixed ladders with a climb of 24 feet or more need a cage, well or ladder safety system, and ladders installed or replaced since November 2018 must have a ladder safety system or personal fall arrest system.",
+    "Ladder training under 1926.1060 is given by a competent person, covers hazards, setup, care and load capacity, and is documented on this platform."
+  ],
+  "questions": [
+    {
+      "text": "A technician needs to replace a photocell on a streetlight pole next to an energized service drop. Which ladder is correct?",
+      "options": [
+        "A Type IA aluminum extension ladder because it is lighter",
+        "A Type I wood ladder as long as it is dry",
+        "A Type IA or IAA fiberglass extension ladder",
+        "Any ladder, as long as a second worker foots it"
+      ],
+      "answer": 2,
+      "explanation": "Near energized equipment the ladder must have nonconductive side rails, and the department uses Type IA and IAA ratings for field work. Metal ladders are never used near energized lines, and wet wood conducts too."
+    },
+    {
+      "text": "What must happen to a portable ladder found with a cracked side rail?",
+      "options": [
+        "Tag it 'Do Not Use' and remove it from service until repaired or discarded",
+        "Wrap the crack with tape and finish the job",
+        "Set it back on the truck rack and report it at the end of the week",
+        "Keep using it for light-duty tasks only"
+      ],
+      "answer": 0,
+      "explanation": "Section 1926.1053(b)(16) requires a ladder with structural defects to be immediately marked or tagged 'Do Not Use' and withdrawn from service until it is repaired to its original design or discarded."
+    },
+    {
+      "text": "An extension ladder is set so its top rests 20 feet up a wall. How far out from the wall should the feet be?",
+      "options": [
+        "2 feet",
+        "10 feet",
+        "8 feet",
+        "5 feet"
+      ],
+      "answer": 3,
+      "explanation": "The 4 to 1 rule puts the feet one quarter of the working length away from the wall. One quarter of 20 feet is 5 feet."
+    },
+    {
+      "text": "A ladder used to reach a roof is too short for the rails to extend 3 feet above the edge. What does the standard allow?",
+      "options": [
+        "Set the ladder on a sturdy box to gain the missing height",
+        "Secure the ladder at the top to a rigid support and install a grab rail or grab device",
+        "Use it as long as a worker foots the bottom",
+        "Lean a second ladder beside it for a handhold"
+      ],
+      "answer": 1,
+      "explanation": "Section 1926.1053(b)(1) requires the rails to extend at least 3 feet above the landing, or the ladder must be secured at the top to a rigid support and a grab device provided. Boxes are never an acceptable base."
+    },
+    {
+      "text": "Which of these is prohibited by the standard?",
+      "options": [
+        "Facing the ladder while climbing",
+        "Using a hand line to raise tools after reaching the work",
+        "Placing a ladder on a barrel to reach a higher point",
+        "Tying the top of the ladder off to a rigid support"
+      ],
+      "answer": 2,
+      "explanation": "Section 1926.1053(b)(6) requires stable and level footing, and the general industry rule in 1910.23(c) says directly that ladders are not placed on boxes, barrels or other unstable bases to gain height. The other choices are correct practices."
+    },
+    {
+      "text": "What does 'three points of contact' mean when climbing a ladder?",
+      "options": [
+        "Both feet on the same rung and one hand on a rail",
+        "Two hands and one foot, or two feet and one hand, on the ladder at all times",
+        "One hand, one foot and one tool in contact with the ladder",
+        "Three rungs between you and the top of the ladder"
+      ],
+      "answer": 1,
+      "explanation": "Three points of contact means two hands and one foot or two feet and one hand are always on the ladder. The standard also requires at least one hand to grasp the ladder at all times while climbing."
+    },
+    {
+      "text": "Where may a worker stand on a stepladder?",
+      "options": [
+        "On the top cap, as long as the spreaders are locked",
+        "On the top step, if a second worker holds the ladder",
+        "On any step, including the pail shelf, if the duty rating allows it",
+        "On the steps below the top step, never on the top step or top cap"
+      ],
+      "answer": 3,
+      "explanation": "Section 1926.1053(b)(13) prohibits using the top or top step of a stepladder as a step. The cap is not a step, no matter who is holding the ladder."
+    },
+    {
+      "text": "A worker on an extension ladder needs to reach a little higher. Which choice follows the standard and the manufacturer's label?",
+      "options": [
+        "Climb down and get a longer ladder, since the label marks the highest standing level",
+        "Stand on the top rung and hold the wall for balance",
+        "Have a coworker extend the ladder while the worker stays on it",
+        "Stand on the second rung from the top and lean out past the rail"
+      ],
+      "answer": 0,
+      "explanation": "Workers must not stand above the highest standing level shown on the manufacturer's label, must not have a ladder moved or extended while they are on it, and must keep their body centered between the rails."
+    },
+    {
+      "text": "At what length of climb do the fixed ladder rules require a cage, well, ladder safety system or personal fall arrest system?",
+      "options": [
+        "10 feet",
+        "16 feet",
+        "24 feet",
+        "50 feet"
+      ],
+      "answer": 2,
+      "explanation": "Both 1926.1053(a)(19) and the general industry rule 1910.28(b)(9) use 24 feet as the trigger. Fixed ladders installed or replaced since November 2018 need a ladder safety system or PFAS rather than a cage alone."
+    },
+    {
+      "text": "Which topic must ladder training under 1926.1060 include?",
+      "options": [
+        "How to repair a cracked fiberglass rail in the field",
+        "The maximum intended load-carrying capacity of the ladders used",
+        "The purchase history of each ladder on the truck",
+        "How to tie two ladders together to make a longer one"
+      ],
+      "answer": 1,
+      "explanation": "Section 1926.1060(a)(1)(iv) requires training on the maximum intended load-carrying capacity of ladders used, along with hazards, proper construction, use, placement and care. Field repairs and tying ladders together are prohibited practices."
+    }
+  ]
+}
