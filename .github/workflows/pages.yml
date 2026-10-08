@@ -1,0 +1,44 @@
+name: Publish browser edition
+
+# Builds the browser edition (static site) from the course content and pushes
+# it to the gh-pages branch. GitHub Pages serves that branch at
+# https://tompkins52.github.io/Safety-Training/
+# One-time setup: repository Settings > Pages > Source "Deploy from a branch",
+# branch "gh-pages", folder "/ (root)".
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/**"
+      - "site/**"
+      - "scripts/build_site.py"
+      - "app/static/css/app.css"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install markdown
+      - run: python scripts/build_site.py --out dist
+      - name: Push to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          force_orphan: true
+          commit_message: "Publish browser edition"

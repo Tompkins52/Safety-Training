@@ -1,0 +1,18 @@
+{
+  "name": "Public Works Safety Training",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "postCreateCommand": "pip install -r requirements.txt && ([ -f .env ] || cp .env.example .env) && FLASK_APP=run.py flask init-db && FLASK_APP=run.py flask seed-demo",
+  "postStartCommand": "nohup python run.py > /tmp/safety-training.log 2>&1 &",
+  "forwardPorts": [5000],
+  "portsAttributes": {
+    "5000": {
+      "label": "Safety Training (full platform)",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"]
+    }
+  }
+}

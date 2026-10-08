@@ -1,6 +1,6 @@
 # Writing and editing training content
 
-Each training module is one JSON file in `content/courses/`. The file name does not matter; the `slug` inside the file identifies the course. After editing, reload with **Admin > Courses > Reload content from files** or `flask load-content`.
+Each training module is one JSON file in `content/courses/`. The file name does not matter; the `slug` inside the file identifies the course. After editing, reload with **Admin > Courses > Reload content from files** or `flask load-content`. The browser edition on GitHub Pages is rebuilt automatically when the change is pushed to `main` (or run `python scripts/build_site.py` locally).
 
 ## File structure
 

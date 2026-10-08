@@ -1,0 +1,44 @@
+# Render blueprint for the full platform (https://render.com).
+# Click "Deploy to Render" in README.md, or in the Render dashboard choose
+# New > Blueprint and point it at this repository.
+#
+# The Starter plan with a 1 GB disk (about $8 per month) keeps the database
+# between restarts, which a department will want. For a short evaluation you
+# can change "plan: starter" to "plan: free" and delete the "disk" block and
+# the DATABASE_URL line; on the free plan the database resets whenever the
+# service restarts.
+services:
+  - type: web
+    name: safety-training
+    runtime: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: flask init-db && gunicorn --workers 1 --threads 4 --timeout 120 --bind 0.0.0.0:$PORT "app:create_app()"
+    healthCheckPath: /login
+    disk:
+      name: safety-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.6"
+      - key: FLASK_APP
+        value: run.py
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        value: sqlite:////var/data/safety.db
+      - key: ORG_NAME
+        value: Public Works Department
+      - key: APP_NAME
+        value: Public Works Safety Training
+      - key: TIMEZONE
+        value: America/Chicago
+      - key: TZ
+        value: America/Chicago
+      # Set this to the address Render gives the service (used in email links),
+      # then fill in the MAIL_* settings from .env.example to turn on email.
+      - key: APP_BASE_URL
+        sync: false
+      - key: MAIL_ENABLED
+        value: "false"

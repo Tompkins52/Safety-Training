@@ -14,3 +14,4 @@ instance/
 Thumbs.db
 .idea/
 .vscode/
+dist/

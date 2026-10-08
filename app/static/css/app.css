@@ -262,6 +262,7 @@ fieldset .checkbox { margin: 6px 0; }
 
 /* Responsive */
 @media (max-width: 860px) {
+  .card { overflow-x: auto; }
   .grid-2, .course-layout, .form-grid { grid-template-columns: 1fr; }
   .form-grid .span-2 { grid-column: auto; }
   .course-toc .sticky { position: static; }

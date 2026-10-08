@@ -4,6 +4,30 @@ An annual OSHA safety training and incident management platform for a municipal 
 
 **Developed by Lorenzo McCoy and Mark Tompkins.**
 
+## Open it
+
+There are two editions of the platform in this repository.
+
+| | Browser edition | Full platform |
+| --- | --- | --- |
+| Where it runs | GitHub Pages, nothing to install | A small server (or a free GitHub Codespace for a trial) |
+| Address | **https://tompkins52.github.io/Safety-Training/** | Your own address once it is hosted |
+| Training modules and 10-question quizzes | Yes | Yes |
+| Certificates | Yes | Yes |
+| Incident reports, investigation, printable report | Yes (saved in the browser; export to JSON to hand in) | Yes (central records) |
+| Email reminders 30 days before due, 7 days, overdue | Calendar reminders (.ics download) | Yes, automatic |
+| Supervisor completion and incident notices | "Email my record" and "Email this report" buttons | Yes, automatic |
+| Employee accounts, assignments by division, compliance reports | No | Yes |
+
+**Browser edition.** Open https://tompkins52.github.io/Safety-Training/ on any phone or computer. First-time setup for the repository owner: Settings > Pages > Source "Deploy from a branch" > branch `gh-pages`, folder `/ (root)` > Save. The site is rebuilt automatically whenever course content changes on `main`.
+
+**Full platform, try it in five minutes.** Open the repository on GitHub, click **Code > Codespaces > Create codespace on main**, wait for the setup to finish, and the platform opens in a new browser tab with demo accounts loaded (see below). Codespaces is free for personal GitHub accounts within the monthly allowance.
+
+**Full platform, hosted for the department.** Any of these works:
+- [Deploy to Render](https://render.com/deploy?repo=https://github.com/Tompkins52/Safety-Training) using the included `render.yaml` (Starter plan with a persistent disk, about $8 per month; the file explains the free option).
+- Docker on a city server: `docker compose up -d` (below).
+- IT-managed Linux or Windows server: [docs/deployment.md](docs/deployment.md).
+
 ![Admin dashboard](docs/screenshots/admin-dashboard.png)
 
 ## What it does
@@ -98,6 +122,8 @@ The training content is an awareness-level annual refresher. It summarizes the s
 ## Project layout
 
 ```
+site/            browser edition (index.html, app.js, extra.css); built by scripts/build_site.py
+scripts/         build_site.py writes the browser edition to dist/
 app/
   blueprints/      auth, dashboard and team pages, training and quizzes, incidents, admin
   services/        assignments and grading, notifications, mailer, content loader
@@ -124,6 +150,7 @@ tests/             end-to-end tests (pytest)
 | `flask assign-annual --due 2027-01-31` | Assign every applicable course to every active employee |
 | `flask run-notifications` | Run the daily reminder job once (for cron) |
 | `flask send-test-email you@example.gov` | Check the SMTP settings |
+| `python scripts/build_site.py` | Build the browser edition into `dist/` |
 | `python -m pytest tests` | Run the test suite |
 
 ## License
