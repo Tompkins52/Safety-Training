@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{% if creating %}Add employee{% else %}{{ user.full_name }}{% endif %} · {{ app_name }}{% endblock %}
+{% block title %}{% if creating %}Add employee{% else %}{{ user.full_name }}{% endif %} | {{ app_name }}{% endblock %}
 {% block content %}
 <div class="page-head">
   <div><h1>{% if creating %}Add employee{% else %}{{ user.full_name }}{% endif %}</h1></div>
@@ -70,7 +70,7 @@
         <td>{{ a.completed_at|date }}</td>
         <td class="num">{% if a.score is not none %}{{ a.score }}/{{ a.total_questions }}{% endif %}</td>
         <td class="num">{{ a.attempts }}</td>
-        <td class="small muted">{% if a.reminder_30_sent_at %}30d {{ a.reminder_30_sent_at|date }}{% endif %}{% if a.reminder_7_sent_at %} · 7d {{ a.reminder_7_sent_at|date }}{% endif %}{% if a.overdue_last_reminded_at %} · overdue {{ a.overdue_last_reminded_at|date }}{% endif %}{% if a.supervisor_notified_at %} · supervisor notified{% endif %}</td>
+        <td class="small muted">{% if a.reminder_30_sent_at %}30d {{ a.reminder_30_sent_at|date }}{% endif %}{% if a.reminder_7_sent_at %}, 7d {{ a.reminder_7_sent_at|date }}{% endif %}{% if a.overdue_last_reminded_at %}, overdue {{ a.overdue_last_reminded_at|date }}{% endif %}{% if a.supervisor_notified_at %}, supervisor notified{% endif %}</td>
       </tr>
     {% endfor %}
     </tbody>

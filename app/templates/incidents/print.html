@@ -10,7 +10,7 @@
 <div class="report">
   <header class="report-head">
     <div>
-      <h1>{{ org_name }}</h1>
+      <h1>{{ org_name or app_name }}</h1>
       <h2>Incident Report</h2>
     </div>
     <div class="report-id">
@@ -101,6 +101,6 @@
     </div>
     {% if incident.closed_at %}<p class="small">Closed {{ incident.closed_at|datetime }}{% if incident.closed_by %} by {{ incident.closed_by.full_name }}{% endif %}.</p>{% endif %}
   </section>
-  <footer class="report-foot">{{ app_name }} · Printed {{ now|datetime }} · {{ incident.incident_number }}</footer>
+  <footer class="report-foot">{{ app_name }}. Printed {{ now|datetime }}. {{ incident.incident_number }}. {{ credits }}.</footer>
 </div>
 {% endblock %}

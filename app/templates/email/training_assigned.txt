@@ -8,4 +8,4 @@ New safety training has been assigned to you:
 
 Sign in to complete it: {{ link }}
 
-{{ org_name }}
+{{ org_name or app_name }}

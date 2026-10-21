@@ -12,4 +12,4 @@ Description:
 
 Review the report and begin the investigation: {{ link }}
 
-{{ org_name }}
+{{ org_name or app_name }}

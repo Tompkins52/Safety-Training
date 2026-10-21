@@ -15,6 +15,8 @@ on:
       - "site/**"
       - "scripts/build_site.py"
       - "app/static/css/app.css"
+      - "app/static/css/fonts.css"
+      - "app/static/fonts/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -40,7 +42,7 @@ jobs:
           python scripts/build_site.py --out .
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html app.js data.js styles.css .nojekyll
+          git add index.html app.js data.js styles.css .nojekyll fonts
           git diff --cached --quiet || (git commit -m "Rebuild browser edition" && git push)
       - name: Push to gh-pages
         uses: peaceiris/actions-gh-pages@v4

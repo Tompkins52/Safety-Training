@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Certificate · {{ course.title }}{% endblock %}
+{% block title %}Certificate | {{ course.title }}{% endblock %}
 {% block body_class %}print-page{% endblock %}
 {% block content %}
 <div class="no-print page-head">
@@ -9,14 +9,14 @@
 
 <div class="certificate">
   <div class="cert-border">
-    <p class="cert-org">{{ org_name }}</p>
+    <p class="cert-org">{{ org_name or app_name }}</p>
     <h1 class="cert-title">Certificate of Completion</h1>
     <p class="cert-lead">This certifies that</p>
     <p class="cert-name">{{ assignment.user.full_name }}</p>
     <p class="cert-lead">{% if assignment.user.job_title %}{{ assignment.user.job_title }}, {% endif %}{% if assignment.user.division %}{{ assignment.user.division.name }}{% endif %}</p>
     <p class="cert-lead">has successfully completed the annual safety training module</p>
     <p class="cert-course">{{ course.title }}</p>
-    {% if course.standard %}<p class="cert-std">{{ course.standard }}{% if course.standard_title %} · {{ course.standard_title }}{% endif %}</p>{% endif %}
+    {% if course.standard %}<p class="cert-std">{{ course.standard }}{% if course.standard_title %}, {{ course.standard_title }}{% endif %}</p>{% endif %}
     <div class="cert-meta">
       <div><span>Completed</span><strong>{{ assignment.completed_at|date('%B %d, %Y') }}</strong></div>
       <div><span>Quiz score</span><strong>{{ assignment.score }} of {{ assignment.total_questions }} ({{ assignment.percent }}%)</strong></div>
@@ -27,7 +27,8 @@
       <div><span class="line"></span>Employee signature</div>
       <div><span class="line"></span>Supervisor{% if assignment.user.supervisor %}: {{ assignment.user.supervisor.full_name }}{% endif %}</div>
     </div>
-    <p class="cert-foot">{{ app_name }} · {{ credits }}</p>
+    <p class="cert-foot">{{ app_name }}. {{ credits }}.</p>
+    <div class="seal"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="#173a5e" stroke-width="2"/><circle cx="50" cy="50" r="40" fill="none" stroke="#173a5e" stroke-width="1" stroke-dasharray="2 3"/><circle cx="50" cy="50" r="31" fill="#173a5e"/><path d="M35 51 L46 61 L66 39" fill="none" stroke="#c6e33b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><text x="50" y="86" text-anchor="middle" font-family="Barlow Semi Condensed, Arial Narrow, Arial" font-weight="700" font-size="9" fill="#173a5e">{{ assignment.completed_at.year if assignment.completed_at else current_year }}</text></svg></div>
   </div>
 </div>
 {% endblock %}

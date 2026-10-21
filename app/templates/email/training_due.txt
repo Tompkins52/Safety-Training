@@ -10,4 +10,4 @@ Sign in to complete it: {{ link }}
 
 If you have questions, contact your supervisor{% if user.supervisor %}, {{ user.supervisor.full_name }}{% endif %}.
 
-{{ org_name }}
+{{ org_name or app_name }}

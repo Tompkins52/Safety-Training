@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-{% block title %}{{ course.title }} · {{ app_name }}{% endblock %}
+{% block title %}{{ course.title }} | {{ app_name }}{% endblock %}
 {% block content %}
 <div class="page-head">
   <div>
-    <p class="eyebrow">{% if course.top10_rank %}OSHA Top 10 · #{{ course.top10_rank }}{% else %}{{ course.category_label }} training{% endif %}{% if course.standard %} · {{ course.standard }}{% endif %}</p>
+    <p class="eyebrow">{% if course.top10_rank %}OSHA Top 10, rank {{ course.top10_rank }}{% else %}{{ course.category_label }} training{% endif %}{% if course.standard %}. {{ course.standard }}{% endif %}</p>
     <h1>{{ course.title }}</h1>
     <p class="muted">{{ course.summary }}</p>
   </div>

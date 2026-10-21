@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-{% block title %}Investigation {{ incident.incident_number }} · {{ app_name }}{% endblock %}
+{% block title %}Investigation {{ incident.incident_number }} | {{ app_name }}{% endblock %}
 {% block content %}
 <div class="page-head">
   <div>
-    <p class="eyebrow">{{ incident.type_label }} · <a href="{{ url_for('incidents.detail', incident_id=incident.id) }}">{{ incident.incident_number }}</a></p>
+    <p class="eyebrow">{{ incident.type_label }}, <a href="{{ url_for('incidents.detail', incident_id=incident.id) }}">{{ incident.incident_number }}</a></p>
     <h1>Investigation</h1>
-    <p class="muted">{{ incident.occurred_at|datetime }} · {{ incident.location }} · reported by {{ incident.reported_by.full_name }}</p>
+    <p class="muted">{{ incident.occurred_at|datetime }}, {{ incident.location }}, reported by {{ incident.reported_by.full_name }}</p>
   </div>
   <div class="actions">
     <span class="badge badge-{{ 'ok' if incident.status == 'closed' else ('warn' if incident.status == 'under_investigation' else 'danger') }}">{{ incident.status_label }}</span>

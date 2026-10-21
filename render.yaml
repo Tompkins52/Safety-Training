@@ -29,9 +29,9 @@ services:
       - key: DATABASE_URL
         value: sqlite:////var/data/safety.db
       - key: ORG_NAME
-        value: Public Works Department
+        value: Your Department Name
       - key: APP_NAME
-        value: Public Works Safety Training
+        value: Safety Training
       - key: TIMEZONE
         value: America/Chicago
       - key: TZ

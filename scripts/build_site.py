@@ -24,6 +24,12 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 CONTENT = os.path.join(ROOT, "content")
 SITE = os.path.join(ROOT, "site")
 APP_CSS = os.path.join(ROOT, "app", "static", "css", "app.css")
+FONTS_CSS = os.path.join(ROOT, "app", "static", "css", "fonts.css")
+FONTS_DIR = os.path.join(ROOT, "app", "static", "fonts")
+
+APP_NAME = "Safety Training"
+COMPANY = "Tompkins Software Systems LLC"
+LICENSE_LINE = "Licensed software by " + COMPANY
 
 DIVISIONS = [
     {"code": "electric", "name": "Electric Services"},
@@ -78,7 +84,7 @@ def load_top10():
 
 
 def build(out_dir):
-    """Write the five site files into out_dir (other files there are left alone)."""
+    """Write the site files and fonts into out_dir (other files there are left alone)."""
     os.makedirs(out_dir, exist_ok=True)
     data = {
         "generated": date.today().isoformat(),
@@ -86,17 +92,27 @@ def build(out_dir):
         "courses": load_courses(),
         "top10": load_top10(),
         "pass_percent": 80,
-        "credits": "Developed by Lorenzo McCoy and Mark Tompkins",
+        "app_name": APP_NAME,
+        "company": COMPANY,
+        "license_line": LICENSE_LINE,
+        "year": date.today().year,
         "repo": "https://github.com/Tompkins52/Safety-Training",
     }
     with open(os.path.join(out_dir, "data.js"), "w", encoding="utf-8") as fh:
         fh.write("window.SAFETY_DATA = ")
         json.dump(data, fh, ensure_ascii=False)
         fh.write(";\n")
+    with open(FONTS_CSS, encoding="utf-8") as fh:
+        css = fh.read().replace("../fonts/", "fonts/")
     with open(APP_CSS, encoding="utf-8") as fh:
-        css = fh.read()
+        css += "\n" + fh.read()
     with open(os.path.join(SITE, "extra.css"), encoding="utf-8") as fh:
         css += "\n\n/* Browser edition */\n" + fh.read()
+    fonts_out = os.path.join(out_dir, "fonts")
+    os.makedirs(fonts_out, exist_ok=True)
+    for name in os.listdir(FONTS_DIR):
+        if name.endswith(".woff2") or name.startswith("LICENSE"):
+            shutil.copy(os.path.join(FONTS_DIR, name), os.path.join(fonts_out, name))
     with open(os.path.join(out_dir, "styles.css"), "w", encoding="utf-8") as fh:
         fh.write(css)
     for name in ("index.html", "app.js"):

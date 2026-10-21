@@ -1,8 +1,8 @@
-# Public Works Safety Training
+# Safety Training
 
-An annual OSHA safety training and incident management platform for a municipal Public Works Department with an **Electric Services** division, an **Environmental Services** division and a **Public Services** division.
+An annual OSHA safety training and incident management platform for departments with **Electric Services**, **Environmental Services** and **Public Services** crews.
 
-**Developed by Lorenzo McCoy and Mark Tompkins.**
+**Licensed software by Tompkins Software Systems LLC.** See [LICENSE](LICENSE).
 
 ## Open it
 
@@ -10,7 +10,7 @@ There are two editions of the platform in this repository.
 
 | | Browser edition | Full platform |
 | --- | --- | --- |
-| Where it runs | GitHub Pages, nothing to install | A small server (or a free GitHub Codespace for a trial) |
+| Where it runs | GitHub Pages, nothing to install, no sign-in | A small server (or a free GitHub Codespace for a trial) |
 | Address | **https://tompkins52.github.io/Safety-Training/** | Your own address once it is hosted |
 | Training modules and 10-question quizzes | Yes | Yes |
 | Certificates | Yes | Yes |
@@ -19,7 +19,7 @@ There are two editions of the platform in this repository.
 | Supervisor completion and incident notices | "Email my record" and "Email this report" buttons | Yes, automatic |
 | Employee accounts, assignments by division, compliance reports | No | Yes |
 
-**Browser edition.** Open https://tompkins52.github.io/Safety-Training/ on any phone or computer. GitHub Pages serves it from the root of `main` (the files `index.html`, `app.js`, `data.js` and `styles.css` are generated; the source is in `site/`). The site is rebuilt automatically whenever course content changes on `main`. If Pages is ever switched off: Settings > Pages > Source "Deploy from a branch" > branch `main`, folder `/ (root)` > Save.
+**Browser edition.** Open https://tompkins52.github.io/Safety-Training/ on any phone or computer. There is no account to create: the modules and quizzes open directly, and a name is only asked for when a certificate is printed. GitHub Pages serves it from the root of `main` (the files `index.html`, `app.js`, `data.js` and `styles.css` are generated; the source is in `site/`). The site is rebuilt automatically whenever course content changes on `main`. If Pages is ever switched off: Settings > Pages > Source "Deploy from a branch" > branch `main`, folder `/ (root)` > Save.
 
 **Full platform, try it in five minutes.** Open the repository on GitHub, click **Code > Codespaces > Create codespace on main**, wait for the setup to finish, and the platform opens in a new browser tab with demo accounts loaded (see below). Codespaces is free for personal GitHub accounts within the monthly allowance.
 
@@ -28,7 +28,9 @@ There are two editions of the platform in this repository.
 - Docker on a city server: `docker compose up -d` (below).
 - IT-managed Linux or Windows server: [docs/deployment.md](docs/deployment.md).
 
-![Admin dashboard](docs/screenshots/admin-dashboard.png)
+![Browser edition](docs/screenshots/browser-edition.png)
+
+![Admin dashboard of the full platform](docs/screenshots/admin-dashboard.png)
 
 ## What it does
 
@@ -113,7 +115,7 @@ The app listens on port 8000. The SQLite database is kept in `./instance` and th
 | | Pole Top Rescue | 29 CFR 1910.269 | Electric Services, Public Services |
 | | Bucket Truck (Aerial Lift) Rescue | 29 CFR 1910.269, 1910.67 | Electric Services, Public Services |
 
-Ranks 1 to 10 follow OSHA's preliminary FY 2026 list (October 1, 2025 to August 31, 2026). Division mapping can be changed by an administrator under **Admin > Courses**.
+Ranks 1 to 10 follow OSHA's preliminary FY 2026 list (October 1, 2025 to August 31, 2026). Division mapping can be changed by an administrator under **Admin > Courses**. Module content is written for public works and utility crews and refers to them by name; the platform itself is not tied to any one department.
 
 Each module is a JSON file in `content/courses/` with learning objectives, six to eight content sections, key takeaways and its ten quiz questions with explanations. Edit the files and reload them from **Admin > Courses** or with `flask load-content`. See [docs/content-authoring.md](docs/content-authoring.md).
 
@@ -156,4 +158,4 @@ tests/             end-to-end tests (pytest)
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+Copyright 2026 Tompkins Software Systems LLC. All rights reserved. This is licensed software; see [LICENSE](LICENSE) for the terms. The bundled Barlow and Libre Baskerville fonts are under the SIL Open Font License (see `app/static/fonts/`).

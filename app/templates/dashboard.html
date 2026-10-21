@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% block title %}Dashboard · {{ app_name }}{% endblock %}
+{% block title %}Dashboard | {{ app_name }}{% endblock %}
 {% block content %}
 <div class="page-head">
   <div>
     <h1>Welcome, {{ current_user.first_name }}</h1>
     <p class="muted">
-      {{ current_user.job_title or current_user.role_label }}{% if current_user.division %} · {{ current_user.division.name }}{% endif %}
-      {% if current_user.supervisor %} · Supervisor: {{ current_user.supervisor.full_name }}{% endif %}
+      {{ current_user.job_title or current_user.role_label }}{% if current_user.division %}, {{ current_user.division.name }}{% endif %}
+      {% if current_user.supervisor %}. Supervisor: {{ current_user.supervisor.full_name }}{% endif %}
     </p>
   </div>
   <div class="actions">
@@ -83,7 +83,7 @@
       <h3 class="section-label ok">Recently completed</h3>
       <ul class="list">
       {% for a in completed %}
-        <li>{{ a.course.title }} <span class="badge badge-ok">{{ a.completed_at|date }} · {{ a.percent }}%</span>
+        <li>{{ a.course.title }} <span class="badge badge-ok">{{ a.completed_at|date }}, {{ a.percent }}%</span>
           <a class="small" href="{{ url_for('training.certificate', assignment_id=a.id) }}">Certificate</a></li>
       {% endfor %}
       </ul>

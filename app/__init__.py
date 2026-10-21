@@ -1,4 +1,4 @@
-"""Application factory for the Public Works safety training platform."""
+"""Application factory for the Safety Training platform."""
 import os
 import sys
 from datetime import date, datetime
@@ -12,7 +12,8 @@ from .models import User
 from .utils import register_template_helpers
 
 __version__ = "1.0.0"
-CREDITS = "Developed by Lorenzo McCoy and Mark Tompkins"
+COMPANY = "Tompkins Software Systems LLC"
+CREDITS = "Licensed software by " + COMPANY
 
 
 def create_app(config_object=Config):
@@ -58,6 +59,7 @@ def create_app(config_object=Config):
             "app_name": app.config.get("APP_NAME"),
             "app_version": __version__,
             "credits": CREDITS,
+            "company": COMPANY,
             "current_year": date.today().year,
             "now": datetime.now(),
         }

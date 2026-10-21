@@ -1,21 +1,40 @@
-MIT License
+Safety Training
+Copyright (c) 2026 Tompkins Software Systems LLC. All rights reserved.
 
-Copyright (c) 2026 Lorenzo McCoy and Mark Tompkins
+This software, including its source code, training content, quiz questions,
+designs and documentation (together, the "Software"), is licensed, not sold.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. Evaluation. You may view the Software in this repository and run it for
+   the purpose of evaluating it.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+2. Licensed use. Use of the Software for training employees, recording
+   incidents or any other production purpose requires a license agreement
+   with Tompkins Software Systems LLC. The license agreement governs the
+   number of users, sites and divisions covered, support and updates.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+3. Restrictions. Except as permitted by a written license agreement, you may
+   not copy, modify, distribute, sublicense, sell, rent, host for third
+   parties, or create derivative works of the Software, and you may not remove
+   or alter any copyright, trademark or license notice.
+
+4. Training content. The training modules summarize OSHA standards for
+   awareness-level refresher training. They are provided for informational
+   purposes and do not replace the text of the standards, an employer's
+   written programs and procedures, or the hands-on training and drills those
+   programs require. Compliance with applicable law remains the licensee's
+   responsibility.
+
+5. No warranty. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY
+   KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+   NO EVENT SHALL TOMPKINS SOFTWARE SYSTEMS LLC BE LIABLE FOR ANY CLAIM,
+   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+   USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+6. Third-party components. The Barlow and Libre Baskerville font files in
+   app/static/fonts are licensed separately under the SIL Open Font License
+   1.1 (see the LICENSE files in that folder). Python packages listed in
+   requirements.txt are under their own open-source licenses.
+
+For licensing inquiries, contact Tompkins Software Systems LLC.

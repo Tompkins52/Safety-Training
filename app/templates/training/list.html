@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}My training · {{ app_name }}{% endblock %}
+{% block title %}My training | {{ app_name }}{% endblock %}
 {% block content %}
 <div class="page-head">
   <div><h1>My training</h1><p class="muted">Complete each module and pass its 10-question quiz by the due date. You will receive an email reminder 30 days before each due date.</p></div>
@@ -13,7 +13,7 @@
     <tbody>
     {% for a in open_items %}
       <tr>
-        <td><strong>{{ a.course.title }}</strong><br><small class="muted">{{ a.course.duration_minutes }} min · {{ a.course.questions|length }} question quiz</small></td>
+        <td><strong>{{ a.course.title }}</strong><br><small class="muted">{{ a.course.duration_minutes }} min, {{ a.course.questions|length }} question quiz</small></td>
         <td>{{ a.course.standard or '' }}</td>
         <td>{{ a.due_date|date }}<br><small class="muted">{% if a.is_overdue %}{{ -a.days_until_due }} days overdue{% elif a.days_until_due == 0 %}today{% else %}in {{ a.days_until_due }} days{% endif %}</small></td>
         <td><span class="badge badge-{{ a.status_class }}">{{ a.display_status }}</span></td>

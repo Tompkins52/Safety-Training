@@ -9,4 +9,4 @@ Incident {{ incident.incident_number }} ({{ incident.type_label }}) has been clo
 
 View the final report: {{ link }}
 
-{{ org_name }}
+{{ org_name or app_name }}

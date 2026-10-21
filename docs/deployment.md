@@ -47,7 +47,7 @@ The command prints a temporary password. The administrator is asked to change it
 
 ```ini
 [Unit]
-Description=Public Works Safety Training
+Description=Safety Training platform
 After=network.target
 
 [Service]

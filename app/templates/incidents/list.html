@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Incidents · {{ app_name }}{% endblock %}
+{% block title %}Incidents | {{ app_name }}{% endblock %}
 {% block content %}
 <div class="page-head">
   <div><h1>Incidents</h1><p class="muted">Personal injury, property damage and vehicle incidents, including near misses.{% if not current_user.is_supervisor %} You see the incidents you reported.{% elif not current_user.is_admin %} You see incidents in your division and from your team.{% endif %}</p></div>

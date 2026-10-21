@@ -8,4 +8,4 @@ Hello {{ supervisor.first_name }},
 
 Team training status: {{ link }}
 
-{{ org_name }}
+{{ org_name or app_name }}

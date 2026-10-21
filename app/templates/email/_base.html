@@ -4,11 +4,11 @@
   <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f3f4f6;padding:24px 0;">
     <tr><td align="center">
       <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;">
-        <tr><td style="background:#1b2a41;color:#ffffff;padding:16px 24px;font-size:18px;font-weight:bold;">{{ org_name }} &middot; {{ app_name }}</td></tr>
+        <tr><td style="background:#173a5e;color:#ffffff;padding:16px 24px;font-size:18px;font-weight:bold;">{{ app_name }}{% if org_name and org_name != app_name %}, {{ org_name }}{% endif %}</td></tr>
         <tr><td style="padding:24px;font-size:15px;line-height:1.5;">
           {% block body %}{% endblock %}
         </td></tr>
-        <tr><td style="padding:12px 24px;font-size:12px;color:#6b7280;border-top:1px solid #e5e7eb;">This message was sent automatically by the safety training platform. Please do not reply to this email.</td></tr>
+        <tr><td style="padding:12px 24px;font-size:12px;color:#6b7280;border-top:1px solid #e5e7eb;">This message was sent automatically by {{ app_name }}. Please do not reply to this email.</td></tr>
       </table>
     </td></tr>
   </table>

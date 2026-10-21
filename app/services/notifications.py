@@ -20,7 +20,8 @@ from .mailer import send_email
 
 
 def _org():
-    return current_app.config.get("ORG_NAME", "Public Works Department")
+    """Name used in email subjects: the organization if configured, else the app name."""
+    return current_app.config.get("ORG_NAME") or current_app.config.get("APP_NAME") or "Safety Training"
 
 
 def _link(endpoint, **values):
