@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}{{ statement.role_label }} for {{ incident.incident_number }} | {{ app_name }}{% endblock %}
+{% block body_class %}statement-mode{% endblock %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='css/incidents.css') }}">{% endblock %}
+{% block content %}
+<div class="statement-page">
+  <div class="statement-head">
+    <div>
+      <p class="eyebrow">{{ statement.role_label }}</p>
+      <h1>Statement for report {{ incident.incident_number }}</h1>
+      <p class="muted">{{ incident.type_label }}, {{ incident.occurred_at|datetime }}, {{ incident.location }}</p>
+    </div>
+    {% if mode == 'device' %}
+    <a class="btn btn-ghost" href="{{ url_for('incidents.detail', incident_id=incident.id) }}" onclick="return confirm('Leave without signing? The statement text entered so far will not be saved.');">Exit without signing</a>
+    {% endif %}
+  </div>
+
+  <div class="notice">This page shows only your statement. The rest of the report is not visible here. When you sign and submit, your statement is attached to report {{ incident.incident_number }}{% if mode == 'link' %} and the link stops working{% endif %}.</div>
+
+  <form method="post" class="card form-grid" id="statement-form">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label>Printed name <span class="req">*</span>
+      <input type="text" name="printed_name" value="{{ statement.printed_name or '' }}" required autocomplete="name">
+    </label>
+    <label>Department or division
+      <input type="text" name="department" value="{{ statement.department or '' }}" autocomplete="organization">
+    </label>
+    <label>Title
+      <input type="text" name="title" value="{{ statement.title or '' }}" autocomplete="organization-title">
+    </label>
+    <label>Date of incident
+      <input type="text" value="{{ incident.occurred_at|datetime }}" readonly>
+    </label>
+    <label class="span-2">Statement <span class="req">*</span>
+      <small class="muted inline-note">{% if statement.role == 'principal' %}Describe, in your own words, what happened before, during and after the incident. Include dates, times, locations and anyone who was present.{% else %}Describe what you saw and heard, where you were, and what happened before, during and after the incident, in your own words.{% endif %}</small>
+      <textarea name="statement_text" rows="12" required>{{ statement.statement_text or '' }}</textarea>
+    </label>
+    <div class="span-2">
+      <p class="field-label">Signature <span class="req">*</span></p>
+      <div data-widget="signature" data-name="signature_data" data-value=""></div>
+    </div>
+    <label class="span-2 checkbox">
+      <input type="checkbox" name="attest" value="yes" required> I confirm that this statement is true and complete to the best of my knowledge.
+    </label>
+    <div class="form-actions span-2">
+      <button class="btn btn-primary btn-lg" type="submit">Sign and submit</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

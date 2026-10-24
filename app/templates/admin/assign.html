@@ -2,7 +2,11 @@
 {% block title %}Assign training | {{ app_name }}{% endblock %}
 {% block content %}
 <div class="page-head">
-  <div><h1>Assign training</h1><p class="muted">Creates an assignment for every active employee who does not already have an open one for the course. Nothing is duplicated, so this is safe to run at any time, for example at the start of each training year or after adding employees.</p></div>
+  <div><h1>Assign training</h1><p class="muted">Annual cycle: creates an assignment for every active employee who does not already have an open one for the course. Nothing is duplicated, so this is safe to run at any time, for example at the start of each training year or after adding employees.</p></div>
+  <div class="actions">
+    <a class="btn btn-ghost" href="{{ url_for('admin.new_hires') }}">New hire training</a>
+    <a class="btn btn-secondary" href="{{ url_for('admin.assign_individual') }}">Assign individual training</a>
+  </div>
 </div>
 <form method="post" class="card form-grid">
   <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
@@ -27,7 +31,9 @@
     <li>Use this page (or <code>flask assign-annual</code>) to give every employee an assignment for each course that applies to their division, with one due date.</li>
     <li>The daily job emails each employee {{ config.REMINDER_DAYS_BEFORE_DUE }} days before the due date, and again at {{ config.SECOND_REMINDER_DAYS_BEFORE_DUE }} days and when overdue.</li>
     <li>When an employee passes the quiz, their direct supervisor is emailed{% if config.AUTO_RENEW_ASSIGNMENTS %} and next year's assignment is created automatically, due {{ config.DEFAULT_RENEWAL_MONTHS }} months after completion{% endif %}.</li>
-    <li>New hires: add them under Employees with "Assign all training now" ticked.</li>
+    <li>New hires: add them under Employees with "Assign new hire training now" ticked, or use the <a href="{{ url_for('admin.new_hires') }}">New hire training</a> page. The new hire track is every course marked New hire that applies to the division, due 30 days after the hire date.</li>
+    <li>One-off needs: <a href="{{ url_for('admin.assign_individual') }}">Assign individual training</a> gives one employee specific courses, including courses outside their division and the supervisor course.</li>
+    <li>Each reminder an employee receives is also copied to their direct supervisor as a short digest.</li>
   </ol>
 </section>
 {% endblock %}

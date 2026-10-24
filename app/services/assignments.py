@@ -1,4 +1,11 @@
-"""Assignment lifecycle: creating annual assignments, grading quizzes, renewing."""
+"""Assignment lifecycle: annual, new hire and individual assignments, grading quizzes, renewing.
+
+Every assignment carries a reason:
+  annual      the yearly cycle for every course that applies to the division
+  new_hire    the required new hire track (courses flagged new_hire), due 30 days after hire
+  individual  one employee, chosen courses, granted by the safety administrator;
+              bypasses the division rule but never duplicates an open assignment
+"""
 import calendar
 import json
 import random
@@ -8,8 +15,11 @@ from flask import current_app
 
 from ..extensions import db
 from ..timeutil import now
-from ..models import Assignment, Course, QuizAttempt, User
+from ..models import ASSIGNMENT_REASONS, Assignment, Course, QuizAttempt, User
 from . import notifications
+
+NEW_HIRE_DUE_DAYS = 30
+NEW_HIRE_WINDOW_DAYS = 90
 
 
 def add_months(d, months):
@@ -45,11 +55,27 @@ def latest_assignment(user, course):
     )
 
 
-def ensure_assignments(user, due_date=None, courses=None, assigned_by=None, send_notice=False):
+def _new_assignment(user, course, due_date, assigned_by=None, reason="annual"):
+    """Build (and add to the session) the next-cycle assignment for one user and course."""
+    previous = latest_assignment(user, course)
+    assignment = Assignment(
+        user=user,
+        course=course,
+        cycle=previous.cycle + 1 if previous else 1,
+        assigned_on=date.today(),
+        due_date=due_date,
+        reason=reason,
+        assigned_by_id=assigned_by.id if assigned_by else None,
+    )
+    db.session.add(assignment)
+    return assignment
+
+
+def ensure_assignments(user, due_date=None, courses=None, assigned_by=None, send_notice=False, reason="annual"):
     """Create an open assignment for each applicable course the user lacks one for.
 
     Returns the list of assignments created. Idempotent: running it twice
-    creates nothing the second time.
+    creates nothing the second time. `reason` is stored on each assignment.
     """
     due_date = due_date or (date.today() + timedelta(days=current_app.config["DEFAULT_DUE_DAYS"]))
     created = []
@@ -58,18 +84,7 @@ def ensure_assignments(user, due_date=None, courses=None, assigned_by=None, send
             continue
         if open_assignment(user, course):
             continue
-        previous = latest_assignment(user, course)
-        cycle = previous.cycle + 1 if previous else 1
-        assignment = Assignment(
-            user=user,
-            course=course,
-            cycle=cycle,
-            assigned_on=date.today(),
-            due_date=due_date,
-            assigned_by_id=assigned_by.id if assigned_by else None,
-        )
-        db.session.add(assignment)
-        created.append(assignment)
+        created.append(_new_assignment(user, course, due_date, assigned_by, reason))
     db.session.flush()
     if send_notice:
         for assignment in created:
@@ -77,16 +92,122 @@ def ensure_assignments(user, due_date=None, courses=None, assigned_by=None, send
     return created
 
 
-def run_annual_assignment(due_date=None, divisions=None, courses=None, assigned_by=None, send_notice=False):
+def run_annual_assignment(due_date=None, divisions=None, courses=None, assigned_by=None, send_notice=False, reason="annual"):
     """Assign every applicable course to every active employee. Returns created assignments."""
     users = User.query.filter_by(is_active_employee=True)
     if divisions:
         users = users.filter(User.division_id.in_([d.id for d in divisions]))
     created = []
     for user in users.all():
-        created.extend(ensure_assignments(user, due_date, courses, assigned_by, send_notice))
+        created.extend(ensure_assignments(user, due_date, courses, assigned_by, send_notice, reason))
     db.session.commit()
     return created
+
+
+# --------------------------------------------------------------------------- new hire track
+
+
+def new_hire_courses(user=None):
+    """Active courses flagged new_hire; limited to those that apply to the user when one is given."""
+    courses = Course.query.filter_by(is_active=True, new_hire=True).order_by(Course.category, Course.top10_rank, Course.title).all()
+    if user is None:
+        return courses
+    return [c for c in courses if c.applies_to(user)]
+
+
+def new_hire_due_date(user, today=None):
+    """Default due date for the new hire track: hire date + 30 days, else DEFAULT_DUE_DAYS from today."""
+    today = today or date.today()
+    if user.hire_date:
+        return user.hire_date + timedelta(days=NEW_HIRE_DUE_DAYS)
+    return today + timedelta(days=current_app.config["DEFAULT_DUE_DAYS"])
+
+
+def assign_new_hire_training(user, due_date=None, assigned_by=None, send_notice=False):
+    """Give the user every new hire course that applies to their division, reason "new_hire".
+
+    Courses the user already has an open assignment for are left alone, so
+    calling this twice creates nothing the second time.
+    """
+    courses = new_hire_courses(user)
+    if not courses:
+        return []
+    return ensure_assignments(
+        user,
+        due_date=due_date or new_hire_due_date(user),
+        courses=courses,
+        assigned_by=assigned_by,
+        send_notice=send_notice,
+        reason="new_hire",
+    )
+
+
+def new_hire_progress(user):
+    """Completion of the user's new hire track: {"items", "open", "completed", "total", "percent"}."""
+    items = sorted((a for a in user.assignments if a.reason == "new_hire"), key=lambda a: (a.is_completed, a.due_date, a.id))
+    open_items = [a for a in items if not a.is_completed]
+    total = len(items)
+    completed = total - len(open_items)
+    return {
+        "items": items,
+        "open": open_items,
+        "completed": completed,
+        "total": total,
+        "percent": round(100 * completed / total) if total else 0,
+        "overdue": sum(1 for a in open_items if a.is_overdue),
+        "next_due": min((a.due_date for a in open_items), default=None),
+    }
+
+
+def is_recent_hire(user, today=None):
+    today = today or date.today()
+    return bool(user.hire_date) and (today - user.hire_date).days <= NEW_HIRE_WINDOW_DAYS
+
+
+def new_hire_roster(today=None):
+    """Active employees hired in the last 90 days or holding any new hire assignment,
+    each with their progress, for the admin New hire training page."""
+    today = today or date.today()
+    rows = []
+    for user in User.query.filter_by(is_active_employee=True).order_by(User.last_name, User.first_name).all():
+        progress = new_hire_progress(user)
+        if not is_recent_hire(user, today) and not progress["total"]:
+            continue
+        rows.append({"user": user, "progress": progress, "recent_hire": is_recent_hire(user, today)})
+    return rows
+
+
+# --------------------------------------------------------------------------- individual assignments
+
+
+def assign_individual(user, courses, due_date, assigned_by=None, note=None, send_notice=True):
+    """Assign the chosen courses to one employee, reason "individual".
+
+    The division rule does not apply: any active course can be assigned,
+    including the supervisor course. A course the employee already has an
+    open assignment for is skipped. Returns (created, skipped).
+    """
+    created, skipped = [], []
+    for course in courses:
+        if open_assignment(user, course):
+            skipped.append(course)
+            continue
+        created.append(_new_assignment(user, course, due_date, assigned_by, "individual"))
+    db.session.flush()
+    if send_notice:
+        for assignment in created:
+            notifications.notify_training_assigned(assignment, note=note)
+    return created, skipped
+
+
+def assignments_by_reason(assignments):
+    """Group assignments for display: [(reason, label, items)] in new hire, individual, annual order."""
+    groups = []
+    for reason in ("new_hire", "individual", "annual"):
+        items = sorted((a for a in assignments if (a.reason or "annual") == reason), key=lambda a: (a.is_completed, a.due_date, a.id))
+        if items:
+            groups.append((reason, ASSIGNMENT_REASONS[reason], items))
+    return groups
 
 
 def quiz_questions(assignment, seed=None):
@@ -158,10 +279,17 @@ def grade_quiz(assignment, submitted):
 
 
 def renew_assignment(completed):
-    """Create next year's assignment for the same course and employee."""
+    """Create next year's assignment for the same course and employee.
+
+    The renewal is an annual assignment whatever the reason of the one just
+    completed. An individually assigned course that does not apply to the
+    employee's division was a one-off and is not renewed.
+    """
     course = completed.course
     user = completed.user
     if not course.is_active or not user.is_active_employee:
+        return None
+    if completed.reason == "individual" and not course.applies_to(user):
         return None
     if open_assignment(user, course):
         return None
@@ -173,6 +301,7 @@ def renew_assignment(completed):
         cycle=completed.cycle + 1,
         assigned_on=date.today(),
         due_date=add_months(completed_on, months),
+        reason="annual",
     )
     db.session.add(renewal)
     db.session.flush()
@@ -190,6 +319,7 @@ def compliance_rows(users):
             a for a in user.assignments
             if a.is_completed and a.completed_at and a.completed_at >= now() - timedelta(days=365)
         ]
+        new_hire = new_hire_progress(user)
         rows.append(
             {
                 "user": user,
@@ -197,6 +327,7 @@ def compliance_rows(users):
                 "overdue": len(overdue),
                 "due_soon": len(due_soon),
                 "completed_12mo": len(completed_this_year),
+                "new_hire": new_hire if new_hire["total"] else None,
                 "status": "danger" if overdue else ("warn" if due_soon else "ok"),
             }
         )

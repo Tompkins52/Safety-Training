@@ -1,0 +1,12 @@
+{% extends "email/_base.html" %}{% block body %}
+<p>{% if requested_by %}{{ requested_by.full_name }} has asked you{% else %}You have been asked{% endif %} to provide {{ 'an' if statement.role == 'witness' else 'a' }} <strong>{{ statement.role_label|lower }}</strong> for incident report <strong>{{ incident.incident_number }}</strong>.</p>
+<table cellpadding="4" style="font-size:15px;">
+  <tr><td><strong>Report no.</strong></td><td>{{ incident.incident_number }}</td></tr>
+  <tr><td><strong>Incident date</strong></td><td>{{ incident.occurred_at.strftime('%B %d, %Y %I:%M %p') }}</td></tr>
+  <tr><td><strong>Location</strong></td><td>{{ incident.location }}</td></tr>
+</table>
+<p>The link below opens a page that shows only your own statement form. You will not see the report or anyone else's statement. Describe what happened in your own words, sign with a finger, stylus or mouse, tick the confirmation box and submit.</p>
+<p><a href="{{ link }}" style="display:inline-block;background:#0f9d6e;color:#fff;padding:10px 18px;border-radius:4px;text-decoration:none;">Write and sign my statement</a></p>
+<p style="font-size:13px;color:#6b7280;">If the button does not work, copy this address into your browser:<br>{{ link }}</p>
+<p style="font-size:13px;color:#6b7280;">The link can be used once. After you sign and submit, your statement is attached to the report and cannot be changed through this link. If you did not expect this message, you can ignore it.</p>
+{% endblock %}

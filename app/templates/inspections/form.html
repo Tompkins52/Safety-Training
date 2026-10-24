@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% block title %}{{ inspection.number }} | {{ app_name }}{% endblock %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='css/inspections.css') }}">{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <p class="eyebrow">{{ inspection.kind_label }}</p>
+    <h1>{{ inspection.number }}: {{ inspection.title }}</h1>
+    <p class="muted">{% if template and template.frequency %}{{ template.frequency }}. {% endif %}Started {{ inspection.created_at|date }}{% if inspection.created_by %} by {{ inspection.created_by.full_name }}{% endif %}.</p>
+  </div>
+  <div class="actions">
+    <span class="badge badge-{{ 'ok' if inspection.completed else 'warn' }}">{{ 'Completed' if inspection.completed else 'In progress' }}</span>
+    <a class="btn btn-secondary" href="{{ url_for('inspections.print_record', inspection_id=inspection.id) }}">Print</a>
+    <a class="btn btn-ghost" href="{{ url_for('inspections.index') }}">All inspections</a>
+    {% if can_delete %}
+    <form method="post" action="{{ url_for('inspections.delete', inspection_id=inspection.id) }}" class="inline-form" onsubmit="return confirm('Delete {{ inspection.number }}? This cannot be undone.');">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <button class="btn btn-ghost" type="submit">Delete</button>
+    </form>
+    {% endif %}
+  </div>
+</div>
+
+<div class="stat-grid inspection-stats">
+  <div class="stat"><span class="stat-value">{{ totals.answered }}<small>of {{ totals.total }}</small></span><span class="stat-label">Items answered ({{ totals.percent }}%)</span></div>
+  <div class="stat"><span class="stat-value">{{ totals.score }}%</span><span class="stat-label">Of applicable items rated {{ result_labels.ok|lower }}</span></div>
+  <div class="stat{% if totals.findings %} stat-danger{% endif %}"><span class="stat-value">{{ totals.findings }}</span><span class="stat-label">Finding{{ '' if totals.findings == 1 else 's' }}</span></div>
+  <div class="stat{% if totals.open_findings %} stat-warn{% endif %}"><span class="stat-value">{{ totals.open_findings }}</span><span class="stat-label">Open action item{{ '' if totals.open_findings == 1 else 's' }}</span></div>
+</div>
+
+{% if not can_edit %}<div class="flash flash-info">You can view this {{ labels.noun }} but not change it.</div>{% endif %}
+
+<form method="post" class="inspection-form" id="inspection-form">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <fieldset class="plain"{% if not can_edit %} disabled{% endif %}>
+
+  <section class="card">
+    <div class="card-head">
+      <h2>{{ labels.details }}</h2>
+      {% if can_edit %}<button class="btn btn-primary btn-sm" type="submit">Save</button>{% endif %}
+    </div>
+    <div class="form-grid">
+      <label>{{ labels.site }}
+        <input type="text" name="site" value="{{ inspection.site or '' }}" placeholder="{% if inspection.kind == 'audit' %}e.g., Electric Services, whole department{% else %}Street address, facility or job site{% endif %}">
+      </label>
+      <label>Division
+        <select name="division_id">
+          <option value="">Department wide</option>
+          {% for d in divisions %}<option value="{{ d.id }}" {% if inspection.division_id == d.id %}selected{% endif %}>{{ d.name }}</option>{% endfor %}
+        </select>
+      </label>
+      <label>Date
+        <input type="date" name="inspection_date" value="{{ inspection.inspection_date.isoformat() if inspection.inspection_date else '' }}">
+      </label>
+      <label>{{ labels.inspector }}
+        <input type="text" name="inspector_name" value="{{ inspection.inspector_name or '' }}">
+      </label>
+      <label>Accompanied by
+        <input type="text" name="accompanied_by" value="{{ inspection.accompanied_by or '' }}" placeholder="Crew leader, division manager, contractor representative">
+      </label>
+      <label>{{ labels.weather }}
+        <input type="text" name="weather" value="{{ inspection.weather or '' }}" placeholder="{{ labels.weather_placeholder }}">
+      </label>
+    </div>
+    {% if template and template.intro %}<p class="muted small mt">{{ template.intro }}</p>{% endif %}
+  </section>
+
+  {% for section in sections %}
+  <section class="card checklist-section" id="section-{{ loop.index }}">
+    <div class="card-head">
+      <h2><span class="section-no">{{ loop.index }}</span>{{ section.heading }}</h2>
+      <span class="section-progress"><span class="meter" aria-hidden="true"><span class="meter-fill" style="width: {{ section.percent }}%"></span></span>{{ section.answered }} of {{ section.total }} answered</span>
+    </div>
+    {% for item in section.rows %}
+    <div class="check-item">
+      <div class="check-text" id="text-{{ item.key }}">{{ item.text }}{% if item.ref %} <span class="ref">{{ item.ref }}</span>{% endif %}</div>
+      <div class="check-results" role="radiogroup" aria-labelledby="text-{{ item.key }}">
+        {% for value, label in result_labels.items() %}
+        <label class="result-opt result-{{ value }}"><input type="radio" name="r_{{ item.key }}" value="{{ value }}"{% if item.result == value %} checked{% endif %}><span>{{ label }}</span></label>
+        {% endfor %}
+      </div>
+      <input type="text" class="check-note" name="n_{{ item.key }}" value="{{ item.note or '' }}" placeholder="Note or location" aria-label="Note for: {{ item.text }}">
+    </div>
+    {% endfor %}
+  </section>
+  {% endfor %}
+
+  <section class="card" id="findings">
+    <h2>Findings and corrective actions</h2>
+    <p class="muted small">Items marked {% for label in flagged_labels %}{% if not loop.first %} or {% endif %}"{{ label }}"{% endfor %} appear here after you save, with a place for the corrective action, who owns it and when it is due.</p>
+    {% for f in findings %}
+    <div class="finding">
+      <div class="finding-text"><strong>{{ f.section }}:</strong> {{ f.text }}{% if f.ref %} <span class="ref muted small">{{ f.ref }}</span>{% endif %} <span class="badge badge-{{ 'warn' if f.result == 'partial' else 'danger' }}">{{ f.result_label }}</span>{% if f.note %}<br><small class="muted">{{ f.note }}</small>{% endif %}</div>
+      <div class="form-grid nested">
+        <label>Corrective action<input type="text" name="fa_{{ f.key }}" value="{{ f.action or '' }}"></label>
+        <label>Responsible party<input type="text" name="fr_{{ f.key }}" value="{{ f.responsible or '' }}"></label>
+        <label>Target date<input type="date" name="ft_{{ f.key }}" value="{{ f.target_date or '' }}"></label>
+        <label>Status
+          <select name="fs_{{ f.key }}">
+            {% for key, label in finding_statuses.items() %}<option value="{{ key }}" {% if f.status == key %}selected{% endif %}>{{ label }}</option>{% endfor %}
+          </select>
+        </label>
+      </div>
+    </div>
+    {% else %}
+    <p class="muted">No findings so far.</p>
+    {% endfor %}
+  </section>
+
+  <section class="card">
+    <h2>Summary and sign-off</h2>
+    <div class="form-stack">
+      <label>Summary notes
+        <textarea name="summary" rows="4" placeholder="Overall condition, items corrected on the spot, follow-up needed">{{ inspection.summary or '' }}</textarea>
+      </label>
+      <div class="signature-block">
+        <span class="field-label">{{ labels.inspector }} signature</span>
+        {% if can_edit %}
+        <div data-widget="signature" data-name="signature_data" data-value="{{ inspection.signature_data or '' }}"></div>
+        {% elif inspection.signature_data %}
+        <img class="signature-img" src="{{ inspection.signature_data }}" alt="{{ labels.inspector }} signature">
+        {% else %}
+        <p class="muted small">Not signed.</p>
+        {% endif %}
+      </div>
+      <label class="checkbox"><input type="checkbox" name="completed" value="yes"{% if inspection.completed %} checked{% endif %}> Mark this {{ labels.noun }} complete</label>
+      {% if inspection.completed_at %}<p class="small muted">Completed {{ inspection.completed_at|datetime }}.</p>{% endif %}
+      {% if can_edit %}
+      <div class="form-actions">
+        <span class="count"><strong>{{ totals.answered }}</strong> of {{ totals.total }} answered</span>
+        <button class="btn btn-primary btn-lg" type="submit">Save</button>
+        <a class="btn btn-ghost" href="{{ url_for('inspections.index') }}">Back to list</a>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+  </fieldset>
+</form>
+{% endblock %}

@@ -7,10 +7,22 @@ from flask import Blueprint, Response, abort, current_app, flash, redirect, rend
 from flask_login import current_user, login_required
 
 from ..extensions import db
-from ..models import ROLE_LABELS, ROLES, Assignment, Course, Division, NotificationLog, User
+from ..models import COURSE_CATEGORIES, ROLE_LABELS, ROLES, Assignment, Course, Division, NotificationLog, User
 from ..services import notifications
-from ..services.assignments import course_matrix, run_annual_assignment
+from ..services.assignments import (
+    assign_individual as assign_individual_courses,
+    assign_new_hire_training,
+    assignments_by_reason,
+    course_matrix,
+    ensure_assignments,
+    new_hire_courses,
+    new_hire_due_date,
+    new_hire_progress,
+    new_hire_roster,
+    run_annual_assignment,
+)
 from ..services.content_loader import load_all_courses
+from ..services.exports import training_export_response
 from ..utils import parse_date, parse_int, role_required
 
 bp = Blueprint("admin", __name__)
@@ -107,13 +119,24 @@ def employee_new():
             user.must_change_password = True
             db.session.add(user)
             db.session.commit()
-            if request.form.get("assign_now") == "on":
-                from ..services.assignments import ensure_assignments
-
-                due = parse_date(request.form.get("due_date")) or (date.today() + timedelta(days=current_app.config["DEFAULT_DUE_DAYS"]))
-                created = ensure_assignments(user, due_date=due, assigned_by=current_user, send_notice=request.form.get("notify") == "on")
+            notify = request.form.get("notify") == "on"
+            # The new hire track goes first so its courses carry the new hire
+            # reason and due date; the annual pass then fills in the rest.
+            if request.form.get("new_hire_now") == "on":
+                created = assign_new_hire_training(user, assigned_by=current_user, send_notice=notify)
                 db.session.commit()
-                flash(f"{len(created)} training assignments created for {user.full_name}.", "info")
+                if created:
+                    flash(
+                        f"New hire training assigned to {user.full_name}: {len(created)} modules due {created[0].due_date:%b %d, %Y}.",
+                        "info",
+                    )
+                elif user.division is None:
+                    flash("No new hire training was assigned because the employee has no division.", "info")
+            if request.form.get("assign_now") == "on":
+                due = parse_date(request.form.get("due_date")) or (date.today() + timedelta(days=current_app.config["DEFAULT_DUE_DAYS"]))
+                created = ensure_assignments(user, due_date=due, assigned_by=current_user, send_notice=notify)
+                db.session.commit()
+                flash(f"{len(created)} annual training assignments created for {user.full_name}.", "info")
             if generated:
                 flash(f"Account created for {user.full_name}. Temporary password: {password}", "success")
             else:
@@ -144,7 +167,59 @@ def employee_edit(user_id):
             flash("Employee updated.", "success")
             return redirect(url_for("admin.employees"))
     assignments = sorted(user.assignments, key=lambda a: (a.is_completed, a.due_date))
-    return render_template("admin/employee_form.html", creating=False, assignments=assignments, **_employee_form_context(user))
+    return render_template(
+        "admin/employee_form.html",
+        creating=False,
+        assignments=assignments,
+        assignment_groups=assignments_by_reason(assignments),
+        new_hire=new_hire_progress(user),
+        new_hire_due=new_hire_due_date(user),
+        new_hire_course_count=len(new_hire_courses(user)),
+        **_employee_form_context(user),
+    )
+
+
+def _safe_next(default):
+    """Return the posted `next` path when it is a local path, else the default."""
+    target = request.form.get("next") or ""
+    if target.startswith("/") and not target.startswith("//"):
+        return target
+    return default
+
+
+@bp.route("/employees/<int:user_id>/new-hire", methods=["POST"])
+def employee_new_hire(user_id):
+    """Assign the required new hire track to one employee."""
+    user = db.session.get(User, user_id)
+    if user is None:
+        abort(404)
+    if user.division is None:
+        flash(f"{user.full_name} has no division, so no new hire courses apply. Set the division first.", "danger")
+    else:
+        due = parse_date(request.form.get("due_date")) or new_hire_due_date(user)
+        notify = request.form.get("notify") == "on"
+        created = assign_new_hire_training(user, due_date=due, assigned_by=current_user, send_notice=notify)
+        db.session.commit()
+        if created:
+            flash(
+                f"New hire training assigned to {user.full_name}: {len(created)} modules due {due:%b %d, %Y}."
+                + (" The employee has been emailed." if notify else ""),
+                "success",
+            )
+        else:
+            flash(f"{user.full_name} already has an open assignment for every new hire course.", "info")
+    return redirect(_safe_next(url_for("admin.employee_edit", user_id=user.id)))
+
+
+@bp.route("/new-hires")
+def new_hires():
+    """Employees hired in the last 90 days or holding new hire assignments, with their progress."""
+    return render_template(
+        "admin/new_hires.html",
+        rows=new_hire_roster(),
+        courses=new_hire_courses(),
+        today=date.today(),
+    )
 
 
 @bp.route("/employees/<int:user_id>/reset-password", methods=["POST"])
@@ -257,15 +332,85 @@ def assign():
     return render_template("admin/assign.html", divisions=all_divisions, courses=all_courses, default_due=default_due)
 
 
+def _course_groups(courses):
+    """[(label, [courses])] in catalog order, for the grouped course checkboxes."""
+    groups = []
+    for key, label in COURSE_CATEGORIES.items():
+        items = [c for c in courses if c.category == key]
+        if items:
+            groups.append((label, items))
+    other = [c for c in courses if c.category not in COURSE_CATEGORIES]
+    if other:
+        groups.append(("Other", other))
+    return groups
+
+
+@bp.route("/assign/individual", methods=["GET", "POST"])
+def assign_individual():
+    """One employee, chosen courses, reason "individual". Bypasses the division rule."""
+    employees = User.query.filter_by(is_active_employee=True).order_by(User.last_name, User.first_name).all()
+    all_courses = Course.query.filter_by(is_active=True).order_by(Course.category, Course.top10_rank, Course.title).all()
+    default_due = date.today() + timedelta(days=current_app.config["DEFAULT_DUE_DAYS"])
+    selected_user_id = parse_int(request.args.get("user"))
+    selected_course_ids = set()
+    note = ""
+    if request.method == "POST":
+        selected_user_id = parse_int(request.form.get("user_id"))
+        selected_course_ids = set(request.form.getlist("courses"))
+        note = (request.form.get("note") or "").strip()
+        due = parse_date(request.form.get("due_date"))
+        user = db.session.get(User, selected_user_id) if selected_user_id else None
+        courses = [c for c in all_courses if str(c.id) in selected_course_ids]
+        errors = []
+        if user is None or not user.is_active_employee:
+            errors.append("Choose an employee.")
+        if not courses:
+            errors.append("Tick at least one course.")
+        if not due:
+            errors.append("Enter a valid due date.")
+        if errors:
+            for message in errors:
+                flash(message, "danger")
+        else:
+            notify = request.form.get("notify") == "on"
+            created, skipped = assign_individual_courses(user, courses, due, assigned_by=current_user, note=note, send_notice=notify)
+            db.session.commit()
+            if created:
+                flash(
+                    f"{len(created)} course{'s' if len(created) != 1 else ''} assigned to {user.full_name}, due {due:%b %d, %Y}."
+                    + (" The employee has been emailed." if notify else ""),
+                    "success",
+                )
+            if skipped:
+                flash(
+                    f"Already assigned and still open, so not duplicated: {', '.join(c.title for c in skipped)}.",
+                    "info",
+                )
+            return redirect(url_for("admin.employee_edit", user_id=user.id))
+    return render_template(
+        "admin/assign_individual.html",
+        employees=employees,
+        course_groups=_course_groups(all_courses),
+        default_due=default_due,
+        selected_user_id=selected_user_id,
+        selected_course_ids=selected_course_ids,
+        note=note,
+    )
+
+
 # ------------------------------------------------------------------ reports
 
 
-def _report_data():
+def _report_users():
     division_id = parse_int(request.args.get("division"))
     users_q = User.query.filter_by(is_active_employee=True)
     if division_id:
         users_q = users_q.filter_by(division_id=division_id)
-    users = users_q.order_by(User.last_name, User.first_name).all()
+    return division_id, users_q.order_by(User.last_name, User.first_name).all()
+
+
+def _report_data():
+    division_id, users = _report_users()
     courses = Course.query.filter_by(is_active=True).order_by(Course.category, Course.top10_rank, Course.title).all()
     return division_id, users, courses, course_matrix(users, courses)
 
@@ -319,6 +464,13 @@ def reports_export():
     return Response(output.getvalue(), mimetype="text/csv", headers={"Content-Disposition": f"attachment; filename={filename}"})
 
 
+@bp.route("/reports/export.xlsx")
+def reports_export_xlsx():
+    """Full training record workbook for the active employees (optionally one division)."""
+    _division_id, users = _report_users()
+    return training_export_response(users, stem="training-record")
+
+
 # ------------------------------------------------------------------ notifications
 
 
@@ -344,9 +496,13 @@ def notification_log():
 @bp.route("/notifications/run", methods=["POST"])
 def notifications_run():
     counts = notifications.run_daily_notifications()
+    supervisor_copies = (
+        counts.get("training_due_30_supervisor", 0) + counts.get("training_due_7_supervisor", 0) + counts.get("training_overdue_supervisor", 0)
+    )
     flash(
         f"Reminder job finished: {counts['training_due_30']} thirty-day, {counts['training_due_7']} seven-day and "
-        f"{counts['training_overdue']} overdue reminders sent ({counts['skipped']} already sent earlier).",
+        f"{counts['training_overdue']} overdue reminders sent, plus {supervisor_copies} supervisor copies "
+        f"({counts['skipped']} already sent earlier).",
         "success",
     )
     return redirect(url_for("admin.notification_log"))

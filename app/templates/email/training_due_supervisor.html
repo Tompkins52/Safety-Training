@@ -1,0 +1,15 @@
+{% extends "email/_base.html" %}{% block body %}
+<p>Hello {{ supervisor.first_name }},</p>
+<p><strong>{{ user.full_name }}</strong> has safety training coming due. {{ user.first_name }} was reminded today; this is your copy as the direct supervisor.</p>
+<table cellpadding="6" style="font-size:15px;border-collapse:collapse;">
+  <tr><th align="left" style="border-bottom:1px solid #e5e7eb;">Course</th><th align="left" style="border-bottom:1px solid #e5e7eb;">Due</th></tr>
+  {% for row in rows %}
+  <tr>
+    <td style="border-bottom:1px solid #f3f4f6;">{{ row.course.title }}{% if row.course.standard %} <span style="color:#6b7280;">({{ row.course.standard }})</span>{% endif %}</td>
+    <td style="border-bottom:1px solid #f3f4f6;white-space:nowrap;">{{ row.assignment.due_date.strftime('%B %d, %Y') }}<br><span style="color:#6b7280;font-size:13px;">{% if row.days == 0 %}today{% else %}in {{ row.days }} day{% if row.days != 1 %}s{% endif %}{% endif %}</span></td>
+  </tr>
+  {% endfor %}
+</table>
+<p><a href="{{ link }}" style="display:inline-block;background:#0f9d6e;color:#fff;padding:10px 18px;border-radius:4px;text-decoration:none;">View team status</a></p>
+<p style="color:#6b7280;font-size:13px;">No action is needed from you unless the training stays open. You will get another copy if it becomes overdue.</p>
+{% endblock %}

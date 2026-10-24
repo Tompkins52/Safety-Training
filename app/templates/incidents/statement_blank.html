@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Blank {{ statement.role_label|lower }} form, {{ incident.incident_number }}{% endblock %}
+{% block body_class %}print-page{% endblock %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='css/incidents.css') }}">{% endblock %}
+{% block content %}
+<div class="no-print page-head">
+  <div><h1>Blank statement form</h1><p class="muted">Print this page and give it to the person. When it comes back, use <strong>Received on paper</strong> on the report page to attach it.</p></div>
+  <div class="actions"><button class="btn btn-primary" type="button" onclick="window.print()">Print</button> <a class="btn btn-ghost" href="{{ url_for('incidents.detail', incident_id=incident.id) }}">Back</a></div>
+</div>
+
+<div class="report">
+  <header class="report-head">
+    <div>
+      <h1>{{ org_name or app_name }}</h1>
+      <h2>{{ statement.role_label }}</h2>
+    </div>
+    <div class="report-id">
+      <div><span>Report no.</span><strong>{{ incident.incident_number }}</strong></div>
+      <div><span>Incident date</span><strong>{{ incident.occurred_at|datetime }}</strong></div>
+      <div><span>Location</span><strong>{{ incident.location }}</strong></div>
+    </div>
+  </header>
+
+  <p class="small">Please describe, in your own words, what happened before, during and after the incident{% if statement.role == 'witness' %}, including where you were and what you saw and heard{% endif %}. Use additional pages if needed. This statement will be attached to the incident report above.</p>
+
+  <table class="report-table">
+    <tr><th>Printed name</th><td>{{ statement.printed_name or '' }}</td><th>Department or division</th><td>{{ statement.department or '' }}</td></tr>
+    <tr><th>Title</th><td>{{ statement.title or '' }}</td><th>Date</th><td></td></tr>
+  </table>
+
+  <h4>Statement</h4>
+  {% for _ in range(18) %}<div class="write-line"></div>
+  {% endfor %}
+
+  <div class="sig-row" style="margin-top:36px">
+    <div><span class="line"></span>Signature</div>
+    <div><span class="line"></span>Date</div>
+  </div>
+  <p class="small" style="margin-top:24px">I confirm that this statement is true and complete to the best of my knowledge.</p>
+  <footer class="report-foot">{{ app_name }}. {{ incident.incident_number }}. {{ credits }}.</footer>
+</div>
+{% endblock %}

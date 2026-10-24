@@ -5,6 +5,7 @@
   "standard_title": "Hazard Communication (general industry)",
   "category": "osha_top10",
   "top10_rank": 2,
+  "new_hire": true,
   "divisions": ["electric", "environmental", "public"],
   "duration_minutes": 30,
   "renewal_months": 12,

@@ -1,35 +1,35 @@
-/* Safety Training: shared stylesheet for the full platform and the browser edition.
-   Palette: concrete, utility blue, safety orange, hi-vis lime. Type: Barlow and
+/* IntelliSafe: shared stylesheet for the full platform and the browser edition.
+   Palette: concrete, deep teal navy, signal green, mint. Type: Barlow and
    Barlow Semi Condensed (Libre Baskerville on certificates). */
 :root {
   --concrete: #eceef0;
   --concrete-deep: #dfe3e7;
   --sheet: #ffffff;
-  --blue: #173a5e;
-  --blue-deep: #0f2740;
-  --blue-tint: #e3ebf4;
+  --blue: #0b3954;
+  --blue-deep: #072638;
+  --blue-tint: #e3eef4;
   --ink: #1b2733;
   --steel: #5b6878;
   --rule: #cfd5db;
   --rule-soft: #e4e8ec;
-  --orange: #ef6420;
-  --orange-deep: #c94f12;
-  --orange-tint: #fdebe0;
-  --lime: #c6e33b;
-  --lime-tint: #eef7c7;
-  --lime-ink: #3b5300;
+  --orange: #0f9d6e;
+  --orange-deep: #0b7a55;
+  --orange-tint: #e1f5ec;
+  --lime: #8ff0c8;
+  --lime-tint: #e4faf1;
+  --lime-ink: #0b4a36;
   --caution-tint: #fdf0c2;
   --caution-ink: #6f4d00;
   --danger: #c8342e;
   --danger-tint: #fbe3e1;
   --danger-ink: #8f1f1a;
-  --info-tint: #e3ebf4;
+  --info-tint: #e3eef4;
   --radius: 4px;
   --radius-lg: 8px;
   --font: "Barlow", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-cond: "Barlow Semi Condensed", "Barlow", "Arial Narrow", Arial, sans-serif;
   --font-serif: "Libre Baskerville", Georgia, "Times New Roman", serif;
-  --stripe: repeating-linear-gradient(135deg, var(--orange) 0 14px, #fff 14px 26px);
+  --stripe: linear-gradient(90deg, #0f9d6e 0%, #38bdf8 55%, #8ff0c8 100%);
 }
 
 * { box-sizing: border-box; }
@@ -62,14 +62,15 @@ small, .small { font-size: 0.85rem; }
 
 /* Header */
 .site-header { background: var(--blue); color: #fff; }
-.site-header::after { content: ""; display: block; height: 6px; background: var(--stripe); }
+.site-header::after { content: ""; display: block; height: 4px; background: var(--stripe); }
 .header-inner { display: flex; align-items: center; gap: 22px; min-height: 66px; flex-wrap: nowrap; }
 .brand { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; min-width: 0; }
 .brand:hover { color: #fff; }
 .brand-mark { display: inline-flex; width: 38px; height: 38px; flex: none; }
 .brand-mark svg { width: 100%; height: 100%; display: block; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
-.brand-title { font-family: var(--font-cond); font-weight: 700; font-size: 1.3rem; letter-spacing: 0.01em; white-space: nowrap; }
+.brand-title { font-family: var(--font-cond); font-weight: 700; font-size: 1.35rem; letter-spacing: 0.01em; white-space: nowrap; }
+.brand-title .wm-light { font-weight: 500; }
 .brand-sub { font-size: 0.78rem; color: rgba(255,255,255,0.72); white-space: nowrap; }
 .main-nav { display: flex; gap: 2px; flex-wrap: wrap; }
 .main-nav a { font-family: var(--font-cond); font-weight: 600; font-size: 1.02rem; color: rgba(255,255,255,0.82); text-decoration: none; padding: 8px 11px; border-radius: var(--radius); white-space: nowrap; }

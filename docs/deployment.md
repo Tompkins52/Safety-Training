@@ -47,7 +47,7 @@ The command prints a temporary password. The administrator is asked to change it
 
 ```ini
 [Unit]
-Description=Safety Training platform
+Description=IntelliSafe safety platform
 After=network.target
 
 [Service]
@@ -137,7 +137,8 @@ The job is safe to run more than once a day; nothing is sent twice. An administr
 ## 6. Backups and upgrades
 
 - Back up `instance/safety.db` (SQLite) regularly. A nightly copy is enough: `sqlite3 instance/safety.db ".backup /backups/safety-$(date +%F).db"`.
-- To upgrade: `git pull`, `pip install -r requirements.txt`, restart the service. `flask init-db` can be re-run safely; it adds any new tables and reloads course content without touching employees, assignments or incidents.
+- To upgrade: `git pull`, `pip install -r requirements.txt`, restart the service, then `flask load-content` to pick up new or changed modules and checklists. New tables and columns are added automatically when the app starts (existing rows are kept), so upgrading from an earlier release needs no database work; `flask init-db` can also be re-run safely.
+- Statement links: when investigators send statement requests by email, the link uses `APP_BASE_URL`, so set it to the address employees reach the platform at.
 - To move to PostgreSQL later, set `DATABASE_URL=postgresql+psycopg://user:pass@host/safety`, install `psycopg`, and run `flask init-db`.
 
 ## 7. Security notes

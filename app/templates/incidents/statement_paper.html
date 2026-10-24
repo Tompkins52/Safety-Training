@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Statement from paper, {{ incident.incident_number }} | {{ app_name }}{% endblock %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='css/incidents.css') }}">{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <p class="eyebrow">{{ statement.role_label }}, <a href="{{ url_for('incidents.detail', incident_id=incident.id) }}">{{ incident.incident_number }}</a></p>
+    <h1>Statement received on paper</h1>
+    <p class="muted">{{ incident.type_label }}, {{ incident.occurred_at|datetime }}, {{ incident.location }}</p>
+  </div>
+  <div class="actions">
+    <a class="btn btn-ghost" href="{{ url_for('incidents.blank_statement', incident_id=incident.id, role=statement.role) }}">Print blank form</a>
+  </div>
+</div>
+
+<div class="notice">Type the statement exactly as written, record who signed it and when, and keep the paper copy with the report file.</div>
+
+<form method="post" class="card form-grid">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  {% if statement.id %}<input type="hidden" name="statement" value="{{ statement.id }}">{% else %}<input type="hidden" name="role" value="{{ statement.role }}">{% endif %}
+  <label>Printed name <span class="req">*</span>
+    <input type="text" name="printed_name" value="{{ statement.printed_name or '' }}" required>
+  </label>
+  <label>Department or division
+    <input type="text" name="department" value="{{ statement.department or '' }}">
+  </label>
+  <label>Title
+    <input type="text" name="title" value="{{ statement.title or '' }}">
+  </label>
+  <label>Date of incident
+    <input type="text" value="{{ incident.occurred_at|datetime }}" readonly>
+  </label>
+  <label class="span-2">Statement as written <span class="req">*</span>
+    <textarea name="statement_text" rows="12" required>{{ statement.statement_text or '' }}</textarea>
+  </label>
+  <label>Signed on paper on
+    <input type="date" name="signed_on" value="{{ (statement.signed_at.date() if statement.signed_at else today()).strftime('%Y-%m-%d') }}">
+  </label>
+  <label>Received by
+    <input type="text" name="received_by" value="{{ statement.received_by or current_user.full_name }}">
+  </label>
+  <div class="form-actions span-2">
+    <button class="btn btn-primary" type="submit">Attach statement</button>
+    <a class="btn btn-ghost" href="{{ url_for('incidents.detail', incident_id=incident.id) }}">Cancel</a>
+  </div>
+</form>
+{% endblock %}

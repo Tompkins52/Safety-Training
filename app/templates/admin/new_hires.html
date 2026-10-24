@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}New hire training | {{ app_name }}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div><h1>New hire training</h1><p class="muted">Employees hired in the last 90 days, plus anyone holding new hire assignments. The required new hire track is every course marked New hire that applies to the employee's division, due 30 days after the hire date.</p></div>
+  <div class="actions">
+    <a class="btn btn-ghost" href="{{ url_for('admin.assign_individual') }}">Assign individual training</a>
+    <a class="btn btn-primary" href="{{ url_for('admin.employee_new') }}">Add employee</a>
+  </div>
+</div>
+
+<section class="card">
+  <h2>Employees</h2>
+  {% if rows %}
+  <table class="table">
+    <thead><tr><th>Employee</th><th>Division</th><th>Supervisor</th><th>Hired</th><th>New hire training</th><th>Next due</th><th class="num">Overdue</th><th></th></tr></thead>
+    <tbody>
+    {% for row in rows %}
+      {% set p = row.progress %}
+      <tr>
+        <td><a href="{{ url_for('admin.employee_edit', user_id=row.user.id) }}">{{ row.user.full_name }}</a><br><small class="muted">{{ row.user.job_title or row.user.role_label }}</small></td>
+        <td>{{ row.user.division.name if row.user.division else '' }}</td>
+        <td>{{ row.user.supervisor.full_name if row.user.supervisor else '' }}</td>
+        <td>{{ row.user.hire_date|date }}{% if row.user.hire_date %}<br><small class="muted">{{ (today - row.user.hire_date).days }} days ago</small>{% endif %}</td>
+        <td>
+          {% if p.total %}
+            <div class="meter"><div class="meter-fill {{ 'ok' if p.percent >= 90 else ('warn' if p.percent >= 50 else 'danger') }}" style="width: {{ p.percent }}%"></div></div>
+            <span class="badge badge-{{ 'ok' if p.completed == p.total else ('danger' if p.overdue else 'warn') }}">{{ p.completed }} of {{ p.total }} complete</span>
+          {% else %}
+            <span class="badge badge-neutral">Not assigned</span>
+          {% endif %}
+        </td>
+        <td>{{ p.next_due|date }}</td>
+        <td class="num">{% if p.overdue %}<span class="badge badge-danger">{{ p.overdue }}</span>{% else %}0{% endif %}</td>
+        <td class="actions-cell">
+          {% if p.completed < p.total or not p.total %}
+          <form method="post" action="{{ url_for('admin.employee_new_hire', user_id=row.user.id) }}" class="inline-form">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="next" value="{{ url_for('admin.new_hires') }}">
+            <input type="hidden" name="notify" value="on">
+            <button class="btn btn-sm btn-secondary" type="submit" {% if not row.user.division %}disabled title="Set the employee's division first"{% endif %}>Assign track</button>
+          </form>
+          {% endif %}
+          <a class="btn btn-sm btn-ghost" href="{{ url_for('admin.employee_edit', user_id=row.user.id) }}">Record</a>
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <p class="small muted mt">Assign track creates an assignment for each new hire course the employee does not already hold an open assignment for, and emails the employee. Nothing is duplicated.</p>
+  {% else %}
+  <p class="muted">No new hires in the last 90 days. Set a hire date when adding an employee, or tick "Assign new hire training now" on the add employee form, and they will appear here.</p>
+  {% endif %}
+</section>
+
+<section class="card">
+  <h2>Required new hire courses ({{ courses|length }})</h2>
+  <table class="table compact">
+    <thead><tr><th>Course</th><th>Standard</th><th>Category</th><th>Applies to</th><th class="num">Est. time</th></tr></thead>
+    <tbody>
+    {% for c in courses %}
+      <tr>
+        <td>{{ c.title }}</td>
+        <td>{{ c.standard or '' }}</td>
+        <td>{{ c.category_label }}{% if c.top10_rank %} #{{ c.top10_rank }}{% endif %}</td>
+        <td>{% for d in c.divisions %}{{ d.name }}{% if not loop.last %}, {% endif %}{% endfor %}</td>
+        <td class="num">{{ c.duration_minutes }} min</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <p class="small muted">A course joins the new hire track with <code>"new_hire": true</code> in its file under <code>content/courses/</code>, followed by a content reload under Courses.</p>
+</section>
+{% endblock %}

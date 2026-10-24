@@ -1,0 +1,42 @@
+/* Inspections and audits: rules that app.css and forms.css do not already cover. */
+
+/* Template cards: keep the Start button at the bottom of each card */
+.template-card form { margin-top: auto; }
+.template-card .eyebrow { margin-bottom: 0; }
+
+/* Header stats */
+.inspection-stats .stat-value small { font-size: 0.95rem; color: var(--steel); font-weight: 600; margin-left: 5px; font-family: var(--font); }
+
+/* The whole form sits in one borderless fieldset so a read-only viewer gets every control disabled at once */
+.inspection-form > fieldset.plain { border: 0; padding: 0; margin: 0; min-width: 0; }
+.inspection-form > fieldset.plain:disabled .card { background: #fafbfc; }
+
+/* Section heads with their progress */
+.checklist-section .card-head { align-items: center; padding-bottom: 6px; margin-bottom: 4px; border-bottom: 2px solid var(--rule); }
+.checklist-section .card-head h2 { border-bottom: 0; padding-bottom: 0; }
+.section-progress { display: inline-flex; align-items: center; gap: 2px; font-family: var(--font-cond); font-size: 0.9rem; color: var(--steel); white-space: nowrap; }
+
+/* Findings */
+.finding-text .badge { margin-left: 6px; vertical-align: middle; }
+.finding-text .ref { font-family: var(--font-cond); white-space: nowrap; }
+
+/* Sign-off */
+.field-label { display: block; font-size: 0.95rem; font-weight: 600; color: #2b3642; margin-bottom: 4px; }
+.signature-block { margin-bottom: 14px; }
+.inspection-form .form-actions .count { font-family: var(--font-cond); color: var(--steel); margin-right: auto; }
+
+/* Printable record: let the long checklist flow across pages, but keep rows and headings whole */
+.report-section.checklist { page-break-inside: auto; break-inside: auto; }
+.report h4 { page-break-after: avoid; break-after: avoid; }
+.checklist-print { page-break-inside: auto; }
+.checklist-print tr { page-break-inside: avoid; break-inside: avoid; }
+.checklist-print th.col-item { width: 42%; }
+.checklist-print .col-ref { width: 11%; white-space: nowrap; font-size: 0.8rem; }
+.checklist-print .col-mark { width: 7%; text-align: center; font-size: 0.78rem; padding-left: 4px; padding-right: 4px; }
+.checklist-print td { font-size: 0.82rem; }
+.findings-print td { font-size: 0.82rem; }
+.report .sig-row .signature-img { max-height: 56px; margin-bottom: 4px; }
+
+@media (max-width: 860px) {
+  .checklist-section .card-head { align-items: flex-start; }
+}

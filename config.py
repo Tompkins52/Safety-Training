@@ -30,7 +30,7 @@ class Config:
     # Core
     SECRET_KEY = os.environ.get("SECRET_KEY", "change-me-before-going-live")
     ORG_NAME = os.environ.get("ORG_NAME", "")
-    APP_NAME = os.environ.get("APP_NAME", "Safety Training")
+    APP_NAME = os.environ.get("APP_NAME", "IntelliSafe")
     APP_BASE_URL = os.environ.get("APP_BASE_URL", "http://localhost:5000").rstrip("/")
     TIMEZONE = os.environ.get("TIMEZONE", "America/Chicago")
 

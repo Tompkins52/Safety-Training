@@ -2,7 +2,7 @@
 {% block title %}Course catalog | {{ app_name }}{% endblock %}
 {% block content %}
 <div class="page-head">
-  <div><h1>Course catalog</h1><p class="muted">Annual training modules. Each module ends with a 10-question quiz; a score of 80% or better records completion.</p></div>
+  <div><h1>Course catalog</h1><p class="muted">Annual training modules. Each module ends with a 10-question quiz; a score of 80% or better records completion. Modules tagged <span class="tag" style="margin-left:0">New hire</span> make up the required new hire track, due 30 days after the hire date. Supervisor modules go to supervisors and managers.</p></div>
 </div>
 
 <section class="card">
@@ -42,8 +42,8 @@
       <tr>
         <td><strong>{{ c.title }}</strong><br><small class="muted">{{ c.summary }}</small></td>
         <td>{{ c.standard or '' }}</td>
-        <td>{% if c.top10_rank %}Top 10 #{{ c.top10_rank }}{% else %}{{ c.category_label }}{% endif %}</td>
-        <td>{% for d in c.divisions %}{{ d.name }}{% if not loop.last %}, {% endif %}{% endfor %}</td>
+        <td>{{ c.category_label }}{% if c.top10_rank %} #{{ c.top10_rank }}{% endif %}{% if c.new_hire %}<span class="tag">New hire</span>{% endif %}</td>
+        <td>{% for d in c.divisions %}{{ d.name }}{% if not loop.last %}, {% endif %}{% endfor %}{% if c.is_supervisor_course %}<br><small class="muted">supervisors and managers</small>{% endif %}</td>
         <td class="num">{{ c.duration_minutes }} min</td>
         <td class="num">{{ c.renewal_months }} months</td>
       </tr>

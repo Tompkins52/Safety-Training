@@ -1,0 +1,13 @@
+{% if requested_by %}{{ requested_by.full_name }} has asked you{% else %}You have been asked{% endif %} to provide {{ 'an' if statement.role == 'witness' else 'a' }} {{ statement.role_label|lower }} for incident report {{ incident.incident_number }}.
+
+  Report no.:     {{ incident.incident_number }}
+  Incident date:  {{ incident.occurred_at.strftime('%B %d, %Y %I:%M %p') }}
+  Location:       {{ incident.location }}
+
+The link below opens a page that shows only your own statement form. You will not see the report or anyone else's statement. Describe what happened in your own words, sign with a finger, stylus or mouse, tick the confirmation box and submit.
+
+{{ link }}
+
+The link can be used once. After you sign and submit, your statement is attached to the report and cannot be changed through this link. If you did not expect this message, you can ignore it.
+
+{{ org_name or app_name }}

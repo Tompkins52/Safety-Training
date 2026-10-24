@@ -1,4 +1,4 @@
-# Writing and editing training content
+# Writing and editing training content and checklists
 
 Each training module is one JSON file in `content/courses/`. The file name does not matter; the `slug` inside the file identifies the course. After editing, reload with **Admin > Courses > Reload content from files** or `flask load-content`. The browser edition on GitHub Pages is rebuilt automatically when the change is pushed to `main` (or run `python scripts/build_site.py` locally).
 
@@ -12,6 +12,7 @@ Each training module is one JSON file in `content/courses/`. The file name does 
   "standard_title": "Ladders (construction)",
   "category": "osha_top10",
   "top10_rank": 5,
+  "new_hire": true,
   "divisions": ["electric", "environmental", "public"],
   "duration_minutes": 30,
   "renewal_months": 12,
@@ -36,8 +37,9 @@ Each training module is one JSON file in `content/courses/`. The file name does 
 | Field | Notes |
 | --- | --- |
 | `slug` | Unique id, lowercase with hyphens. Changing it creates a new course. |
-| `category` | `osha_top10` or `rescue`. Any other value is shown as-is. |
+| `category` | `osha_top10`, `general`, `rescue` or `supervisor`. Supervisor modules are assigned only to supervisors and administrators in the annual cycle. |
 | `top10_rank` | 1 to 10 for Top 10 courses, `null` otherwise. Controls catalog ordering. |
+| `new_hire` | `true` when the module belongs to the required new hire track. |
 | `divisions` | Division codes the course applies to **when first loaded**. After that, division mapping is managed in the app so administrators' changes are not overwritten. |
 | `renewal_months` | How long a completion is valid. Also editable in the app. |
 | `sections[].body` | Markdown: paragraphs, `- ` bullets, `1.` numbered lists, `**bold**`. No HTML. |
@@ -67,3 +69,7 @@ python -m pytest -q tests/test_app.py::test_content_loaded
 ```
 
 The loader rejects a file with a missing `slug`, `title`, `sections` or `questions`, a question with fewer than two options, or an `answer` index outside the options.
+
+## Inspection checklists and the audit
+
+Checklists live in `content/inspections/*.json`: `construction-site-inspection.json`, `general-industry-inspection.json` and `annual-safety-program-audit.json`. Each file has a `slug`, `title`, `kind` (`inspection` or `audit`), `industry`, `frequency`, an `intro` shown on the checklist card, and `sections`, each with a `heading` and `items` of `{"text": "...", "ref": "1926.501(b)(1)"}`. Items are plain sentences describing the condition that should be true on a compliant site. Edit the files, push, and both editions pick up the change: the browser edition is rebuilt by the Pages workflow and the full platform reads the files on each request, so past inspections keep the items they were started with.

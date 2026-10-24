@@ -1,0 +1,181 @@
+{
+  "slug": "incident-reporting-investigation",
+  "title": "Incident Reporting and Investigation for Supervisors and Managers",
+  "standard": "29 CFR 1904",
+  "standard_title": "Recording and Reporting Occupational Injuries and Illnesses, with incident investigation practice",
+  "category": "supervisor",
+  "top10_rank": null,
+  "new_hire": false,
+  "divisions": [
+    "electric",
+    "environmental",
+    "public"
+  ],
+  "duration_minutes": 35,
+  "renewal_months": 12,
+  "summary": "Supervisors and managers are the first link in incident reporting: they care for the injured, secure the scene, decide what must go to OSHA and when, and lead the investigation that keeps it from happening again. This course covers the reporting and recordkeeping rules in 29 CFR 1904, the recordability test, vehicle incident requirements including CDL post-accident testing, and the eight-section incident report used on this platform. It ends with how to find root causes and assign corrective actions that actually close.",
+  "objectives": [
+    "Explain the purpose of incident investigation and the reporting duties of employees and supervisors, including the no-retaliation rules in 1904.36 and Section 11(c).",
+    "Report a work-related fatality to OSHA within 8 hours and an inpatient hospitalization, amputation or loss of an eye within 24 hours, by phone, online or through the area office.",
+    "Maintain the OSHA 300 log, 301 incident report and 300A annual summary within the required entry, posting and retention periods.",
+    "Decide whether an injury or illness is recordable by applying the criteria in 1904.7 and the first aid list in 1904.7(b)(5).",
+    "Lead an investigation through the first hour, witness interviews and the eight-section incident report, identifying direct, contributing and root causes.",
+    "Assign corrective actions using the hierarchy of controls, with a responsible party, target date and verification date, and share lessons learned without naming individuals."
+  ],
+  "sections": [
+    {
+      "heading": "Why investigate at all",
+      "body": "An incident is the system telling you something. A broken wrist, a backed-over sign post or a near miss in a trench proves a hazard exists and the controls did not hold. The purpose of investigating is to **find out why and fix it so it does not happen again**, not to find someone to blame. Investigations that hunt for a culprit produce less reporting, not fewer injuries, because people stop telling you about the close calls that are your best warning.\n\nThere are also duties you cannot skip. **Part 1904** sets deadlines for reporting serious events to OSHA and for recording injuries, and missing them is a citation on its own. The **workers' compensation** insurer or risk pool needs a prompt, accurate report to handle a claim fairly.\n\nThe department follows a **just culture** approach: honest mistakes are coached, risky shortcuts are corrected along with the reasons behind them, and only reckless behavior goes to discipline. Say that out loud before you ask your first question."
+    },
+    {
+      "heading": "Why this training matters",
+      "body": "The supervisor is the first link in the chain. You get the call, decide whether the scene is safe, and start the clock on every deadline in this course. Get the first hour wrong and evidence disappears, witnesses compare stories, an OSHA deadline passes while everyone assumes someone else called, and the crew learns that reporting is a hassle.\n\nMake sure everyone you supervise knows the rule: **report every injury, illness, near miss, property damage event and vehicle incident, immediately**, to you or whoever is acting for you. Immediately means before the task is finished, not at the end of the shift.\n\nUnder **1904.35** the department must have a reasonable reporting procedure that does not discourage anyone from using it. Under **1904.36** and **Section 11(c) of the OSH Act**, no employee may be punished for reporting an injury, filing a safety complaint or asking to see the records. That includes a worse route, a lost overtime slot or a remark at the tailboard. Protect the reporter and you protect the program."
+    },
+    {
+      "heading": "Reporting to OSHA and keeping the records",
+      "body": "Reporting to OSHA and recording are two different duties.\n\n**Reporting to OSHA (1904.39).** The department must report a **work-related fatality within 8 hours** of learning of it, and an **inpatient hospitalization, amputation or loss of an eye within 24 hours**. Inpatient hospitalization means formal admission for care, not an emergency room visit or observation. Report by **phone to the nearest OSHA area office**, by phone to **OSHA's 24-hour line, 1-800-321-6742**, or **online at osha.gov**. The safety office normally makes the call, but if you cannot reach them, you make it. Most city employees are covered through an OSHA-approved state plan that adopts these rules; know which agency covers your department.\n\n**Recording (1904.29 through 1904.35).** The department keeps three forms or their equivalents:\n\n- The **300 log**, a running list of recordable cases. Enter each case **within 7 calendar days** of learning about it.\n- The **301 incident report**, one per case. The platform's incident report serves as the equivalent.\n- The **300A annual summary**, the year's totals, certified by a senior official and **posted from February 1 through April 30** of the next year.\n\nKeep the records for **five years** after the year they cover. Employees, former employees and their representatives may see the 300 log, and their own 301, by the end of the next business day."
+    },
+    {
+      "heading": "Is it recordable?",
+      "body": "A case is **work-related** if an event or exposure at work caused it, contributed to it or made an existing condition significantly worse. A work-related case is **recordable** under 1904.7 if it results in any of these:\n\n- **Death.**\n- **Days away from work**, counted in calendar days after the day of injury, capped at 180.\n- **Restricted work or job transfer**, meaning the employee cannot do a routine job function or a full shift.\n- **Medical treatment beyond first aid.**\n- **Loss of consciousness.**\n- **A significant injury or illness diagnosed by a physician** or other licensed health care professional, such as a fractured or cracked bone or tooth or a punctured eardrum, even with no treatment or lost time.\n\nFirst aid is not a judgment call. Section 1904.7(b)(5) lists everything that counts, and anything not on the list is medical treatment. In plain terms: over-the-counter medicine at over-the-counter strength; tetanus shots; cleaning or soaking a wound; bandages, butterfly bandages and Steri-Strips; hot or cold packs; elastic wraps and other non-rigid supports; splints, slings and collars used only during transport; draining a blister or a nail; eye patches; flushing or swabbing something out of the eye; pulling a splinter; finger guards; massage; and fluids for heat stress. Stitches, staples, prescription medicine, rigid splints and physical therapy are medical treatment. A doctor visit for observation or an x-ray alone is not.\n\n**Privacy cases.** For an injury to an intimate body part or the reproductive system, a sexual assault, a mental illness, HIV, hepatitis, tuberculosis, a needlestick with another person's blood, or another illness the employee asks to keep private, write 'privacy case' on the 300 log in place of the name and keep the name on a separate confidential list."
+    },
+    {
+      "heading": "Vehicle incidents",
+      "body": "Any crash, backing strike or rollover involving a department vehicle also gets the vehicle section of the report.\n\n- **Call the police** and get the report number, even for minor damage. Describe what happened; do not argue fault.\n- **Photograph** before anything moves: every vehicle from all four corners, damage close up, skid marks, signs and signals, weather and lighting.\n- **Get witness names and phone numbers** before they drive away.\n- **Post-accident testing for CDL drivers.** Under **49 CFR 382.303**, a driver operating a commercial motor vehicle must be tested after a crash with a fatality, and after a crash with an injury treated away from the scene or a vehicle towed away if the driver is cited. The **alcohol test must be done within 2 hours** of the crash; if not, document why and stop trying at 8 hours. The **drug test must be done within 32 hours**. The driver must stay available for testing, which never means delaying medical care.\n- **Preventability review.** A crash is preventable if the driver did not do everything reasonably possible to avoid it, whoever was ticketed. The fleet safety committee decides, using the ANSI/ASSP Z15.1 approach, and the answer drives corrective action, not discipline."
+    },
+    {
+      "heading": "The investigation, step by step",
+      "body": "1. **Care for the injured.** First aid, then 911 if there is any doubt.\n2. **Secure the scene.** Stop work, cone or tape the area and lock out any equipment involved. In a fatality or hospitalization case, move nothing except to rescue someone or prevent further harm; OSHA may want to see the scene as it was.\n3. **Preserve evidence.** Photographs from several angles, measurements, the tools and PPE in use, weather and lighting notes, and telematics and camera footage before it overwrites.\n4. **Notify.** Your chain of command and the safety office right away so the OSHA clock is not missed, and the police for any vehicle incident.\n5. **Start the report** on the platform before the end of the shift.\n6. **Interview promptly and separately**, before memories fade and blend. Talk to the injured employee first if they are able, then each witness alone, at or near the scene. Ask **open questions**: 'Walk me through what you were doing.' Ask **where and how it happened**, not whose fault it was. Do not lead, interrupt or correct. Finish with 'What would have prevented this?' Write the statement **in the witness's own words**, read it back, and have them **sign and date** it.\n7. **Complete the eight-section report.** The sections are (1) incident information, (2) vehicle and equipment, (3) personal injury, with a body diagram, (4) description, (5) principal statement, (6) eyewitness statements, (7) facts and analysis, with direct cause, contributing causes and root cause, and (8) signatures. The **investigator**, normally the supervisor, completes sections 1 through 4 and drafts 7. The **principal party**, the injured or involved employee, writes section 5 in their own words. **Witnesses** complete section 6. The **safety representative** reviews section 7 and the corrective actions. **Management signatures** in section 8 come last: supervisor, division manager, director.\n8. **Analyze, correct and close.** The next section shows how."
+    },
+    {
+      "heading": "Finding causes and fixing them",
+      "body": "Every incident has layers. The **direct cause** is the event that did the harm: the fall, the strike, the contact. **Contributing causes** are the conditions and actions that made it likely; sort them as **behavioral** (what people did or did not do), **engineered** (equipment, vehicle and facility design) or **environmental** (weather, lighting, footing, traffic). The **root cause** is the system failure underneath.\n\nA worked example. A street crew laborer fractures an ankle stepping down from a dump truck tailgate onto a loose chunk of asphalt. **Direct cause:** a fall from the tailgate. **Contributing causes:** no step or grab handle on the truck (engineered); the crew was rushing to beat rain and he had a shovel in both hands (behavioral); debris piled where crews step down (environmental). Now the **five whys**. Why the fracture? He landed on loose material. Why was he jumping down? There is no step. Why no step? The trucks were ordered without one. Why did nobody raise it? Getting on and off trucks was never treated as a hazard. Why not? There is no job hazard analysis for mounting and dismounting, so no equipment or rule exists. That is the **root cause**.\n\nCorrective actions follow the **hierarchy of controls**, top down: **elimination, substitution, engineering, administrative, PPE**. Here, retrofitting steps and grab handles (engineering) beats a three-points-of-contact rule (administrative), which beats ankle-supporting boots (PPE). Every action gets a **responsible party**, a **target date** and a **verification date** when someone confirms it was done and works. List the **supporting references**, the policies, procedures and regulations that applied. Then close the loop: tell the injured employee and the crew what changed."
+    },
+    {
+      "heading": "What this means on the job",
+      "body": "**Share lessons learned.** Every closed investigation becomes a tailboard topic. Describe what happened, why, and what changed, and **never name the people involved**. Your job is to show that the department fixes systems instead of punishing people. Near misses get the same treatment.\n\n**Electric Services.** An arc flash with no injury is a near miss and gets a full investigation. Preserve the rubber goods, hot sticks and switching order. A crew member admitted to the hospital after a contact is a 24-hour OSHA report.\n\n**Environmental Services.** A gas exposure that sends an operator to the emergency room is recordable if treatment goes beyond first aid and reportable if the operator is admitted. Save the gas monitor log before it clears.\n\n**Public Services.** The 2-hour alcohol testing window after a plow or refuse truck crash starts at the moment of the crash, not when you hear about it. A worker struck by mower discharge or a falling limb needs a careful body diagram.\n\nThe investigation is finished when the corrective action is verified, not when the form is signed."
+    }
+  ],
+  "key_takeaways": [
+    "Investigate to prevent the next incident, not to assign blame; a just culture coaches honest mistakes and reserves discipline for reckless behavior.",
+    "Employees must report every injury, illness, near miss, property damage event and vehicle incident immediately, and 1904.36 and Section 11(c) forbid any retaliation for reporting.",
+    "Report a work-related fatality to OSHA within 8 hours and an inpatient hospitalization, amputation or loss of an eye within 24 hours, by phone to the area office or the 24-hour line, or online.",
+    "Enter each recordable case on the 300 log within 7 calendar days, post the 300A from February 1 through April 30, and keep the records for five years.",
+    "A case is recordable if it involves death, days away, restricted work or transfer, medical treatment beyond the 1904.7(b)(5) first aid list, loss of consciousness, or a significant diagnosed injury or illness.",
+    "After a CDL driver's qualifying crash, the alcohol test is due within 2 hours and the drug test within 32 hours under 49 CFR 382.303.",
+    "Interview witnesses promptly and separately with open questions, record statements in their own words, and have them signed and dated.",
+    "Work from direct cause to contributing causes to root cause, pick corrective actions from the top of the hierarchy of controls, assign an owner with target and verification dates, and share the lesson at a tailboard without names."
+  ],
+  "questions": [
+    {
+      "text": "What is the main purpose of an incident investigation?",
+      "options": [
+        "To document who was at fault so discipline can be applied consistently",
+        "To satisfy the insurer that the department was not negligent",
+        "To find out why the incident happened and fix it so it does not happen again",
+        "To decide whether the injured employee's account is credible"
+      ],
+      "answer": 2,
+      "explanation": "Investigations exist to prevent recurrence. Blame-focused investigations drive reporting underground, and the just culture approach reserves discipline for reckless behavior, not honest mistakes."
+    },
+    {
+      "text": "Which incidents must employees report to their supervisor, and when?",
+      "options": [
+        "Every injury, illness, near miss, property damage event and vehicle incident, immediately",
+        "Injuries that need a doctor, by the end of the shift",
+        "Injuries and vehicle crashes only, within 24 hours",
+        "Anything the employee believes is recordable, within 7 days"
+      ],
+      "answer": 0,
+      "explanation": "The rule is everything, right away, including near misses and property damage. Deciding what is recordable is the supervisor's and the safety office's job, not the employee's, and early reports keep small cases from becoming serious ones."
+    },
+    {
+      "text": "A line worker is admitted to the hospital overnight after a fall from a pole at 2:00 p.m. on Tuesday. By when must the department report this to OSHA?",
+      "options": [
+        "Within 8 hours, by 10:00 p.m. Tuesday",
+        "Within 24 hours of learning of the admission",
+        "Within 7 calendar days, when the case is entered on the 300 log",
+        "No report is needed unless the worker misses more than three days"
+      ],
+      "answer": 1,
+      "explanation": "Under 1904.39, an inpatient hospitalization, amputation or loss of an eye must be reported within 24 hours. The 8-hour deadline applies to a fatality. The 7-day deadline is for entering the case on the 300 log, which is separate from reporting."
+    },
+    {
+      "text": "Which statement about OSHA recordkeeping is correct?",
+      "options": [
+        "The 300A annual summary is posted from January 1 through March 31",
+        "Records are kept for three years after the year they cover",
+        "Only the safety office may see the 300 log",
+        "A recordable case must be entered on the 300 log within 7 calendar days of learning about it"
+      ],
+      "answer": 3,
+      "explanation": "Section 1904.29 gives 7 calendar days to enter a case. The 300A is posted February 1 through April 30, records are kept for five years, and employees and their representatives have a right to see the log."
+    },
+    {
+      "text": "Which of these injuries is recordable?",
+      "options": [
+        "A cut on the forearm closed with Steri-Strips",
+        "A splinter removed with tweezers",
+        "A cut on the forearm closed with two sutures",
+        "A sore shoulder treated with an ice pack and an over-the-counter pain reliever"
+      ],
+      "answer": 2,
+      "explanation": "Sutures are medical treatment, so the case is recordable. Steri-Strips, splinter removal by simple means, cold packs and nonprescription medicine are all on the 1904.7(b)(5) first aid list."
+    },
+    {
+      "text": "An employee reports a work-related injury to the reproductive system. How is it entered on the 300 log?",
+      "options": [
+        "As 'privacy case' in place of the name, with the name kept on a separate confidential list",
+        "With the employee's name, like any other case",
+        "It is left off the log because of its private nature",
+        "With the employee's initials only"
+      ],
+      "answer": 0,
+      "explanation": "Injuries to intimate body parts or the reproductive system are privacy concern cases under 1904.29(b)(7). The case is still recorded, but 'privacy case' replaces the name on the log and the name goes on a separate confidential list."
+    },
+    {
+      "text": "A refuse truck driver with a CDL is cited after a crash in which the other vehicle had to be towed. Under 49 CFR 382.303, when must the alcohol test be done?",
+      "options": [
+        "Within 32 hours of the crash",
+        "Within 2 hours of the crash, with the reasons documented if it is not, and attempts stopped at 8 hours",
+        "Before the end of the driver's shift",
+        "Only if the police officer requests it"
+      ],
+      "answer": 1,
+      "explanation": "Post-accident alcohol testing is due within 2 hours; if it cannot be done, the employer documents why and stops attempting after 8 hours. The drug test is due within 32 hours. A tow-away crash with a citation triggers both tests."
+    },
+    {
+      "text": "Which approach to witness interviews follows the course?",
+      "options": [
+        "Interview all witnesses together so they can fill in each other's gaps",
+        "Ask yes or no questions to keep the interview short and focused",
+        "Write a summary of what the witness probably meant and file it",
+        "Interview each witness separately and promptly, ask open questions about where and how it happened, write the statement in their own words, and have them sign and date it"
+      ],
+      "answer": 3,
+      "explanation": "Separate, prompt interviews with open questions keep memories from blending. Statements belong in the witness's own words, signed and dated, and the questions focus on where and how, not whose fault."
+    },
+    {
+      "text": "In the course example, a laborer fractures an ankle jumping down from a dump truck tailgate because the truck has no step. What is the root cause?",
+      "options": [
+        "The laborer landed on a loose chunk of asphalt",
+        "Getting on and off trucks was never analyzed as a hazard, so no equipment or rule exists",
+        "The crew was rushing to finish before the rain",
+        "The laborer was wearing low-cut boots"
+      ],
+      "answer": 1,
+      "explanation": "The loose asphalt is part of the direct cause and rushing is a behavioral contributing cause. The root cause is the system gap underneath: no job hazard analysis for mounting and dismounting, which is why there is no step and no rule."
+    },
+    {
+      "text": "After that investigation, which corrective action sits highest on the hierarchy of controls?",
+      "options": [
+        "Issue ankle-supporting boots to the crew",
+        "Add a three-points-of-contact rule to the tailboard",
+        "Retrofit the trucks with steps and grab handles",
+        "Post a reminder sign in the shop"
+      ],
+      "answer": 2,
+      "explanation": "Steps and grab handles are an engineering control, which ranks above administrative controls like rules and signs and above PPE like boots. Elimination and substitution are higher still but are not practical for climbing on and off a truck."
+    }
+  ]
+}

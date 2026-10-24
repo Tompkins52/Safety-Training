@@ -1,0 +1,119 @@
+{
+  "slug": "annual-safety-program-audit",
+  "title": "Annual Safety Program Audit",
+  "kind": "audit",
+  "industry": "program",
+  "frequency": "Once a year, by the safety manager with division management",
+  "intro": "This audit is a program-level review of whether the required written programs, training, inspections, records and follow-up are in place and working across the department. It is different from a site or facility inspection: instead of looking for hazards on the floor, you are checking documents, records and systems. Complete it with each division manager, note gaps and the owner for each, and carry the open items into next year's safety goals.",
+  "sections": [
+    {
+      "heading": "Written programs",
+      "items": [
+        {"text": "The written hazard communication program is current, the chemical inventory was updated this year, and employees know where to find it.", "ref": "1910.1200(e)"},
+        {"text": "The respiratory protection program names an administrator and was evaluated for effectiveness within the year.", "ref": "1910.134(c), 1910.134(l)"},
+        {"text": "The energy control program has equipment-specific lockout procedures, and each procedure had its periodic inspection within the year.", "ref": "1910.147(c)(4), 1910.147(c)(6)"},
+        {"text": "The permit-required confined space program is current, with an up-to-date space inventory and a review of canceled permits within 12 months.", "ref": "1910.146(c), 1910.146(d)(14)"},
+        {"text": "The bloodborne pathogens exposure control plan was reviewed and updated within the year, including the exposure determination and sharps review.", "ref": "1910.1030(c)(1)(iv)"},
+        {"text": "The emergency action plan and fire prevention plan are in writing, current for each facility, and available to employees.", "ref": "1910.38, 1910.39"},
+        {"text": "The PPE hazard assessment is certified and has been updated for new tasks, chemicals or equipment added this year.", "ref": "1910.132(d)(2)"},
+        {"text": "A hearing conservation program covers every employee exposed at or above 85 dBA, where that exposure exists.", "ref": "1910.95(c)"},
+        {"text": "A workplace violence prevention policy is in place with a reporting procedure and training, and employees know it exists.", "ref": "OSH Act 5(a)(1)"},
+        {"text": "Each program names a responsible person, shows a review date within the last 12 months, and is accessible in print or electronically.", "ref": ""}
+      ]
+    },
+    {
+      "heading": "Training",
+      "items": [
+        {"text": "Annual safety training (hazard communication, bloodborne pathogens, PPE, emergency action, extinguishers, hearing) is complete for all employees and documented with names, dates and topics.", "ref": "1910.1200(h), 1910.1030(g)(2), 1910.157(g)"},
+        {"text": "New hires received safety orientation and job-specific training within their first weeks and before exposure to the hazards of the job.", "ref": "1910.132(f), 1910.1200(h)(1)"},
+        {"text": "Every forklift and powered industrial truck operator has an evaluation on file dated within the last 3 years.", "ref": "1910.178(l)(4)(iii)"},
+        {"text": "Every respirator user has a fit test dated within the last 12 months and a current medical clearance.", "ref": "1910.134(f)(2), 1910.134(e)"},
+        {"text": "Designated first aid responders at each facility and crew hold current first aid and CPR/AED certifications.", "ref": "1910.151(b)"},
+        {"text": "Each line worker completed a pole top rescue and a bucket truck rescue drill within the year, with the rescue time recorded.", "ref": "1910.269(b)(1), APPA Safety Manual"},
+        {"text": "Confined space entrants, attendants, entry supervisors and rescuers have current training, and rescue practice was held within 12 months.", "ref": "1910.146(g), 1910.146(k)(2)(iv)"},
+        {"text": "Competent persons for excavation, scaffolds and fall protection, qualified electrical workers, and certified flaggers are identified with current training.", "ref": "1926.651(k), 1926.503, 1910.332"},
+        {"text": "Operators of aerial lifts, cranes and digger derricks, chainsaws and mowers have documented equipment-specific training, and crane operators are certified.", "ref": "1910.67(c)(2), 1926.1427, ANSI Z133"}
+      ]
+    },
+    {
+      "heading": "Inspections",
+      "items": [
+        {"text": "Job site inspections were completed by supervisors on the required schedule, and the records are on file.", "ref": "1926.20(b)(2)"},
+        {"text": "Facility inspections were completed monthly or quarterly as required, and findings were closed within the target dates.", "ref": ""},
+        {"text": "Fire extinguishers show monthly visual checks for every month and annual maintenance within the year.", "ref": "1910.157(e)"},
+        {"text": "Harnesses, lanyards and self-retracting lifelines were inspected by a competent person on the manufacturer's schedule, and ladders are inspected before use.", "ref": "1910.140(c)(18), 1926.502(d)(21), 1910.23(b)(9)"},
+        {"text": "Aerial lifts and bucket trucks had annual inspections and, for insulated booms, dielectric tests within the year.", "ref": "ANSI/SAIA A92.2, 1926.453"},
+        {"text": "Cranes, hoists and digger derricks have documented monthly and annual inspections, and load tests after major repair.", "ref": "1926.1412, 1910.179(j), 1910.180(d)"},
+        {"text": "Vehicle pre-trip inspections and driver vehicle inspection reports are completed, defects repaired, and reports kept at least 3 months.", "ref": "49 CFR 396.11, 49 CFR 396.13"},
+        {"text": "Slings and rigging hardware have periodic inspections documented, and damaged items were removed from service.", "ref": "1910.184(d), 1926.251(a)"},
+        {"text": "Eyewash stations are flushed weekly, AEDs checked monthly, and SCBA inspected monthly, each with a record.", "ref": "ANSI Z358.1, 1910.134(h)(3)"}
+      ]
+    },
+    {
+      "heading": "Incident management",
+      "items": [
+        {"text": "All injuries, illnesses, vehicle collisions, property damage and near misses were reported through the defined process within the required time.", "ref": "1904.35(b)(1)"},
+        {"text": "Each incident has a written investigation by the supervisor, with statements, photos and a timeline where appropriate.", "ref": ""},
+        {"text": "Investigations identify root causes using a structured method rather than stopping at employee error.", "ref": ""},
+        {"text": "Corrective actions have owners and due dates, are closed, and were verified to be effective after implementation.", "ref": ""},
+        {"text": "Incident trends by division, injury type, body part, cause and time of day were reviewed at least quarterly and reported to management.", "ref": ""},
+        {"text": "Lessons learned from incidents were shared across divisions through safety alerts or tailboard topics.", "ref": ""},
+        {"text": "Near miss reporting is encouraged and nonpunitive, and near misses are investigated the same way as injuries.", "ref": "1904.36"},
+        {"text": "Fatalities were reported to OSHA within 8 hours and inpatient hospitalizations, amputations and losses of an eye within 24 hours, if any occurred.", "ref": "1904.39"}
+      ]
+    },
+    {
+      "heading": "Recordkeeping",
+      "items": [
+        {"text": "The OSHA 300 log is current, with each recordable case entered within 7 calendar days of learning of it.", "ref": "1904.29(b)(3)"},
+        {"text": "The OSHA 300A summary for last year was certified by a senior official and posted from February 1 through April 30.", "ref": "1904.32"},
+        {"text": "An OSHA 301 incident report or equivalent is complete for every recordable case.", "ref": "1904.29(b)(2)"},
+        {"text": "Electronic submission of injury data was completed by March 2 where the department is required to submit.", "ref": "1904.41"},
+        {"text": "Injury and illness records are retained for 5 years after the end of the year they cover, and privacy cases withhold the employee name.", "ref": "1904.33, 1904.29(b)(6)"},
+        {"text": "Training records and certificates for forklift, confined space, lockout, respirator, first aid, flagger and licenses are retained and retrievable by employee.", "ref": ""},
+        {"text": "The SDS library is current, and safety data sheets for discontinued chemicals or exposure records are kept 30 years.", "ref": "1910.1020(d)(1)(ii)"},
+        {"text": "Medical surveillance records (audiograms, respirator clearances, vaccinations, exposure monitoring) are kept for employment plus 30 years and stored confidentially.", "ref": "1910.1020(d)(1)(i), 1910.1030(h)"},
+        {"text": "Equipment inspection records for cranes, lifts, extinguishers and lockout periodic inspections are retained as the standards require.", "ref": ""}
+      ]
+    },
+    {
+      "heading": "Emergency preparedness",
+      "items": [
+        {"text": "An evacuation drill was held at each staffed facility within the year, and drills for severe weather or shelter in place were documented with observations.", "ref": ""},
+        {"text": "Evacuation maps are posted at each facility showing primary and secondary routes, assembly points, extinguisher and AED locations.", "ref": ""},
+        {"text": "Fire alarms, employee alarms, chlorine leak alarms and weather warning systems were tested on schedule and employees recognize each signal.", "ref": "1910.165(d)"},
+        {"text": "AEDs were inspected monthly with pads and batteries in date, and first aid kits are stocked and checked monthly.", "ref": "1910.151(b)"},
+        {"text": "A severe weather plan identifies shelter areas, covers flooding at lift stations and plants, and gets warnings to crews in the field.", "ref": ""},
+        {"text": "Chemical release plans for chlorine, ammonia and other hazardous materials are coordinated with the fire department, and exercises were held where RMP applies.", "ref": "1910.120(q), 40 CFR 68.95"},
+        {"text": "Emergency contact lists, call trees and after-hours numbers are current, and critical shutoffs are documented for each facility.", "ref": ""},
+        {"text": "Emergency lights were tested monthly and for 90 minutes annually, and backup power for critical facilities was exercised.", "ref": "NFPA 101 7.9.3"}
+      ]
+    },
+    {
+      "heading": "Contractors and the public",
+      "items": [
+        {"text": "Contractor safety requirements (insurance, safety program, training, site rules) are written into contracts and verified before work starts.", "ref": ""},
+        {"text": "Contractors received orientation on site hazards, permit spaces, chemicals, lockout and emergency procedures, and the information exchange is documented.", "ref": "1910.146(c)(8), 1926.1203(h), 1910.147(f)(2)"},
+        {"text": "Contractor work is monitored, staff have authority to stop unsafe work, and contractor incidents are reported to the department.", "ref": ""},
+        {"text": "Traffic control plans are prepared for work on or near roadways, follow MUTCD Part 6 and state DOT standards, and flaggers are certified.", "ref": "MUTCD Part 6"},
+        {"text": "The public is protected at job sites with barricades, fencing, covered or backfilled excavations at the end of the shift, accessible pedestrian detours and lighting.", "ref": "MUTCD Part 6, 1926.651"},
+        {"text": "Utility locates are requested through 811 before every excavation by staff or contractors, and the department responds to locate requests on time.", "ref": "1926.651(b)"},
+        {"text": "Facility visitors and tour groups sign in, receive PPE and an escort, and chemical rooms and electrical rooms are kept locked.", "ref": ""},
+        {"text": "Work near schools, parks and events has a plan for separating the public from equipment and open work.", "ref": ""}
+      ]
+    },
+    {
+      "heading": "Management and employee involvement",
+      "items": [
+        {"text": "A safety committee with management and employee members met at least quarterly, with minutes, action items and follow-up on file.", "ref": ""},
+        {"text": "Tailboard and toolbox talks are held and documented with topic, date and attendance, daily for field crews and at least weekly for shops.", "ref": "1910.269(c)"},
+        {"text": "The hazard reporting path works: employees know how to report, reports are acknowledged, acted on, and the reporter gets feedback.", "ref": "1904.35(b)(1)(i)"},
+        {"text": "Employees can report injuries and hazards without discipline or retaliation, and the policy says so in writing.", "ref": "1904.36, OSH Act 11(c)"},
+        {"text": "Management reviewed the safety program this year using audit, inspection, incident and training data, and shared the results.", "ref": ""},
+        {"text": "Safety goals and leading indicators for next year are set with owners, measurable targets and budget.", "ref": ""},
+        {"text": "Supervisors have safety responsibilities in their job descriptions and performance reviews, and good safety performance is recognized.", "ref": ""},
+        {"text": "Each division has a designated safety representative with the time and training to do the role.", "ref": ""}
+      ]
+    }
+  ]
+}

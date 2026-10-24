@@ -1,0 +1,177 @@
+{
+  "slug": "electrical-safety",
+  "title": "Electrical Safety",
+  "standard": "29 CFR 1910 Subpart S",
+  "standard_title": "Electrical, general industry (1910.303 to 1910.335), with 1910.269 for power line work",
+  "category": "general",
+  "top10_rank": null,
+  "new_hire": true,
+  "divisions": ["electric", "environmental", "public"],
+  "duration_minutes": 35,
+  "renewal_months": 12,
+  "summary": "Electricity is in every shop, plant and street cabinet, and a shock that would barely hurt at the wall outlet can kill when you are wet, grounded or 30 feet up a ladder. This course covers how electricity injures, who may work on energized parts, the de-energize and lock out rule, approach distances to overhead lines, 811 before digging, GFCIs and cord inspection, panel clearances, generators, downed lines and arc flash. Line crews follow 1910.269 and the department's energized work rules on top of this course.",
+  "objectives": [
+    "Explain how shock, electrocution, arc flash and arc blast injure the body and why a small current is enough to kill.",
+    "Distinguish qualified from unqualified persons under 1910.332 and state the de-energize, lock out and verify rule in 1910.333.",
+    "Keep yourself, your tools and your equipment at least 10 feet from overhead lines up to 50 kV and call 811 before any digging.",
+    "Inspect cords and portable tools before each shift and use GFCI protection for temporary power and wet locations.",
+    "Recognize unsafe panels, electrical rooms and generator setups, including the 36-inch working space and the backfeed hazard.",
+    "Respond correctly to a downed power line, including when your vehicle is in contact with it."
+  ],
+  "sections": [
+    {
+      "heading": "How electricity injures",
+      "body": "Electricity injures in several ways:\n\n- **Shock** is current passing through your body. It can stop your breathing or throw your heart into **ventricular fibrillation**, which kills within minutes. **Electrocution** is death by shock.\n- **Burns** form where current enters and leaves the body and from the heat of an arc.\n- **Arc flash** is the explosion of light and heat when current jumps through the air. OSHA notes arc temperatures can reach about 35,000 degrees Fahrenheit.\n- **Arc blast** is the pressure wave from that explosion, which throws people and molten metal.\n- **Falls** follow shock: a jolt that would not kill you on the ground knocks you off a ladder, pole or tank.\n\nIt is **current, measured in amps, that does the damage, not voltage**. A fraction of one amp is enough:\n\n- Around **5 milliamps**: a definite shock. A GFCI trips at this level.\n- Roughly **10 to 30 milliamps**: muscles lock and you **cannot let go** of the conductor.\n- **50 to 150 milliamps**: severe pain, breathing stops, death is possible.\n- **About 1 amp and up**: the heart stops pumping and death is likely.\n\nA 100-watt light bulb draws less than 1 amp. That is why ordinary 120-volt circuits kill people, especially when sweat, rain, standing water or a metal ladder lowers the body's resistance."
+    },
+    {
+      "heading": "Why this training matters",
+      "body": "Electricity kills workers who never meant to touch a wire: tree trimmers whose pole saw reached a line, laborers who raised an aluminum ladder into a service drop, operators who lifted a dump body or boom into a line, mechanics using a damaged drill in a wet shop, and plant operators who reached into a control panel.\n\nThe hazard is invisible and silent, so the only protection is knowing the rules and following them when nothing looks wrong.\n\nThis course is the general electrical safety training required under **29 CFR 1910.332** for employees who face a risk of shock that the wiring rules alone do not remove. For most of the department that means working near energized equipment, not on it. Line crews, substation and meter technicians work under **1910.269** and the department's energized work procedures, minimum approach distances, rubber goods and grounding rules; that training is separate and this course does not replace it."
+    },
+    {
+      "heading": "Qualified or unqualified, and de-energize first",
+      "body": "A **qualified person** has been trained in and has shown the skills and knowledge to work on specific equipment: telling exposed live parts from other parts, determining their voltage, and knowing the approach distances in 1910.333(c). You can be qualified for one piece of equipment and unqualified for the one next to it. Everyone else is **unqualified**, including most of the department. **Unqualified persons do not work on energized parts, open energized panels or test circuits.**\n\n**De-energize first.** Section 1910.333(a) requires live parts to be **de-energized before anyone works on or near them**, unless the employer can show that shutting down creates a greater hazard or is not feasible. De-energized means:\n\n- The circuit is opened at the breaker or disconnect and **locked out and tagged** under the department's lockout/tagout program.\n- A **qualified person tests with a meter** and confirms zero voltage before anyone touches the parts. A breaker in the off position proves nothing until the test is done.\n\n**Training.** Under 1910.332, employees who work near exposed parts at 50 volts or more are trained in the safety-related work practices in 1910.331 to 1910.335 that apply to their jobs, and unqualified persons also learn any other electrical safety practices they need."
+    },
+    {
+      "heading": "Overhead power lines and digging",
+      "body": "**Look up and live.** Before you raise a dump body, boom, bucket, ladder, pole saw or length of pipe, look up and find the lines.\n\nSection 1910.333(c)(3) sets the distance for **unqualified persons** and for **vehicles and equipment**: **at least 10 feet from any energized overhead line rated up to 50 kV**, measured to the person or the longest conductive thing they hold, and to any part of the equipment or its load. Above 50 kV, add **4 inches for every 10 kV**. For cranes and other hoisting equipment on construction work, **1926.1408** is stricter: stay **20 feet** away unless the utility has confirmed the voltage, and then the standard's table applies, starting at 10 feet.\n\n- Use a **spotter** whenever equipment works within a boom's length of a line.\n- Fiberglass ladders only near lines.\n- If a job cannot keep the distance, stop and have the utility de-energize, ground or cover the line.\n\n**Call 811 before you dig.** Section 1926.651 requires the location of underground utilities to be determined before an excavation is opened. Call **811** or use the state one-call website the required number of business days before any digging. Wait for the marks, **hand dig or vacuum excavate** inside the tolerance zone around each mark, and call again if the marks fade or the ticket expires."
+    },
+    {
+      "heading": "Downed power lines",
+      "body": "**Assume every downed line is energized**, along with the fence, guardrail, puddle, vehicle or tree it touches. Lines can re-energize automatically after a fault.\n\n- **Stay back at least 35 feet**, about the length of a city bus.\n- **Never drive over a downed line** or under a line hanging low.\n- Call 911 and dispatch, and keep eyes on it until a line crew arrives.\n\nIf a line falls on your truck or your equipment touches one:\n\n- **Stay in the cab.** The vehicle is energized, but you are safe inside as long as you do not touch the ground. Warn everyone to stay away.\n- If you can, drive clear, then stay put until a qualified person says it is safe.\n- **Leave only if the vehicle is on fire.** **Jump clear with both feet together**, never touching the vehicle and the ground at the same time, then **shuffle away with your feet together** without lifting them. Current spreads through the ground in rings of falling voltage; a long step puts each foot in a different ring and sends current through your body."
+    },
+    {
+      "heading": "Cords, tools and GFCIs",
+      "body": "A **ground fault circuit interrupter (GFCI)** compares the current going out and coming back. If about 5 milliamps leaks, through you for example, it cuts the power instantly. Under 1910.304(b)(3) and 1926.404(b)(1), GFCI protection is required for receptacles powering tools on temporary wiring during construction, maintenance and repair work. **Every portable tool and cord used outdoors, in a wet or damp location, in a plant or near water runs through a GFCI**, in the receptacle or a portable GFCI at the cord end. Press the test button before you use it.\n\n**Inspect before each shift.** Section 1910.334(a)(2) requires a visual check of cord- and plug-connected tools and extension cords before use on any shift. Take it out of service if you find:\n\n- Cut, cracked, nicked or melted insulation, or a jacket pulled out of the plug.\n- A **missing ground pin** on a three-prong plug.\n- **Tape or splices** on the cord. Tape is not a repair.\n- Crushed or pinched spots that may hide broken conductors.\n\nExtension cord rules:\n\n- **Three-wire cords rated for hard or extra-hard usage**, marked on the jacket.\n- **No cords through doorways, windows or holes in walls**, under rugs, or where they can be pinched, driven over or hung on nails.\n- **No daisy chaining** cords or power strips. It overloads and overheats the cord.\n\n**Double insulated tools** have a two-prong plug and the square-within-a-square symbol; the missing ground pin is not a defect, but they still need a GFCI in wet locations."
+    },
+    {
+      "heading": "Panels, electrical rooms, generators and arc flash",
+      "body": "**Panels and disconnects.** Under 1910.303 and 1910.305:\n\n- Keep **at least 36 inches of clear working space** in front of every panel, disconnect and motor control center, and at least 30 inches wide. **That space is not storage.**\n- Covers stay on and closed, **every breaker and disconnect is labeled** with what it controls, and missing knockouts and open holes in boxes get plugged. Resetting a breaker on a closed dead-front panel is fine; taking the cover off is qualified work.\n\n**Arc flash.** Working on or near energized parts in a panel, even taking a voltage reading, risks an arc. **NFPA 70E** is the consensus standard for protecting against it. It requires **arc-rated clothing and face protection, insulated tools and voltage-rated gloves** for qualified persons working inside the arc flash boundary. If you are not trained and dressed for it, you do not open the door.\n\n**Portable generators.**\n\n- **Never run a generator indoors**, in a garage, vault or pump house. Keep it at least 20 feet from doors, windows and intakes with the exhaust pointed away; carbon monoxide kills quietly.\n- **Never plug a generator into a wall outlet.** That **backfeeds** the building wiring and the utility transformer and can energize a line that a line crew believes is dead. Power a building only through a **transfer switch** installed by a qualified person.\n- Ground the generator as the manufacturer requires; a unit connected to a building needs a ground rod."
+    },
+    {
+      "heading": "What this means on the job",
+      "body": "**Electric Services.** Your energized work, minimum approach distances, rubber goods, grounding and bucket truck rules come from **1910.269** and the department's procedures, not this course. Everything else here applies around the truck and in the shop.\n\n**Environmental Services.** Plants and pump stations are **wet locations** full of motors, drives and control panels. Portable pumps, lights and tools run on GFCIs, cords stay out of the water, and nothing gets plugged in with wet hands. Operators reset breakers with the panel cover closed; anything inside the enclosure waits for the electrician. Collection crews opening vaults or digging call 811 every time.\n\n**Public Services.** Dump truck drivers check for lines before raising the bed, every load, and lower it before moving. Forestry crews treat any tree within 10 feet of a line as utility work and bring in Electric Services or the line clearance contractor. Signal and streetlight technicians are qualified for their own cabinets and poles and unqualified for everything else. Facilities staff keep 36 inches in front of panels and never use steel wool or wet mops near energized parts.\n\nFor everyone: look up before you lift, call before you dig, test before you touch, and if you are not qualified, do not open it."
+    }
+  ],
+  "key_takeaways": [
+    "Current, not voltage, kills; a few milliamps locks your muscles and a fraction of an amp can stop your heart, so ordinary 120-volt circuits are deadly, especially when you are wet or grounded.",
+    "Most crew members are unqualified persons: never work on energized parts, and de-energize, lock out and test with a meter before any electrical work.",
+    "Keep yourself, your tools and every part of your equipment at least 10 feet from overhead lines up to 50 kV, more for higher voltage, and look up before raising a bed, boom, bucket or ladder.",
+    "Call 811 before any digging and hand dig or vacuum excavate inside the tolerance zone around the marks.",
+    "Use GFCI protection for portable tools, temporary power and all wet locations, and inspect cords and tools before every shift; damaged insulation, missing ground pins and taped repairs take the item out of service.",
+    "Keep 36 inches of clear working space in front of panels, keep covers on and breakers labeled, and never store anything in an electrical room.",
+    "Run generators outdoors at least 20 feet from the building and never plug one into a wall outlet; backfeed can kill a line worker.",
+    "Treat every downed line as energized, stay at least 35 feet back, never drive over one, and if your vehicle contacts a line, stay inside unless it is on fire, then jump clear with feet together and shuffle away."
+  ],
+  "questions": [
+    {
+      "text": "Which statement about electrical injury is correct?",
+      "options": [
+        "Only voltages above 600 volts can kill",
+        "Dry skin makes shock impossible",
+        "Voltage, not current, is what stops the heart",
+        "A current well under 1 amp can cause the heart to fibrillate"
+      ],
+      "answer": 3,
+      "explanation": "Current does the damage. Around 50 to 150 milliamps can stop breathing, and currents near 1 amp cause the heart to fibrillate, which is why ordinary 120-volt circuits kill people every year."
+    },
+    {
+      "text": "A mechanic has switched off the breaker for a shop air compressor and wants to work inside the motor junction box. What else must happen before anyone touches the wiring?",
+      "options": [
+        "Nothing, since the breaker is off",
+        "The circuit must be locked out and tagged, and a qualified person must test it to verify zero voltage",
+        "A coworker must stand at the breaker to make sure no one turns it on",
+        "The compressor must be disconnected from its air line"
+      ],
+      "answer": 1,
+      "explanation": "Section 1910.333(b) requires the circuit to be locked out or tagged and a qualified person to test the parts and verify they are de-energized before work begins. An open breaker proves nothing until a meter confirms zero voltage."
+    },
+    {
+      "text": "A dump truck will raise its bed near a 12.47 kV distribution line. What is the minimum clearance under 1910.333(c)(3)?",
+      "options": [
+        "10 feet",
+        "3 feet",
+        "6 feet",
+        "20 feet"
+      ],
+      "answer": 0,
+      "explanation": "For lines rated up to 50 kV, vehicles and mechanical equipment that can be elevated near overhead lines must keep 10 feet of clearance, measured to any part of the equipment or its load. Cranes on construction work follow the stricter 20-foot rule in 1926.1408 unless the voltage is confirmed."
+    },
+    {
+      "text": "Which of these is required before digging to set a new sign post?",
+      "options": [
+        "Only a visual check of the area for utility markers",
+        "Calling 811 only if the hole will be deeper than 4 feet",
+        "Calling 811 or the state one-call center and waiting for the utilities to be marked",
+        "Asking the property owner where the lines are"
+      ],
+      "answer": 2,
+      "explanation": "Underground utility locations must be determined before any excavation is opened, and the one-call center is how that is done. Depth does not matter; services and cables are often shallow, and you hand dig inside the tolerance zone around the marks."
+    },
+    {
+      "text": "A crew is running a portable pump from a temporary cord in a flooded vault. What protects the crew from a ground fault?",
+      "options": [
+        "A three-prong plug on the pump",
+        "A heavier gauge extension cord",
+        "Standing on the vault ladder while the pump runs",
+        "GFCI protection at the receptacle or a portable GFCI at the cord"
+      ],
+      "answer": 3,
+      "explanation": "A GFCI senses leaking current of about 5 milliamps and cuts the power before the current reaches a level that locks muscles or stops the heart. A ground pin or a heavier cord does not detect a fault in a wet location."
+    },
+    {
+      "text": "During a pre-shift check, a drill's cord has a section wrapped in electrical tape. What is the correct action?",
+      "options": [
+        "Take the drill out of service and tag it until it is properly repaired",
+        "Use it, since the tape covers the damaged spot",
+        "Add another layer of tape and use it only indoors",
+        "Cut off the taped section and twist the wires together"
+      ],
+      "answer": 0,
+      "explanation": "Section 1910.334(a)(2) requires damaged cord- and plug-connected equipment to be removed from service until it is repaired and tested. Tape does not restore the jacket or the insulation, so a taped cord is a damaged cord."
+    },
+    {
+      "text": "How much clear working space is required in front of an electrical panel, and may it be used for storage?",
+      "options": [
+        "18 inches, and storage is allowed if it is on a cart",
+        "36 inches, and the space may not be used for storage",
+        "24 inches, and only flammable items are prohibited",
+        "There is no required distance as long as the cover is closed"
+      ],
+      "answer": 1,
+      "explanation": "Section 1910.303(g)(1) requires at least 36 inches of working space in front of equipment that may need servicing while energized, and states that the working space may not be used for storage. Someone has to be able to reach the disconnect in an emergency."
+    },
+    {
+      "text": "Why must a portable generator never be plugged into a wall outlet to power a building?",
+      "options": [
+        "The outlet cannot supply enough current to the generator",
+        "It voids the generator warranty",
+        "It backfeeds the building wiring and the utility line, which can electrocute a line worker",
+        "It trips the GFCI on the generator"
+      ],
+      "answer": 2,
+      "explanation": "Power fed into an outlet travels back through the building wiring and the utility transformer and can energize a line that a crew believes is dead. A transfer switch isolates the building from the utility before the generator is connected."
+    },
+    {
+      "text": "How far should you stay from a downed power line?",
+      "options": [
+        "At least 35 feet",
+        "At least 10 feet",
+        "At least 3 feet",
+        "Far enough that you cannot hear it humming"
+      ],
+      "answer": 0,
+      "explanation": "Treat every downed line as energized and stay at least 35 feet back, about the length of a city bus. A live line does not have to hum or spark, and current spreads through the ground around the contact point."
+    },
+    {
+      "text": "Your truck's boom contacts an energized line and the truck is not on fire. What do you do?",
+      "options": [
+        "Climb down the side of the truck carefully",
+        "Step out onto the ground and run",
+        "Have a coworker open the door from outside",
+        "Stay in the cab, warn others to stay away and wait for the line to be de-energized"
+      ],
+      "answer": 3,
+      "explanation": "Inside the cab you are at the same voltage as the truck and no current flows through you. Touching the truck and the ground at the same time completes the circuit. Only a fire justifies leaving, and then you jump clear with both feet together and shuffle away."
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "slug": "bloodborne-pathogens",
+  "title": "Bloodborne Pathogens",
+  "standard": "29 CFR 1910.1030",
+  "standard_title": "Bloodborne Pathogens (general industry)",
+  "category": "general",
+  "top10_rank": null,
+  "new_hire": true,
+  "divisions": ["electric", "environmental", "public"],
+  "duration_minutes": 30,
+  "renewal_months": 12,
+  "summary": "Bloodborne pathogens are germs carried in human blood that can cause lifelong disease, and public works crews meet them more often than most people think: discarded needles in parks and sweeper hoppers, injured coworkers, crash scenes and restroom cleanups. This course explains how hepatitis B, hepatitis C and HIV spread, who the standard covers, the controls and PPE that keep you from being exposed, the free hepatitis B vaccine and exactly what to do if an exposure happens. It also covers safe cleanup of blood spills and the training the standard requires every year.",
+  "objectives": [
+    "Explain how hepatitis B, hepatitis C and HIV are transmitted on the job and why every contact with blood is treated as infectious.",
+    "Identify who has occupational exposure under 1910.1030, including designated first aid responders, and where to find the written exposure control plan.",
+    "Apply universal precautions, work practice controls and the right PPE when handling sharps, giving first aid or cleaning up blood.",
+    "Describe the hepatitis B vaccination offer, the 10 working day deadline and the declination form.",
+    "Carry out the steps that follow an exposure incident: wash, report immediately, and complete the confidential medical evaluation and follow-up.",
+    "Clean up and dispose of a blood spill using an EPA-registered disinfectant or a fresh 1:10 bleach solution, labeled containers and the biohazard symbol."
+  ],
+  "sections": [
+    {
+      "heading": "What bloodborne pathogens are and how they spread",
+      "body": "**Bloodborne pathogens** are germs carried in human blood that cause disease in people. Three matter most:\n\n- **Hepatitis B virus (HBV)** attacks the liver and can become a lifelong infection. A vaccine prevents it. HBV is tough: the CDC reports it can survive in dried blood for at least a week.\n- **Hepatitis C virus (HCV)** also attacks the liver, often with no symptoms for years. There is no vaccine, but treatment now cures most infections.\n- **HIV** weakens the immune system and causes AIDS. There is no vaccine or cure, but treatment controls it.\n\nThe standard also covers **other potentially infectious materials (OPIM)**: semen, vaginal secretions, spinal and joint fluids, any body fluid with visible blood in it or that you cannot identify, and unfixed human tissue.\n\nThese germs get in through **needlesticks and cuts** from contaminated sharps, through **broken skin** such as scrapes, cracked knuckles, rashes and burns, and through the **mucous membranes** of the eyes, nose and mouth. They do not pass through unbroken skin or casual contact. Sweat, tears, urine, vomit, feces, sewage and stormwater are not OPIM unless visible blood is present, but the needles that turn up in all of them are a sharps hazard."
+    },
+    {
+      "heading": "Why this training matters",
+      "body": "You do not work in a hospital, but you handle what hospitals handle. Public works crews find needles in **parks, playgrounds and restrooms**; in **street sweeper hoppers and catch basins**, mixed with wet debris; in **trash and recycling bags**, where a needle goes through the bag, the glove and the hand; and in **wastewater bar screens, grit chambers and wet wells**. They clean blood out of vehicles and equipment after collisions and injuries. They give first aid to coworkers who are cut, crushed or burned, and often reach a crash scene before the ambulance. One needlestick or one splash to the eye can mean an infection that lasts a lifetime.\n\nThese infections are preventable, and OSHA's **Bloodborne Pathogens standard, 29 CFR 1910.1030**, lays out the system that prevents them. It requires training **at initial assignment** to tasks with exposure and **at least once a year** after that, with a chance to ask questions. This module is the annual refresher."
+    },
+    {
+      "heading": "Who is covered and the exposure control plan",
+      "body": "The standard covers every employee with **occupational exposure**: reasonably anticipated contact of the skin, eyes, mucous membranes or a puncture with blood or OPIM while doing the job. In public works that usually means:\n\n- **Designated first aid responders**, including crew members who give first aid as a collateral duty.\n- Employees who handle needles and sharps as part of the work: park and restroom maintenance, street sweeping, refuse collection, wastewater screening.\n- Employees who clean blood from vehicles, equipment, facilities or the right of way.\n\n**The Good Samaritan question.** If first aid is not part of your job and you choose to help a bleeding coworker or member of the public, OSHA does not count that as occupational exposure. Help anyway, use the gloves and pocket mask on the truck, and **report any contact with blood right away**; the department's plan provides the same medical follow-up.\n\n**The written exposure control plan.** Section 1910.1030(c) requires a written **exposure control plan** that lists which jobs and tasks have exposure, how each part of the standard is carried out, and how exposure incidents are investigated. It is **reviewed and updated at least once a year** and whenever new tasks, equipment or safer sharps devices change the picture. Ask your supervisor where the current copy is kept."
+    },
+    {
+      "heading": "Universal precautions, work practices and PPE",
+      "body": "**Universal precautions** is the first rule: **treat all human blood and OPIM as infectious**, every time. You cannot tell by looking who is infected.\n\n**Engineering controls** remove the hazard and **work practices** change how you do the task:\n\n- **Never pick up a needle with your fingers**, even gloved. Use tongs, pliers or a grabber and drop it point first into a **sharps container**: closable, puncture resistant, leakproof, and labeled with the biohazard symbol or color coded red.\n- **Do not bend, break or recap needles.** Do not reach into trash bags, hoppers or screens by hand; look first, then use a tool.\n- **Wash your hands** with soap and water as soon as gloves come off and after any contact with blood. With no sink nearby, use antiseptic hand cleaner, then wash as soon as you can. Flush a splash to the eyes, nose or mouth with water immediately.\n- **No eating, drinking, smoking, vaping, lip balm or contact lenses** where exposure is likely, and no food stored where blood or OPIM may be.\n\n**Personal protective equipment** is the last barrier, provided at no cost to you:\n\n- **Gloves** whenever your hands may touch blood, OPIM, broken skin or a contaminated surface.\n- **Change disposable gloves** as soon as they are torn, punctured or soiled, and between patients. Never wash or reuse them. Peel them off inside out, then wash your hands.\n- **Eye and face protection** whenever blood could splash or spray.\n- **A gown or apron** when soaking or heavy splashing is possible.\n- **A pocket mask or bag valve mask** for CPR, never mouth to mouth.\n\nPPE comes off before you leave the area and goes in the marked container."
+    },
+    {
+      "heading": "Hepatitis B vaccination",
+      "body": "Hepatitis B is the one bloodborne disease with a vaccine. Section 1910.1030(f) requires the department to **offer the hepatitis B vaccine series free of charge** to every employee with occupational exposure, **within 10 working days of initial assignment**, after this training, by or under a licensed health care professional. You cannot be charged or required to take a blood test first.\n\nYou do not have to accept it. If you decline, you sign the **declination statement** from Appendix A of the standard. It says you understand the risk, you were offered the vaccine at no cost, and you may **change your mind later** and still receive it free.\n\nOSHA allows one narrow exception: designated first aid responders whose main job is something else may be offered the vaccine within 24 hours after they give first aid involving blood, if the department's plan meets strict conditions."
+    },
+    {
+      "heading": "If you are exposed",
+      "body": "An **exposure incident** is specific contact with blood or OPIM through the eyes, mouth, other mucous membrane, broken skin or a puncture.\n\n- **Wash.** Scrub a needlestick or cut with soap and running water. Flush splashed eyes, nose or mouth with clean water. Do not squeeze the wound or put bleach on skin.\n- **Report it immediately** to your supervisor, not at the end of the shift. Medicine that prevents HBV or HIV infection works best when it starts within hours.\n- **Get the medical evaluation.** The department provides a **confidential medical evaluation and follow-up at no cost**. It documents how the exposure happened, identifies and tests the **source individual** where possible and allowed by law, tests your blood with your consent, provides **post-exposure treatment when medically indicated**, and includes counseling.\n- **Follow up.** You receive the health care professional's written opinion within 15 days. Your test results stay between you and the provider, and a needlestick also goes on the department's **sharps injury log**.\n\nThe unreported needlestick is the one that becomes a lifelong infection."
+    },
+    {
+      "heading": "Cleaning up blood spills, regulated waste and labels",
+      "body": "Blood on a truck seat, shop floor or restroom wall is cleaned and decontaminated **as soon as feasible** by a trained employee using the department's spill kit:\n\n- **Put on PPE:** nitrile gloves at minimum, with eye protection and a gown or apron for a large spill.\n- **Remove sharps first** with tongs into the sharps container, and glass with a dustpan and brush.\n- **Absorb** the liquid with paper towels or absorbent powder. Do not spray disinfectant into a pool of blood; it splashes.\n- **Disinfect** with an **EPA-registered disinfectant** labeled for HBV and HIV, or a **fresh 1:10 bleach solution** (1 part household bleach to 9 parts water, mixed that day). Leave the surface **wet for the contact time on the label**; for bleach, let it air dry. Wiping it off right away kills nothing.\n- **Bag the waste.** Materials soaked or caked with blood that would release it when squeezed are **regulated waste**. They go in a closable, leakproof **red bag or biohazard-labeled container**, closed before it is moved, and are disposed of as the plan and state law require.\n- **Remove PPE** last, inside out, then wash your hands.\n\n**Labels.** The **biohazard symbol** on a fluorescent orange or orange-red label marks regulated waste, sharps containers, refrigerators holding blood or OPIM, and contaminated equipment. **Red bags and red containers** may be used instead. When you see either one, assume the contents can infect you."
+    },
+    {
+      "heading": "What this means on the job",
+      "body": "**Electric Services.** Line crews and substation technicians are often the designated first aid responders on their crew. A coworker brought down in a pole-top or bucket rescue may be bleeding or burned, so nitrile gloves and a pocket mask ride in the rescue kit. Rubber insulating gloves protect you from voltage, not from blood. Meter technicians who find needles in meter pits leave them for a crew with tongs and a sharps container.\n\n**Environmental Services.** Refuse and recycling collectors meet needles hidden in bags. Never compress a bag against your body, never reach into a hopper by hand, and treat every puncture as an exposure incident, not a scratch. Wastewater operators pull needles out of bar screens and grit washers with tools, never gloves alone, and keep a sharps container at the headworks.\n\n**Public Services.** Sweeper operators find needles in hoppers and catch basins; dump the hopper and look before you shovel. Parks and facilities staff carry a sharps kit for playgrounds, restrooms and shelters. Fleet technicians cleaning a vehicle after a collision wear gloves and eye protection and bag soaked materials as regulated waste.\n\nFor everyone: gloves on before you touch, tongs before you reach, sharps container before you walk away, and report every stick or splash the same hour it happens."
+    }
+  ],
+  "key_takeaways": [
+    "Treat all human blood and other potentially infectious materials as infectious, every time, no matter who it came from.",
+    "Never pick up a needle or bloody glass by hand; use tongs or a brush and dustpan and drop sharps point first into a labeled, puncture-resistant sharps container.",
+    "Wear gloves whenever your hands may touch blood, add eye and face protection when splashing is possible, change torn or soiled gloves right away and wash your hands as soon as gloves come off.",
+    "The hepatitis B vaccine is offered free within 10 working days of assignment to a job with exposure, and if you sign the declination form you can still change your mind later.",
+    "After a needlestick or splash: wash or flush, report it immediately, and complete the confidential medical evaluation and follow-up at no cost to you.",
+    "Clean blood spills with an EPA-registered disinfectant or a fresh 1:10 bleach solution left wet for the full contact time, and dispose of soaked materials as regulated waste in red or biohazard-labeled containers.",
+    "The written exposure control plan lists who is covered and how incidents are handled; it is reviewed every year and you can read it any time.",
+    "Training is required when you are first assigned to a task with exposure and at least once a year after that."
+  ],
+  "questions": [
+    {
+      "text": "Which of these is a way bloodborne pathogens can enter your body at work?",
+      "options": [
+        "Shaking hands with an infected coworker",
+        "A splash of blood into your eye",
+        "Sharing a water cooler in the shop",
+        "Riding in the same truck cab as an infected coworker"
+      ],
+      "answer": 1,
+      "explanation": "Bloodborne pathogens enter through needlesticks and cuts, broken skin, and mucous membranes such as the eyes, nose and mouth. They do not spread through casual contact, shared water coolers or shared air."
+    },
+    {
+      "text": "A fleet technician whose job does not include first aid stops to help a bleeding member of the public and gets blood on a cut finger. Which statement is correct?",
+      "options": [
+        "The technician is covered by the standard because anyone who touches blood is covered",
+        "The technician should not report it because the standard does not apply",
+        "It counts as occupational exposure only if the technician was wearing gloves",
+        "OSHA does not treat this as occupational exposure, but the technician should still report it right away and the department arranges medical follow-up"
+      ],
+      "answer": 3,
+      "explanation": "A Good Samaritan act by an employee whose job does not include first aid is not occupational exposure under 1910.1030, but blood on broken skin is still a real exposure. The department's plan provides the same reporting and medical follow-up, and it only works if the exposure is reported immediately."
+    },
+    {
+      "text": "You find a syringe in the grass at a park. What is the correct way to pick it up?",
+      "options": [
+        "With tongs or a grabber, dropping it point first into a sharps container",
+        "With two pairs of nitrile gloves, holding the barrel",
+        "By recapping it first so the needle is covered",
+        "By sweeping it into a trash bag with the other litter"
+      ],
+      "answer": 0,
+      "explanation": "Needles are never picked up by hand, even gloved, and never recapped. A tool keeps your fingers away from the point, and a closable, puncture-resistant, labeled sharps container keeps the needle from sticking the next person who handles the trash."
+    },
+    {
+      "text": "When must the department offer the hepatitis B vaccine to a new employee with occupational exposure?",
+      "options": [
+        "Within 30 days of hire",
+        "Only after the first exposure incident",
+        "Within 10 working days of initial assignment, after training",
+        "At the next annual physical"
+      ],
+      "answer": 2,
+      "explanation": "Section 1910.1030(f) requires the vaccine to be made available free of charge within 10 working days of initial assignment to a job with occupational exposure, after the employee has received training. Only a narrow exception for designated first aid responders allows it to be offered after an incident."
+    },
+    {
+      "text": "An employee signs the hepatitis B vaccine declination form. Six months later she changes her mind. What happens?",
+      "options": [
+        "She must wait until the next annual training to request it",
+        "The department must still provide the vaccine series at no cost",
+        "She can get it, but through her own insurance",
+        "The declination is permanent"
+      ],
+      "answer": 1,
+      "explanation": "The declination statement in Appendix A says the employee may later decide to accept the vaccine and the employer must then make it available at no cost. Declining once does not close the door."
+    },
+    {
+      "text": "A collector is stuck through a glove by a needle in a trash bag. What should happen first?",
+      "options": [
+        "Finish the route, then mention it at the end of the shift",
+        "Squeeze the wound hard and pour bleach on it",
+        "Wait to see if the site becomes red or sore before reporting",
+        "Wash the wound with soap and water and report it to the supervisor immediately"
+      ],
+      "answer": 3,
+      "explanation": "The first steps after an exposure incident are to wash the wound with soap and water and report it immediately so the confidential medical evaluation can start. Treatment that prevents HBV or HIV infection works best when it begins within hours, so waiting for symptoms or the end of the shift gives the infection a head start."
+    },
+    {
+      "text": "Which cleanup practice is correct for blood on a truck seat?",
+      "options": [
+        "Absorb the blood, then apply disinfectant and leave the surface wet for the contact time on the label",
+        "Spray disinfectant into the pool of blood and wipe it up immediately",
+        "Wipe it with a dry rag and let the sun dry the seat",
+        "Pour undiluted bleach on it and wipe it off right away"
+      ],
+      "answer": 0,
+      "explanation": "Absorb the liquid first, then disinfect and let the product stay wet for its full contact time. Spraying into a pool of blood splashes it, and wiping a disinfectant off right away does not give it time to kill anything."
+    },
+    {
+      "text": "How is the bleach solution for blood cleanup mixed?",
+      "options": [
+        "Equal parts bleach and water",
+        "1 part bleach to 100 parts water, stored for a month",
+        "1 part household bleach to 9 parts water, mixed fresh that day",
+        "Straight bleach from the bottle"
+      ],
+      "answer": 2,
+      "explanation": "A 1:10 solution is 1 part household bleach to 9 parts water. Diluted bleach loses strength over time, so it is mixed fresh the day it is used and left on the surface until it air dries."
+    },
+    {
+      "text": "What does a fluorescent orange label with the biohazard symbol, or a red bag, tell you?",
+      "options": [
+        "The container holds flammable liquid",
+        "The contents are safe to put in the regular trash",
+        "The container holds sharps only, never soft waste",
+        "The contents may contain blood or OPIM and can infect you"
+      ],
+      "answer": 3,
+      "explanation": "Section 1910.1030(g) requires the biohazard label, or red bags and containers in its place, on regulated waste, sharps containers, refrigerators holding blood or OPIM, and contaminated equipment. The symbol means treat the contents as infectious."
+    },
+    {
+      "text": "How often must the written exposure control plan be reviewed and this training repeated?",
+      "options": [
+        "At least once a year, and whenever tasks or equipment change",
+        "Every three years",
+        "Only when a new employee is hired",
+        "Only after an exposure incident"
+      ],
+      "answer": 0,
+      "explanation": "The exposure control plan is reviewed and updated at least annually and whenever new tasks or equipment change who is exposed. Training is given at initial assignment and at least once a year after that."
+    }
+  ]
+}

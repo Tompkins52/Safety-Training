@@ -1,100 +1,218 @@
 {% extends "base.html" %}
+{% from "incidents/_macros.html" import yn, row, picked, statement_badge %}
 {% block title %}{{ incident.incident_number }} | {{ app_name }}{% endblock %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='css/incidents.css') }}">{% endblock %}
 {% block content %}
 <div class="page-head">
   <div>
-    <p class="eyebrow">{{ incident.type_label }}</p>
-    <h1>Incident {{ incident.incident_number }}</h1>
+    <p class="eyebrow">{{ incident.type_label }} <span class="tag">{{ incident.type_code }}</span></p>
+    <h1>Report {{ incident.incident_number }}</h1>
     <p class="muted">{{ incident.occurred_at|datetime }}, {{ incident.location }}{% if incident.division %}, {{ incident.division.name }}{% endif %}</p>
   </div>
   <div class="actions">
     <span class="badge badge-{{ 'ok' if incident.status == 'closed' else ('warn' if incident.status == 'under_investigation' else 'danger') }}">{{ incident.status_label }}</span>
     <a class="btn btn-secondary" href="{{ url_for('incidents.print_report', incident_id=incident.id) }}">Print report</a>
-    {% if incident.status != 'closed' or current_user.is_admin %}
-      {% if current_user.is_supervisor or incident.reported_by_id == current_user.id %}<a class="btn btn-ghost" href="{{ url_for('incidents.edit', incident_id=incident.id) }}">Edit report</a>{% endif %}
+    {% if can_edit %}<a class="btn btn-ghost" href="{{ url_for('incidents.edit', incident_id=incident.id) }}">Edit sections 1 to 4</a>{% endif %}
+    {% if can_investigate %}
+      <a class="btn btn-primary" href="{{ url_for('incidents.investigation', incident_id=incident.id) }}">{% if incident.has_investigation %}Sections 7 and 8{% else %}Start sections 7 and 8{% endif %}</a>
+      {% if incident.status != 'closed' %}
+      <form method="post" action="{{ url_for('incidents.set_status', incident_id=incident.id) }}" class="inline-form" onsubmit="return confirm('Close this report?');">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button class="btn btn-ghost" name="status" value="closed" type="submit">Close report</button>
+      </form>
+      {% endif %}
     {% endif %}
-    {% if can_investigate %}<a class="btn btn-primary" href="{{ url_for('incidents.investigation', incident_id=incident.id) }}">{% if incident.has_investigation %}Investigation{% else %}Start investigation{% endif %}</a>{% endif %}
   </div>
 </div>
 
 <div class="grid-2">
-  <section class="card">
-    <h2>Report</h2>
+  <section class="card section-card" id="section-1">
+    <h2><span class="section-no">1</span>Incident information</h2>
     <dl class="dl">
-      <dt>Reported by</dt><dd>{{ incident.reported_by.full_name }} on {{ incident.reported_at|datetime }}</dd>
-      <dt>Severity</dt><dd>{{ incident.severity_label }}</dd>
-      {% if incident.work_activity %}<dt>Work activity</dt><dd>{{ incident.work_activity }}</dd>{% endif %}
-      {% if incident.equipment_involved %}<dt>Equipment</dt><dd>{{ incident.equipment_involved }}</dd>{% endif %}
-      {% if incident.weather_conditions %}<dt>Conditions</dt><dd>{{ incident.weather_conditions }}</dd>{% endif %}
-      <dt>What happened</dt><dd class="pre">{{ incident.description }}</dd>
-      {% if incident.employees_involved %}<dt>Employees involved</dt><dd class="pre">{{ incident.employees_involved }}</dd>{% endif %}
-      {% if incident.witnesses %}<dt>Witnesses</dt><dd class="pre">{{ incident.witnesses }}</dd>{% endif %}
-      {% if incident.immediate_actions %}<dt>Immediate actions</dt><dd class="pre">{{ incident.immediate_actions }}</dd>{% endif %}
+      {{ row('Reported by', incident.reported_by.full_name ~ ' on ' ~ incident.reported_at|datetime) }}
+      {{ row('Severity', incident.severity_label) }}
+      {{ row('Work activity', incident.work_activity) }}
+      {{ row('Conditions', incident.weather_conditions) }}
+      {{ row('Employees involved', incident.employees_involved) }}
+      {{ row('Witnesses', incident.witnesses) }}
+      {{ row('Immediate actions', incident.immediate_actions) }}
+      {% if incident.property_description %}
+      <dt>Property damaged</dt><dd>{{ incident.property_description }}{% if incident.property_owner_label %} ({{ incident.property_owner_label }}){% endif %}{% if incident.estimated_cost is not none %}, {{ incident.estimated_cost|money }}{% endif %}{% if incident.damage_description %}<br><span class="pre">{{ incident.damage_description }}</span>{% endif %}</dd>
+      {% endif %}
+      <dt>Investigator</dt><dd>{{ incident.investigator_name or '' }}{% if incident.investigator_title %}, {{ incident.investigator_title }}{% endif %}{% if incident.investigation_date %}, started {{ incident.investigation_date|date }}{% endif %}</dd>
     </dl>
   </section>
 
-  <section class="card">
-    <h2>{{ incident.type_label }} details</h2>
+  <section class="card section-card" id="section-2">
+    <h2><span class="section-no">2</span>Vehicle and equipment</h2>
     <dl class="dl">
-    {% if incident.incident_type == 'injury' %}
-      <dt>Injured person</dt><dd>{{ incident.injured_person or '' }}{% if incident.injured_job_title %}, {{ incident.injured_job_title }}{% endif %}</dd>
-      <dt>Body part</dt><dd>{{ incident.body_part or '' }}</dd>
-      <dt>Nature of injury</dt><dd>{{ incident.injury_nature or '' }}</dd>
-      <dt>Treatment</dt><dd>{{ incident.treatment_label }}{% if incident.treatment_provider %} ({{ incident.treatment_provider }}){% endif %}</dd>
-      <dt>Days away / restricted</dt><dd>{{ incident.days_away if incident.days_away is not none else 0 }} / {{ incident.days_restricted if incident.days_restricted is not none else 0 }}</dd>
-      <dt>OSHA recordable</dt><dd>{% if incident.osha_recordable is none %}Not yet determined{% elif incident.osha_recordable %}Yes{% else %}No{% endif %}</dd>
-    {% elif incident.incident_type == 'property_damage' %}
-      <dt>Property</dt><dd>{{ incident.property_description or '' }}</dd>
-      <dt>Owner</dt><dd>{{ incident.property_owner_label }}</dd>
-      <dt>Estimated cost</dt><dd>{{ incident.estimated_cost|money }}</dd>
-      <dt>Damage</dt><dd class="pre">{{ incident.damage_description or '' }}</dd>
-    {% elif incident.incident_type == 'vehicle' %}
-      <dt>Vehicle / unit</dt><dd>{{ incident.vehicle_unit or '' }}</dd>
-      <dt>Driver</dt><dd>{{ incident.driver_name or '' }}</dd>
-      <dt>Seat belt</dt><dd>{% if incident.seat_belt_used is none %}Unknown{% elif incident.seat_belt_used %}Yes{% else %}No{% endif %}</dd>
-      <dt>Police report</dt><dd>{{ incident.police_report_number or '' }}</dd>
-      <dt>Drug / alcohol test</dt><dd>{{ incident.drug_test_label }}</dd>
-      <dt>Damage estimate</dt><dd>{{ incident.vehicle_damage_estimate|money }}</dd>
-      <dt>Preventability</dt><dd>{{ incident.preventability_label }}</dd>
-      <dt>Other party</dt><dd class="pre">{{ incident.other_party or '' }}</dd>
-    {% endif %}
+      <dt>Vehicle involved</dt><dd>{{ yn(incident.vehicle_involved) }}</dd>
+      {% if incident.vehicle_involved %}
+        {{ row('Type', incident.vehicle_type) }}
+        {{ row('Make and model', incident.vehicle_make_model) }}
+        {{ row('License plate', incident.license_plate) }}
+        {{ row('City vehicle no.', incident.vehicle_unit) }}
+        {% if incident.driver_name or incident.seat_belt_used is not none %}<dt>Driver</dt><dd>{{ incident.driver_name or '' }}{% if incident.seat_belt_used is not none %}, seat belt {{ 'yes' if incident.seat_belt_used else 'no' }}{% endif %}</dd>{% endif %}
+        {{ row('Police report', incident.police_report_number) }}
+        {{ row('Drug and alcohol test', incident.drug_test_label) }}
+        {% if incident.vehicle_damage_estimate is not none %}<dt>Damage estimate</dt><dd>{{ incident.vehicle_damage_estimate|money }}</dd>{% endif %}
+        {{ row('Preventability', incident.preventability_label) }}
+        {{ row('Other party', incident.other_party) }}
+      {% endif %}
+      <dt>Equipment involved</dt><dd>{{ yn(incident.equipment_involved_flag) }}</dd>
+      {% if incident.equipment_involved_flag %}{{ row('Equipment', incident.equipment_involved) }}{% endif %}
     </dl>
+    {% if incident.vehicle_involved and incident.damage_marks %}<div class="diagram-small" data-widget="vehicle" data-marks='{{ incident.damage_marks|tojson }}'></div>{% endif %}
+    {% if incident.vehicle_involved and incident.scene_sketch %}<img class="sketch-img" src="{{ incident.scene_sketch }}" alt="Scene sketch">{% endif %}
+    {% if incident.equipment_involved_flag and incident.equipment_sketch %}<img class="sketch-img" src="{{ incident.equipment_sketch }}" alt="Equipment sketch">{% endif %}
   </section>
 </div>
 
-<section class="card">
-  <div class="card-head"><h2>Investigation</h2>{% if can_investigate %}<a class="btn btn-sm btn-ghost" href="{{ url_for('incidents.investigation', incident_id=incident.id) }}">Edit</a>{% endif %}</div>
-  {% if incident.has_investigation %}
+<div class="grid-2">
+  <section class="card section-card" id="section-3">
+    <h2><span class="section-no">3</span>Personal injury</h2>
+    <dl class="dl">
+      <dt>Injury occurred</dt><dd>{{ yn(incident.injury_occurred) }}</dd>
+      {% if incident.injury_occurred %}
+        <dt>Injured person</dt><dd>{{ incident.injured_person or '' }}{% if incident.injured_job_title %}, {{ incident.injured_job_title }}{% endif %}</dd>
+        {{ row('Type of injury', picked(incident.injury_types, incident.injury_other)) }}
+        {{ row('Body parts', picked(incident.body_parts, incident.body_part_other)) }}
+        {% if incident.treatment or incident.treatment_provider %}<dt>Treatment</dt><dd>{{ incident.treatment_label }}{% if incident.treatment_provider %} ({{ incident.treatment_provider }}){% endif %}</dd>{% endif %}
+        <dt>Days away / restricted</dt><dd>{{ incident.days_away if incident.days_away is not none else 0 }} / {{ incident.days_restricted if incident.days_restricted is not none else 0 }}</dd>
+        <dt>OSHA recordable</dt><dd>{{ yn(incident.osha_recordable, 'Not yet determined') }}</dd>
+      {% endif %}
+    </dl>
+    {% if incident.injury_occurred and incident.body_marks %}<div class="diagram-small" data-widget="body" data-marks='{{ incident.body_marks|tojson }}'></div>{% endif %}
+  </section>
+
+  <section class="card section-card" id="section-4">
+    <h2><span class="section-no">4</span>Incident description</h2>
+    <p class="pre">{{ incident.description }}</p>
+  </section>
+</div>
+
+{% for role, role_label in statement_roles.items() %}
+{% set number = 5 if role == 'principal' else 6 %}
+{% set rows = incident.principal_statements if role == 'principal' else incident.witness_statements %}
+<section class="card section-card" id="section-{{ number }}">
+  <div class="card-head">
+    <h2><span class="section-no">{{ number }}</span>{{ role_label }}{% if role == 'witness' %}s{% endif %}</h2>
+    {% if can_investigate %}<a class="btn btn-sm btn-ghost" href="{{ url_for('incidents.blank_statement', incident_id=incident.id, role=role) }}">Print blank form</a>{% endif %}
+  </div>
+  <p class="muted small">{% if role == 'principal' %}The principal party gives their own account and signs it without seeing the rest of the report: on this device, through an emailed link, or on a printed form. Add one statement per party.{% else %}Each witness gives their own account and signs it without seeing the rest of the report: on this device, through an emailed link, or on a printed form.{% endif %}</p>
+  {% for s in rows %}
+  <div class="statement-row">
+    <div>
+      <strong>{{ s.printed_name or '(name not entered yet)' }}</strong>
+      {% set meta = [s.department, s.title]|select|list %}{% if meta %}<br><small class="muted">{{ meta|join(', ') }}</small>{% endif %}
+      {% if s.email %}<br><small class="muted">{{ s.email }}</small>{% endif %}
+      {% if s.received_by and s.signed_via == 'paper' %}<br><small class="muted">Received by {{ s.received_by }}</small>{% endif %}
+      {% if s.statement_text %}<details class="statement-text"><summary>Statement text</summary><p class="pre small">{{ s.statement_text }}</p></details>{% endif %}
+    </div>
+    <div>{{ statement_badge(s) }}</div>
+    <div class="statement-actions">
+      {% if can_investigate and not s.is_signed %}
+        <a class="btn btn-sm btn-primary" href="{{ url_for('incidents.sign_statement', incident_id=incident.id, statement_id=s.id) }}">Sign on this device</a>
+        <a class="btn btn-sm btn-ghost" href="{{ url_for('incidents.paper_statement', incident_id=incident.id, statement=s.id) }}">Enter from paper</a>
+        {% if s.email %}
+        <form method="post" action="{{ url_for('incidents.resend_statement_link', incident_id=incident.id, statement_id=s.id) }}" class="inline-form">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <button class="btn btn-sm btn-ghost" type="submit">Resend link</button>
+        </form>
+        {% endif %}
+        <form method="post" action="{{ url_for('incidents.delete_statement', incident_id=incident.id, statement_id=s.id) }}" class="inline-form" onsubmit="return confirm('Remove this statement from the report?');">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <button class="btn btn-sm btn-ghost" type="submit">Remove</button>
+        </form>
+      {% endif %}
+    </div>
+  </div>
+  {% else %}
+  <p class="empty">No {{ role_label|lower }} yet.</p>
+  {% endfor %}
+  {% if can_investigate %}
+  <div class="statement-add">
+    <form method="post" action="{{ url_for('incidents.add_statement', incident_id=incident.id) }}" class="inline-form">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <input type="hidden" name="role" value="{{ role }}">
+      <input type="hidden" name="mode" value="device">
+      <button class="btn btn-sm btn-secondary" type="submit">Sign on this device</button>
+    </form>
+    <form method="post" action="{{ url_for('incidents.add_statement', incident_id=incident.id) }}" class="inline-form">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <input type="hidden" name="role" value="{{ role }}">
+      <input type="hidden" name="mode" value="link">
+      <label for="email-{{ role }}">Send a link to<input type="email" id="email-{{ role }}" name="email" placeholder="name@example.gov" required></label>
+      <button class="btn btn-sm btn-ghost" type="submit">Send a link</button>
+    </form>
+    <a class="btn btn-sm btn-ghost" href="{{ url_for('incidents.paper_statement', incident_id=incident.id, role=role) }}">Received on paper</a>
+  </div>
+  {% endif %}
+</section>
+{% endfor %}
+
+<section class="card section-card" id="section-7">
+  <div class="card-head">
+    <h2><span class="section-no">7</span>Incident facts and analysis</h2>
+    {% if can_investigate %}<a class="btn btn-sm btn-ghost" href="{{ url_for('incidents.investigation', incident_id=incident.id) }}">Edit</a>{% endif %}
+  </div>
+  {% if incident.has_investigation or incident.facts_analysis or incident.contributing_causes %}
   <dl class="dl">
-    <dt>Investigator</dt><dd>{{ incident.investigator.full_name if incident.investigator else '' }}{% if incident.investigation_date %}, {{ incident.investigation_date|date }}{% endif %}</dd>
-    <dt>Direct cause</dt><dd class="pre">{{ incident.direct_cause or '' }}</dd>
-    <dt>Root cause</dt><dd class="pre">{{ incident.root_cause or '' }}</dd>
-    <dt>Contributing factor</dt><dd><strong>{{ incident.contributing_factor_label.split(' (')[0] }}</strong>{% if incident.contributing_factor_detail %}<br><span class="pre">{{ incident.contributing_factor_detail }}</span>{% endif %}</dd>
-    {% if incident.lessons_learned %}<dt>Lessons learned</dt><dd class="pre">{{ incident.lessons_learned }}</dd>{% endif %}
-    {% if incident.closed_at %}<dt>Closed</dt><dd>{{ incident.closed_at|datetime }} by {{ incident.closed_by.full_name if incident.closed_by else '' }}</dd>{% endif %}
+    {% set rep = [incident.safety_rep_name, incident.safety_rep_title]|select|list %}
+    {% if rep or incident.analysis_date %}<dt>Safety representative</dt><dd>{{ rep|join(', ') }}{% if incident.analysis_date %}, {{ incident.analysis_date|date }}{% endif %}</dd>{% endif %}
+    {{ row('Analysis of the facts', incident.facts_analysis) }}
+    {{ row('Contributing causes', incident.contributing_causes) }}
+    {{ row('Direct cause', incident.direct_cause) }}
+    {{ row('Root cause', incident.root_cause) }}
+    {% if incident.contributing_factor_type %}<dt>Contributing factor type</dt><dd><strong>{{ incident.contributing_factor_label.split(' (')[0] }}</strong>{% if incident.contributing_factor_detail %}<br><span class="pre">{{ incident.contributing_factor_detail }}</span>{% endif %}</dd>{% endif %}
+    {{ row('Supporting references', incident.supporting_references) }}
+    {{ row('Lessons learned', incident.lessons_learned) }}
   </dl>
   {% else %}
-  <p class="muted">The investigation has not been recorded yet.{% if can_investigate %} Use <strong>Start investigation</strong> to record the direct cause, root cause, contributing factor type and corrective actions.{% endif %}</p>
+  <p class="empty">Not recorded yet.{% if can_investigate %} The safety representative records the analysis, causes, corrective actions and references in Section 7.{% endif %}</p>
   {% endif %}
 
-  <h3>Corrective actions</h3>
+  <h3>Recommended corrective actions</h3>
   {% if incident.corrective_actions %}
+  <div class="table-scroll">
   <table class="table compact">
-    <thead><tr><th>Action</th><th>Responsible</th><th>Target date</th><th>Status</th><th>Completed</th></tr></thead>
+    <thead><tr><th>Action</th><th>Responsible party</th><th>Target date</th><th>Verification date</th><th>Status</th></tr></thead>
     <tbody>
     {% for a in incident.corrective_actions %}
       <tr>
         <td>{{ a.description }}{% if a.notes %}<br><small class="muted">{{ a.notes }}</small>{% endif %}</td>
         <td>{{ a.responsible_name or '' }}</td>
         <td>{{ a.target_date|date }}{% if a.is_overdue %} <span class="badge badge-danger">Overdue</span>{% endif %}</td>
-        <td><span class="badge badge-{{ 'ok' if a.status == 'completed' else ('warn' if a.status == 'in_progress' else 'neutral') }}">{{ a.status_label }}</span></td>
-        <td>{{ a.completed_on|date }}</td>
+        <td>{{ a.verification_date|date }}{% if a.verified_by %}<br><small class="muted">{{ a.verified_by }}</small>{% endif %}</td>
+        <td><span class="badge badge-{{ 'ok' if a.status in ('completed', 'verified') else ('warn' if a.status == 'in_progress' else 'neutral') }}">{{ a.status_label }}</span></td>
       </tr>
     {% endfor %}
     </tbody>
   </table>
+  </div>
   {% else %}
-  <p class="muted">No corrective actions recorded.</p>
+  <p class="empty">No corrective actions recorded.</p>
   {% endif %}
+</section>
+
+<section class="card section-card" id="section-8">
+  <div class="card-head">
+    <h2><span class="section-no">8</span>Signatures</h2>
+    {% if can_investigate %}<a class="btn btn-sm btn-ghost" href="{{ url_for('incidents.investigation', incident_id=incident.id) }}#signatures">Sign</a>{% endif %}
+  </div>
+  <table class="table compact">
+    <thead><tr><th>Role</th><th>Name</th><th>Status</th></tr></thead>
+    <tbody>
+    {% for role, label in signature_roles.items() %}
+      {% set sig = incident.signature_for(role) %}
+      <tr>
+        <td>{{ label }}</td>
+        <td>{{ sig.name if sig and sig.name else '' }}{% if sig and sig.title %}, {{ sig.title }}{% endif %}</td>
+        <td>{% if sig and sig.signature_data %}<span class="badge badge-ok">Signed {{ sig.signed_at|date }}</span>{% else %}<span class="badge badge-neutral">Not signed</span>{% endif %}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% if incident.closed_at %}<p class="small muted">Closed {{ incident.closed_at|datetime }}{% if incident.closed_by %} by {{ incident.closed_by.full_name }}{% endif %}.</p>{% endif %}
 </section>
 {% endblock %}

@@ -56,7 +56,34 @@ PREVENTABILITY = {
     "preventable": "Preventable",
     "non_preventable": "Non-preventable",
 }
-ACTION_STATUSES = {"open": "Open", "in_progress": "In progress", "completed": "Completed"}
+ACTION_STATUSES = {"open": "Open", "in_progress": "In progress", "completed": "Completed", "verified": "Verified"}
+COURSE_CATEGORIES = {
+    "osha_top10": "OSHA Top 10",
+    "general": "General safety",
+    "rescue": "Rescue",
+    "supervisor": "Supervisors and managers",
+}
+ASSIGNMENT_REASONS = {"annual": "Annual", "new_hire": "New hire", "individual": "Assigned individually"}
+INCIDENT_TYPE_CODES = {"injury": "PI", "property_damage": "PD", "vehicle": "VI"}
+VEHICLE_TYPES = [
+    "Pickup or SUV", "Dump truck", "Bucket or aerial lift truck", "Digger derrick", "Refuse or vactor truck",
+    "Street sweeper", "Plow or salt truck", "Sedan or van", "Trailer", "Other",
+]
+INJURY_TYPES = ["Burn", "Strain/Sprain", "Laceration", "Amputation", "Contusion", "Fracture", "Other"]
+BODY_PARTS = [
+    "Head", "Eye", "Ear", "Face", "Neck", "Chest", "Shoulder", "Back", "Abdomen", "Groin", "Buttocks",
+    "Upper Arm", "Forearm", "Wrist", "Hand/Finger", "Thigh/Leg", "Knee", "Calf", "Ankle", "Foot/Toe", "Other",
+]
+STATEMENT_ROLES = {"principal": "Principal statement", "witness": "Eyewitness statement"}
+SIGNATURE_ROLES = {
+    "investigator": "Investigator",
+    "manager": "Manager",
+    "safety_manager": "Safety Manager",
+    "assistant_director": "Department Assistant Director",
+}
+INSPECTION_KINDS = {"inspection": "Site inspection", "audit": "Annual audit"}
+INSPECTION_RESULTS = {"ok": "Satisfactory", "action": "Action needed", "na": "Not applicable"}
+AUDIT_RESULTS = {"ok": "In place", "partial": "Partly in place", "missing": "Missing", "na": "Not applicable"}
 
 
 def _loads(text, default):
@@ -157,6 +184,7 @@ class Course(db.Model):
     standard_title = db.Column(db.String(200))
     category = db.Column(db.String(40), nullable=False, default="osha_top10")
     top10_rank = db.Column(db.Integer)
+    new_hire = db.Column(db.Boolean, nullable=False, default=False)
     duration_minutes = db.Column(db.Integer, default=30)
     renewal_months = db.Column(db.Integer, default=12)
     summary = db.Column(db.Text)
@@ -187,14 +215,24 @@ class Course(db.Model):
 
     @property
     def category_label(self):
-        return {"osha_top10": "OSHA Top 10", "rescue": "Rescue"}.get(self.category, self.category.title())
+        return COURSE_CATEGORIES.get(self.category, self.category.title())
 
     @property
     def division_codes(self):
         return {d.code for d in self.divisions}
 
+    @property
+    def is_supervisor_course(self):
+        return self.category == "supervisor"
+
     def applies_to(self, user):
-        return user.division is not None and user.division in self.divisions
+        """Annual assignment rule: the course covers the user's division, and
+        supervisor courses go only to supervisors and administrators."""
+        if user.division is None or user.division not in self.divisions:
+            return False
+        if self.is_supervisor_course and not user.is_supervisor:
+            return False
+        return True
 
     def __repr__(self):
         return f"<Course {self.slug}>"
@@ -230,6 +268,7 @@ class Assignment(db.Model):
     assigned_on = db.Column(db.Date, nullable=False, default=date.today)
     due_date = db.Column(db.Date, nullable=False, index=True)
     status = db.Column(db.String(20), nullable=False, default="assigned")  # assigned, in_progress, completed
+    reason = db.Column(db.String(20), nullable=False, default="annual")  # annual, new_hire, individual
     started_at = db.Column(db.DateTime)
     completed_at = db.Column(db.DateTime)
     score = db.Column(db.Integer)
@@ -297,6 +336,10 @@ class Assignment(db.Model):
     def certificate_number(self):
         return f"CERT-{self.id:06d}"
 
+    @property
+    def reason_label(self):
+        return ASSIGNMENT_REASONS.get(self.reason, self.reason or "")
+
 
 class QuizAttempt(db.Model):
     __tablename__ = "quiz_attempts"
@@ -346,7 +389,37 @@ class Incident(db.Model):
     equipment_involved = db.Column(db.String(200))
     weather_conditions = db.Column(db.String(200))
 
-    # Personal injury
+    # Section 1: investigator
+    investigator_name = db.Column(db.String(120))
+    investigator_title = db.Column(db.String(120))
+
+    # Section 2: vehicle, machine, equipment or trailer
+    vehicle_involved = db.Column(db.Boolean)
+    vehicle_type = db.Column(db.String(80))
+    vehicle_make_model = db.Column(db.String(120))
+    license_plate = db.Column(db.String(40))
+    damage_marks_json = db.Column(db.Text)  # [{"x": percent, "y": percent}] circled on the vehicle diagram
+    scene_sketch = db.Column(db.Text)  # PNG data URL drawn on the intersection pad
+    equipment_involved_flag = db.Column(db.Boolean)
+    equipment_sketch = db.Column(db.Text)  # PNG data URL
+
+    # Section 3: personal injury
+    injury_occurred = db.Column(db.Boolean)
+    injury_types_json = db.Column(db.Text)  # ["Laceration", ...]
+    injury_other = db.Column(db.String(200))
+    body_parts_json = db.Column(db.Text)  # ["Hand/Finger", ...]
+    body_part_other = db.Column(db.String(200))
+    body_marks_json = db.Column(db.Text)  # [{"x": percent, "y": percent}] marked on the body diagram
+
+    # Section 7: safety representative's facts and analysis
+    safety_rep_name = db.Column(db.String(120))
+    safety_rep_title = db.Column(db.String(120))
+    analysis_date = db.Column(db.Date)
+    facts_analysis = db.Column(db.Text)
+    contributing_causes = db.Column(db.Text)
+    supporting_references = db.Column(db.Text)
+
+    # Personal injury (legacy single-value fields kept for older reports)
     injured_person = db.Column(db.String(120))
     injured_job_title = db.Column(db.String(120))
     body_part = db.Column(db.String(120))
@@ -394,6 +467,46 @@ class Incident(db.Model):
     corrective_actions = db.relationship(
         "CorrectiveAction", back_populates="incident", cascade="all, delete-orphan", order_by="CorrectiveAction.id"
     )
+    statements = db.relationship(
+        "Statement", back_populates="incident", cascade="all, delete-orphan", order_by="Statement.id"
+    )
+    signatures = db.relationship(
+        "IncidentSignature", back_populates="incident", cascade="all, delete-orphan", order_by="IncidentSignature.id"
+    )
+
+    @property
+    def type_code(self):
+        return INCIDENT_TYPE_CODES.get(self.incident_type, "IN")
+
+    @property
+    def damage_marks(self):
+        return _loads(self.damage_marks_json, [])
+
+    @property
+    def body_marks(self):
+        return _loads(self.body_marks_json, [])
+
+    @property
+    def injury_types(self):
+        return _loads(self.injury_types_json, [])
+
+    @property
+    def body_parts(self):
+        return _loads(self.body_parts_json, [])
+
+    @property
+    def principal_statements(self):
+        return [s for s in self.statements if s.role == "principal"]
+
+    @property
+    def witness_statements(self):
+        return [s for s in self.statements if s.role == "witness"]
+
+    def signature_for(self, role):
+        for sig in self.signatures:
+            if sig.role == role:
+                return sig
+        return None
 
     @property
     def type_label(self):
@@ -433,7 +546,65 @@ class Incident(db.Model):
 
     @property
     def open_actions(self):
-        return [a for a in self.corrective_actions if a.status != "completed"]
+        return [a for a in self.corrective_actions if a.status not in ("completed", "verified")]
+
+
+class Statement(db.Model):
+    """Section 5 (principal) or section 6 (eyewitness) statement. One report
+    can carry any number of each. A statement is signed on the investigator's
+    device, through an emailed link (token), or on paper."""
+
+    __tablename__ = "statements"
+
+    id = db.Column(db.Integer, primary_key=True)
+    incident_id = db.Column(db.Integer, db.ForeignKey("incidents.id"), nullable=False, index=True)
+    role = db.Column(db.String(20), nullable=False, default="principal")  # principal, witness
+    token = db.Column(db.String(64), unique=True, index=True)
+    email = db.Column(db.String(200))
+    printed_name = db.Column(db.String(120))
+    department = db.Column(db.String(120))
+    title = db.Column(db.String(120))
+    statement_text = db.Column(db.Text)
+    signature_data = db.Column(db.Text)  # PNG data URL
+    status = db.Column(db.String(20), nullable=False, default="pending")  # pending, signed
+    signed_via = db.Column(db.String(20))  # device, link, paper
+    signed_at = db.Column(db.DateTime)
+    received_by = db.Column(db.String(120))
+    sent_at = db.Column(db.DateTime)
+    created_at = db.Column(db.DateTime, default=now, nullable=False)
+
+    incident = db.relationship("Incident", back_populates="statements")
+
+    @property
+    def role_label(self):
+        return STATEMENT_ROLES.get(self.role, self.role)
+
+    @property
+    def is_signed(self):
+        return self.status == "signed"
+
+
+class IncidentSignature(db.Model):
+    """Section 8 signature block: investigator, manager, safety manager and
+    department assistant director."""
+
+    __tablename__ = "incident_signatures"
+
+    id = db.Column(db.Integer, primary_key=True)
+    incident_id = db.Column(db.Integer, db.ForeignKey("incidents.id"), nullable=False, index=True)
+    role = db.Column(db.String(30), nullable=False)
+    name = db.Column(db.String(120))
+    title = db.Column(db.String(120))
+    signature_data = db.Column(db.Text)  # PNG data URL
+    signed_at = db.Column(db.DateTime)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+
+    incident = db.relationship("Incident", back_populates="signatures")
+    user = db.relationship("User")
+
+    @property
+    def role_label(self):
+        return SIGNATURE_ROLES.get(self.role, self.role)
 
 
 class CorrectiveAction(db.Model):
@@ -446,6 +617,8 @@ class CorrectiveAction(db.Model):
     target_date = db.Column(db.Date)
     status = db.Column(db.String(20), nullable=False, default="open")
     completed_on = db.Column(db.Date)
+    verification_date = db.Column(db.Date)
+    verified_by = db.Column(db.String(120))
     notes = db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=now, nullable=False)
 
@@ -457,7 +630,71 @@ class CorrectiveAction(db.Model):
 
     @property
     def is_overdue(self):
-        return self.status != "completed" and self.target_date is not None and self.target_date < date.today()
+        return self.status not in ("completed", "verified") and self.target_date is not None and self.target_date < date.today()
+
+
+class Inspection(db.Model):
+    """A completed (or in-progress) site inspection or annual program audit.
+    The checklist items are copied from the template at creation time so a
+    later change to the template does not rewrite past inspections."""
+
+    __tablename__ = "inspections"
+
+    id = db.Column(db.Integer, primary_key=True)
+    number = db.Column(db.String(30), unique=True, nullable=False, index=True)  # INS-2026-001 or AUD-2026-001
+    template_slug = db.Column(db.String(80), nullable=False, index=True)
+    kind = db.Column(db.String(20), nullable=False, default="inspection")  # inspection, audit
+    title = db.Column(db.String(200), nullable=False)
+    site = db.Column(db.String(200))
+    inspection_date = db.Column(db.Date, nullable=False, default=date.today)
+    division_id = db.Column(db.Integer, db.ForeignKey("divisions.id"))
+    inspector_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+    inspector_name = db.Column(db.String(120))
+    accompanied_by = db.Column(db.String(200))
+    weather = db.Column(db.String(120))
+    items_json = db.Column(db.Text)  # [{"key","section","text","ref","result","note"}]
+    findings_json = db.Column(db.Text)  # [{"key","action","responsible","target_date","status"}]
+    summary = db.Column(db.Text)
+    signature_data = db.Column(db.Text)  # PNG data URL
+    completed = db.Column(db.Boolean, nullable=False, default=False)
+    completed_at = db.Column(db.DateTime)
+    created_by_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+    created_at = db.Column(db.DateTime, default=now, nullable=False)
+    updated_at = db.Column(db.DateTime, default=now, onupdate=now, nullable=False)
+
+    division = db.relationship("Division")
+    inspector = db.relationship("User", foreign_keys=[inspector_id])
+    created_by = db.relationship("User", foreign_keys=[created_by_id])
+
+    @property
+    def items(self):
+        return _loads(self.items_json, [])
+
+    @property
+    def findings(self):
+        return _loads(self.findings_json, [])
+
+    @property
+    def kind_label(self):
+        return INSPECTION_KINDS.get(self.kind, self.kind)
+
+    @property
+    def result_labels(self):
+        return AUDIT_RESULTS if self.kind == "audit" else INSPECTION_RESULTS
+
+    @property
+    def stats(self):
+        counts = {}
+        for item in self.items:
+            key = item.get("result") or "unanswered"
+            counts[key] = counts.get(key, 0) + 1
+        counts["total"] = len(self.items)
+        counts["answered"] = sum(1 for i in self.items if i.get("result"))
+        return counts
+
+    @property
+    def open_findings(self):
+        return [f for f in self.findings if f.get("status") != "closed"]
 
 
 class NotificationLog(db.Model):
@@ -483,8 +720,12 @@ class NotificationLog(db.Model):
         "training_due_7": "7-day reminder",
         "training_overdue": "Overdue reminder",
         "training_completed": "Completion notice to supervisor",
+        "training_due_30_supervisor": "30-day reminder (supervisor copy)",
+        "training_due_7_supervisor": "7-day reminder (supervisor copy)",
+        "training_overdue_supervisor": "Overdue reminder (supervisor copy)",
         "incident_reported": "Incident reported",
         "incident_closed": "Incident closed",
+        "statement_request": "Statement request",
         "account_created": "Account created",
         "test": "Test message",
     }

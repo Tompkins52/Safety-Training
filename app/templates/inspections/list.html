@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}Inspections | {{ app_name }}{% endblock %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='css/inspections.css') }}">{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div><h1>Inspections and audits</h1><p class="muted">Site inspection checklists for construction and general industry work, and the annual safety program audit. Mark each item, note findings, and assign corrective actions.{% if not current_user.is_supervisor %} You see the inspections you started.{% elif not current_user.is_admin %} You see your own inspections and those in your division.{% endif %}</p></div>
+  <div class="actions"><a class="btn btn-secondary" href="{{ url_for('inspections.export_xlsx', kind=filters.kind or None, status=filters.status or None) }}">Export to Excel</a></div>
+</div>
+
+<section class="card">
+  <h2>Start a new one</h2>
+  {% if templates %}
+  <div class="template-grid">
+    {% for t in templates %}
+    <div class="template-card">
+      <div>
+        <p class="eyebrow">{{ t.kind_label }}</p>
+        <h3>{{ t.title }}</h3>
+        <p class="muted small">{{ t.intro }}</p>
+        <p class="small"><strong>Industry:</strong> {{ t.industry_label }}. <strong>Frequency:</strong> {{ t.frequency }}. {{ t.item_count }} items in {{ t.section_count }} sections.</p>
+      </div>
+      <form method="post" action="{{ url_for('inspections.start', slug=t.slug) }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button class="btn btn-primary" type="submit">Start {{ 'audit' if t.kind == 'audit' else 'inspection' }}</button>
+      </form>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="muted">No checklist templates are installed. Add checklist files to the content/inspections folder.</p>
+  {% endif %}
+</section>
+
+<form method="get" class="filter-bar card">
+  <label>Kind
+    <select name="kind">
+      <option value="">All</option>
+      {% for key, label in kinds.items() %}<option value="{{ key }}" {% if filters.kind == key %}selected{% endif %}>{{ label }}</option>{% endfor %}
+    </select>
+  </label>
+  <label>Status
+    <select name="status">
+      <option value="">All</option>
+      {% for key, label in status_filters.items() %}<option value="{{ key }}" {% if filters.status == key %}selected{% endif %}>{{ label }}</option>{% endfor %}
+    </select>
+  </label>
+  <button class="btn btn-secondary" type="submit">Filter</button>
+  <a class="btn btn-ghost" href="{{ url_for('inspections.index') }}">Clear</a>
+</form>
+
+<section class="card">
+  <h2>Completed and in progress</h2>
+  {% if rows %}
+  <div class="table-scroll">
+  <table class="table">
+    <thead><tr><th>Number</th><th>Checklist</th><th>Site or facility</th><th>Date</th><th>Inspector</th><th class="num">Answered</th><th>Action items</th><th>Status</th><th></th></tr></thead>
+    <tbody>
+    {% for inspection, totals in rows %}
+      <tr>
+        <td><a href="{{ url_for('inspections.checklist', inspection_id=inspection.id) }}"><strong>{{ inspection.number }}</strong></a></td>
+        <td>{{ inspection.title }}<br><small class="muted">{{ inspection.kind_label }}{% if inspection.division %}, {{ inspection.division.name }}{% endif %}</small></td>
+        <td>{{ inspection.site or '' }}</td>
+        <td>{{ inspection.inspection_date|date }}</td>
+        <td>{{ inspection.inspector_name or '' }}</td>
+        <td class="num">{{ totals.answered }} of {{ totals.total }}</td>
+        <td>
+          {% if totals.findings == 0 %}{% if totals.answered %}<span class="badge badge-ok">None</span>{% endif %}
+          {% elif totals.open_findings %}<span class="badge badge-warn">{{ totals.open_findings }} open of {{ totals.findings }}</span>
+          {% else %}<span class="badge badge-ok">{{ totals.findings }} closed</span>{% endif %}
+        </td>
+        <td><span class="badge badge-{{ 'ok' if inspection.completed else 'warn' }}">{{ 'Completed' if inspection.completed else 'In progress' }}</span></td>
+        <td class="actions-cell"><a class="btn btn-sm btn-ghost" href="{{ url_for('inspections.checklist', inspection_id=inspection.id) }}">Open</a> <a class="btn btn-sm btn-ghost" href="{{ url_for('inspections.print_record', inspection_id=inspection.id) }}">Print</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  {% else %}
+  <p class="muted">No inspections or audits match.</p>
+  {% endif %}
+</section>
+{% endblock %}

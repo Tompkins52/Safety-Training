@@ -1,0 +1,181 @@
+{
+  "slug": "confined-spaces",
+  "title": "Confined Spaces",
+  "standard": "29 CFR 1910.146",
+  "standard_title": "Permit-Required Confined Spaces (general industry), with 1926 Subpart AA for construction",
+  "category": "general",
+  "top10_rank": null,
+  "new_hire": false,
+  "divisions": [
+    "electric",
+    "environmental",
+    "public"
+  ],
+  "duration_minutes": 40,
+  "renewal_months": 12,
+  "summary": "Manholes, wet wells, vaults and tanks look the same on the day they kill as they did the day before. This course covers how to recognize a confined space, what makes it permit-required, how to test and ventilate the atmosphere, what the entrant, attendant and entry supervisor each do, and why rescue starts with a retrieval line instead of a second person going in. It is built on 29 CFR 1910.146 and notes where the construction rule in 1926 Subpart AA adds to it.",
+  "objectives": [
+    "Identify a confined space using the three-part definition and name the four conditions that make it permit-required.",
+    "Test the atmosphere in the correct order and at the correct levels with a bump-tested meter, and state the oxygen, flammable and toxic limits that stop an entry.",
+    "Describe what the entry permit records, who signs it, how long it lasts and when it is cancelled.",
+    "Explain the duties of the authorized entrant, the attendant and the entry supervisor, including why the attendant never enters.",
+    "Set up non-entry rescue with a tripod, winch and full body harness, and explain why would-be rescuers make up so many confined space deaths.",
+    "Apply the sewer entry provisions, traffic control and training requirements that cover routine public works entries."
+  ],
+  "sections": [
+    {
+      "heading": "What a confined space is, and what makes it permit-required",
+      "body": "Under **29 CFR 1910.146(b)**, a **confined space** meets all three tests:\n\n1. It is large enough and shaped so a worker can bodily enter and do assigned work.\n2. It has limited or restricted means of entry or exit.\n3. It is not designed for continuous occupancy.\n\nIn public works that means manholes, sewer lines, lift stations and wet wells, water storage tanks, valve vaults, meter pits, electrical vaults, digesters, clarifiers, baghouses, tanker and vactor truck tanks, culverts and storm structures.\n\nIt is a **permit-required confined space** (a **permit space**) when it has any one of these:\n\n- A **hazardous atmosphere**, or the potential for one.\n- A material that could **engulf** an entrant: water, sewage, sludge, grit or salt.\n- **Inwardly converging walls** or a **floor that slopes down to a smaller opening** that could trap an entrant.\n- **Any other recognized serious hazard**, such as an unguarded auger, exposed energized parts or a fall.\n\nThe employer must identify permit spaces, post **danger signs** or warn employees by an equally effective means, and either keep employees out or run a **written permit space program**. Treat any space not on the department's inventory as a permit space until the entry supervisor rules otherwise. Construction work such as new sewer installation falls under **29 CFR 1926 Subpart AA**, which uses the same framework."
+    },
+    {
+      "heading": "Why this training matters",
+      "body": "Confined space deaths follow a pattern. The space looked the same as last week. There was no smell, or it faded. One worker went down within a few breaths. A coworker went in after them and went down too. **NIOSH studies of confined space deaths found that more than half of the victims were would-be rescuers.**\n\nPublic works crews face this risk more than most. Appendix E to 1910.146 says it plainly: for sewer workers, the permit space is the usual work environment. Familiarity is the danger. A sewer atmosphere can change in minutes from an upstream discharge, a rain surge or a plug of debris that lets go, and methane and carbon monoxide have no odor at all. **Your senses cannot test a confined space. Only a meter can.**"
+    },
+    {
+      "heading": "Atmospheric hazards, testing and ventilation",
+      "body": "Section 1910.146(b) defines a **hazardous atmosphere** as any of these:\n\n- **Oxygen below 19.5 percent** or **above 23.5 percent**.\n- A **flammable gas or vapor above 10 percent of its lower explosive limit (LEL)**, which the standard calls the lower flammable limit.\n- A toxic substance above its exposure limit, or any other condition immediately dangerous to life or health.\n\nThe toxic gases that matter most here are **hydrogen sulfide (H2S)** and **carbon monoxide (CO)**. Appendix E sets meter alarms at **10 ppm for H2S** and **35 ppm for CO**. H2S smells like rotten eggs at low levels, but higher concentrations deaden the sense of smell within a few breaths, so a smell that fades can mean the gas is getting worse.\n\n**Testing.** Before anyone enters, a trained person tests the air with a **calibrated multi-gas meter** that was **bump-tested that day** with known gas to prove every sensor alarms. Sample from outside with a pump and sample line, **oxygen first, then flammables, then toxics**, as 1910.146(d)(5)(iii) requires; the flammable sensor does not read correctly without enough oxygen. Sample at the **top, middle and bottom**, because gases layer: methane rises, H2S sinks and CO mixes throughout. The entrant then carries a running meter the whole time. If any alarm sounds, everyone gets out.\n\n**Ventilation.** A blower does not replace testing. Under 1910.146(c)(5)(ii)(E), forced air must come from a clean source, reach the entrant's work area and keep running until the last entrant is out. Set the intake **upwind, away from vehicle and generator exhaust, the blower's own engine and the roadway**; a blower that pulls in exhaust fills the space with CO. Ventilate, then retest before anyone enters."
+    },
+    {
+      "heading": "The permit, isolation and the three roles",
+      "body": "**The permit.** No one enters until the **entry supervisor** signs an entry permit under 1910.146(f). It names the space, the purpose, the date and duration, the entrants, the attendant and the entry supervisor, and it records the hazards, isolation measures, acceptable entry conditions, test results, rescue service and how to call it, communication method and required equipment. It is posted at the opening and lasts no longer than the task. The entry supervisor **cancels** it when the work is done or when a condition the permit does not allow appears; cancelled permits are kept for a year.\n\n**Isolation.** Cut the space off from energy and material: **lockout and tagout** of pumps, mixers, augers and electrical gear under 1910.147, and **blanking or blinding** a line with a solid plate rated for the line pressure. **Line breaking**, opening a line that carries sewage, chemicals or pressurized fluid, follows its own procedure and PPE. A closed valve by itself is not isolation.\n\n**The three roles.**\n\n- **Authorized entrant.** Knows the hazards and signs of exposure, uses the equipment correctly, stays in contact with the attendant and exits at once when told, on any alarm or when anything feels wrong. **Only employees who have completed the department's hands-on confined space training and are listed on the permit may enter.**\n- **Attendant.** Stays outside, keeps an exact count, keeps in contact, watches conditions inside and out, orders evacuation when needed, calls rescue as soon as help may be needed and performs **non-entry rescue only**. The attendant **never leaves the post** unless relieved by another trained attendant and **never enters the space to attempt a rescue**.\n- **Entry supervisor.** Confirms the permit is complete, tests are done, equipment is in place and the rescue service can be reached, then signs. Ends the entry, cancels the permit and removes anyone not authorized.\n\n**Communication.** Agree on the method before entry: voice, radio or rope signals. If contact is lost and cannot be restored, the entrants come out."
+    },
+    {
+      "heading": "Entry procedure, step by step",
+      "body": "1. **Plan.** Confirm the space is on the inventory, review its hazards and assign trained entrants, an attendant and an entry supervisor.\n2. **Set up traffic control and the work zone** before the cover comes off.\n3. **Remove the cover** with a cover lifter and guard the opening.\n4. **Isolate.** Lock out and tag out, blank or block lines, verify zero energy.\n5. **Test the atmosphere** from outside, top to bottom, oxygen first, then flammables, then toxics. Record the readings.\n6. **Ventilate** if needed, then retest.\n7. **Stage rescue.** Tripod and winch set, harness on, retrieval line attached, rescue service confirmed.\n8. **Sign and post the permit.** The entry supervisor verifies every item and signs.\n9. **Enter and monitor.** The entrant carries a running meter; the attendant keeps count, keeps contact and watches conditions.\n10. **Evacuate** on any alarm, loss of contact, prohibited condition or order from the attendant or supervisor. No re-entry until the entry supervisor retests and reauthorizes.\n11. **Close out.** Account for everyone and every tool, replace the cover, cancel the permit, note any problems on it and pull the traffic control last."
+    },
+    {
+      "heading": "Rescue: non-entry first",
+      "body": "Section 1910.146(k) builds rescue around getting a person out **without sending anyone else in**.\n\n- **Retrieval systems** are used whenever an entrant goes into a permit space, unless the equipment would add risk or would not help. Each entrant wears a **full body harness** with the retrieval line attached at the center of the back between the shoulders or above the head, and the other end goes to a **mechanical device or fixed point outside** so retrieval can start the moment it is needed. A **mechanical device**, such as a tripod and winch, is required for vertical spaces **more than 5 feet deep**.\n- **Entry rescue** is done only by a trained, equipped rescue team with supplied air or SCBA and its own attendant and retrieval system. If the department relies on an outside service, it must confirm that the service can **reach the space in time for the hazard**, is available that day, knows the hazards and has practiced there.\n- **Call early.** The attendant calls rescue as soon as an entrant may need help, not after a collapse.\n\nThe most important rule is also the simplest: **if someone goes down, you do not go in.** Start the winch, call for rescue, keep the blower running and keep talking to them."
+    },
+    {
+      "heading": "Sewer entry, alternate procedures, traffic control and training",
+      "body": "**Sewer entry.** A sewer is part of a continuous system and cannot be fully isolated. Paragraph 1910.146(d)(5)(i) allows pre-entry testing to the extent feasible in that case but requires **continuous monitoring** where the entrants are working. Non-mandatory **Appendix E, Sewer System Entry**, adds that only employees thoroughly trained in the department's sewer entry procedures should enter, that entrants carry an alarming meter, and that crews watch the weather so work stops before a surge from rain or hydrant flow.\n\n**Alternate procedures and reclassification.** Under 1910.146(c)(5), when the only hazard is an actual or potential hazardous atmosphere and monitoring data shows that **continuous forced air ventilation alone** keeps the space safe, entry can proceed with a signed certification instead of a full permit. Testing still applies, and an alarm empties the space. Under 1910.146(c)(7), a permit space can be **reclassified** as non-permit only when it has no actual or potential atmospheric hazard and every other hazard is eliminated without entry. Ventilation controls a hazard; it does not eliminate one.\n\n**Traffic control.** Set up signs, cones and arrow boards per the department's traffic control plan and **MUTCD Part 6** before the cover comes off, use the truck as a shield, wear Class 2 or Class 3 high-visibility apparel and never assign the attendant to flag traffic.\n\n**Training.** Under 1910.146(g), training comes before the first assignment, before a change in duties, whenever the work changes in a way that adds a hazard and whenever the department sees deviations or gaps in knowledge. It is certified with the employee's name, the trainer's signature and the dates. This course is the classroom portion; the hands-on session with the meter, blower, tripod and harness completes it."
+    },
+    {
+      "heading": "What this means on the job",
+      "body": "**Electric Services.** Underground vaults and manholes carry every confined space hazard plus energized cable. Routine line work entries may fall under the enclosed space rules of 1910.269(e); the department treats them as permit spaces. A flooded meter pit is a permit space until tested.\n\n**Environmental Services.** Wet wells, lift stations, digesters and clarifiers are permit spaces every time, because sewage produces H2S and methane around the clock. Watch the forecast on storm sewer work; upstream rain is an engulfment hazard. Solid waste crews treat compactor hoppers, transfer station pits and tanker tanks as permit spaces. No one climbs into a vactor debris tank to clear a clog.\n\n**Public Services.** Streets crews entering culverts and storm structures face sudden flow and low oxygen from rotting debris. Signal technicians entering pull boxes and vaults follow the same rules as Electric. Fleet mechanics do not enter tanker, water truck or sweeper hopper tanks without a permit. Facilities staff treat pits, tanks and crawl spaces with limited exits as potential permit spaces.\n\nIf the entry is not planned, tested, permitted and rigged, it does not happen. The job can wait. The person in the hole cannot."
+    }
+  ],
+  "key_takeaways": [
+    "A confined space is one a worker can bodily enter, with limited or restricted entry or exit, that is not designed for continuous occupancy; it is permit-required if it has a hazardous atmosphere, an engulfment hazard, converging walls or a sloping floor, or any other serious hazard.",
+    "Only a meter can test a space: oxygen must be between 19.5 and 23.5 percent, flammables below 10 percent of the LEL, and hydrogen sulfide and carbon monoxide below the alarm points, tested oxygen first, then flammables, then toxics, at the top, middle and bottom.",
+    "Ventilate with clean air from a blower whose intake is away from exhaust and traffic, retest, and keep monitoring the whole time anyone is inside.",
+    "No one enters until the entry supervisor has signed the permit, and only employees with the department's hands-on confined space training who are listed on the permit may enter.",
+    "The attendant stays outside, keeps count, keeps contact, calls rescue early and never enters the space to attempt a rescue.",
+    "Every entrant wears a full body harness with a retrieval line to a tripod and winch or fixed point outside, and a mechanical device is required for vertical spaces more than 5 feet deep.",
+    "Sewers cannot be isolated, so sewer entries require continuous monitoring, weather awareness and the extra precautions in Appendix E.",
+    "If someone goes down, you do not go in; start the retrieval, call rescue, keep the blower running and keep talking to them."
+  ],
+  "questions": [
+    {
+      "text": "Which of the following describes a confined space under 1910.146?",
+      "options": [
+        "Any space below ground level that requires a ladder to reach",
+        "A space a worker can bodily enter, with limited or restricted entry or exit, that is not designed for continuous occupancy",
+        "Any space that has tested positive for a hazardous atmosphere",
+        "A space that is posted with a danger sign by the employer"
+      ],
+      "answer": 1,
+      "explanation": "The definition in 1910.146(b) has three parts: large enough to bodily enter and work in, limited or restricted means of entry or exit, and not designed for continuous occupancy. A hazardous atmosphere or a danger sign is what makes a confined space permit-required, not what makes it a confined space."
+    },
+    {
+      "text": "An empty V-box salt spreader hopper is open to the air and tests clean. Its walls slope inward to the auger trough at the bottom. Can a mechanic climb in to clear bridged salt without a permit?",
+      "options": [
+        "Yes, because the atmosphere is acceptable and the hopper is open at the top",
+        "Yes, as long as a coworker watches from the truck bed",
+        "No. Inwardly converging walls that could trap an entrant make it a permit space, and the auger is another serious hazard that must be locked out",
+        "No, but only because salt dust is a combustible dust hazard"
+      ],
+      "answer": 2,
+      "explanation": "A space is permit-required if it has any one of the four conditions, and inwardly converging walls or a floor that slopes to a smaller opening is one of them. The auger adds a recognized serious hazard that requires lockout. Good air alone does not make a space non-permit."
+    },
+    {
+      "text": "Which oxygen reading meets the acceptable entry range in 1910.146?",
+      "options": [
+        "18.9 percent",
+        "19.2 percent",
+        "23.8 percent",
+        "20.9 percent"
+      ],
+      "answer": 3,
+      "explanation": "The standard defines a hazardous atmosphere as oxygen below 19.5 percent or above 23.5 percent. Normal air is 20.9 percent. Readings of 18.9 and 19.2 percent are oxygen deficient, and 23.8 percent is oxygen enriched."
+    },
+    {
+      "text": "In what order does 1910.146(d)(5)(iii) require the atmosphere to be tested?",
+      "options": [
+        "Oxygen, then flammables, then toxics",
+        "Toxics, then oxygen, then flammables",
+        "Flammables, then oxygen, then toxics",
+        "Any order, as long as all three are tested before entry"
+      ],
+      "answer": 0,
+      "explanation": "The standard requires testing first for oxygen, then for combustible gases and vapors, then for toxic gases and vapors. The flammable sensor does not read correctly in an oxygen-deficient atmosphere, so the oxygen reading has to come first."
+    },
+    {
+      "text": "Why must the atmosphere be sampled at the top, middle and bottom of a manhole?",
+      "options": [
+        "To give the sensors time to warm up before the final reading at the bottom",
+        "Because gases layer: methane rises, hydrogen sulfide sinks and carbon monoxide mixes throughout",
+        "To average the three readings into a single value for the permit",
+        "Because the standard requires one reading for each of the three gases"
+      ],
+      "answer": 1,
+      "explanation": "Gases have different densities. Methane is lighter than air and collects near the top, hydrogen sulfide is heavier and settles at the bottom, and carbon monoxide is close to the weight of air and mixes throughout. A single reading at one level can miss a lethal layer."
+    },
+    {
+      "text": "An entrant in a wet well stops answering the radio, and the attendant sees him slumped against the wall. What does the attendant do?",
+      "options": [
+        "Climb down the ladder to check on him and help him up",
+        "Send the second entrant over to check on him while calling the supervisor",
+        "Start the winch retrieval, call rescue and stay outside the space",
+        "Shut off the blower to hear better and wait for the entry supervisor"
+      ],
+      "answer": 2,
+      "explanation": "The attendant performs non-entry rescue only and never enters the space. The retrieval system is rigged so retrieval can begin as soon as the attendant sees it is needed, and rescue is called as soon as an entrant may need help. The blower stays running and the other entrant is ordered out."
+    },
+    {
+      "text": "When does the entry supervisor cancel an entry permit?",
+      "options": [
+        "At the end of the shift, whether or not the work is finished",
+        "Only after the rescue service has signed off on the entry",
+        "After 24 hours, which is the longest a permit may run",
+        "When the work covered by the permit is completed, or when a condition the permit does not allow arises in or near the space"
+      ],
+      "answer": 3,
+      "explanation": "Under 1910.146(e), the permit lasts no longer than the task it covers, and the entry supervisor terminates the entry and cancels the permit when the work is done or when a prohibited condition arises. There is no fixed 24-hour limit; the task sets the duration."
+    },
+    {
+      "text": "A vertical manhole is 12 feet deep. What does 1910.146(k)(3) require for retrieval?",
+      "options": [
+        "A mechanical device, such as a tripod and winch, connected to the retrieval line on the entrant's full body harness",
+        "A second entrant stationed on the ladder to assist if needed",
+        "A rope tied around the entrant's waist and held by the attendant",
+        "Nothing beyond the ladder, because the space is less than 20 feet deep"
+      ],
+      "answer": 0,
+      "explanation": "Retrieval systems are required whenever an entrant goes into a permit space unless they would add risk or would not help, and a mechanical device must be available for vertical spaces more than 5 feet deep. The line attaches to a full body harness at the center of the back or above the head, not around the waist."
+    },
+    {
+      "text": "Why does 1910.146(d)(5)(i) call for continuous monitoring during sewer entry?",
+      "options": [
+        "Because sewer meters drift and must be reset every few minutes",
+        "Because a sewer permit expires after one hour",
+        "Because pre-entry testing is not required in sewers",
+        "Because a sewer is part of a continuous system that cannot be fully isolated, so the atmosphere can change without warning"
+      ],
+      "answer": 3,
+      "explanation": "A sewer cannot be isolated like a tank. Pre-entry testing is still done to the extent feasible, but because flow from upstream can change the atmosphere at any time, the standard requires continuous monitoring in the areas where entrants are working."
+    },
+    {
+      "text": "A crew sets up a blower to ventilate a lift station wet well. Where does the blower intake belong?",
+      "options": [
+        "Upwind and away from vehicle and generator exhaust, the blower's own engine and the roadway",
+        "Next to the truck's exhaust pipe so it draws warm air in winter",
+        "Inside the wet well, so the air recirculates faster",
+        "Anywhere convenient, as long as the duct reaches the bottom of the well"
+      ],
+      "answer": 0,
+      "explanation": "Under 1910.146(c)(5)(ii)(E), forced air must come from a clean source and may not increase the hazards in the space. A blower that pulls in exhaust pushes carbon monoxide into the space where the entrant is breathing."
+    }
+  ]
+}

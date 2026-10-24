@@ -1,0 +1,50 @@
+{# Shared pieces for the eight-section incident report templates. #}
+
+{% macro yn(value, blank='Not answered') -%}
+{% if value is sameas true %}Yes{% elif value is sameas false %}No{% else %}{{ blank }}{% endif %}
+{%- endmacro %}
+
+{# One definition-list row, printed only when there is a value. #}
+{% macro row(label, value) -%}
+{% if value is not none and value != '' %}<dt>{{ label }}</dt><dd class="pre">{{ value }}</dd>{% endif %}
+{%- endmacro %}
+
+{# Checked list for the detail page: the selected items plus "Other: text". #}
+{% macro picked(selected, other_text) -%}
+{% set items = [] %}{% for item in selected if item != 'Other' %}{% set _ = items.append(item) %}{% endfor %}{% if other_text %}{% set _ = items.append('Other: ' ~ other_text) %}{% elif 'Other' in selected %}{% set _ = items.append('Other') %}{% endif %}{{ items|join(', ') }}
+{%- endmacro %}
+
+{# Printed check box: [X] when on, [ ] when off. #}
+{% macro check(on) -%}
+<span class="check" aria-label="{{ 'checked' if on else 'not checked' }}">{% if on %}X{% else %}&nbsp;{% endif %}</span>
+{%- endmacro %}
+
+{# Printed check list of every choice with the selected ones marked. #}
+{% macro checklist(choices, selected, other_text) -%}
+<div class="print-checks">
+{% for choice in choices %}<span class="print-check">{{ check(choice in selected) }}{{ choice }}{% if choice == 'Other' and other_text %}: {{ other_text }}{% endif %}</span>
+{% endfor %}</div>
+{%- endmacro %}
+
+{# Yes / no pair of printed check boxes. #}
+{% macro yesno(value) -%}
+{{ check(value is sameas true) }} Yes &nbsp;&nbsp; {{ check(value is sameas false) }} No
+{%- endmacro %}
+
+{# Status badge for a statement row. #}
+{% macro statement_badge(s) -%}
+{% if s.is_signed %}<span class="badge badge-ok">Signed {% if s.signed_via == 'paper' %}{{ s.signed_at|date }} on paper{% elif s.signed_via == 'link' %}{{ s.signed_at|datetime }} by link{% else %}{{ s.signed_at|datetime }} on this device{% endif %}</span>{% elif s.sent_at %}<span class="badge badge-warn">Link sent {{ s.sent_at|date }}, not yet signed</span>{% else %}<span class="badge badge-warn">Not yet signed</span>{% endif %}
+{%- endmacro %}
+
+{# Checkbox grid for the report form: every choice except Other, then Other with a text box. #}
+{% macro check_grid(name, choices, selected, other_name, other_value, other_label) -%}
+<div class="check-grid">
+{% for choice in choices if choice != 'Other' %}<label class="checkbox"><input type="checkbox" name="{{ name }}" value="{{ choice }}" {% if choice in selected %}checked{% endif %}> {{ choice }}</label>
+{% endfor %}<label class="checkbox other"><input type="checkbox" name="{{ name }}" value="Other" {% if 'Other' in selected %}checked{% endif %}> Other: <input type="text" name="{{ other_name }}" value="{{ other_value or '' }}" aria-label="{{ other_label }}"></label>
+</div>
+{%- endmacro %}
+
+{# Section heading inside a form grid. #}
+{% macro section_head(number, title, who) -%}
+<div class="span-2 section-head"><h2><span class="section-no">Section {{ number }}</span>{{ title }}</h2>{% if who %}<p class="muted small">{{ who }}</p>{% endif %}</div>
+{%- endmacro %}

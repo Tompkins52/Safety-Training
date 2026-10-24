@@ -1,0 +1,638 @@
+{
+  "slug": "general-industry-inspection",
+  "title": "Facility and Shop Safety Inspection (General Industry)",
+  "kind": "inspection",
+  "industry": "general",
+  "frequency": "Monthly for shops and plants, quarterly for other facilities",
+  "intro": "Use this checklist for water and wastewater plants, pump and lift stations, fleet maintenance shops, sign shops, warehouses, salt domes and office buildings. Walk the whole facility, including yards and outbuildings, and check each item against what you see rather than what the procedure says should be there. Record deficiencies with a photo, an owner and a due date, and skip sections that do not apply to the facility.",
+  "sections": [
+    {
+      "heading": "Walking-working surfaces and housekeeping",
+      "items": [
+        {
+          "text": "Floors, aisles and passageways are clean, orderly, dry and free of cords, hoses, stored material and other tripping hazards.",
+          "ref": "1910.22(a)"
+        },
+        {
+          "text": "Aisles and passageways give enough clearance for carts and lift trucks, and permanent aisles are marked.",
+          "ref": "1910.176(a)"
+        },
+        {
+          "text": "Floor holes, pits, tanks, clarifiers and hatches are covered or guarded, and hatches are closed when not in use.",
+          "ref": "1910.28(b)(3)"
+        },
+        {
+          "text": "Guardrails are 42 inches high, plus or minus 3 inches, with midrails, and toeboards are in place where objects could fall on people below.",
+          "ref": "1910.29(b), 1910.29(k)"
+        },
+        {
+          "text": "Platforms, mezzanines, catwalks and loading docks 4 feet or more above a lower level have guardrails or other fall protection.",
+          "ref": "1910.28(b)(1), 1910.28(b)(10)"
+        },
+        {
+          "text": "Stairs with 4 or more risers have handrails or stair rails, uniform treads and risers, slip resistant surfaces, and are kept clear.",
+          "ref": "1910.28(b)(11), 1910.25"
+        },
+        {
+          "text": "Fixed ladders are in good condition, and ladders extending more than 24 feet have a ladder safety system or personal fall arrest system where required.",
+          "ref": "1910.28(b)(9), 1910.23(d)"
+        },
+        {
+          "text": "Portable ladders are inspected before first use each shift, and ladders with broken rungs, split rails or missing feet are tagged and removed.",
+          "ref": "1910.23(b)(9), 1910.23(b)(10)"
+        }
+      ]
+    },
+    {
+      "heading": "Exits and emergency action plan",
+      "items": [
+        {
+          "text": "Each area has at least two exit routes located far enough apart that one fire will not block both, unless the size and occupancy permit one.",
+          "ref": "1910.36(b)"
+        },
+        {
+          "text": "Exit routes are at least 28 inches wide at every point and free of stored material, equipment, snow and locked or blocked doors.",
+          "ref": "1910.36(g), 1910.37(a)(3)"
+        },
+        {
+          "text": "Exit doors open from the inside without keys, tools or special knowledge, and swing in the direction of travel where required.",
+          "ref": "1910.36(d), 1910.36(e)"
+        },
+        {
+          "text": "Exits are marked with illuminated EXIT signs with letters at least 6 inches high, and doors that could be mistaken for exits are marked Not an Exit.",
+          "ref": "1910.37(b)"
+        },
+        {
+          "text": "Exit routes are lit, emergency lighting works when tested, and the exit discharge outside is clear to a safe area.",
+          "ref": "1910.37(b)(1), 1910.36(c)"
+        },
+        {
+          "text": "Fire doors are kept closed or held open only by automatic releases tied to the alarm, never propped with wedges.",
+          "ref": "1910.36(a)(3)"
+        },
+        {
+          "text": "A written emergency action plan covers reporting, evacuation routes, critical operations, accounting for employees, rescue and medical duties, and contacts.",
+          "ref": "1910.38(b), 1910.38(c)"
+        },
+        {
+          "text": "Employees were trained on the plan when hired and when duties or the plan changed, and the alarm has a distinctive signal that everyone recognizes.",
+          "ref": "1910.38(e), 1910.165(b)"
+        }
+      ]
+    },
+    {
+      "heading": "Fire extinguishers and fire prevention",
+      "items": [
+        {
+          "text": "Extinguishers are mounted, identified with signs where needed, and not blocked by stored material or equipment.",
+          "ref": "1910.157(c)(1)"
+        },
+        {
+          "text": "Extinguisher types match the hazards, with travel distance of 75 feet or less for Class A and 50 feet or less for Class B hazards.",
+          "ref": "1910.157(d)"
+        },
+        {
+          "text": "Each extinguisher has been visually checked within the last month, and the check is recorded on the tag or in a log.",
+          "ref": "1910.157(e)(2)"
+        },
+        {
+          "text": "Annual maintenance has been done on each extinguisher within the last 12 months and is recorded on the tag or a record kept one year.",
+          "ref": "1910.157(e)(3)"
+        },
+        {
+          "text": "Hydrostatic test dates are current, 12 years for stored pressure dry chemical units and 5 years for water and carbon dioxide units.",
+          "ref": "1910.157(f)"
+        },
+        {
+          "text": "Employees expected to use extinguishers were trained when hired and within the last year.",
+          "ref": "1910.157(g)"
+        },
+        {
+          "text": "The written fire prevention plan lists the major fire hazards, storage and handling practices, ignition sources and the people responsible for controls.",
+          "ref": "1910.39(c)"
+        },
+        {
+          "text": "Oily rags are in covered metal cans, and cardboard, pallets and other combustibles are kept away from heaters, panels and hot work.",
+          "ref": "1910.39(c)(2)"
+        },
+        {
+          "text": "Sprinkler heads have 18 inches of clearance below them, control valves are open and supervised, and hot work is done under a permit with a fire watch.",
+          "ref": "1910.159(c)(10), 1910.252(a)(2)"
+        }
+      ]
+    },
+    {
+      "heading": "Electrical",
+      "items": [
+        {
+          "text": "Panels and disconnects have at least 36 inches of clear working space in front and 30 inches of width, and nothing is stored in that space.",
+          "ref": "1910.303(g)(1)"
+        },
+        {
+          "text": "Panel covers are in place, breaker blanks fill unused slots, knockouts are closed, and each breaker and disconnect is legibly labeled.",
+          "ref": "1910.305(b)(1)(ii), 1910.303(f)"
+        },
+        {
+          "text": "Flexible cords are not used in place of fixed wiring, run through walls, ceilings or doorways, under rugs, or fastened to building surfaces.",
+          "ref": "1910.305(g)(1)(iv)"
+        },
+        {
+          "text": "Extension cords and tool cords have no cuts, splices or missing ground prongs, and damaged cords have been removed from service.",
+          "ref": "1910.334(a)(2), 1910.305(g)(2)"
+        },
+        {
+          "text": "GFCI protection is provided for receptacles in wet and damp locations, outdoors, near sinks and in wet process areas.",
+          "ref": "1910.304(b)(3), NFPA 70 210.8"
+        },
+        {
+          "text": "Receptacles, switches and junction boxes have cover plates, and there are no exposed conductors, open splices or taped repairs.",
+          "ref": "1910.303(g)(2)(i), 1910.305(b)(2)"
+        },
+        {
+          "text": "Equipment in wet wells, digester areas and other classified locations is rated for that location.",
+          "ref": "1910.307"
+        },
+        {
+          "text": "Electrical rooms and enclosures with exposed live parts are locked or restricted to qualified persons and marked with warning signs.",
+          "ref": "1910.303(g)(2)"
+        },
+        {
+          "text": "Work on or near exposed energized parts is justified, done only by qualified persons, and uses arc rated clothing, voltage rated gloves and insulated tools.",
+          "ref": "1910.333(a), 1910.335"
+        }
+      ]
+    },
+    {
+      "heading": "Machine guarding and abrasive wheels",
+      "items": [
+        {
+          "text": "Points of operation, nip points, rotating parts and sources of flying chips or sparks are guarded on saws, drill presses, lathes, presses and conveyors.",
+          "ref": "1910.212(a)(1), 1910.212(a)(3)"
+        },
+        {
+          "text": "Guards are secured in place, do not create their own pinch points, and machines that could move in use are anchored.",
+          "ref": "1910.212(a)(2), 1910.212(b)"
+        },
+        {
+          "text": "Fans within 7 feet of the floor have guards with openings no larger than one half inch.",
+          "ref": "1910.212(a)(5)"
+        },
+        {
+          "text": "Belts, pulleys, chains, sprockets, shafts and couplings within 7 feet of the floor or platform are enclosed.",
+          "ref": "1910.219"
+        },
+        {
+          "text": "Bench and pedestal grinders have work rests within one eighth inch of the wheel and tongue guards within one quarter inch.",
+          "ref": "1910.215(a)(4), 1910.215(b)(9)"
+        },
+        {
+          "text": "Wheels are ring tested before mounting, rated speed is at or above spindle speed, and guards cover the spindle end, nut and flange.",
+          "ref": "1910.215(d)(1), 1910.215(a)(2)"
+        },
+        {
+          "text": "Table saws have hood guards, spreaders and anti-kickback fingers, radial saws return to the rear, and band saw blades are enclosed except at the cut.",
+          "ref": "1910.213"
+        },
+        {
+          "text": "Machines that could injure the operator on restart will not restart on their own after a power failure, and stop controls are within reach and marked.",
+          "ref": "1910.213(b)(3)"
+        }
+      ]
+    },
+    {
+      "heading": "Lockout/tagout",
+      "items": [
+        {
+          "text": "A written energy control program is in place with equipment-specific procedures for pumps, blowers, conveyors, compactors, lifts, chemical feeders and other serviced equipment.",
+          "ref": "1910.147(c)(1), 1910.147(c)(4)"
+        },
+        {
+          "text": "Each procedure identifies the energy sources (electrical, hydraulic, pneumatic, stored, gravity, chemical, water pressure) and the steps to shut down, isolate, lock, verify and restore.",
+          "ref": "1910.147(c)(4)(ii)"
+        },
+        {
+          "text": "Locks, tags, hasps, breaker and valve lockout devices are available where work is done, are standardized, durable and identify the user.",
+          "ref": "1910.147(c)(5)"
+        },
+        {
+          "text": "Each person working on equipment applies a personal lock, using group hasps or a lockbox when several people are involved.",
+          "ref": "1910.147(d)(4), 1910.147(f)(3)"
+        },
+        {
+          "text": "Isolation is verified by trying to start the equipment or testing with a meter, and stored energy is relieved, blocked or bled before work begins.",
+          "ref": "1910.147(d)(5), 1910.147(d)(6)"
+        },
+        {
+          "text": "Disconnects and valves are labeled, can accept a lock, and energy isolating devices installed or modified since 1990 are lockable.",
+          "ref": "1910.147(c)(2)(iii)"
+        },
+        {
+          "text": "A periodic inspection of each procedure was done within the last 12 months by an authorized employee not using it, and is certified with date, equipment, employees and inspector.",
+          "ref": "1910.147(c)(6)"
+        },
+        {
+          "text": "Authorized and affected employees were trained, retrained when jobs or procedures changed, and the training is documented.",
+          "ref": "1910.147(c)(7)"
+        },
+        {
+          "text": "Outside contractors and facility staff have exchanged lockout procedures, and shift changes hand off locks without a gap in protection.",
+          "ref": "1910.147(f)(2), 1910.147(f)(4)"
+        }
+      ]
+    },
+    {
+      "heading": "Personal protective equipment and hazard assessment",
+      "items": [
+        {
+          "text": "A written hazard assessment for each work area and job identifies the PPE required and is certified with the date, workplace and person who did it.",
+          "ref": "1910.132(d)"
+        },
+        {
+          "text": "Required PPE is provided at no cost, available in the right sizes, and kept clean and in good repair.",
+          "ref": "1910.132(h), 1910.132(a)"
+        },
+        {
+          "text": "Employees were trained on when PPE is needed, which PPE, how to wear and adjust it, and its limitations, and the training is documented.",
+          "ref": "1910.132(f)"
+        },
+        {
+          "text": "Eye and face protection meeting ANSI Z87.1 is worn where flying particles, chemicals, molten metal or injurious light exist, including over prescription glasses.",
+          "ref": "1910.133(a)"
+        },
+        {
+          "text": "Head protection meeting ANSI Z89.1 is worn where falling objects or electrical hazards exist, with Class E hats for electrical exposure.",
+          "ref": "1910.135"
+        },
+        {
+          "text": "Gloves suited to the hazard (cuts, chemicals, heat, bloodborne pathogens, electrical) are selected and used, and protective footwear is worn where required.",
+          "ref": "1910.138, 1910.136"
+        },
+        {
+          "text": "Hearing protection is provided where noise reaches 85 dBA over 8 hours and worn where required, with audiograms and training under the hearing conservation program.",
+          "ref": "1910.95(i), 1910.95(c)"
+        },
+        {
+          "text": "Emergency eyewash and showers are within 10 seconds of corrosive chemical use (battery charging, chlorine, acids, caustics), unobstructed, flushed weekly and deliver tepid water.",
+          "ref": "1910.151(c), ANSI Z358.1"
+        },
+        {
+          "text": "Rubber insulating gloves and sleeves are electrically retested on schedule, gloves every 6 months and sleeves every 12 months, and air tested before use.",
+          "ref": "1910.137(c)(2)"
+        }
+      ]
+    },
+    {
+      "heading": "Hazard communication",
+      "items": [
+        {
+          "text": "A written hazard communication program with a current chemical inventory list is available at the facility.",
+          "ref": "1910.1200(e)(1), 1910.1200(e)(4)"
+        },
+        {
+          "text": "A safety data sheet is readily available for every hazardous chemical in the work area on every shift, in a binder or electronically with a backup.",
+          "ref": "1910.1200(g)(8)"
+        },
+        {
+          "text": "Every shipped container carries a label with product identifier, signal word, pictograms, hazard statements and supplier information.",
+          "ref": "1910.1200(f)(1)"
+        },
+        {
+          "text": "Secondary containers such as spray bottles, jugs and parts washer tanks are labeled with the product identifier and hazard information; nothing is unlabeled.",
+          "ref": "1910.1200(f)(6)"
+        },
+        {
+          "text": "Employees were trained at assignment and whenever a new hazard was introduced on the chemicals, labels, SDS and protective measures.",
+          "ref": "1910.1200(h)"
+        },
+        {
+          "text": "The inventory matches what is on the shelves, and obsolete or unknown chemicals have been removed and disposed of properly.",
+          "ref": "1910.1200(e)(1)(i)"
+        },
+        {
+          "text": "Non-routine tasks such as tank cleaning or pesticide mixing, and chemicals in unlabeled pipes, are covered in the program.",
+          "ref": "1910.1200(e)(1)(ii), 1910.1200(e)(1)(iii)"
+        },
+        {
+          "text": "Contractors working on site know the chemical hazards and SDS location, and the facility knows what chemicals contractors bring in.",
+          "ref": "1910.1200(e)(2)"
+        },
+        {
+          "text": "Incompatible chemicals (acids and bases, oxidizers and fuels, chlorine and ammonia, bleach and acid) are stored apart.",
+          "ref": "NFPA 400"
+        }
+      ]
+    },
+    {
+      "heading": "Flammable and compressed gas storage",
+      "items": [
+        {
+          "text": "Flammable liquids outside an approved cabinet or storage room do not exceed 25 gallons of Category 1 or 120 gallons of Category 2, 3 or 4 per fire area.",
+          "ref": "1910.106(e)(2)(ii)"
+        },
+        {
+          "text": "Storage cabinets are approved, labeled Flammable Keep Fire Away, kept closed, and hold no more than 60 gallons of flammable liquid.",
+          "ref": "1910.106(d)(3)"
+        },
+        {
+          "text": "Drums of flammable liquid are bonded and grounded when dispensing, and liquids are never transferred by air pressure.",
+          "ref": "1910.106(e)(6)(ii)"
+        },
+        {
+          "text": "Flammable storage areas have No Smoking signs, no ignition sources, ventilation, and electrical equipment rated for the location.",
+          "ref": "1910.106(e)(6)(i), 1910.106(d)(4)"
+        },
+        {
+          "text": "Compressed gas cylinders are stored upright, secured with chains or straps, and have valve protection caps on when not in use.",
+          "ref": "1910.101(b), CGA P-1"
+        },
+        {
+          "text": "Oxygen cylinders are separated from fuel gas cylinders and combustibles by 20 feet or a 5 foot barrier with a half hour fire rating.",
+          "ref": "1910.253(b)(4)(iii)"
+        },
+        {
+          "text": "Cylinders are labeled with contents, empties are marked and kept apart, and storage is away from heat, exits, elevators and corrosive chemicals.",
+          "ref": "1910.253(b)(2)"
+        },
+        {
+          "text": "Propane cylinders for forklifts and heaters are stored outdoors in a locked cage away from exits and ignition sources.",
+          "ref": "1910.110(f)"
+        }
+      ]
+    },
+    {
+      "heading": "Powered industrial trucks",
+      "items": [
+        {
+          "text": "Each operator has been trained and evaluated on the type of truck used, with a record showing the name, training date, evaluation date and evaluator.",
+          "ref": "1910.178(l)(6)"
+        },
+        {
+          "text": "Every operator has been evaluated within the last 3 years, and refresher training was given after any accident, near miss or unsafe operation.",
+          "ref": "1910.178(l)(4)"
+        },
+        {
+          "text": "Trucks are examined before each shift, defects are reported and the truck is taken out of service until repaired; pre-use checklists are on file.",
+          "ref": "1910.178(q)(7)"
+        },
+        {
+          "text": "Capacity plates are legible and list attachments, loads stay within rated capacity, and forks are free of cracks, bends and heel wear.",
+          "ref": "1910.178(a)(3), 1910.178(a)(6)"
+        },
+        {
+          "text": "Operators wear seat belts, carry no riders, and park with forks lowered, controls neutral, power off and brakes set.",
+          "ref": "1910.178(m)(3), 1910.178(m)(5)"
+        },
+        {
+          "text": "Battery charging areas have eyewash, ventilation, No Smoking signs, acid neutralizer and a means to keep trucks from running over chargers.",
+          "ref": "1910.178(g)"
+        },
+        {
+          "text": "Propane cylinders are changed outdoors or in a designated area with the engine off, and the cylinder is secured with the relief valve up.",
+          "ref": "1910.178(f)"
+        },
+        {
+          "text": "Trucks used indoors are rated for the location, and carbon monoxide from engine trucks is controlled with ventilation or monitoring.",
+          "ref": "1910.178(c), 1910.1000"
+        },
+        {
+          "text": "Trailer wheels are chocked or dock locks engaged before entry, dock boards are secured, and overhead guards, horns and lights are in place and working.",
+          "ref": "1910.178(k)(1), 1910.178(e)"
+        }
+      ]
+    },
+    {
+      "heading": "Confined spaces",
+      "items": [
+        {
+          "text": "The facility has evaluated its spaces and identified permit-required confined spaces such as wet wells, digesters, tanks, vaults, manholes and clearwells.",
+          "ref": "1910.146(c)(1)"
+        },
+        {
+          "text": "Danger signs reading Permit-Required Confined Space Do Not Enter are posted at entrances, or employees are otherwise informed.",
+          "ref": "1910.146(c)(2)"
+        },
+        {
+          "text": "A written permit space program is in place for spaces employees enter, and spaces not entered are secured against entry.",
+          "ref": "1910.146(c)(3), 1910.146(c)(4)"
+        },
+        {
+          "text": "Canceled permits are kept for at least one year and were reviewed within the last 12 months to improve the program.",
+          "ref": "1910.146(e)(6), 1910.146(d)(14)"
+        },
+        {
+          "text": "Gas monitors are calibrated per the manufacturer and bump tested before use, and tests are done for oxygen, then flammables, then toxic gases.",
+          "ref": "1910.146(d)(5)"
+        },
+        {
+          "text": "Ventilation blowers, retrieval tripods and winches, harnesses, radios, lighting and barriers are available, inspected and in working order.",
+          "ref": "1910.146(d)(4)"
+        },
+        {
+          "text": "Retrieval systems are used for vertical entries deeper than 5 feet unless they would increase the risk or not help rescue.",
+          "ref": "1910.146(k)(3)"
+        },
+        {
+          "text": "The rescue service has been evaluated for response time and access to the spaces, and in-house rescuers practiced within the last 12 months.",
+          "ref": "1910.146(k)(1), 1910.146(k)(2)"
+        },
+        {
+          "text": "Entrants, attendants, entry supervisors and rescuers are trained with certified records, and contractors entering spaces are briefed on the hazards.",
+          "ref": "1910.146(g), 1910.146(c)(8)"
+        }
+      ]
+    },
+    {
+      "heading": "Respiratory protection and air quality",
+      "items": [
+        {
+          "text": "A written respiratory protection program with a named administrator covers all required respirator use, such as chlorine response, painting and dust exposure.",
+          "ref": "1910.134(c)(1)"
+        },
+        {
+          "text": "Medical evaluations were completed before employees were fit tested or used a respirator.",
+          "ref": "1910.134(e)"
+        },
+        {
+          "text": "Fit tests were done before first use and within the last 12 months for each tight-fitting respirator, with records of type, size, date and method.",
+          "ref": "1910.134(f), 1910.134(m)(2)"
+        },
+        {
+          "text": "Respirators are cleaned after use and stored away from dust, sunlight, heat and chemicals so facepieces are not deformed.",
+          "ref": "1910.134(h)"
+        },
+        {
+          "text": "Emergency escape respirators and SCBA are inspected monthly with the inspection recorded, cylinders are at least 90 percent full, and hydrostatic test dates are current.",
+          "ref": "1910.134(h)(3)"
+        },
+        {
+          "text": "Employees who wear filtering facepieces voluntarily have been given the Appendix D information.",
+          "ref": "1910.134(c)(2)"
+        },
+        {
+          "text": "Welding areas have local exhaust or enough general ventilation, and stainless or galvanized work has been evaluated for hexavalent chromium and metal fumes.",
+          "ref": "1910.252(c), 1910.1026"
+        },
+        {
+          "text": "Vehicle exhaust is captured when engines run indoors, and carbon monoxide levels are kept below the permissible limit with monitoring where idling occurs.",
+          "ref": "1910.1000"
+        }
+      ]
+    },
+    {
+      "heading": "Chemical feed and treatment areas",
+      "items": [
+        {
+          "text": "Chlorine gas rooms are separate from other areas, open outward to the outside, can be viewed through a window, and have ventilation and light switches outside the door.",
+          "ref": "Ten States Standards 5.4.3"
+        },
+        {
+          "text": "Continuous leak detection for chlorine, ammonia, ozone or hydrogen sulfide is working, tested on schedule, and alarms at a staffed location.",
+          "ref": "Ten States Standards 5.4.3"
+        },
+        {
+          "text": "Chlorine Institute emergency kits (A for 150 pound cylinders, B for ton containers) are on hand with trained staff, or a response contract is in place.",
+          "ref": "Chlorine Institute Pamphlet 1"
+        },
+        {
+          "text": "SCBA, not cartridge respirators, is staged outside the chlorine room for emergency entry and inspected monthly.",
+          "ref": "1910.134(d)(2), 1910.134(h)(3)"
+        },
+        {
+          "text": "Chlorine cylinders are secured, ton containers rest on trunnions, valve caps are on when not connected, and containers are out of direct sun and heat.",
+          "ref": "1910.101(b), Chlorine Institute Pamphlet 1"
+        },
+        {
+          "text": "Bulk tanks for hypochlorite, ferric chloride, caustic, alum and polymer have secondary containment sized for the largest tank plus rain, in good condition.",
+          "ref": "NFPA 400, 40 CFR 112"
+        },
+        {
+          "text": "Pipes, pumps and fill connections are labeled with contents and flow direction, and fill ports are locked and labeled to prevent mixing incompatible chemicals.",
+          "ref": "ASME A13.1, 1910.1200(f)"
+        },
+        {
+          "text": "Chemical-specific PPE (face shield, goggles, apron, gloves rated for the chemical) is staged at each point of use, and eyewash is within 10 seconds.",
+          "ref": "1910.132(d), 1910.151(c)"
+        },
+        {
+          "text": "NFPA 704 placards are posted at room entrances, and emergency contacts and shutdown steps are posted; PSM and RMP requirements are met where thresholds are exceeded.",
+          "ref": "NFPA 704, 1910.119, 40 CFR 68"
+        }
+      ]
+    },
+    {
+      "heading": "Ergonomics and material handling",
+      "items": [
+        {
+          "text": "Hoists, lift tables, carts, drum dollies, pallet jacks and manhole cover lifters are available and used for heavy or awkward loads.",
+          "ref": "OSH Act 5(a)(1)"
+        },
+        {
+          "text": "Heavy items are stored between knee and shoulder height, and frequently used items are at waist level.",
+          "ref": ""
+        },
+        {
+          "text": "Storage racks are anchored, loaded within posted capacity, free of damaged uprights, and material is stacked stable and limited in height.",
+          "ref": "1910.176(b), ANSI MH16.1"
+        },
+        {
+          "text": "Bagged salt, chemicals and other sacked material are stacked with cross ties and stepped back, and drums are stored on racks or secured.",
+          "ref": "1910.176(b)"
+        },
+        {
+          "text": "Computer, dispatch, SCADA and lab workstations allow neutral postures with adjustable chairs, monitors at eye level and keyboards at elbow height.",
+          "ref": ""
+        },
+        {
+          "text": "Hoists, chain falls and slings are marked with capacity, inspected on schedule, and hooks have working safety latches.",
+          "ref": "1910.179, 1910.184(d)"
+        },
+        {
+          "text": "Jobs with repeated lifting, sustained force or vibration have been reviewed, and rotation, tool changes or aids are in place.",
+          "ref": ""
+        },
+        {
+          "text": "Employees are trained in lifting technique, team lifts and early reporting of strains and sprains.",
+          "ref": ""
+        }
+      ]
+    },
+    {
+      "heading": "Vehicles and yard",
+      "items": [
+        {
+          "text": "The fuel island has a clearly marked emergency shutoff, an extinguisher within 75 feet, No Smoking and Stop Engine signs, and dispensers in good repair.",
+          "ref": "1910.106(g), NFPA 30A"
+        },
+        {
+          "text": "Above ground and underground fuel tanks have containment, current leak detection and inspection records, and fill and vent points protected from vehicles.",
+          "ref": "NFPA 30, 40 CFR 280"
+        },
+        {
+          "text": "Spill kits with absorbents, booms and drain covers are stocked near fuel, oil storage and wash areas, and used oil and antifreeze are labeled and contained.",
+          "ref": "40 CFR 112, 40 CFR 279"
+        },
+        {
+          "text": "Yard lighting is adequate at the fuel island, parking, loading areas and walkways, and walkways are kept clear of snow and ice.",
+          "ref": "1910.22(a)"
+        },
+        {
+          "text": "Backing areas have defined traffic patterns, mirrors or cameras where views are blocked, marked pedestrian walkways, and spotters for large vehicles.",
+          "ref": ""
+        },
+        {
+          "text": "Vehicle lifts were inspected within the last year, have rated capacity marked, locks are used at height, and arms and pads are in good condition.",
+          "ref": "ANSI/ALI ALOIM"
+        },
+        {
+          "text": "Raised vehicles are blocked with jack stands before anyone works under them, wheels are chocked, and plows and attachments are lowered or blocked for service.",
+          "ref": "1910.244(a)(2)(iii), 1910.147"
+        },
+        {
+          "text": "Truck and bus tires are serviced by trained employees using a restraining cage or device, with the rim charts posted.",
+          "ref": "1910.177"
+        },
+        {
+          "text": "Drivers complete pre-trip inspections, defects are repaired before use, and inspection reports for commercial vehicles are kept on file.",
+          "ref": "49 CFR 396.11, 49 CFR 396.13"
+        }
+      ]
+    },
+    {
+      "heading": "First aid and medical",
+      "items": [
+        {
+          "text": "First aid kits are stocked to ANSI/ISEA Z308.1, checked monthly, and expired or used items are replaced.",
+          "ref": "1910.151(b), ANSI/ISEA Z308.1"
+        },
+        {
+          "text": "Trained first aid responders are on each shift when a clinic or hospital is not within a few minutes, and their first aid and CPR cards are current.",
+          "ref": "1910.151(b)"
+        },
+        {
+          "text": "AEDs are in known locations, pads and batteries are within date, and monthly readiness checks are logged.",
+          "ref": ""
+        },
+        {
+          "text": "Bloodborne pathogen kits with gloves, CPR barriers, gowns, eye protection, biohazard bags and disinfectant are stocked for responders and cleanup.",
+          "ref": "1910.1030(d)(3)"
+        },
+        {
+          "text": "Hepatitis B vaccination has been offered to employees with occupational exposure, and signed declinations are on file.",
+          "ref": "1910.1030(f)(2)"
+        },
+        {
+          "text": "Sharps found in the field or in solid waste are handled with tongs and placed in sharps containers, and regulated waste is labeled and disposed of properly.",
+          "ref": "1910.1030(d)(4)(iii), 1910.1030(g)(1)"
+        },
+        {
+          "text": "Employees know how to report an exposure incident immediately and how post-exposure evaluation is arranged.",
+          "ref": "1910.1030(f)(3)"
+        },
+        {
+          "text": "Water, shade or warming areas, rest breaks and acclimatization are provided for work in heat or cold, and employees know the warning signs.",
+          "ref": "OSH Act 5(a)(1)"
+        }
+      ]
+    }
+  ]
+}

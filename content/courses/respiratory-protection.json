@@ -5,6 +5,7 @@
   "standard_title": "Respiratory Protection (general industry)",
   "category": "osha_top10",
   "top10_rank": 6,
+  "new_hire": false,
   "divisions": [
     "electric",
     "environmental",

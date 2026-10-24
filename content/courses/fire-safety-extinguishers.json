@@ -1,0 +1,177 @@
+{
+  "slug": "fire-safety-extinguishers",
+  "title": "Fire Safety and Fire Extinguishers",
+  "standard": "29 CFR 1910.157",
+  "standard_title": "Portable Fire Extinguishers, Emergency Action Plans and Fire Prevention Plans (1910.157, 1910.38, 1910.39)",
+  "category": "general",
+  "top10_rank": null,
+  "new_hire": true,
+  "divisions": ["electric", "environmental", "public"],
+  "duration_minutes": 30,
+  "renewal_months": 12,
+  "summary": "Fuel, solvents, hot work, batteries and running engines put fire hazards in every public works shop, plant and truck. This course covers how fires start and the five classes of fire, which extinguisher works on which fire, how to decide whether to fight a fire or get out, the PASS technique, and the placement and inspection rules in 1910.157. It also explains the emergency action plan and fire prevention plan and what to do when a truck, chipper or refuse load catches fire.",
+  "objectives": [
+    "Name the three parts of the fire triangle and the five classes of fire, with an example of each from public works.",
+    "Match extinguisher types to fire classes and explain why water is never used on flammable liquid or energized electrical fires.",
+    "Decide whether to fight a small fire or evacuate, and use the PASS technique from 6 to 8 feet back with an exit behind you.",
+    "State the travel distance limits for Class A and Class B extinguishers and the items checked in a monthly visual inspection.",
+    "Describe what the emergency action plan and fire prevention plan require of you under 1910.38 and 1910.39.",
+    "Apply hot work, flammable liquid storage and fuel transfer precautions in the shop, and respond correctly to a vehicle or equipment fire."
+  ],
+  "sections": [
+    {
+      "heading": "The fire triangle and the classes of fire",
+      "body": "A fire needs three things at once: **fuel**, **heat** and **oxygen**. Take any one away and the fire goes out. Water cools, dry chemical coats the fuel, carbon dioxide pushes out the oxygen, and putting the gas can away removes the fuel before a fire starts.\n\nFires are grouped by what is burning, because the fuel decides what will put it out:\n\n- **Class A: ordinary combustibles.** Wood, paper, cardboard, cloth, trash, brush, plastics and tires.\n- **Class B: flammable liquids and gases.** Gasoline, diesel, hydraulic oil, grease, paint, solvents, propane and acetylene.\n- **Class C: energized electrical equipment.** Panels, motors, chargers, cords, signal cabinets and vehicle wiring. Once the power is off, it becomes a Class A or B fire.\n- **Class D: combustible metals.** Magnesium, titanium, sodium and lithium. Rare in public works, but magnesium shows up in some vehicle and equipment parts.\n- **Class K: cooking oils and fats.** Fryers and grills in a facility kitchen.\n\nMany fires are a mix: a truck fire is burning plastic, diesel and live wiring at the same time."
+    },
+    {
+      "heading": "Why this training matters",
+      "body": "Look around a fleet shop: fuel in every vehicle, solvent in the parts washer, oxygen and acetylene cylinders, battery chargers, grinders throwing sparks and rags soaked in oil. A water plant has chemical rooms, switchgear and generators. A refuse truck carries whatever a resident threw away, including batteries and hot ashes. Every division has fire hazards.\n\nA hand-held extinguisher is for a fire in its early stage, smaller than a trash can. After that, the only safe move is to get everyone out and let the fire department work.\n\nOSHA's **Portable Fire Extinguishers standard, 29 CFR 1910.157**, applies because the department provides extinguishers for you to use. Paragraph (g) requires training on the general principles of extinguisher use and the hazards of fighting an early-stage fire, **at initial employment and at least annually**. Employees designated in the emergency action plan to use extinguishers get hands-on training as well."
+    },
+    {
+      "heading": "Extinguisher types and what they are for",
+      "body": "The label tells you what an extinguisher fights. Letters show the classes and numbers show capacity. A **2-A:10-B:C** unit fights Class A, B and C fires; higher numbers mean bigger fires.\n\n- **Multipurpose dry chemical (ABC).** The red extinguisher on most trucks and shop walls. It works on Class A, B and C fires by coating the fuel. It leaves a corrosive powder to clean up.\n- **Carbon dioxide (CO2).** For Class B and C fires. It leaves no residue, so it is the choice near panels, switchgear, computers and in substations. Short range, and little effect on Class A fires.\n- **Water (air-pressurized).** Class A only.\n- **Class D dry powder.** Only for burning metal, applied to smother it.\n- **Class K wet chemical.** For kitchen grease fires. It turns the oil into a soapy foam that seals it.\n\n**Never put water on a Class B or Class C fire.** Water spreads burning fuel across the floor, and it conducts electricity straight back to you. On an electrical fire, **cut the power first** if you can reach the breaker or disconnect safely, then use CO2 or ABC. With the power off, the fire is Class A or B, but not before."
+    },
+    {
+      "heading": "Fight or leave, then PASS",
+      "body": "Before you pull a pin, decide whether this is your fire to fight. Fight it only if **every** one of these is true:\n\n- The **alarm has been raised** and someone is calling 911.\n- The fire is **small and contained**, no bigger than a trash can, and not spreading.\n- You have a **clear exit at your back**, with the fire not between you and the door.\n- You have the **right extinguisher** for the class of fire, and it is charged.\n- You are **trained** and feel able to do it.\n\nIf any answer is no, **leave**, close the door behind you and go to the assembly point.\n\nIf you do fight it, use **PASS** from **6 to 8 feet back**:\n\n- **Pull** the pin.\n- **Aim** the nozzle or horn **at the base of the fire**, not the flames.\n- **Squeeze** the handle.\n- **Sweep** side to side across the base, moving in slowly as the fire dies down.\n\nMost hand-held extinguishers empty in 10 to 25 seconds. If the fire is not out when the extinguisher is empty, or it flares back up, get out. **Never turn your back** on a fire while you walk away. A used extinguisher goes for recharge even if you squeezed it once."
+    },
+    {
+      "heading": "Where extinguishers go and how they are kept ready",
+      "body": "Section 1910.157(c) requires extinguishers to be **mounted, located and identified** so they are **readily accessible**, kept **fully charged** and in their **designated place** at all times except when in use.\n\n- **Travel distance.** For **Class A** hazards, no one should have to travel more than **75 feet** to reach an extinguisher. For **Class B** hazards, the limit is **50 feet**.\n- **Mounting.** On a bracket or in a cabinet, never loose on the floor, label out, area in front clear, and a sign where it is hard to see.\n\n**Monthly visual inspection.** Once a month, someone checks each extinguisher:\n\n- It is in its place, visible and not blocked.\n- The **gauge needle is in the green**, or a CO2 unit weighs what its label says.\n- The **pin is in and the tamper seal is unbroken**.\n- No dents, rust, leaks, cracked hose or clogged nozzle.\n- The **inspection tag** is initialed and dated.\n\n**Annual maintenance** is a thorough check by a qualified person, recorded on the tag. **Hydrostatic testing** pressure-tests the shell: every **5 years** for CO2 and water units and every **12 years** for the common stored-pressure dry chemical type, which is also emptied and examined inside every **6 years**. Out-of-date tag or gauge in the red: pull it and tell your supervisor."
+    },
+    {
+      "heading": "Emergency action plans and fire prevention plans",
+      "body": "The **emergency action plan (1910.38)** is written, kept in the workplace and available to you. It covers:\n\n- How to **report** a fire or other emergency.\n- **Evacuation routes** and exit assignments, posted on exit maps.\n- Which employees **stay to operate critical equipment** before evacuating, and when they leave.\n- The **assembly point** and the **headcount** so no one is left inside unknown.\n- Who performs rescue or medical duties.\n\nThe alarm must be distinctive, and the plan is reviewed with you when you are hired, when your duties change and when the plan changes. When you hear it, go.\n\nThe **fire prevention plan (1910.39)** lists the **major fire hazards** in each facility, how hazardous materials are stored and handled, the **ignition sources** and how they are controlled, and the equipment that protects against each hazard. It sets procedures to **control the build-up of flammable and combustible waste**, such as oily rags in closed metal cans and brush piles kept away from buildings, and names the **employees responsible** for ignition sources and fuel hazards. You are told the fire hazards of your job when first assigned."
+    },
+    {
+      "heading": "Hot work and flammable liquids in the shop",
+      "body": "**Hot work** is welding, cutting, grinding and anything else that throws sparks or flame. Under 1910.252: move the work to a safe place; if you cannot, move combustibles at least **35 feet** away or cover them with fire-resistant blankets; if you cannot do that either, do not start. Keep a **charged extinguisher within reach** and post a **fire watch** whenever combustibles are within 35 feet or sparks could reach them through openings. The fire watch stays **at least 30 minutes after the work ends**. Never weld or cut on a drum, tank or container that held fuel until it has been thoroughly cleaned. On a vehicle, disconnect the battery and keep sparks away from fuel lines and tanks.\n\n**Flammable liquids** such as gasoline and most solvents, and **combustible liquids** such as diesel and hydraulic oil, are stored under 1910.106:\n\n- Only in **approved containers**. For gasoline that means a **safety can** of 5 gallons or less with a spring-closing lid and spout cover, or a listed plastic can.\n- In a listed **flammable storage cabinet** marked 'Flammable, Keep Fire Away', with no more than **60 gallons** of flammable liquid per cabinet.\n- **Bond and ground when transferring fuel.** Clip the bonding wire between the drum or nozzle and the container so static cannot spark the vapor, and fill portable cans on the ground, never in a truck bed.\n- **No smoking, grinding or open flame** near fuel.\n- **Oily rags** go in a closed, self-closing metal can emptied daily."
+    },
+    {
+      "heading": "What this means on the job",
+      "body": "The fires most likely to find you are on wheels. For any **vehicle or equipment fire**: stop away from buildings, fuel pumps and overhead lines, shut off the engine, get everyone out and away, and call 911. If it is small and you have the right extinguisher, attack from upwind. On an engine fire, **do not throw the hood open**; the rush of air feeds it. Crack it or discharge through the grille.\n\n**Electric Services.** A **bucket truck hydraulic fire** usually starts when a leaking hose sprays oil mist onto a hot exhaust. Shut down the engine and PTO, bring the bucket down on the emergency controls if someone is in it, and use the truck's ABC extinguisher. In substations and switchgear rooms, **de-energize first** and use CO2.\n\n**Environmental Services.** A **refuse truck load fire**, often started by a battery or hot ashes, is handled by dumping the load. Notify dispatch and 911, drive to a safe open area away from buildings, vehicles, storm drains and overhead lines, **eject the load**, pull the truck clear and let the fire department put it out. Never fight a fire inside the hopper.\n\n**Public Services.** **Chipper fires** start in hot bearings, hydraulic fluid and packed dry debris: shut down, back away and use the extinguisher on the chipper or truck. Snow crews fueling at 3 a.m. still shut off the engine and bond the can.\n\nEveryone: know the two nearest extinguishers and where you meet outside."
+    }
+  ],
+  "key_takeaways": [
+    "Fire needs fuel, heat and oxygen; removing any one puts it out, and the class of fire (A, B, C, D or K) tells you which extinguisher will do that safely.",
+    "ABC dry chemical covers most fires on trucks and in shops, CO2 is for electrical and flammable liquid fires near sensitive equipment, and water is for Class A only, never for burning liquids or energized equipment.",
+    "Fight a fire only if it is small and contained, the alarm is raised, you have the right extinguisher, you are trained and you have an exit at your back; otherwise get out and close the door.",
+    "Use PASS from 6 to 8 feet back: Pull the pin, Aim at the base, Squeeze the handle, Sweep side to side, and never turn your back on the fire.",
+    "Extinguishers must be mounted, visible and within 75 feet of travel for Class A hazards and 50 feet for Class B hazards, inspected visually every month and maintained by a qualified person every year.",
+    "The emergency action plan tells you how to report a fire, where to go and how everyone is counted; the fire prevention plan controls fuel, waste and ignition sources and names who is responsible.",
+    "Hot work needs combustibles cleared 35 feet, an extinguisher at hand and a fire watch for at least 30 minutes afterward; fuel stays in approved cans and cabinets and is bonded during transfer.",
+    "For a burning refuse load, call it in, dump the load in a safe open area and let the fire department put it out; never fight a fire inside the hopper."
+  ],
+  "questions": [
+    {
+      "text": "Wiring in a running pump motor at a lift station catches fire. What class of fire is it, and what changes once the power is cut?",
+      "options": [
+        "Class A, and it becomes Class B when de-energized",
+        "Class B, and it stays Class B",
+        "Class C, and it becomes a Class A or B fire once de-energized",
+        "Class D, because the motor housing is metal"
+      ],
+      "answer": 2,
+      "explanation": "A fire in energized electrical equipment is Class C. Once the equipment is de-energized, what is left burning is insulation, plastic or oil, which makes it a Class A or B fire."
+    },
+    {
+      "text": "Why must water never be used on a gasoline fire?",
+      "options": [
+        "Water spreads the burning fuel instead of putting it out",
+        "Water cannot reach the base of a liquid fire",
+        "Water evaporates too fast to cool gasoline",
+        "Water reacts chemically with gasoline and explodes"
+      ],
+      "answer": 0,
+      "explanation": "Gasoline floats on water, so a stream of water carries the burning fuel across the floor and makes the fire bigger. Class B fires are fought with ABC dry chemical or CO2."
+    },
+    {
+      "text": "A small fire has started in a parts washer and is spreading up the wall toward the ceiling. The alarm is sounding and you have an ABC extinguisher. What should you do?",
+      "options": [
+        "Fight it, because you have the right extinguisher",
+        "Switch to a water extinguisher for more reach",
+        "Open the overhead door to clear the smoke, then fight it",
+        "Leave, close the door behind you and go to the assembly point"
+      ],
+      "answer": 3,
+      "explanation": "A fire that is spreading is no longer small and contained, so one of the conditions for fighting it has failed. Having the right extinguisher does not change that. Get out, close the door to slow the fire and let the fire department handle it."
+    },
+    {
+      "text": "Where do you aim an extinguisher, and from how far away?",
+      "options": [
+        "At the top of the flames, from 15 feet",
+        "At the base of the fire, from 6 to 8 feet back",
+        "At the smoke, from as close as possible",
+        "At the ceiling above the fire, from 3 feet"
+      ],
+      "answer": 1,
+      "explanation": "The A in PASS is Aim at the base of the fire, where the fuel is. Starting 6 to 8 feet back keeps you out of the heat and lets you move in as the fire dies down."
+    },
+    {
+      "text": "What is the maximum travel distance to an extinguisher for Class A hazards under 1910.157?",
+      "options": [
+        "75 feet",
+        "50 feet",
+        "100 feet",
+        "25 feet"
+      ],
+      "answer": 0,
+      "explanation": "Section 1910.157(d)(2) sets the travel distance for Class A hazards at 75 feet or less. For Class B hazards it is 50 feet or less, because flammable liquid fires grow faster."
+    },
+    {
+      "text": "Which of these is part of the monthly visual inspection of an extinguisher?",
+      "options": [
+        "Discharging it briefly to confirm it works",
+        "Weighing a dry chemical unit on a shop scale",
+        "Checking that the pin is in place and the tamper seal is unbroken",
+        "Hydrostatic testing of the shell"
+      ],
+      "answer": 2,
+      "explanation": "The monthly check confirms the extinguisher is in place, charged, undamaged and ready: gauge in the green, pin and seal intact, no damage, tag initialed. Discharging a unit means it must be recharged, and hydrostatic testing is done every 5 or 12 years by a qualified service."
+    },
+    {
+      "text": "Under 1910.38, which of these must the emergency action plan include?",
+      "options": [
+        "The purchase price of each extinguisher",
+        "Procedures to account for all employees after evacuation",
+        "A list of flammable liquids in each cabinet",
+        "The hydrostatic test dates for all extinguishers"
+      ],
+      "answer": 1,
+      "explanation": "The emergency action plan must include procedures to account for all employees after an evacuation, along with reporting procedures, evacuation routes, duties for employees who stay to operate critical equipment, and who to contact for more information. The headcount at the assembly point is how the fire department knows whether to search."
+    },
+    {
+      "text": "A mechanic finishes welding a plow frame near a workbench with cardboard boxes 20 feet away. What does 1910.252 require?",
+      "options": [
+        "Nothing further, since the work is done",
+        "A fire watch for 10 minutes",
+        "Hosing down the area with water",
+        "A fire watch for at least 30 minutes after the work ends"
+      ],
+      "answer": 3,
+      "explanation": "When combustibles are within 35 feet of hot work, a fire watch is required during the work and for at least a half hour after it ends, to catch smoldering material that sparks may have reached."
+    },
+    {
+      "text": "What prevents a static spark when filling a portable gas can from a shop dispenser?",
+      "options": [
+        "Filling it in the truck bed so it is above the ground",
+        "Filling it as fast as possible to limit vapor",
+        "Bonding the nozzle to the can and filling it on the ground",
+        "Using a plastic funnel"
+      ],
+      "answer": 2,
+      "explanation": "Fuel flowing through a nozzle builds a static charge. Bonding the nozzle to the container and setting the can on the ground lets that charge bleed off instead of jumping as a spark through gasoline vapor. A can in a truck bed or on a plastic liner is insulated and can spark."
+    },
+    {
+      "text": "A refuse truck's load begins to smoke and flame on the route. What is the correct response?",
+      "options": [
+        "Drive to the transfer station and dump it on the tipping floor",
+        "Notify dispatch and 911, drive to a safe open area away from buildings and overhead lines, eject the load and move the truck clear",
+        "Open the hopper and discharge an ABC extinguisher into the load",
+        "Continue the route so the load compacts and smothers the fire"
+      ],
+      "answer": 1,
+      "explanation": "A burning load is dumped where it can burn without spreading, in an open area clear of buildings, vehicles, storm drains and overhead lines, and the fire department puts it out. Dumping it on a tipping floor spreads the fire indoors, and fighting it inside the hopper puts you next to a compacting, burning load."
+    }
+  ]
+}

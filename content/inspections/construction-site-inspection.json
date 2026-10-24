@@ -1,0 +1,629 @@
+{
+  "slug": "construction-site-inspection",
+  "title": "Construction Site Safety Inspection",
+  "kind": "inspection",
+  "industry": "construction",
+  "frequency": "Weekly or at each site visit, and after any change in site conditions",
+  "intro": "Use this checklist on public works construction and maintenance jobs such as water main replacement, trenching and utility repairs, road and bridge work, pole setting and facility construction. Walk the site with the crew leader, check each item against what you see, and record anything that needs correction along with who will fix it and by when. Skip sections that do not apply to the work in progress.",
+  "sections": [
+    {
+      "heading": "General site and housekeeping",
+      "items": [
+        {
+          "text": "Work areas, passageways and stairs are clear of debris, form lumber with protruding nails, cords and other tripping hazards.",
+          "ref": "1926.25(a)"
+        },
+        {
+          "text": "Combustible scrap and debris are removed at regular intervals, and containers are provided for waste, oily rags and flammable waste.",
+          "ref": "1926.25(b), 1926.25(c)"
+        },
+        {
+          "text": "Materials are stacked, racked, blocked or interlocked so they cannot slide, fall or collapse, and are kept clear of openings and hoistways.",
+          "ref": "1926.250(a)(1), 1926.250(b)(1)"
+        },
+        {
+          "text": "Work areas, accessways and stairways have adequate natural or artificial lighting for the work being done.",
+          "ref": "1926.56(a)"
+        },
+        {
+          "text": "Potable drinking water is available with single-use cups or a fountain, and any nonpotable water outlet is clearly marked.",
+          "ref": "1926.51(a)"
+        },
+        {
+          "text": "Toilet facilities are provided in the required number for the crew size and are kept clean and serviceable.",
+          "ref": "1926.51(c)"
+        },
+        {
+          "text": "Hand washing facilities are available where workers handle sewage, contaminated soil, concrete or chemicals.",
+          "ref": "1926.51(f)"
+        },
+        {
+          "text": "A competent person is designated for the site and makes frequent and regular inspections that are documented.",
+          "ref": "1926.20(b)(2)"
+        },
+        {
+          "text": "Workers have been instructed to recognize and avoid the unsafe conditions tied to their assigned tasks, and the daily tailboard or job hazard analysis is signed.",
+          "ref": "1926.21(b)(2)"
+        }
+      ]
+    },
+    {
+      "heading": "Traffic control and work zones",
+      "items": [
+        {
+          "text": "A temporary traffic control plan consistent with MUTCD Part 6 is on site and the field setup matches it.",
+          "ref": "MUTCD Part 6"
+        },
+        {
+          "text": "Advance warning signs, tapers, channelizing devices and buffer spaces are placed for the posted speed and type of closure.",
+          "ref": "MUTCD Part 6"
+        },
+        {
+          "text": "Flaggers are trained, use STOP and SLOW paddles rather than flags, and stand where drivers can see them with an escape route.",
+          "ref": "1926.201(a), MUTCD Part 6"
+        },
+        {
+          "text": "Flaggers wear high-visibility garments meeting ANSI/ISEA 107 Class 2 or Class 3, with Class 3 or retroreflective trousers at night.",
+          "ref": "1926.201(a), MUTCD Part 6, ANSI/ISEA 107"
+        },
+        {
+          "text": "Every worker on foot who is exposed to traffic or equipment wears high-visibility apparel.",
+          "ref": "1926.651(d), 23 CFR 634"
+        },
+        {
+          "text": "Night work zones are lit without glare to drivers, and each flagger station is illuminated.",
+          "ref": "MUTCD Part 6"
+        },
+        {
+          "text": "Signs, cones, drums and barricades are clean, retroreflective, upright and in good condition, and are removed or covered when the hazard is gone.",
+          "ref": "1926.200, 1926.202, MUTCD Part 6"
+        },
+        {
+          "text": "Pedestrians have a protected, accessible route around the work zone, and sidewalk closures are signed in advance.",
+          "ref": "MUTCD Part 6, ADA Standards"
+        },
+        {
+          "text": "Shadow vehicles, truck-mounted attenuators or positive barriers are positioned to shield workers from approaching traffic where the plan calls for them.",
+          "ref": "MUTCD Part 6"
+        }
+      ]
+    },
+    {
+      "heading": "Fall protection",
+      "items": [
+        {
+          "text": "Workers on surfaces with unprotected sides or edges 6 feet or more above a lower level are protected by guardrails, safety nets or personal fall arrest systems.",
+          "ref": "1926.501(b)(1)"
+        },
+        {
+          "text": "Guardrail toprails are 42 inches high, plus or minus 3 inches, with midrails, and withstand 200 pounds of force.",
+          "ref": "1926.502(b)"
+        },
+        {
+          "text": "Holes, including manholes, vault openings and skylights, are covered with secured covers marked HOLE or COVER, or are guarded by guardrails.",
+          "ref": "1926.501(b)(4), 1926.502(i)"
+        },
+        {
+          "text": "Personal fall arrest systems use full body harnesses, anchorages rated 5,000 pounds per worker or engineered with a 2 to 1 safety factor, and 6 foot maximum free fall.",
+          "ref": "1926.502(d)"
+        },
+        {
+          "text": "Harnesses, lanyards and lifelines are inspected before each use and removed from service when damaged or after arresting a fall.",
+          "ref": "1926.502(d)(21), 1926.502(d)(19)"
+        },
+        {
+          "text": "Workers in bucket trucks and boom lifts wear a harness with the lanyard attached to the boom or basket, not to an adjacent structure.",
+          "ref": "1926.453(b)(2)(v)"
+        },
+        {
+          "text": "Wall openings with a bottom edge less than 39 inches above the walking surface and a drop of 6 feet or more are guarded.",
+          "ref": "1926.501(b)(14)"
+        },
+        {
+          "text": "Edges of excavations 6 feet or deeper that are hidden by vegetation or obstructions are guarded, and walkways over excavations have guardrails.",
+          "ref": "1926.501(b)(7), 1926.651(l)"
+        },
+        {
+          "text": "A plan exists to rescue a suspended worker promptly, and workers have been trained by a competent person on the fall hazards and systems in use.",
+          "ref": "1926.502(d)(20), 1926.503"
+        }
+      ]
+    },
+    {
+      "heading": "Ladders and stairways",
+      "items": [
+        {
+          "text": "Ladders are inspected by a competent person for visible defects, and damaged ladders are tagged Do Not Use and removed from service.",
+          "ref": "1926.1053(b)(15), 1926.1053(b)(16)"
+        },
+        {
+          "text": "Portable ladders used for access extend at least 3 feet above the upper landing or are secured at the top with a grab rail.",
+          "ref": "1926.1053(b)(1)"
+        },
+        {
+          "text": "Extension and straight ladders are set at a 4 to 1 pitch, with the base one quarter of the working length from the wall.",
+          "ref": "1926.1053(b)(5)(i)"
+        },
+        {
+          "text": "Ladders rest on stable, level surfaces and are secured or held when they could be displaced; they are not set on boxes, barrels or equipment.",
+          "ref": "1926.1053(b)(6), 1926.1053(b)(7)"
+        },
+        {
+          "text": "The top and top step of stepladders are not used as steps, and ladders are not loaded beyond their rated capacity.",
+          "ref": "1926.1053(b)(13), 1926.1053(b)(3)"
+        },
+        {
+          "text": "Workers face the ladder, keep at least one hand on it while climbing, and do not carry loads that could cause loss of balance.",
+          "ref": "1926.1053(b)(21), 1926.1053(b)(22)"
+        },
+        {
+          "text": "Metal ladders are not used near energized lines or equipment, and ladders with conductive side rails are marked.",
+          "ref": "1926.1053(b)(12)"
+        },
+        {
+          "text": "Stairways with 4 or more risers or rising more than 30 inches have stairrails on each unprotected side and a handrail.",
+          "ref": "1926.1052(c)(1)"
+        }
+      ]
+    },
+    {
+      "heading": "Scaffolds",
+      "items": [
+        {
+          "text": "Scaffolds are erected, moved, dismantled or altered only under a competent person, who inspects them before each shift and after any event that could affect integrity.",
+          "ref": "1926.451(f)(3), 1926.451(f)(7)"
+        },
+        {
+          "text": "Each scaffold and component supports at least 4 times the maximum intended load without failure.",
+          "ref": "1926.451(a)(1)"
+        },
+        {
+          "text": "Platforms are fully planked or decked between the front uprights and the guardrail supports, with gaps no wider than 1 inch.",
+          "ref": "1926.451(b)(1)"
+        },
+        {
+          "text": "Legs, posts and frames bear on base plates and mud sills or another firm foundation, not on blocks, barrels or unstable objects.",
+          "ref": "1926.451(c)(2)"
+        },
+        {
+          "text": "Scaffolds with a height more than 4 times the minimum base width are restrained from tipping by guying, tying or bracing.",
+          "ref": "1926.451(c)(1)"
+        },
+        {
+          "text": "Guardrails with toprails 38 to 45 inches high and midrails protect all open sides of platforms more than 10 feet up, or personal fall arrest is used.",
+          "ref": "1926.451(g)(1), 1926.451(g)(4)"
+        },
+        {
+          "text": "Ladders, stair towers, ramps or built-in frame ladders give access to platforms more than 2 feet above or below the access point; cross braces are not climbed.",
+          "ref": "1926.451(e)(1)"
+        },
+        {
+          "text": "Scaffolds are kept at least 10 feet from energized lines up to 50 kV, plus 0.4 inch for each kV above 50 kV.",
+          "ref": "1926.451(f)(6)"
+        },
+        {
+          "text": "Toeboards, screens or canopies protect workers below from falling objects, and casters on mobile scaffolds are locked while in use.",
+          "ref": "1926.451(h), 1926.452(w)(2)"
+        }
+      ]
+    },
+    {
+      "heading": "Excavations and trenching",
+      "items": [
+        {
+          "text": "Underground utilities have been located and marked with a current one-call (811) ticket, and are exposed by safe means as the excavation approaches them.",
+          "ref": "1926.651(b)"
+        },
+        {
+          "text": "A competent person inspects the excavation, adjacent areas and protective systems daily before entry, after rain or thaw and as conditions change, and the inspections are recorded.",
+          "ref": "1926.651(k)(1)"
+        },
+        {
+          "text": "Excavations 5 feet or deeper are protected by sloping, benching, shoring or a trench shield unless made entirely in stable rock.",
+          "ref": "1926.652(a)(1)"
+        },
+        {
+          "text": "Protective systems for excavations deeper than 20 feet are designed by a registered professional engineer.",
+          "ref": "1926.652(b)(4), 1926.652(c)(4)"
+        },
+        {
+          "text": "Spoil piles, materials and equipment are kept at least 2 feet back from the edge or are restrained from falling in.",
+          "ref": "1926.651(j)(2)"
+        },
+        {
+          "text": "A ladder, stairway or ramp is within 25 feet of lateral travel for every worker in a trench 4 feet or deeper.",
+          "ref": "1926.651(c)(2)"
+        },
+        {
+          "text": "Trench shields are installed to restrict movement, extend above the vertical sides where used with sloping, and no one is inside while the shield is moved.",
+          "ref": "1926.652(g)"
+        },
+        {
+          "text": "The atmosphere is tested before entry where oxygen deficiency or a hazardous atmosphere could exist (excavations over 4 feet near sewers, landfills or chemicals), and ventilation is used.",
+          "ref": "1926.651(g)(1)"
+        },
+        {
+          "text": "Accumulating water is controlled with pumps or diversion, and no one works in an excavation where water is accumulating without precautions.",
+          "ref": "1926.651(h)"
+        },
+        {
+          "text": "Sidewalks, pavements, poles, foundations and adjacent structures are supported where the excavation could undermine them.",
+          "ref": "1926.651(i)"
+        },
+        {
+          "text": "Loose rock and soil are scaled or barricaded, no one works under suspended loads, and barricades, stop logs or a spotter keep equipment back from the edge.",
+          "ref": "1926.651(j)(1), 1926.651(e), 1926.651(f)"
+        }
+      ]
+    },
+    {
+      "heading": "Electrical and overhead lines",
+      "items": [
+        {
+          "text": "All 120-volt receptacles used for tools and equipment that are not part of permanent wiring have GFCI protection, or an assured equipment grounding conductor program is followed.",
+          "ref": "1926.404(b)(1)"
+        },
+        {
+          "text": "Extension cords are three-wire hard or extra-hard usage type (S, ST, SO), with intact insulation, no splices and ground prongs in place; damaged cords are removed.",
+          "ref": "1926.405(a)(2)(ii)(J), 1926.416(e)"
+        },
+        {
+          "text": "Temporary lights have guards over the bulbs and are not suspended by their cords unless designed for it.",
+          "ref": "1926.405(a)(2)(ii)(E), 1926.405(a)(2)(ii)(F)"
+        },
+        {
+          "text": "Panels, temporary power centers and disconnects have covers in place, unused openings closed and clear access.",
+          "ref": "1926.403(i), 1926.405(b)"
+        },
+        {
+          "text": "Overhead and underground power circuits are located before work begins, and no one works where contact is possible unless the circuit is de-energized and grounded or guarded.",
+          "ref": "1926.416(a)"
+        },
+        {
+          "text": "Excavators, dump trucks and aerial lifts stay at least 10 feet from lines up to 50 kV, farther for higher voltages, unless lines are de-energized and grounded or insulated.",
+          "ref": "1926.600(a)(6)"
+        },
+        {
+          "text": "Crane work that could come within 20 feet of a power line proceeds only with the line de-energized and grounded, or with required clearance and a dedicated spotter.",
+          "ref": "1926.1408(a), 1926.1408(b)"
+        },
+        {
+          "text": "Circuits and equipment being worked on are de-energized, locked out and tagged by qualified persons before work starts.",
+          "ref": "1926.417"
+        },
+        {
+          "text": "Work on or near energized distribution lines is done only by qualified employees using minimum approach distances and tested rubber insulating equipment.",
+          "ref": "1926.960, 1926.97"
+        },
+        {
+          "text": "Portable generators run outdoors away from doors, windows and trench openings, and the receptacles in use are GFCI protected.",
+          "ref": "1926.404(b)(1), 1926.404(f)(3)"
+        }
+      ]
+    },
+    {
+      "heading": "Cranes, hoists and rigging",
+      "items": [
+        {
+          "text": "The crane operator is certified or qualified for the type and capacity of equipment being operated.",
+          "ref": "1926.1427"
+        },
+        {
+          "text": "A competent person completes a shift inspection before use, and monthly and annual inspections are documented and available.",
+          "ref": "1926.1412(d), 1926.1412(e), 1926.1412(f)"
+        },
+        {
+          "text": "Load charts and the operating manual are in the cab, and the load is within the rated capacity for the crane configuration and radius.",
+          "ref": "1926.1417"
+        },
+        {
+          "text": "The crane is set up on firm, level ground with outriggers fully extended per the manufacturer and on blocking or pads.",
+          "ref": "1926.1402"
+        },
+        {
+          "text": "A qualified signal person is used when the operator cannot see the load, the landing area or the travel path.",
+          "ref": "1926.1419, 1926.1428"
+        },
+        {
+          "text": "The swing radius of the rotating superstructure is barricaded so no one can be struck or crushed.",
+          "ref": "1926.1424(a)"
+        },
+        {
+          "text": "No one stands under a suspended load, loads never pass over people, tag lines are used, and a qualified rigger rigs loads when workers are in the fall zone.",
+          "ref": "1926.1425"
+        },
+        {
+          "text": "Slings, shackles, hooks and other rigging are inspected before each shift by a competent person, marked with capacity, have working hook latches and are removed when damaged.",
+          "ref": "1926.251(a)(1), 1926.251(a)(2)"
+        }
+      ]
+    },
+    {
+      "heading": "Heavy equipment and vehicles",
+      "items": [
+        {
+          "text": "Equipment with an obstructed view to the rear has a working backup alarm audible above site noise, or a spotter directs every backing move.",
+          "ref": "1926.602(a)(9)(ii), 1926.601(b)(4)"
+        },
+        {
+          "text": "Seat belts are installed and worn in vehicles and on equipment with rollover protective structures.",
+          "ref": "1926.602(a)(2)(i), 1926.601(b)(10)"
+        },
+        {
+          "text": "Rollover protective structures are in place on dozers, loaders, graders, scrapers and tractors, and canopies protect operators from falling objects where needed.",
+          "ref": "1926.1000"
+        },
+        {
+          "text": "Brakes, horn, lights, mirrors, wipers, steps and grab handles are in working order, and each vehicle is inspected at the start of the shift with defects corrected before use.",
+          "ref": "1926.601(b)(14)"
+        },
+        {
+          "text": "Spotters wear high-visibility apparel, stay in the operator's view and out of the path of travel, and use agreed hand signals.",
+          "ref": ""
+        },
+        {
+          "text": "Parked equipment has buckets, blades and forks lowered to the ground, controls in neutral, parking brake set and wheels chocked on grades.",
+          "ref": "1926.600(a)(3)(ii)"
+        },
+        {
+          "text": "No one rides in buckets, on loads, on fenders or on tailgates; workers are transported only in seats designed for passengers.",
+          "ref": "1926.601(b)(9)"
+        },
+        {
+          "text": "Dump bodies are lowered before travel and raised only on firm, level ground clear of overhead lines, and raised bodies are blocked before anyone works under them.",
+          "ref": "1926.601(b)(11), 1926.600(a)(6)"
+        },
+        {
+          "text": "Fueling is done with engines off and no smoking, and operators are trained and authorized for each machine they run.",
+          "ref": "1926.152(g), 1926.21(b)(2)"
+        }
+      ]
+    },
+    {
+      "heading": "Hand and power tools",
+      "items": [
+        {
+          "text": "Hand and power tools, whether owned by the employer or the worker, are in safe condition, and damaged tools are tagged and removed from service.",
+          "ref": "1926.300(a), 1926.301(a)"
+        },
+        {
+          "text": "Guards on belts, gears, shafts, blades and other moving parts are in place and have not been removed, wedged or defeated.",
+          "ref": "1926.300(b)"
+        },
+        {
+          "text": "Portable circular saws have upper guards and lower retracting guards that return automatically to the closed position.",
+          "ref": "1926.304(d)"
+        },
+        {
+          "text": "Circular saws, chain saws and jackhammers have constant pressure switches that stop the tool when released; drills and larger grinders have momentary contact controls.",
+          "ref": "1926.300(d)"
+        },
+        {
+          "text": "Grinding wheels are rated for the spindle speed, ring tested before mounting, and used with guards and work rests adjusted to the wheel.",
+          "ref": "1926.303"
+        },
+        {
+          "text": "Pneumatic tools are secured to hoses by a positive means such as whip checks or clips, and compressed air for cleaning is reduced below 30 psi with chip guarding.",
+          "ref": "1926.302(b)(1), 1926.302(b)(4)"
+        },
+        {
+          "text": "Powder-actuated tools are used only by trained and carded operators, tested before loading each day, and never left loaded or pointed at anyone.",
+          "ref": "1926.302(e)"
+        },
+        {
+          "text": "Electric tools are double insulated or grounded, have working switches and intact cords, and are plugged into GFCI-protected circuits.",
+          "ref": "1926.302(a)(1), 1926.404(b)(1)"
+        },
+        {
+          "text": "Chisels, drift pins and wedges have no mushroomed heads, wooden handles are tight and unsplit, and chainsaws have working chain brakes with operators wearing leg protection.",
+          "ref": "1926.301(c), 1926.301(d), ANSI Z133"
+        }
+      ]
+    },
+    {
+      "heading": "Personal protective equipment",
+      "items": [
+        {
+          "text": "Hard hats meeting ANSI Z89.1 are worn wherever falling or flying objects or electrical contact are possible, with Class E hats near energized lines.",
+          "ref": "1926.100"
+        },
+        {
+          "text": "Safety glasses with side shields, goggles or face shields are worn for grinding, chipping, cutting, sawing, concrete work, pressure washing and chemical handling.",
+          "ref": "1926.102(a)"
+        },
+        {
+          "text": "Welders and helpers use filter lenses of the correct shade with face and eye protection, and screens shield nearby workers from the arc.",
+          "ref": "1926.102, 1926.351(e)"
+        },
+        {
+          "text": "Hearing protection is worn around jackhammers, saws, compactors and other loud equipment where exposure exceeds permissible levels.",
+          "ref": "1926.52, 1926.101"
+        },
+        {
+          "text": "Protective footwear meeting ASTM F2413 is worn, with waterproof boots for wet concrete and sewer work.",
+          "ref": "1926.96"
+        },
+        {
+          "text": "Gloves matched to the hazard are used: cut resistant for sheet metal and glass, chemical resistant for concrete and solvents, and rubber insulating gloves for electrical work.",
+          "ref": "1926.95(a), 1926.97"
+        },
+        {
+          "text": "Rubber insulating gloves and sleeves are air tested before each use and electrically retested on schedule, gloves every 6 months and sleeves every 12 months.",
+          "ref": "1926.97(c)(2)"
+        },
+        {
+          "text": "Wet cutting or vacuum shrouds control silica dust when cutting, grinding or drilling concrete and masonry, and fit-tested workers wear respirators where Table 1 requires them.",
+          "ref": "1926.1153(c), 1926.103"
+        },
+        {
+          "text": "Workers over or near water with a drowning hazard wear Coast Guard approved life jackets, and a ring buoy with 90 feet of line is within 200 feet.",
+          "ref": "1926.106(a), 1926.106(c)"
+        }
+      ]
+    },
+    {
+      "heading": "Hazard communication and flammables",
+      "items": [
+        {
+          "text": "Safety data sheets for the chemicals on site (fuels, solvents, pipe primer and cement, epoxies, coatings, form release) are available at the site or by immediate electronic access.",
+          "ref": "1926.59, 1910.1200(g)(8)"
+        },
+        {
+          "text": "Every container, including fuel cans, spray bottles and buckets, is labeled with the product identifier and hazard information.",
+          "ref": "1910.1200(f)(6)"
+        },
+        {
+          "text": "Workers have been trained on the hazards of the chemicals they use, and contractors on site share label and SDS information with the crew.",
+          "ref": "1910.1200(h), 1910.1200(e)(2)"
+        },
+        {
+          "text": "Flammable liquids are kept in approved safety cans of 5 gallons or less or in approved cabinets, with no more than 25 gallons stored outside a cabinet.",
+          "ref": "1926.152(a)(1), 1926.152(b)(1)"
+        },
+        {
+          "text": "Storage cabinets are labeled Flammable Keep Fire Away and hold no more than 60 gallons of flammable or 120 gallons of combustible liquids.",
+          "ref": "1926.152(b)(2), 1926.152(b)(3)"
+        },
+        {
+          "text": "Outdoor fuel storage and portable tanks are at least 20 feet from buildings, graded or diked to contain spills, and free of weeds and debris.",
+          "ref": "1926.152(c)"
+        },
+        {
+          "text": "Fuel is transferred between containers only with the containers bonded, and No Smoking signs are posted at fueling and storage areas.",
+          "ref": "1926.152(e)(2), 1926.152(g)"
+        },
+        {
+          "text": "Oxygen and fuel gas cylinders are upright, secured, capped when not in use, and separated by 20 feet or a 5 foot fire-rated barrier; propane is stored outdoors.",
+          "ref": "1926.350(a), 1926.153(j)"
+        },
+        {
+          "text": "Asbestos cement pipe, pipe wrap, lead paint on structures and other regulated materials are identified before disturbance, and work follows the applicable standard.",
+          "ref": "1926.1101, 1926.62"
+        }
+      ]
+    },
+    {
+      "heading": "Fire protection and first aid",
+      "items": [
+        {
+          "text": "A fire extinguisher rated at least 2A is provided for every 3,000 square feet of building under construction, with no more than 100 feet of travel to reach one.",
+          "ref": "1926.150(c)(1)"
+        },
+        {
+          "text": "An extinguisher rated at least 10B is within 50 feet of any point where more than 5 gallons of flammable liquid or 5 pounds of flammable gas is used.",
+          "ref": "1926.150(c)(1)(vi)"
+        },
+        {
+          "text": "Extinguishers are charged, mounted or staged where visible and accessible, and inspected monthly with the check recorded.",
+          "ref": "1926.150(c)(1)(viii), 1926.150(a)(4)"
+        },
+        {
+          "text": "Hot work is done with combustibles moved 35 feet away or shielded, an extinguisher at hand and a fire watch during and after cutting or welding.",
+          "ref": "1926.352"
+        },
+        {
+          "text": "Temporary heaters are stable, clear of tarps and combustibles, vented, and not used in enclosures without ventilation.",
+          "ref": "1926.154"
+        },
+        {
+          "text": "A person with a current first aid certificate is on site when a clinic or hospital is not within 3 to 4 minutes for serious injuries.",
+          "ref": "1926.50(c)"
+        },
+        {
+          "text": "First aid supplies are in a weatherproof container, checked weekly, with items individually sealed and replaced after use.",
+          "ref": "1926.50(d)"
+        },
+        {
+          "text": "Emergency phone numbers and the site location or address are posted, and a phone or radio is available to summon an ambulance.",
+          "ref": "1926.50(f), 1926.50(e)"
+        },
+        {
+          "text": "Eyewash or quick drenching facilities are available where eyes or skin can be exposed to corrosive materials such as batteries, concrete admixtures or chemicals.",
+          "ref": "1926.50(g)"
+        }
+      ]
+    },
+    {
+      "heading": "Confined spaces in construction",
+      "items": [
+        {
+          "text": "A competent person has identified every confined space on the job (manholes, vaults, pipe, tanks, pits) and determined which are permit-required.",
+          "ref": "1926.1203(a)"
+        },
+        {
+          "text": "Permit space entries are made only under a completed permit, with the entrant, attendant and entry supervisor trained for their roles.",
+          "ref": "1926.1203(d), 1926.1207"
+        },
+        {
+          "text": "The atmosphere is tested for oxygen, then flammables, then toxic gases before entry and continuously during entry, using a calibrated and bump-tested monitor.",
+          "ref": "1926.1204(e)"
+        },
+        {
+          "text": "Continuous forced air ventilation from a clean source is directed to the work area whenever an atmospheric hazard exists or could develop.",
+          "ref": "1926.1203(e), 1926.1204(c)"
+        },
+        {
+          "text": "An attendant remains outside the space, keeps contact with entrants, monitors conditions and does not enter to attempt rescue.",
+          "ref": "1926.1209"
+        },
+        {
+          "text": "A harness, tripod and winch are set up for non-entry retrieval on vertical entries deeper than 5 feet, and a rescue service able to respond is confirmed before entry.",
+          "ref": "1926.1211"
+        },
+        {
+          "text": "The permit is posted at the entry point with hazards, test results and rescue contacts, and is canceled when the entry is complete.",
+          "ref": "1926.1205, 1926.1206"
+        },
+        {
+          "text": "The host employer, controlling contractor and entry employer have exchanged information on the permit spaces and their hazards.",
+          "ref": "1926.1203(h)"
+        },
+        {
+          "text": "Lines are isolated by lockout, blanking or blinding where needed, and barriers protect the opening from traffic and pedestrians.",
+          "ref": "1926.1204(c)"
+        },
+        {
+          "text": "Sewer entries where flow cannot be isolated have an early warning system for rising water, and the weather forecast is checked before entry.",
+          "ref": "1926.1204"
+        }
+      ]
+    },
+    {
+      "heading": "Concrete, masonry and demolition",
+      "items": [
+        {
+          "text": "No construction loads are placed on a concrete structure or formwork until a qualified person confirms it can support them.",
+          "ref": "1926.701(a)"
+        },
+        {
+          "text": "Protruding rebar and other impalement hazards are guarded with impalement-rated caps, troughs or bent over where workers could fall onto them.",
+          "ref": "1926.701(b)"
+        },
+        {
+          "text": "Formwork and shoring are braced and inspected, and forms are removed only after the concrete has reached the strength the plans require.",
+          "ref": "1926.703(a), 1926.703(e)"
+        },
+        {
+          "text": "No one works under concrete buckets being raised or lowered, and powered trowels have a control that stops the blades when the operator lets go.",
+          "ref": "1926.701(e), 1926.702(c)"
+        },
+        {
+          "text": "Masonry walls more than 8 feet high have a limited access zone and are braced until permanent supports are in place.",
+          "ref": "1926.706"
+        },
+        {
+          "text": "Concrete workers have waterproof gloves, boots and eye protection for wet concrete, with eyewash available.",
+          "ref": "1926.95, 1926.50(g)"
+        },
+        {
+          "text": "Before demolition starts, a competent person has completed an engineering survey of the structure and utilities are shut off, capped or controlled.",
+          "ref": "1926.850(a), 1926.850(c)"
+        },
+        {
+          "text": "Asbestos, lead and other hazardous materials are identified and handled before demolition, floor openings are protected, and debris chutes are enclosed.",
+          "ref": "1926.850(e), 1926.852, 1926.1101"
+        }
+      ]
+    }
+  ]
+}

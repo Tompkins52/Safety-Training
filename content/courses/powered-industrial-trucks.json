@@ -5,6 +5,7 @@
   "standard_title": "Powered Industrial Trucks (general industry)",
   "category": "osha_top10",
   "top10_rank": 7,
+  "new_hire": false,
   "divisions": ["electric", "environmental", "public"],
   "duration_minutes": 35,
   "renewal_months": 12,

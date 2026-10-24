@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Assign individual training | {{ app_name }}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div><h1>Assign individual training</h1><p class="muted">Give one employee specific courses outside the annual cycle: a refresher after an incident, a course from another division, or the supervisor course for an acting supervisor. The division rule does not apply here. A course the employee already holds an open assignment for is skipped, never duplicated.</p></div>
+  <div class="actions">
+    <a class="btn btn-ghost" href="{{ url_for('admin.new_hires') }}">New hire training</a>
+    <a class="btn btn-ghost" href="{{ url_for('admin.assign') }}">Annual assignment</a>
+  </div>
+</div>
+<form method="post" class="card form-grid">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <label>Employee <span class="req">*</span>
+    <select name="user_id" required>
+      <option value="">Choose an employee</option>
+      {% for e in employees %}<option value="{{ e.id }}" {% if selected_user_id == e.id %}selected{% endif %}>{{ e.last_name }}, {{ e.first_name }}{% if e.division %} ({{ e.division.name }}){% else %} (no division){% endif %}{% if e.role != 'employee' %}, {{ e.role_label }}{% endif %}</option>{% endfor %}
+    </select>
+  </label>
+  <label>Due date <span class="req">*</span><input type="date" name="due_date" value="{{ default_due.strftime('%Y-%m-%d') }}" required>
+    <small class="muted">Reminders follow the same schedule as annual training.</small></label>
+  <label class="span-2">Note to the employee <small class="muted">(optional, included in the assignment email)</small>
+    <textarea name="note" rows="2" maxlength="500" placeholder="For example: refresher following the October 3 near miss.">{{ note }}</textarea>
+  </label>
+  <fieldset class="span-2">
+    <legend>Courses <span class="req">*</span></legend>
+    {% for label, items in course_groups %}
+    <h3 class="section-label">{{ label }}</h3>
+    <div class="check-grid">
+      {% for c in items %}
+      <label class="checkbox"><input type="checkbox" name="courses" value="{{ c.id }}" {% if c.id|string in selected_course_ids %}checked{% endif %}> <span>{{ c.title }}{% if c.new_hire %}<span class="tag">New hire</span>{% endif %}{% if c.is_supervisor_course %}<span class="tag">Supervisors</span>{% endif %}<br><small class="muted">{% if c.standard %}{{ c.standard }}. {% endif %}{% for d in c.divisions %}{{ d.name }}{% if not loop.last %}, {% endif %}{% endfor %}</small></span></label>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </fieldset>
+  <label class="checkbox self-end"><input type="checkbox" name="notify" checked> Email the employee now that training has been assigned</label>
+  <div class="form-actions span-2">
+    <button class="btn btn-primary btn-lg" type="submit">Assign courses</button>
+    <a class="btn btn-ghost" href="{{ url_for('admin.employees') }}">Cancel</a>
+  </div>
+</form>
+<section class="card">
+  <h2>What happens next</h2>
+  <ol class="small">
+    <li>Each assignment is recorded with the reason "Assigned individually" and shows that tag on the employee's My Training page and on their supervisor's team page.</li>
+    <li>The employee gets the usual reminders {{ config.REMINDER_DAYS_BEFORE_DUE }} and {{ config.SECOND_REMINDER_DAYS_BEFORE_DUE }} days before the due date and every {{ config.OVERDUE_REMINDER_EVERY_DAYS }} days once overdue; their supervisor gets a copy of each.</li>
+    <li>When the employee passes the quiz, a course that applies to their division renews on the annual cycle. A course outside their division is a one-off and does not renew.</li>
+  </ol>
+</section>
+{% endblock %}

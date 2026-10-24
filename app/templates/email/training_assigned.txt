@@ -5,7 +5,13 @@ New safety training has been assigned to you:
   Course:   {{ course.title }}{% if course.standard %} ({{ course.standard }}){% endif %}
   Due date: {{ assignment.due_date.strftime('%B %d, %Y') }}
   Time:     about {{ course.duration_minutes }} minutes, plus a {{ course.questions|length }} question quiz
-
+{% if assignment.reason == 'new_hire' %}
+This module is part of the required new hire training track.
+{% elif assignment.reason == 'individual' %}
+This module was assigned to you individually by the safety administrator.
+{% endif %}{% if note %}
+Note from the safety administrator: {{ note }}
+{% endif %}
 Sign in to complete it: {{ link }}
 
 {{ org_name or app_name }}

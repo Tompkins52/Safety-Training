@@ -6,5 +6,8 @@
   <tr><td><strong>Due date</strong></td><td>{{ assignment.due_date.strftime('%B %d, %Y') }}</td></tr>
   <tr><td><strong>Time</strong></td><td>about {{ course.duration_minutes }} minutes, plus a {{ course.questions|length }} question quiz</td></tr>
 </table>
-<p><a href="{{ link }}" style="display:inline-block;background:#ef6420;color:#fff;padding:10px 18px;border-radius:4px;text-decoration:none;">Open my training</a></p>
+{% if assignment.reason == 'new_hire' %}<p>This module is part of the required new hire training track.</p>
+{% elif assignment.reason == 'individual' %}<p>This module was assigned to you individually by the safety administrator.</p>{% endif %}
+{% if note %}<p style="background:#f3f4f6;padding:10px 14px;border-left:4px solid #0b3954;"><strong>Note from the safety administrator:</strong> {{ note }}</p>{% endif %}
+<p><a href="{{ link }}" style="display:inline-block;background:#0f9d6e;color:#fff;padding:10px 18px;border-radius:4px;text-decoration:none;">Open my training</a></p>
 {% endblock %}

@@ -5,6 +5,7 @@
   "standard_title": "Machine Guarding, general requirements (general industry)",
   "category": "osha_top10",
   "top10_rank": 10,
+  "new_hire": false,
   "divisions": ["electric", "environmental", "public"],
   "duration_minutes": 30,
   "renewal_months": 12,

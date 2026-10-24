@@ -5,6 +5,7 @@
     flask create-admin                 create or update a safety administrator account
     flask seed-demo                    create demo divisions, employees and assignments
     flask assign-annual --due DATE     assign every applicable course to every employee
+    flask assign-new-hire EMAIL        assign the required new hire training track to one employee
     flask run-notifications            run the daily reminder job once (for cron)
     flask send-test-email ADDRESS      send a test message using the SMTP settings
 """
@@ -18,7 +19,7 @@ from flask.cli import with_appcontext
 from .extensions import db
 from .models import Division, NotificationLog, User
 from .services import notifications
-from .services.assignments import ensure_assignments, run_annual_assignment
+from .services.assignments import assign_new_hire_training, ensure_assignments, run_annual_assignment
 from .services.content_loader import ensure_divisions, load_all_courses
 from .services.mailer import send_email
 from .utils import parse_date
@@ -83,7 +84,9 @@ def seed_demo():
     divisions = {d.code: d for d in Division.query.all()}
     password = "Welcome123!"
 
-    def upsert(email, first, last, role, division, title, supervisor=None, employee_number=None):
+    today = date.today()
+
+    def upsert(email, first, last, role, division, title, supervisor=None, employee_number=None, hire_date=None):
         user = User.query.filter_by(email=email).first()
         if user is None:
             user = User(email=email, first_name=first, last_name=last)
@@ -94,6 +97,8 @@ def seed_demo():
         user.job_title = title
         user.supervisor = supervisor
         user.employee_number = employee_number
+        if hire_date is not None:
+            user.hire_date = hire_date
         db.session.flush()
         return user
 
@@ -101,9 +106,14 @@ def seed_demo():
     sup_e = upsert("electric.super@example.gov", "Dana", "Whitfield", "supervisor", divisions["electric"], "Line Superintendent", admin, "2001")
     sup_n = upsert("environmental.super@example.gov", "Luis", "Ortega", "supervisor", divisions["environmental"], "Plant Superintendent", admin, "3001")
     sup_p = upsert("public.super@example.gov", "Karen", "Blake", "supervisor", divisions["public"], "Streets Superintendent", admin, "4001")
+    # Mai Nguyen is the demo new hire: hired two weeks ago, new hire track due 30 days after hire.
+    new_hire = upsert(
+        "m.nguyen@example.gov", "Mai", "Nguyen", "employee", divisions["electric"], "Apprentice Lineworker", sup_e, "2011",
+        hire_date=today - timedelta(days=14),
+    )
     employees = [
         upsert("j.carter@example.gov", "James", "Carter", "employee", divisions["electric"], "Journeyman Lineworker", sup_e, "2010"),
-        upsert("m.nguyen@example.gov", "Mai", "Nguyen", "employee", divisions["electric"], "Apprentice Lineworker", sup_e, "2011"),
+        new_hire,
         upsert("r.patel@example.gov", "Ravi", "Patel", "employee", divisions["environmental"], "Wastewater Operator", sup_n, "3010"),
         upsert("t.brooks@example.gov", "Tina", "Brooks", "employee", divisions["environmental"], "Water Distribution Tech", sup_n, "3011"),
         upsert("d.kowalski@example.gov", "Dan", "Kowalski", "employee", divisions["public"], "Equipment Operator", sup_p, "4010"),
@@ -111,8 +121,10 @@ def seed_demo():
     ]
     db.session.commit()
 
-    # Assignments with a spread of due dates so the dashboard and reminder job have something to show.
-    today = date.today()
+    # The new hire track first, so those courses carry the new hire reason, then
+    # annual assignments with a spread of due dates so the dashboard and
+    # reminder job have something to show.
+    new_hire_count = len(assign_new_hire_training(new_hire, assigned_by=admin))
     schedule = {
         "j.carter@example.gov": today + timedelta(days=20),
         "m.nguyen@example.gov": today + timedelta(days=45),
@@ -121,7 +133,7 @@ def seed_demo():
         "d.kowalski@example.gov": today + timedelta(days=6),
         "a.flores@example.gov": today + timedelta(days=30),
     }
-    total = 0
+    total = new_hire_count
     for user in employees + [sup_e, sup_n, sup_p]:
         due = schedule.get(user.email, today + timedelta(days=45))
         total += len(ensure_assignments(user, due_date=due, assigned_by=admin))
@@ -131,6 +143,7 @@ def seed_demo():
     click.echo("  Safety administrator: safety.admin@example.gov")
     click.echo("  Supervisors:          electric.super@example.gov, environmental.super@example.gov, public.super@example.gov")
     click.echo("  Employees:            j.carter@example.gov (Electric), r.patel@example.gov (Environmental), d.kowalski@example.gov (Public) and others")
+    click.echo(f"  New hire:             m.nguyen@example.gov (Electric), hired {new_hire.hire_date:%Y-%m-%d}, {new_hire_count} new hire modules")
     click.echo(f"  {total} training assignments created.")
 
 
@@ -152,6 +165,29 @@ def assign_annual(due, division_code, notify):
         divisions = [division]
     created = run_annual_assignment(due_date=due_date, divisions=divisions, send_notice=notify)
     click.echo(f"{len(created)} assignments created.")
+
+
+@click.command("assign-new-hire")
+@click.argument("email")
+@click.option("--due", "due", default=None, help="Due date (YYYY-MM-DD). Default: hire date + 30 days, or DEFAULT_DUE_DAYS from today.")
+@click.option("--notify/--no-notify", default=False, help="Email the employee that training was assigned.")
+@with_appcontext
+def assign_new_hire(email, due, notify):
+    """Assign the required new hire training track to the employee with this EMAIL."""
+    user = User.query.filter_by(email=email.strip().lower()).first()
+    if user is None:
+        raise click.BadParameter(f"no account with email '{email}'", param_hint="EMAIL")
+    due_date = parse_date(due) if due else None
+    if due and not due_date:
+        raise click.BadParameter("use YYYY-MM-DD", param_hint="--due")
+    if user.division is None:
+        raise click.ClickException(f"{user.full_name} has no division, so no new hire courses apply.")
+    created = assign_new_hire_training(user, due_date=due_date, send_notice=notify)
+    db.session.commit()
+    if created:
+        click.echo(f"{len(created)} new hire assignments created for {user.full_name}, due {created[0].due_date:%Y-%m-%d}.")
+    else:
+        click.echo(f"{user.full_name} already has an open assignment for every new hire course.")
 
 
 @click.command("run-notifications")
@@ -187,5 +223,5 @@ def send_test_email(address):
 
 
 def register_cli(app):
-    for command in (init_db, load_content, create_admin, seed_demo, assign_annual, run_notifications, send_test_email):
+    for command in (init_db, load_content, create_admin, seed_demo, assign_annual, assign_new_hire, run_notifications, send_test_email):
         app.cli.add_command(command)

@@ -2,8 +2,18 @@
 {% block title %}My training | {{ app_name }}{% endblock %}
 {% block content %}
 <div class="page-head">
-  <div><h1>My training</h1><p class="muted">Complete each module and pass its 10-question quiz by the due date. You will receive an email reminder 30 days before each due date.</p></div>
+  <div><h1>My training</h1><p class="muted">Complete each module and pass its 10-question quiz by the due date. You will receive an email reminder 30 days before each due date, again at 7 days, and your supervisor gets a copy.</p></div>
+  <div class="actions">
+    <a class="btn btn-secondary" href="{{ url_for('training.export_xlsx') }}" title="Your training record, quiz attempts and certificates as an Excel workbook">Export to Excel</a>
+  </div>
 </div>
+
+{% if new_hire %}
+<section class="card">
+  <div class="card-head"><h2>New hire training</h2><span class="badge badge-{{ 'ok' if new_hire.completed == new_hire.total else ('danger' if new_hire.overdue else 'warn') }}">{{ new_hire.completed }} of {{ new_hire.total }} complete</span></div>
+  <div class="small muted"><div class="meter"><div class="meter-fill {{ 'ok' if new_hire.percent >= 90 else ('warn' if new_hire.percent >= 50 else 'danger') }}" style="width: {{ new_hire.percent }}%"></div></div> {{ new_hire.percent }}% complete. {% if new_hire.open %}The modules tagged New hire below are the required new hire track{% if new_hire.next_due %}; the next one is due {{ new_hire.next_due|date }}{% endif %}.{% else %}You have finished the required new hire track.{% endif %}</div>
+</section>
+{% endif %}
 
 <section class="card">
   <h2>Assigned</h2>
@@ -13,7 +23,7 @@
     <tbody>
     {% for a in open_items %}
       <tr>
-        <td><strong>{{ a.course.title }}</strong><br><small class="muted">{{ a.course.duration_minutes }} min, {{ a.course.questions|length }} question quiz</small></td>
+        <td><strong>{{ a.course.title }}</strong>{% if a.reason != 'annual' %}<span class="tag">{{ a.reason_label }}</span>{% endif %}<br><small class="muted">{{ a.course.duration_minutes }} min, {{ a.course.questions|length }} question quiz</small></td>
         <td>{{ a.course.standard or '' }}</td>
         <td>{{ a.due_date|date }}<br><small class="muted">{% if a.is_overdue %}{{ -a.days_until_due }} days overdue{% elif a.days_until_due == 0 %}today{% else %}in {{ a.days_until_due }} days{% endif %}</small></td>
         <td><span class="badge badge-{{ a.status_class }}">{{ a.display_status }}</span></td>
@@ -36,7 +46,7 @@
     <tbody>
     {% for a in history %}
       <tr>
-        <td>{{ a.course.title }}</td>
+        <td>{{ a.course.title }}{% if a.reason != 'annual' %}<span class="tag">{{ a.reason_label }}</span>{% endif %}</td>
         <td>{{ a.completed_at|date }}</td>
         <td class="num">{{ a.score }}/{{ a.total_questions }} ({{ a.percent }}%)</td>
         <td class="num">{{ a.cycle }}</td>

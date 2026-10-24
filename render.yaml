@@ -31,7 +31,7 @@ services:
       - key: ORG_NAME
         value: Your Department Name
       - key: APP_NAME
-        value: Safety Training
+        value: IntelliSafe
       - key: TIMEZONE
         value: America/Chicago
       - key: TZ

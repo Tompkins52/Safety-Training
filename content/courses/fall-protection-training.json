@@ -5,6 +5,7 @@
   "standard_title": "Fall Protection, training requirements (construction)",
   "category": "osha_top10",
   "top10_rank": 8,
+  "new_hire": false,
   "divisions": ["electric", "environmental", "public"],
   "duration_minutes": 25,
   "renewal_months": 12,

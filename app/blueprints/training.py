@@ -6,7 +6,8 @@ from flask_login import current_user, login_required
 from ..extensions import db
 from ..timeutil import now
 from ..models import Assignment, QuizAttempt
-from ..services.assignments import add_months, grade_quiz, quiz_questions, start_assignment
+from ..services.assignments import add_months, grade_quiz, new_hire_progress, quiz_questions, start_assignment
+from ..services.exports import training_export_response
 
 bp = Blueprint("training", __name__)
 
@@ -26,7 +27,20 @@ def my_training():
     assignments = sorted(current_user.assignments, key=lambda a: (a.is_completed, a.due_date))
     open_items = [a for a in assignments if not a.is_completed]
     history = sorted([a for a in assignments if a.is_completed], key=lambda a: a.completed_at or datetime.min, reverse=True)
-    return render_template("training/list.html", open_items=open_items, history=history)
+    new_hire = new_hire_progress(current_user)
+    return render_template(
+        "training/list.html",
+        open_items=open_items,
+        history=history,
+        new_hire=new_hire if new_hire["total"] else None,
+    )
+
+
+@bp.route("/export.xlsx")
+@login_required
+def export_xlsx():
+    """The signed-in employee's own training record as an Excel workbook."""
+    return training_export_response([current_user._get_current_object()], stem="my-training-record")
 
 
 @bp.route("/<int:assignment_id>")

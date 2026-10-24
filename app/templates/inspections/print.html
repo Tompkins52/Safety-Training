@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}{{ inspection.number }} {{ inspection.title }}{% endblock %}
+{% block body_class %}print-page{% endblock %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='css/inspections.css') }}">{% endblock %}
+{% block content %}
+<div class="no-print page-head">
+  <div><h1>Printable {{ labels.noun }}</h1></div>
+  <div class="actions"><button class="btn btn-primary" onclick="window.print()">Print or save as PDF</button> <a class="btn btn-ghost" href="{{ url_for('inspections.checklist', inspection_id=inspection.id) }}">Back</a></div>
+</div>
+
+<div class="report">
+  <header class="report-head">
+    <div>
+      <h1>{{ org_name or app_name }}</h1>
+      <h2>{{ inspection.title }}</h2>
+    </div>
+    <div class="report-id">
+      <div><span>Number</span><strong>{{ inspection.number }}</strong></div>
+      <div><span>Date</span><strong>{{ inspection.inspection_date|date }}</strong></div>
+      <div><span>Status</span><strong>{{ 'Completed' if inspection.completed else 'In progress' }}</strong></div>
+    </div>
+  </header>
+
+  <table class="report-table">
+    <tr><th>{{ labels.site }}</th><td>{{ inspection.site or '' }}</td><th>Division</th><td>{{ inspection.division.name if inspection.division else 'Department wide' }}</td></tr>
+    <tr><th>{{ labels.inspector }}</th><td>{{ inspection.inspector_name or '' }}</td><th>Accompanied by</th><td>{{ inspection.accompanied_by or '' }}</td></tr>
+    <tr><th>{{ labels.weather }}</th><td>{{ inspection.weather or '' }}</td><th>Result</th><td>{{ totals.answered }} of {{ totals.total }} items answered, {{ totals.score }}% of applicable items rated {{ result_labels.ok|lower }}, {{ totals.findings }} finding{{ '' if totals.findings == 1 else 's' }}{% if totals.findings %} ({{ totals.open_findings }} open){% endif %}</td></tr>
+  </table>
+
+  <section class="report-section">
+    <h3>Findings and corrective actions</h3>
+    {% if findings %}
+    <table class="report-table grid findings-print">
+      <thead><tr><th>#</th><th>Finding</th><th>Result</th><th>Corrective action</th><th>Responsible</th><th>Target date</th><th>Status</th></tr></thead>
+      <tbody>
+      {% for f in findings %}
+        <tr><td>{{ loop.index }}</td><td>{{ f.section }}: {{ f.text }}{% if f.note %}<br><small>{{ f.note }}</small>{% endif %}</td><td>{{ f.result_label }}</td><td>{{ f.action or '' }}</td><td>{{ f.responsible or '' }}</td><td>{{ f.target|date }}</td><td>{{ f.status_label }}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p class="small">No findings.</p>
+    {% endif %}
+  </section>
+
+  <section class="report-section checklist">
+    <h3>Checklist</h3>
+    {% for section in sections %}
+    <h4>{{ loop.index }}. {{ section.heading }} <small>({{ section.answered }} of {{ section.total }} answered)</small></h4>
+    <table class="report-table grid checklist-print">
+      <thead><tr><th class="col-item">Item</th><th class="col-ref">Ref.</th>{% for label in result_labels.values() %}<th class="col-mark">{{ label }}</th>{% endfor %}<th>Note</th></tr></thead>
+      <tbody>
+      {% for item in section.rows %}
+        <tr><td>{{ item.text }}</td><td class="col-ref">{{ item.ref or '' }}</td>{% for value in result_labels %}<td class="col-mark"><span class="check">{% if item.result == value %}X{% else %}&nbsp;{% endif %}</span></td>{% endfor %}<td>{{ item.note or '' }}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p class="small">This record has no checklist items.</p>
+    {% endfor %}
+  </section>
+
+  <section class="report-section">
+    <h3>Summary and sign-off</h3>
+    <p class="pre box">{{ inspection.summary or '' }}</p>
+    <div class="sig-row">
+      <div>{% if inspection.signature_data %}<img class="signature-img" src="{{ inspection.signature_data }}" alt="{{ labels.inspector }} signature">{% else %}<span class="line"></span>{% endif %}{{ inspection.inspector_name or labels.inspector }}</div>
+      <div><span class="line-text">{{ inspection.completed_at|date }}</span>Date completed</div>
+      <div><span class="line"></span>Safety manager review &nbsp; <small>Date</small></div>
+    </div>
+  </section>
+  <footer class="report-foot">{{ app_name }}. Printed {{ now|datetime }}. {{ inspection.number }}. {{ credits }}.</footer>
+</div>
+{% endblock %}

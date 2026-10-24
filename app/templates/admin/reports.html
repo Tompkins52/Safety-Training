@@ -10,7 +10,8 @@
         {% for d in divisions %}<option value="{{ d.id }}" {% if division_id == d.id %}selected{% endif %}>{{ d.name }}</option>{% endfor %}
       </select>
     </form>
-    <a class="btn btn-secondary" href="{{ url_for('admin.reports_export', division=division_id or '') }}">Export CSV</a>
+    <a class="btn btn-ghost" href="{{ url_for('admin.reports_export', division=division_id or '') }}">Export CSV</a>
+    <a class="btn btn-secondary" href="{{ url_for('admin.reports_export_xlsx', division=division_id or '') }}" title="Training record, quiz attempts, compliance and courses as an Excel workbook">Export to Excel</a>
     <a class="btn btn-primary" href="{{ url_for('admin.assign') }}">Assign training</a>
   </div>
 </div>
@@ -39,6 +40,7 @@
 
 <section class="card">
   <h2>Training matrix</h2>
+  <p class="small muted">The Excel export has the full record behind this matrix: one row per assignment with its reason (annual, new hire or assigned individually), every quiz attempt, a per-employee compliance sheet and the course list.</p>
   <div class="table-scroll">
   <table class="table matrix">
     <thead>

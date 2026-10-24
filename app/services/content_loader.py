@@ -60,6 +60,7 @@ def load_course(data, division_lookup=None):
     course.standard_title = data.get("standard_title")
     course.category = data.get("category", "osha_top10")
     course.top10_rank = data.get("top10_rank")
+    course.new_hire = bool(data.get("new_hire", False))
     course.duration_minutes = data.get("duration_minutes", 30)
     course.renewal_months = data.get("renewal_months", 12)
     course.summary = data.get("summary", "")

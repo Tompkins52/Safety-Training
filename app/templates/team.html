@@ -2,14 +2,17 @@
 {% block title %}My team | {{ app_name }}{% endblock %}
 {% block content %}
 <div class="page-head">
-  <div><h1>My team</h1><p class="muted">Training status for the employees who report to you. You receive an email each time one of them completes a course.</p></div>
+  <div><h1>My team</h1><p class="muted">Training status for the employees who report to you. You receive an email each time one of them completes a course, and a copy of every due-date and overdue reminder they get.</p></div>
+  <div class="actions">
+    <a class="btn btn-secondary" href="{{ url_for('main.team_export_xlsx') }}" title="Your team's training record, quiz attempts and compliance as an Excel workbook">Export to Excel</a>
+  </div>
 </div>
 
 <section class="card">
   <h2>Compliance</h2>
   {% if rows %}
   <table class="table">
-    <thead><tr><th>Employee</th><th>Division</th><th>Title</th><th class="num">Open</th><th class="num">Due in 30 days</th><th class="num">Overdue</th><th class="num">Completed (12 mo)</th><th>Overdue courses</th></tr></thead>
+    <thead><tr><th>Employee</th><th>Division</th><th>Title</th><th class="num">Open</th><th class="num">Due in 30 days</th><th class="num">Overdue</th><th class="num">Completed (12 mo)</th><th>New hire track</th><th>Overdue courses</th></tr></thead>
     <tbody>
     {% for row in rows %}
       <tr>
@@ -20,6 +23,7 @@
         <td class="num">{{ row.due_soon }}</td>
         <td class="num">{% if row.overdue %}<span class="badge badge-danger">{{ row.overdue }}</span>{% else %}0{% endif %}</td>
         <td class="num">{{ row.completed_12mo }}</td>
+        <td>{% if row.new_hire %}<span class="badge badge-{{ 'ok' if row.new_hire.completed == row.new_hire.total else ('danger' if row.new_hire.overdue else 'warn') }}">{{ row.new_hire.completed }} of {{ row.new_hire.total }}</span>{% else %}<span class="muted small">n/a</span>{% endif %}</td>
         <td class="small">{% for a in row.user.assignments if a.is_overdue %}{{ a.course.title }} (due {{ a.due_date|date }}){% if not loop.last %}; {% endif %}{% endfor %}</td>
       </tr>
     {% endfor %}
@@ -31,13 +35,36 @@
 </section>
 
 <section class="card">
+  <h2>Open assignments{% if open_items %} ({{ open_items|length }}){% endif %}</h2>
+  {% if open_items %}
+  <table class="table compact">
+    <thead><tr><th>Employee</th><th>Course</th><th>Reason</th><th>Due</th><th>Status</th><th class="num">Attempts</th></tr></thead>
+    <tbody>
+    {% for a in open_items %}
+      <tr>
+        <td>{{ a.user.full_name }}</td>
+        <td>{{ a.course.title }}</td>
+        <td>{% if a.reason != 'annual' %}<span class="tag" style="margin-left:0">{{ a.reason_label }}</span>{% else %}<span class="muted small">Annual</span>{% endif %}</td>
+        <td>{{ a.due_date|date }}<br><small class="muted">{% if a.is_overdue %}{{ -a.days_until_due }} days overdue{% elif a.days_until_due == 0 %}today{% else %}in {{ a.days_until_due }} days{% endif %}</small></td>
+        <td><span class="badge badge-{{ a.status_class }}">{{ a.display_status }}</span></td>
+        <td class="num">{{ a.attempts }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="muted">Nothing is open on your team.</p>
+  {% endif %}
+</section>
+
+<section class="card">
   <h2>Recent completions</h2>
   {% if recent_completions %}
   <table class="table compact">
     <thead><tr><th>Employee</th><th>Course</th><th>Completed</th><th class="num">Score</th><th class="num">Attempts</th></tr></thead>
     <tbody>
     {% for a in recent_completions %}
-      <tr><td>{{ a.user.full_name }}</td><td>{{ a.course.title }}</td><td>{{ a.completed_at|datetime }}</td><td class="num">{{ a.score }}/{{ a.total_questions }} ({{ a.percent }}%)</td><td class="num">{{ a.attempts }}</td></tr>
+      <tr><td>{{ a.user.full_name }}</td><td>{{ a.course.title }}{% if a.reason != 'annual' %}<span class="tag">{{ a.reason_label }}</span>{% endif %}</td><td>{{ a.completed_at|datetime }}</td><td class="num">{{ a.score }}/{{ a.total_questions }} ({{ a.percent }}%)</td><td class="num">{{ a.attempts }}</td></tr>
     {% endfor %}
     </tbody>
   </table>

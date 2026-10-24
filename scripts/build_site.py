@@ -27,8 +27,9 @@ APP_CSS = os.path.join(ROOT, "app", "static", "css", "app.css")
 FONTS_CSS = os.path.join(ROOT, "app", "static", "css", "fonts.css")
 FONTS_DIR = os.path.join(ROOT, "app", "static", "fonts")
 
-APP_NAME = "Safety Training"
-COMPANY = "Tompkins Software Systems LLC"
+APP_NAME = "IntelliSafe"
+BRAND_COMPANY = "IntelliSafe Systems LLC"
+COMPANY = "Tompkins Software Systems LLC"  # licensing credit shown in the footer
 LICENSE_LINE = "Licensed software by " + COMPANY
 
 DIVISIONS = [
@@ -56,6 +57,7 @@ def load_courses():
                 "standard_title": d.get("standard_title"),
                 "category": d.get("category", "osha_top10"),
                 "top10_rank": d.get("top10_rank"),
+                "new_hire": bool(d.get("new_hire", False)),
                 "divisions": d.get("divisions", []),
                 "duration_minutes": d.get("duration_minutes", 30),
                 "renewal_months": d.get("renewal_months", 12),
@@ -69,9 +71,28 @@ def load_courses():
                 ],
             }
         )
-    order = {"osha_top10": 0, "rescue": 1}
-    courses.sort(key=lambda c: (order.get(c["category"], 2), c["top10_rank"] or 99, c["title"]))
+    order = {"osha_top10": 0, "general": 1, "rescue": 2, "supervisor": 3}
+    courses.sort(key=lambda c: (order.get(c["category"], 4), c["top10_rank"] or 99, c["title"]))
     return courses
+
+
+def load_inspections():
+    out = []
+    for path in sorted(glob.glob(os.path.join(CONTENT, "inspections", "*.json"))):
+        with open(path, encoding="utf-8") as fh:
+            out.append(json.load(fh))
+    order = {"inspection": 0, "audit": 1}
+    out.sort(key=lambda t: (order.get(t.get("kind"), 2), t.get("title", "")))
+    return out
+
+
+def bundle_js():
+    """Concatenate site/js/*.js (sorted) into one script wrapped in a single scope."""
+    parts = []
+    for path in sorted(glob.glob(os.path.join(SITE, "js", "*.js"))):
+        with open(path, encoding="utf-8") as fh:
+            parts.append("// ==== " + os.path.basename(path) + "\n" + fh.read())
+    return "(function () {\n  \"use strict\";\n" + "\n".join(parts) + "\n})();\n"
 
 
 def load_top10():
@@ -91,9 +112,11 @@ def build(out_dir):
         "divisions": DIVISIONS,
         "courses": load_courses(),
         "top10": load_top10(),
+        "inspections": load_inspections(),
         "pass_percent": 80,
         "app_name": APP_NAME,
         "company": COMPANY,
+        "brand_company": BRAND_COMPANY,
         "license_line": LICENSE_LINE,
         "year": date.today().year,
         "repo": "https://github.com/Tompkins52/Safety-Training",
@@ -115,8 +138,9 @@ def build(out_dir):
             shutil.copy(os.path.join(FONTS_DIR, name), os.path.join(fonts_out, name))
     with open(os.path.join(out_dir, "styles.css"), "w", encoding="utf-8") as fh:
         fh.write(css)
-    for name in ("index.html", "app.js"):
-        shutil.copy(os.path.join(SITE, name), os.path.join(out_dir, name))
+    shutil.copy(os.path.join(SITE, "index.html"), os.path.join(out_dir, "index.html"))
+    with open(os.path.join(out_dir, "app.js"), "w", encoding="utf-8") as fh:
+        fh.write(bundle_js())
     # Tell GitHub Pages not to run Jekyll on the output.
     open(os.path.join(out_dir, ".nojekyll"), "w").close()
     print(f"Built {len(data['courses'])} courses into {out_dir}")

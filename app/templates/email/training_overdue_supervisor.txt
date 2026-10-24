@@ -1,0 +1,12 @@
+Hello {{ supervisor.first_name }},
+
+{{ user.full_name }} has safety training that is OVERDUE. {{ user.first_name }} was reminded today; this is your copy as the direct supervisor.
+{% for row in rows %}
+  {{ row.course.title }}{% if row.course.standard %} ({{ row.course.standard }}){% endif %}
+  Was due {{ row.assignment.due_date.strftime('%B %d, %Y') }}, {{ -row.days }} day{% if row.days != -1 %}s{% endif %} overdue
+{% endfor %}
+Please follow up with {{ user.first_name }}. Reminders repeat every {{ config.OVERDUE_REMINDER_EVERY_DAYS }} days until the training is completed.
+
+Team training status: {{ link }}
+
+{{ org_name or app_name }}

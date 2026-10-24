@@ -1,59 +1,17 @@
-"""End-to-end smoke tests: training flow, notifications, incidents and admin pages."""
-import os
-import sys
+"""Training flow, notifications and admin pages."""
 from datetime import date, timedelta
 
-import pytest
-
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
-from app import create_app  # noqa: E402
-from app.extensions import db  # noqa: E402
-from app.models import Assignment, Course, Division, Incident, NotificationLog, User  # noqa: E402
-from app.services.assignments import ensure_assignments, run_annual_assignment  # noqa: E402
-from app.services.content_loader import load_all_courses  # noqa: E402
-from app.services.notifications import run_daily_notifications  # noqa: E402
-from config import TestConfig  # noqa: E402
-
-PASSWORD = "Testing-12345"
-
-
-@pytest.fixture
-def app():
-    app = create_app(TestConfig)
-    with app.app_context():
-        db.drop_all()
-        db.create_all()
-        load_all_courses()
-        divisions = {d.code: d for d in Division.query.all()}
-        admin = User(first_name="Sam", last_name="Admin", email="admin@example.gov", role="admin")
-        admin.set_password(PASSWORD)
-        sup = User(first_name="Dana", last_name="Super", email="super@example.gov", role="supervisor", division=divisions["electric"])
-        sup.set_password(PASSWORD)
-        emp = User(first_name="James", last_name="Carter", email="emp@example.gov", role="employee", division=divisions["electric"], supervisor=sup)
-        emp.set_password(PASSWORD)
-        other = User(first_name="Ravi", last_name="Patel", email="other@example.gov", role="employee", division=divisions["environmental"])
-        other.set_password(PASSWORD)
-        db.session.add_all([admin, sup, emp, other])
-        db.session.commit()
-        yield app
-        db.session.remove()
-        db.drop_all()
-
-
-@pytest.fixture
-def client(app):
-    return app.test_client()
-
-
-def login(client, email):
-    return client.post("/login", data={"email": email, "password": PASSWORD}, follow_redirects=True)
+from app.extensions import db
+from app.models import Assignment, Course, Division, NotificationLog, User
+from app.services.assignments import ensure_assignments, run_annual_assignment
+from app.services.notifications import run_daily_notifications
+from tests.conftest import login
 
 
 def test_content_loaded(app):
     with app.app_context():
         courses = Course.query.all()
-        assert len(courses) == 12
+        assert len(courses) == 19
         for c in courses:
             assert len(c.questions) == 10, c.slug
             for q in c.questions:
@@ -69,13 +27,17 @@ def test_content_loaded(app):
 def test_assignment_applies_division_rules(app):
     with app.app_context():
         emp = User.query.filter_by(email="emp@example.gov").first()
+        sup = User.query.filter_by(email="super@example.gov").first()
         other = User.query.filter_by(email="other@example.gov").first()
         created = run_annual_assignment(due_date=date.today() + timedelta(days=45))
-        # electric employee + electric supervisor: 12 each; environmental: 10; admin has no division
-        assert len(created) == 12 + 12 + 10
-        assert len(emp.open_assignments()) == 12
-        assert len(other.open_assignments()) == 10
+        # electric employee: 18 (no supervisor course); electric supervisor: 19;
+        # environmental employee: 16 (no rescue, no supervisor course); admin has no division
+        assert len(created) == 18 + 19 + 16
+        assert len(emp.open_assignments()) == 18
+        assert len(other.open_assignments()) == 16
         assert not any(a.course.category == "rescue" for a in other.assignments)
+        assert not any(a.course.category == "supervisor" for a in emp.assignments)
+        assert any(a.course.category == "supervisor" for a in sup.assignments)
         # idempotent
         assert run_annual_assignment(due_date=date.today() + timedelta(days=45)) == []
 
@@ -175,132 +137,6 @@ def test_daily_reminders(app):
         assert any("due in 30 days" in b for b in bodies)
         subjects = [n.subject for n in NotificationLog.query.all()]
         assert any("OVERDUE" in s for s in subjects)
-
-
-def test_incident_report_investigation_and_print(app, client):
-    login(client, "emp@example.gov")
-    resp = client.get("/incidents/new")
-    assert resp.status_code == 200
-    data = {
-        "incident_type": "injury",
-        "occurred_at": "2026-10-01T09:30",
-        "location": "Pole 4421, Main St and 3rd Ave",
-        "division_id": "",
-        "severity": "moderate",
-        "description": "Employee slipped on wet pole step while descending and cut left hand on a tool.",
-        "immediate_actions": "First aid applied, supervisor notified.",
-        "injured_person": "James Carter",
-        "injured_job_title": "Lineworker",
-        "body_part": "Left hand",
-        "injury_nature": "Laceration",
-        "treatment": "clinic",
-        "days_away": "0",
-        "days_restricted": "2",
-    }
-    resp = client.post("/incidents/new", data=data, follow_redirects=True)
-    assert resp.status_code == 200
-    assert b"INC-" in resp.data
-    with app.app_context():
-        incident = Incident.query.first()
-        assert incident.incident_number.startswith("INC-2026-")
-        assert incident.incident_type == "injury"
-        assert incident.days_restricted == 2
-        incident_id = incident.id
-        notices = NotificationLog.query.filter_by(kind="incident_reported").all()
-        recipients = {n.recipient_email for n in notices}
-        assert "admin@example.gov" in recipients and "super@example.gov" in recipients
-
-    # The reporter can view and print but not investigate.
-    assert client.get(f"/incidents/{incident_id}").status_code == 200
-    assert client.get(f"/incidents/{incident_id}/print").status_code == 200
-    assert client.get(f"/incidents/{incident_id}/investigation").status_code == 403
-
-    # Another employee cannot see it.
-    client.get("/logout")
-    login(client, "other@example.gov")
-    assert client.get(f"/incidents/{incident_id}").status_code == 403
-
-    # Supervisor investigates: closing without causes is refused.
-    client.get("/logout")
-    login(client, "super@example.gov")
-    resp = client.post(f"/incidents/{incident_id}/status", data={"status": "closed"}, follow_redirects=True)
-    assert b"Before closing" in resp.data
-    resp = client.post(
-        f"/incidents/{incident_id}/investigation",
-        data={
-            "investigation_date": "2026-10-02",
-            "direct_cause": "Wet pole step and worn glove grip.",
-            "root_cause": "No procedure for pausing pole work after rain; gloves not inspected.",
-            "contributing_factor_type": "environmental",
-            "contributing_factor_detail": "Rain earlier that morning left steps wet.",
-            "osha_recordable": "yes",
-        },
-        follow_redirects=True,
-    )
-    assert resp.status_code == 200
-    resp = client.post(
-        f"/incidents/{incident_id}/actions",
-        data={"description": "Add wet-weather pole climbing pause to the work rules.", "responsible_name": "Dana Super", "target_date": "2026-11-01"},
-        follow_redirects=True,
-    )
-    assert b"Add wet-weather" in resp.data
-    resp = client.post(f"/incidents/{incident_id}/status", data={"status": "closed"}, follow_redirects=True)
-    assert b"closed" in resp.data.lower()
-    with app.app_context():
-        incident = db.session.get(Incident, incident_id)
-        assert incident.status == "closed"
-        assert incident.contributing_factor_type == "environmental"
-        assert incident.osha_recordable is True
-        assert len(incident.corrective_actions) == 1
-        assert NotificationLog.query.filter_by(kind="incident_closed").count() == 2  # reporter + supervisor
-    resp = client.get(f"/incidents/{incident_id}/print")
-    assert b"Incident Report" in resp.data
-    assert b"Wet pole step" in resp.data
-    assert b"Environmental" in resp.data
-
-
-def test_vehicle_and_property_incident_fields(app, client):
-    login(client, "other@example.gov")
-    resp = client.post(
-        "/incidents/new",
-        data={
-            "incident_type": "vehicle",
-            "occurred_at": "2026-09-15T14:00",
-            "location": "Yard",
-            "severity": "minor",
-            "description": "Backed refuse truck into gate post.",
-            "vehicle_unit": "ES-204",
-            "driver_name": "Ravi Patel",
-            "police_report_number": "",
-            "vehicle_damage_estimate": "1250.50",
-            "drug_alcohol_test": "completed",
-            "seat_belt_used": "yes",
-        },
-        follow_redirects=True,
-    )
-    assert resp.status_code == 200
-    resp = client.post(
-        "/incidents/new",
-        data={
-            "incident_type": "property_damage",
-            "occurred_at": "2026-09-16T08:00",
-            "location": "12 Elm St",
-            "severity": "minor",
-            "description": "Mower threw a rock through a resident's window.",
-            "property_description": "Residential window",
-            "property_owner": "third_party",
-            "estimated_cost": "400",
-        },
-        follow_redirects=True,
-    )
-    assert resp.status_code == 200
-    with app.app_context():
-        vehicle = Incident.query.filter_by(incident_type="vehicle").first()
-        assert vehicle.vehicle_damage_estimate == 1250.5 and vehicle.seat_belt_used is True
-        prop = Incident.query.filter_by(incident_type="property_damage").first()
-        assert prop.property_owner == "third_party" and prop.estimated_cost == 400
-        numbers = sorted(i.incident_number for i in Incident.query.all())
-        assert numbers == ["INC-2026-0001", "INC-2026-0002"]
 
 
 def test_admin_pages_and_csv(app, client):

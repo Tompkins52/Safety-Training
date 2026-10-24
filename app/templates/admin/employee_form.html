@@ -2,9 +2,18 @@
 {% block title %}{% if creating %}Add employee{% else %}{{ user.full_name }}{% endif %} | {{ app_name }}{% endblock %}
 {% block content %}
 <div class="page-head">
-  <div><h1>{% if creating %}Add employee{% else %}{{ user.full_name }}{% endif %}</h1></div>
+  <div><h1>{% if creating %}Add employee{% else %}{{ user.full_name }}{% endif %}</h1>
+    {% if not creating %}<p class="muted">{{ user.job_title or role_labels[user.role] }}{% if user.division %}, {{ user.division.name }}{% endif %}{% if user.hire_date %}. Hired {{ user.hire_date|date }}{% endif %}{% if user.supervisor %}. Reports to {{ user.supervisor.full_name }}{% endif %}</p>{% endif %}
+  </div>
   {% if not creating %}
   <div class="actions">
+    <form method="post" action="{{ url_for('admin.employee_new_hire', user_id=user.id) }}" class="inline-form" title="Assign every new hire course that applies to this employee's division">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <label class="small">Due <input type="date" name="due_date" value="{{ new_hire_due.strftime('%Y-%m-%d') }}"></label>
+      <label class="checkbox small"><input type="checkbox" name="notify"> Email</label>
+      <button class="btn btn-secondary" type="submit">Assign new hire training</button>
+    </form>
+    <a class="btn btn-ghost" href="{{ url_for('admin.assign_individual', user=user.id) }}">Assign individual training</a>
     <form method="post" action="{{ url_for('admin.employee_reset_password', user_id=user.id) }}" class="inline-form" onsubmit="return confirm('Generate a new temporary password for this employee?');">
       <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
       <button class="btn btn-ghost" type="submit">Reset password</button>
@@ -20,14 +29,14 @@
   <label>Email <span class="req">*</span><input type="email" name="email" value="{{ user.email or '' }}" required></label>
   <label>Employee number<input type="text" name="employee_number" value="{{ user.employee_number or '' }}"></label>
   <label>Job title<input type="text" name="job_title" value="{{ user.job_title or '' }}"></label>
-  <label>Hire date<input type="date" name="hire_date" value="{{ user.hire_date.strftime('%Y-%m-%d') if user.hire_date else '' }}"></label>
+  <label>Hire date <small class="muted">(sets the new hire training due date: hire date + 30 days)</small><input type="date" name="hire_date" value="{{ user.hire_date.strftime('%Y-%m-%d') if user.hire_date else '' }}"></label>
   <label>Division
     <select name="division_id">
       <option value="">None (administrative)</option>
       {% for d in divisions %}<option value="{{ d.id }}" {% if user.division_id == d.id %}selected{% endif %}>{{ d.name }}</option>{% endfor %}
     </select>
   </label>
-  <label>Direct supervisor
+  <label>Direct supervisor <small class="muted">(receives completion notices and copies of reminders)</small>
     <select name="supervisor_id">
       <option value="">None</option>
       {% for s in supervisors if s.id != user.id %}<option value="{{ s.id }}" {% if user.supervisor_id == s.id %}selected{% endif %}>{{ s.full_name }} ({{ role_labels[s.role] }})</option>{% endfor %}
@@ -42,8 +51,9 @@
   {% if creating %}
   <label>Temporary password <small class="muted">(leave blank to generate one)</small><input type="text" name="password" minlength="10" autocomplete="off"></label>
   <div class="span-2 checkbox-stack">
-    <label class="checkbox"><input type="checkbox" name="assign_now" checked> Assign all training for the division now</label>
-    <label>Due date for that training<input type="date" name="due_date" value="{{ default_due.strftime('%Y-%m-%d') }}"></label>
+    <label class="checkbox"><input type="checkbox" name="new_hire_now" checked> Assign new hire training now <small class="muted">(every course marked New hire that applies to the division, due 30 days after the hire date)</small></label>
+    <label class="checkbox"><input type="checkbox" name="assign_now" checked> Assign all other annual training for the division now</label>
+    <label>Due date for the annual training<input type="date" name="due_date" value="{{ default_due.strftime('%Y-%m-%d') }}"></label>
     <label class="checkbox"><input type="checkbox" name="notify"> Email the employee that training was assigned</label>
   </div>
   {% endif %}
@@ -54,15 +64,26 @@
 </form>
 
 {% if not creating %}
+{% if new_hire and new_hire.total %}
+<section class="card">
+  <div class="card-head"><h2>New hire training</h2><span class="badge badge-{{ 'ok' if new_hire.completed == new_hire.total else ('danger' if new_hire.overdue else 'warn') }}">{{ new_hire.completed }} of {{ new_hire.total }} complete</span></div>
+  <div class="muted small"><div class="meter"><div class="meter-fill {{ 'ok' if new_hire.percent >= 90 else ('warn' if new_hire.percent >= 50 else 'danger') }}" style="width: {{ new_hire.percent }}%"></div></div> {{ new_hire.percent }}% complete{% if new_hire.next_due %}. Next due {{ new_hire.next_due|date }}{% endif %}{% if new_hire.overdue %}. {{ new_hire.overdue }} overdue{% endif %}.</div>
+</section>
+{% elif new_hire_course_count %}
+<p class="muted small">No new hire training has been assigned. The button above assigns the {{ new_hire_course_count }} new hire courses for {{ user.division.name }}.</p>
+{% endif %}
+
 <section class="card">
   <h2>Training record</h2>
-  {% if assignments %}
+  {% if assignment_groups %}
+  {% for reason, label, items in assignment_groups %}
+  <h3 class="section-label">{{ label }} <small class="muted">({{ items|length }})</small></h3>
   <table class="table compact">
     <thead><tr><th>Module</th><th class="num">Cycle</th><th>Assigned</th><th>Due</th><th>Status</th><th>Completed</th><th class="num">Score</th><th class="num">Attempts</th><th>Reminders</th></tr></thead>
     <tbody>
-    {% for a in assignments %}
+    {% for a in items %}
       <tr>
-        <td>{{ a.course.title }}</td>
+        <td>{{ a.course.title }}{% if a.assigned_by %}<br><small class="muted">by {{ a.assigned_by.full_name }}</small>{% endif %}</td>
         <td class="num">{{ a.cycle }}</td>
         <td>{{ a.assigned_on|date }}</td>
         <td>{{ a.due_date|date }}</td>
@@ -75,8 +96,9 @@
     {% endfor %}
     </tbody>
   </table>
+  {% endfor %}
   {% else %}
-  <p class="muted">No assignments. Use <a href="{{ url_for('admin.assign') }}">Assign training</a> to create them.</p>
+  <p class="muted">No assignments. Use <a href="{{ url_for('admin.assign') }}">Assign training</a> for the annual cycle, the button above for the new hire track, or <a href="{{ url_for('admin.assign_individual', user=user.id) }}">Assign individual training</a> for specific courses.</p>
   {% endif %}
 </section>
 {% endif %}

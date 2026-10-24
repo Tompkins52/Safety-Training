@@ -4,8 +4,9 @@ from flask import Blueprint, render_template
 from flask_login import current_user, login_required
 
 from ..models import Assignment, Course, Division, Incident, User
-from ..services.assignments import compliance_rows
+from ..services.assignments import compliance_rows, new_hire_progress
 from ..services.content_loader import load_top10
+from ..services.exports import training_export_response
 from ..utils import role_required
 from ..timeutil import now
 
@@ -24,6 +25,7 @@ def dashboard():
     completed = [a for a in assignments if a.is_completed]
     completed.sort(key=lambda a: a.completed_at or datetime.min, reverse=True)
     my_incidents = Incident.query.filter_by(reported_by_id=user.id).order_by(Incident.reported_at.desc()).limit(5).all()
+    new_hire = new_hire_progress(user)
 
     context = {
         "overdue": overdue,
@@ -31,6 +33,7 @@ def dashboard():
         "upcoming": upcoming,
         "completed": completed[:6],
         "my_incidents": my_incidents,
+        "new_hire": new_hire if new_hire["open"] else None,
     }
     if user.is_supervisor:
         context["team_rows"] = compliance_rows(sorted(user.direct_reports, key=lambda u: u.last_name))
@@ -80,14 +83,19 @@ def organization_stats():
     return stats
 
 
+def _team_members():
+    """The people on the signed-in supervisor's team page: direct reports, or
+    every active employee for an administrator who has no direct reports."""
+    if current_user.is_admin and not current_user.direct_reports:
+        return User.query.filter_by(is_active_employee=True).order_by(User.last_name, User.first_name).all()
+    return sorted(current_user.direct_reports, key=lambda u: (u.last_name, u.first_name))
+
+
 @bp.route("/team")
 @login_required
 @role_required("supervisor", "admin")
 def team():
-    if current_user.is_admin and not current_user.direct_reports:
-        members = User.query.filter_by(is_active_employee=True).order_by(User.last_name, User.first_name).all()
-    else:
-        members = sorted(current_user.direct_reports, key=lambda u: (u.last_name, u.first_name))
+    members = _team_members()
     rows = compliance_rows(members)
     recent_completions = (
         Assignment.query.filter(Assignment.user_id.in_([u.id for u in members] or [0]), Assignment.status == "completed")
@@ -95,7 +103,19 @@ def team():
         .limit(10)
         .all()
     )
-    return render_template("team.html", rows=rows, recent_completions=recent_completions)
+    open_items = sorted(
+        (a for u in members for a in u.assignments if not a.is_completed),
+        key=lambda a: (a.user.last_name, a.user.first_name, a.due_date, a.course.title),
+    )
+    return render_template("team.html", rows=rows, recent_completions=recent_completions, open_items=open_items)
+
+
+@bp.route("/team/export.xlsx")
+@login_required
+@role_required("supervisor", "admin")
+def team_export_xlsx():
+    """Training record workbook limited to the supervisor's team."""
+    return training_export_response(_team_members(), stem="team-training-record")
 
 
 @bp.route("/catalog")

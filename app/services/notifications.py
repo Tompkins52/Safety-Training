@@ -1,13 +1,19 @@
 """Builds, sends and logs the platform's email notifications.
 
 Notification kinds:
-  training_assigned   employee, when an assignment is created (optional)
-  training_due_30     employee, 30 days before the due date
-  training_due_7      employee, 7 days before the due date
-  training_overdue    employee, every 7 days while overdue
-  training_completed  direct supervisor, when the employee passes the quiz
-  incident_reported   safety administrators, supervisor and safety officer mailbox
-  incident_closed     reporter and supervisor, when an investigation is closed
+  training_assigned             employee, when an assignment is created (optional)
+  training_due_30               employee, 30 days before the due date
+  training_due_7                employee, 7 days before the due date
+  training_overdue              employee, every 7 days while overdue
+  training_due_30_supervisor    direct supervisor, copy of the 30-day reminder
+  training_due_7_supervisor     direct supervisor, copy of the 7-day reminder
+  training_overdue_supervisor   direct supervisor, copy of the overdue reminder
+  training_completed            direct supervisor, when the employee passes the quiz
+  incident_reported             safety administrators, supervisor and safety officer mailbox
+  incident_closed               reporter and supervisor, when an investigation is closed
+
+The supervisor copies are digests: one message per employee per reminder
+kind per run, listing every course that triggered a reminder that day.
 """
 from datetime import date
 
@@ -21,7 +27,7 @@ from .mailer import send_email
 
 def _org():
     """Name used in email subjects: the organization if configured, else the app name."""
-    return current_app.config.get("ORG_NAME") or current_app.config.get("APP_NAME") or "Safety Training"
+    return current_app.config.get("ORG_NAME") or current_app.config.get("APP_NAME") or "IntelliSafe"
 
 
 def _link(endpoint, **values):
@@ -61,7 +67,7 @@ def _deliver(kind, recipient_email, subject, template, context, *, user=None, as
 # --------------------------------------------------------------------------- training
 
 
-def notify_training_assigned(assignment):
+def notify_training_assigned(assignment, note=None):
     user = assignment.user
     subject = f"[{_org()}] New safety training assigned: {assignment.course.title}"
     entry = _deliver(
@@ -69,7 +75,13 @@ def notify_training_assigned(assignment):
         user.email,
         subject,
         "training_assigned",
-        {"assignment": assignment, "user": user, "course": assignment.course, "link": _link("training.my_training")},
+        {
+            "assignment": assignment,
+            "user": user,
+            "course": assignment.course,
+            "note": (note or "").strip() or None,
+            "link": _link("training.my_training"),
+        },
         user=user,
         assignment=assignment,
     )
@@ -167,6 +179,55 @@ def notify_supervisor_completion(assignment):
     return entry
 
 
+def notify_supervisor_reminder(assignments, kind, today=None):
+    """Send the employee's direct supervisor a copy of the reminders sent today.
+
+    `assignments` are one employee's assignments that received a `kind`
+    reminder (training_due_30, training_due_7 or training_overdue) in this
+    run. One digest message is sent and logged under `kind` + "_supervisor".
+    Returns the log entry, or None when there is no supervisor to copy.
+    """
+    if not assignments:
+        return None
+    today = today or date.today()
+    user = assignments[0].user
+    supervisor = user.supervisor
+    if supervisor is None or not supervisor.email or not supervisor.is_active_employee or supervisor.id == user.id:
+        return None
+    items = sorted(assignments, key=lambda a: (a.due_date, a.course.title))
+    rows = [{"assignment": a, "course": a.course, "days": (a.due_date - today).days} for a in items]
+    count = len(items)
+    first = items[0]
+    if kind == "training_overdue":
+        template = "training_overdue_supervisor"
+        if count == 1:
+            subject = f"[{_org()}] OVERDUE: {user.full_name}, {first.course.title} was due {first.due_date:%b %d, %Y}"
+        else:
+            subject = f"[{_org()}] OVERDUE: {user.full_name} has {count} training modules past due"
+    else:
+        template = "training_due_supervisor"
+        if count == 1:
+            subject = f"[{_org()}] {user.full_name}: {first.course.title} training due {first.due_date:%b %d, %Y}"
+        else:
+            subject = f"[{_org()}] {user.full_name}: {count} training modules coming due"
+    return _deliver(
+        f"{kind}_supervisor",
+        supervisor.email,
+        subject,
+        template,
+        {
+            "supervisor": supervisor,
+            "user": user,
+            "rows": rows,
+            "count": count,
+            "kind": kind,
+            "link": _link("main.team"),
+        },
+        user=supervisor,
+        assignment=first,
+    )
+
+
 # --------------------------------------------------------------------------- incidents
 
 
@@ -235,14 +296,26 @@ def run_daily_notifications(today=None):
 
     Safe to run more than once a day: each reminder is sent once per
     assignment, and overdue reminders repeat only every
-    OVERDUE_REMINDER_EVERY_DAYS days.
+    OVERDUE_REMINDER_EVERY_DAYS days. Each employee reminder sent in a run is
+    also copied to the employee's direct supervisor as one digest per
+    employee and reminder kind; because the copies ride on the employee
+    reminders, a second run the same day sends no duplicates.
     """
     cfg = current_app.config
     today = today or date.today()
     first = cfg["REMINDER_DAYS_BEFORE_DUE"]
     second = cfg["SECOND_REMINDER_DAYS_BEFORE_DUE"]
     overdue_every = cfg["OVERDUE_REMINDER_EVERY_DAYS"]
-    counts = {"training_due_30": 0, "training_due_7": 0, "training_overdue": 0, "skipped": 0}
+    counts = {
+        "training_due_30": 0,
+        "training_due_7": 0,
+        "training_overdue": 0,
+        "skipped": 0,
+        "training_due_30_supervisor": 0,
+        "training_due_7_supervisor": 0,
+        "training_overdue_supervisor": 0,
+    }
+    reminded = {}  # (user_id, kind) -> assignments reminded in this run
 
     query = (
         Assignment.query.join(User, Assignment.user_id == User.id)
@@ -251,25 +324,31 @@ def run_daily_notifications(today=None):
     )
     for assignment in query.all():
         days_left = (assignment.due_date - today).days
+        kind = None
         if days_left < 0:
             last = assignment.overdue_last_reminded_at
             if last is None or (today - last.date()).days >= overdue_every:
                 notify_training_overdue(assignment)
-                counts["training_overdue"] += 1
-            else:
-                counts["skipped"] += 1
+                kind = "training_overdue"
         elif days_left <= second:
             if assignment.reminder_7_sent_at is None:
                 notify_training_due(assignment, days_left)
-                counts["training_due_7"] += 1
-            else:
-                counts["skipped"] += 1
+                kind = "training_due_7"
         elif days_left <= first:
             if assignment.reminder_30_sent_at is None:
                 notify_training_due(assignment, days_left)
-                counts["training_due_30"] += 1
-            else:
-                counts["skipped"] += 1
+                kind = "training_due_30"
+        else:
+            continue
+        if kind is None:
+            counts["skipped"] += 1
+            continue
+        counts[kind] += 1
+        reminded.setdefault((assignment.user_id, kind), []).append(assignment)
+
+    for (_user_id, kind), assignments in reminded.items():
+        if notify_supervisor_reminder(assignments, kind, today) is not None:
+            counts[f"{kind}_supervisor"] += 1
     db.session.commit()
     current_app.logger.info("Daily notification job: %s", counts)
     return counts

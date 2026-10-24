@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Statement for {{ incident.incident_number }} | {{ app_name }}{% endblock %}
+{% block body_class %}statement-mode{% endblock %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='css/incidents.css') }}">{% endblock %}
+{% block content %}
+<div class="statement-page">
+  <div class="card statement-done">
+    {% if already %}
+      <h1>Already signed</h1>
+      <p>This statement for report {{ incident.incident_number }} was signed on {{ statement.signed_at|datetime }} and can no longer be changed.</p>
+      <p class="muted">If you need to add to it, contact the person who requested the statement.</p>
+    {% else %}
+      <h1>Thank you</h1>
+      <p>Your {{ statement.role_label|lower }} has been signed and attached to report {{ incident.incident_number }} at {{ statement.signed_at|datetime }}.</p>
+      {% if mode == 'device' %}
+        <p class="muted">Please hand the device back to the investigator.</p>
+        <a class="btn btn-primary" href="{{ url_for('incidents.detail', incident_id=incident.id) }}">Done</a>
+      {% else %}
+        <p class="muted">You may close this window.</p>
+      {% endif %}
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

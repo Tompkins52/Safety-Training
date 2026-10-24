@@ -1,4 +1,4 @@
-"""Application factory for the Safety Training platform."""
+"""Application factory for the IntelliSafe platform."""
 import os
 import sys
 from datetime import date, datetime
@@ -11,7 +11,8 @@ from .extensions import csrf, db, login_manager
 from .models import User
 from .utils import register_template_helpers
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
+BRAND_COMPANY = "IntelliSafe Systems LLC"
 COMPANY = "Tompkins Software Systems LLC"
 CREDITS = "Licensed software by " + COMPANY
 
@@ -40,6 +41,7 @@ def create_app(config_object=Config):
     from .blueprints.admin import bp as admin_bp
     from .blueprints.auth import bp as auth_bp
     from .blueprints.incidents import bp as incidents_bp
+    from .blueprints.inspections import bp as inspections_bp
     from .blueprints.main import bp as main_bp
     from .blueprints.training import bp as training_bp
 
@@ -47,6 +49,7 @@ def create_app(config_object=Config):
     app.register_blueprint(main_bp)
     app.register_blueprint(training_bp, url_prefix="/training")
     app.register_blueprint(incidents_bp, url_prefix="/incidents")
+    app.register_blueprint(inspections_bp, url_prefix="/inspections")
     app.register_blueprint(admin_bp, url_prefix="/admin")
 
     register_template_helpers(app)
@@ -60,6 +63,7 @@ def create_app(config_object=Config):
             "app_version": __version__,
             "credits": CREDITS,
             "company": COMPANY,
+            "brand_company": BRAND_COMPANY,
             "current_year": date.today().year,
             "now": datetime.now(),
         }
@@ -74,6 +78,9 @@ def create_app(config_object=Config):
 
     with app.app_context():
         db.create_all()
+        from .services.schema import upgrade_schema
+
+        upgrade_schema()
 
     if app.config.get("SCHEDULER_ENABLED") and not app.config.get("TESTING") and not _is_cli_command():
         from .scheduler import start_scheduler

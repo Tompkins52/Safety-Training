@@ -45,6 +45,20 @@
 </section>
 {% endif %}
 
+{% if new_hire %}
+<section class="card">
+  <div class="card-head"><h2>New hire training</h2><span class="badge badge-{{ 'danger' if new_hire.overdue else 'warn' }}">{{ new_hire.completed }} of {{ new_hire.total }} complete</span></div>
+  <div class="small muted"><div class="meter"><div class="meter-fill {{ 'ok' if new_hire.percent >= 90 else ('warn' if new_hire.percent >= 50 else 'danger') }}" style="width: {{ new_hire.percent }}%"></div></div> {{ new_hire.percent }}% complete. These modules are required for every new hire{% if new_hire.next_due %}; the next one is due {{ new_hire.next_due|date }}{% endif %}.{% if new_hire.overdue %} {{ new_hire.overdue }} overdue.{% endif %}</div>
+  <ul class="list">
+  {% for a in new_hire.open[:6] %}
+    <li><a href="{{ url_for('training.course', assignment_id=a.id) }}">{{ a.course.title }}</a>
+      <span class="badge badge-{{ a.status_class }}">Due {{ a.due_date|date }}</span></li>
+  {% endfor %}
+  {% if new_hire.open|length > 6 %}<li class="muted">and {{ new_hire.open|length - 6 }} more under <a href="{{ url_for('training.my_training') }}">My training</a></li>{% endif %}
+  </ul>
+</section>
+{% endif %}
+
 <div class="grid-2">
   <section class="card">
     <div class="card-head"><h2>My training</h2><a class="btn btn-sm btn-ghost" href="{{ url_for('training.my_training') }}">See all</a></div>
@@ -119,7 +133,7 @@
   <div class="card-head"><h2>My team</h2><a class="btn btn-sm btn-ghost" href="{{ url_for('main.team') }}">Team details</a></div>
   {% if team_rows %}
   <table class="table">
-    <thead><tr><th>Employee</th><th>Title</th><th class="num">Open</th><th class="num">Due in 30 days</th><th class="num">Overdue</th><th class="num">Completed (12 mo)</th></tr></thead>
+    <thead><tr><th>Employee</th><th>Title</th><th class="num">Open</th><th class="num">Due in 30 days</th><th class="num">Overdue</th><th class="num">Completed (12 mo)</th><th>New hire track</th></tr></thead>
     <tbody>
     {% for row in team_rows %}
       <tr>
@@ -129,6 +143,7 @@
         <td class="num">{{ row.due_soon }}</td>
         <td class="num">{% if row.overdue %}<span class="badge badge-danger">{{ row.overdue }}</span>{% else %}0{% endif %}</td>
         <td class="num">{{ row.completed_12mo }}</td>
+        <td>{% if row.new_hire %}<span class="badge badge-{{ 'ok' if row.new_hire.completed == row.new_hire.total else ('danger' if row.new_hire.overdue else 'warn') }}">{{ row.new_hire.completed }} of {{ row.new_hire.total }}</span>{% endif %}</td>
       </tr>
     {% endfor %}
     </tbody>
