@@ -435,7 +435,7 @@ function viewAbout() {
     "<h3>Browser edition and full platform</h3><p>This site is the <strong>browser edition</strong>: everything runs in your browser, nothing is sent to a server, and your progress, reports and inspections stay on this device. Use it to read the modules, take the quizzes, print certificates and complete reports and inspections.</p>" +
     '<p>The <strong>full platform</strong> adds employee accounts, assignments by division or by individual from the safety manager, new hire assignments, automatic email reminders to employees and their supervisors 30 days before training is due, completion notices, statement links emailed to principals and witnesses, incident notices, and department-wide records and Excel exports. It runs on a small server; see the <a href="' + esc(DATA.repo) + '" target="_blank" rel="noopener">project repository</a>.</p>' +
     "<h3>About " + esc(BRAND_COMPANY) + "</h3><p>" + esc(APP) + " is the safety platform of " + esc(BRAND_COMPANY) + ".</p>" +
-    "<h3>License</h3><p><strong>" + esc(LICENSE) + ".</strong> Copyright " + esc(DATA.year || new Date().getFullYear()) + " " + esc(COMPANY) + ". All rights reserved.</p>" +
+    "<h3>License</h3><p><strong>" + esc(LICENSE) + ".</strong> Copyright " + esc(DATA.year || new Date().getFullYear()) + " " + esc(BRAND_COMPANY) + ". All rights reserved.</p>" +
     '<p class="muted small">Content generated ' + esc(fmtDate(DATA.generated)) + ". Training content summarizes OSHA standards for awareness-level annual refresher training. It does not replace the text of the standards, your organization's written programs and procedures, or the hands-on training and drills those programs require.</p></section>";
 }
 

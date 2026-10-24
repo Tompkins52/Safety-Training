@@ -1,5 +1,6 @@
-Safety Training
-Copyright (c) 2026 Tompkins Software Systems LLC. All rights reserved.
+IntelliSafe
+Copyright (c) 2026 IntelliSafe Systems LLC. All rights reserved.
+Developed by Tompkins Software Systems LLC.
 
 This software, including its source code, training content, quiz questions,
 designs and documentation (together, the "Software"), is licensed, not sold.
@@ -9,7 +10,7 @@ designs and documentation (together, the "Software"), is licensed, not sold.
 
 2. Licensed use. Use of the Software for training employees, recording
    incidents or any other production purpose requires a license agreement
-   with Tompkins Software Systems LLC. The license agreement governs the
+   with IntelliSafe Systems LLC. The license agreement governs the
    number of users, sites and divisions covered, support and updates.
 
 3. Restrictions. Except as permitted by a written license agreement, you may
@@ -27,7 +28,7 @@ designs and documentation (together, the "Software"), is licensed, not sold.
 5. No warranty. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY
    KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-   NO EVENT SHALL TOMPKINS SOFTWARE SYSTEMS LLC BE LIABLE FOR ANY CLAIM,
+   NO EVENT SHALL INTELLISAFE SYSTEMS LLC OR TOMPKINS SOFTWARE SYSTEMS LLC BE LIABLE FOR ANY CLAIM,
    DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
    OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
    USE OR OTHER DEALINGS IN THE SOFTWARE.
@@ -37,4 +38,4 @@ designs and documentation (together, the "Software"), is licensed, not sold.
    1.1 (see the LICENSE files in that folder). Python packages listed in
    requirements.txt are under their own open-source licenses.
 
-For licensing inquiries, contact Tompkins Software Systems LLC.
+For licensing inquiries, contact IntelliSafe Systems LLC.

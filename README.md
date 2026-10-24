@@ -4,7 +4,7 @@
 
 The safety platform of **IntelliSafe Systems LLC**: annual OSHA training, incident reporting and investigation, and site inspections for departments with **Electric Services**, **Environmental Services** and **Public Services** crews.
 
-**Licensed software by Tompkins Software Systems LLC.** See [LICENSE](LICENSE).
+**Licensed software by IntelliSafe Systems LLC. Developed by Tompkins Software Systems LLC.** See [LICENSE](LICENSE).
 
 ## Open it
 
@@ -186,4 +186,4 @@ tests/             end-to-end tests (pytest)
 
 ## License
 
-Copyright 2026 Tompkins Software Systems LLC. All rights reserved. This is licensed software; see [LICENSE](LICENSE) for the terms. The bundled Barlow and Libre Baskerville fonts are under the SIL Open Font License (see `app/static/fonts/`).
+Copyright 2026 IntelliSafe Systems LLC. All rights reserved. Developed by Tompkins Software Systems LLC. This is licensed software; see [LICENSE](LICENSE) for the terms. The bundled Barlow and Libre Baskerville fonts are under the SIL Open Font License (see `app/static/fonts/`).

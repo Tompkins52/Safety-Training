@@ -14,7 +14,7 @@ from .utils import register_template_helpers
 __version__ = "1.1.0"
 BRAND_COMPANY = "IntelliSafe Systems LLC"
 COMPANY = "Tompkins Software Systems LLC"
-CREDITS = "Licensed software by " + COMPANY
+CREDITS = "Licensed software by " + BRAND_COMPANY + ". Developed by " + COMPANY
 
 
 def create_app(config_object=Config):
