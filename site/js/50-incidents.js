@@ -265,7 +265,7 @@ function viewIncidentDetail(inc) {
     '<div class="actions btn-row">' + badge(statusCls(inc.status), LABELS.statuses[inc.status]) + ' <a class="btn btn-secondary" href="#/incidents/' + encodeURIComponent(inc.id) + '/print">Print report</a><a class="btn btn-ghost" href="' + esc(incidentMailto(inc, p)) + '">Email summary</a>' +
     (inc.status !== "closed" ? '<a class="btn btn-ghost" href="#/incidents/' + encodeURIComponent(inc.id) + '/edit">Edit sections 1 to 4</a>' : "") +
     '<a class="btn btn-primary" href="#/incidents/' + encodeURIComponent(inc.id) + '/investigation">' + (hasInvestigation(inc) ? "Sections 7 and 8" : "Start sections 7 and 8") + "</a></div></div>" +
-    '<div class="grid-2"><section class="card"><h2><span class="section-no">1</span>Incident information</h2>' + kv([["Reported by", inc.reportedBy + (inc.reportedAt ? " on " + fmtDateTime(inc.reportedAt) : "")], ["Severity", LABELS.severities[inc.severity]], ["Work activity", inc.workActivity], ["Conditions", inc.weatherConditions], ["Employees involved", inc.employeesInvolved], ["Witnesses", inc.witnesses], ["Immediate actions", inc.immediateActions], ["Property damaged", inc.property.propertyDescription ? inc.property.propertyDescription + (inc.property.propertyOwner ? " (" + LABELS.owners[inc.property.propertyOwner] + ")" : "") + (inc.property.estimatedCost !== null ? ", " + money(inc.property.estimatedCost) : "") : ""], ["Investigator", [inc.investigator.name, inc.investigator.title].filter(Boolean).join(", ") + (inc.investigator.date ? ", started " + fmtDate(inc.investigator.date) : "")]]) + "</section>" +
+    '<div class="grid-2"><section class="card"><h2><span class="section-no">1</span>Incident information</h2>' + kv([["Reported by", (inc.reportedBy || "(name not entered)") + (inc.reportedAt ? " on " + fmtDateTime(inc.reportedAt) : "")], ["Severity", LABELS.severities[inc.severity]], ["Work activity", inc.workActivity], ["Conditions", inc.weatherConditions], ["Employees involved", inc.employeesInvolved], ["Witnesses", inc.witnesses], ["Immediate actions", inc.immediateActions], ["Property damaged", inc.property.propertyDescription ? inc.property.propertyDescription + (inc.property.propertyOwner ? " (" + LABELS.owners[inc.property.propertyOwner] + ")" : "") + (inc.property.estimatedCost !== null ? ", " + money(inc.property.estimatedCost) : "") : ""], ["Investigator", ([inc.investigator.name, inc.investigator.title].filter(Boolean).join(", ") || "(name not entered)") + (inc.investigator.date ? ", started " + fmtDate(inc.investigator.date) : "")]]) + "</section>" +
     '<section class="card"><h2><span class="section-no">2</span>Vehicle and equipment</h2>' + kv([["Vehicle involved", ynText(v.involved)], ["Type", v.involved ? v.vehicleType : ""], ["Make and model", v.involved ? v.makeModel : ""], ["Plate and city vehicle no.", v.involved ? [v.licensePlate, v.cityVehicleNumber].filter(Boolean).join(" / ") : ""], ["Driver", v.involved ? v.driverName + (v.seatBeltUsed !== null ? ", seat belt " + (v.seatBeltUsed ? "yes" : "no") : "") : ""], ["Police report", v.involved ? v.policeReportNumber : ""], ["Drug and alcohol test", v.involved ? (LABELS.drugTests[v.drugAlcoholTest] || "") : ""], ["Damage estimate", v.involved ? money(v.damageEstimate) : ""], ["Preventability", v.involved ? LABELS.preventability[v.preventability || "undetermined"] : ""], ["Other party", v.involved ? v.otherParty : ""], ["Equipment involved", ynText(eq.involved)], ["Equipment", eq.involved ? eq.description : ""]]) +
     (v.involved && (v.damageMarks || []).length ? '<div class="diagram-small">' + vehicleDiagramSVG(v.damageMarks, false) + "</div>" : "") +
     (v.involved && v.sceneSketch ? '<img class="sketch-img" src="' + esc(v.sceneSketch) + '" alt="Scene sketch">' : "") +
@@ -273,9 +273,13 @@ function viewIncidentDetail(inc) {
     '<div class="grid-2"><section class="card"><h2><span class="section-no">3</span>Personal injury</h2>' + kv([["Injury occurred", ynText(inj.occurred)], ["Injured person", inj.occurred ? inj.injuredPerson + (inj.injuredJobTitle ? ", " + inj.injuredJobTitle : "") : ""], ["Type of injury", inj.occurred ? inj.injuryTypes.concat(inj.injuryOther ? ["Other: " + inj.injuryOther] : []).filter(function (t) { return t !== "Other"; }).join(", ") : ""], ["Body parts", inj.occurred ? inj.bodyParts.concat(inj.bodyPartOther ? ["Other: " + inj.bodyPartOther] : []).filter(function (t) { return t !== "Other"; }).join(", ") : ""], ["Treatment", inj.occurred ? (LABELS.treatments[inj.treatment] || "") + (inj.treatmentProvider ? " (" + inj.treatmentProvider + ")" : "") : ""], ["Days away / restricted", inj.occurred ? (inj.daysAway === null ? 0 : inj.daysAway) + " / " + (inj.daysRestricted === null ? 0 : inj.daysRestricted) : ""], ["OSHA recordable", inj.occurred ? ynText(inj.oshaRecordable, "Not yet determined") : ""]]) +
     (inj.occurred && (inj.bodyMarks || []).length ? '<div class="diagram-small">' + bodyDiagramSVG(inj.bodyMarks, false) + "</div>" : "") + "</section>" +
     '<section class="card"><h2><span class="section-no">4</span>Incident description</h2><p class="pre">' + esc(inc.description) + "</p></section></div>" +
-    '<section class="card"><div class="card-head"><h2><span class="section-no">5</span>Principal statement</h2><button class="btn btn-sm btn-secondary" type="button" data-action="add-statement" data-role="principal">Add principal statement</button></div><p class="muted small">The principal party gives their own account and signs it on this device without seeing the rest of the report, or on a printed form. Add one page per party.</p>' +
-    (principals.length ? principals.map(function (s) { return statementRow(inc, s, true); }).join("") : '<p class="empty">No principal statement yet.</p>') + "</section>" +
-    '<section class="card"><div class="card-head"><h2><span class="section-no">6</span>Eyewitness statements</h2><button class="btn btn-sm btn-secondary" type="button" data-action="add-statement" data-role="witness">Add eyewitness statement</button></div>' +
+    '<section class="card statements-card"><div class="card-head"><h2>Statements</h2></div><p class="muted small">Each principal party and each eyewitness gives their own account and signs it without seeing the rest of the report. Choose the type of statement, then add as many as you need.</p>' +
+    '<form class="statement-add" data-form="add-statement"><label>Type of statement<select name="role"><option value="principal">Principal statement (Section 5)</option><option value="witness">Eyewitness statement (Section 6)</option></select></label>' +
+    '<label>How it will be given<select name="mode"><option value="device">Sign on this device</option><option value="paper">Received on paper</option><option value="form">Print a blank form</option></select></label>' +
+    '<button class="btn btn-sm btn-secondary" type="submit">Add statement</button></form>' +
+    '<h3><span class="section-no">5</span>Principal statement' + (principals.length ? ' <span class="tag">' + principals.length + "</span>" : "") + "</h3>" +
+    (principals.length ? principals.map(function (s) { return statementRow(inc, s, true); }).join("") : '<p class="empty">No principal statement yet. Add one page per party.</p>') +
+    '<h3 class="mt"><span class="section-no">6</span>Eyewitness statements' + (witnesses.length ? ' <span class="tag">' + witnesses.length + "</span>" : "") + "</h3>" +
     (witnesses.length ? witnesses.map(function (s) { return statementRow(inc, s, true); }).join("") : '<p class="empty">No eyewitness statements yet.</p>') + "</section>" +
     '<section class="card"><div class="card-head"><h2><span class="section-no">7</span>Incident facts and analysis</h2><a class="btn btn-sm btn-ghost" href="#/incidents/' + encodeURIComponent(inc.id) + '/investigation">Edit</a></div>' +
     (hasInvestigation(inc) ? kv([["Safety representative", [a.safetyRepName, a.safetyRepTitle].filter(Boolean).join(", ") + (a.date ? ", " + fmtDate(a.date) : "")], ["Analysis of the facts", a.factsAnalysis], ["Contributing causes", a.contributingCauses], ["Direct causes", a.directCauses], ["Root cause", a.rootCause], ["Contributing factor type", a.factorType ? short(LABELS.factors[a.factorType]) + (a.factorDetail ? ": " + a.factorDetail : "") : ""], ["Supporting references", a.references], ["Lessons learned", a.lessonsLearned]]) : '<p class="empty">Not recorded yet. The safety representative records the analysis, causes, corrective actions and references.</p>') +
@@ -291,13 +295,20 @@ function incidentMailto(inc, p) {
   lines.push("Statements signed: " + inc.statements.filter(function (s) { return s.status === "signed"; }).length + " of " + inc.statements.length, "", "Sent from " + APP + " (browser edition). Print the full eight-section report from the Incidents page.");
   return "mailto:" + encodeURIComponent(p.supervisorEmail || "") + "?subject=" + encodeURIComponent("Incident report " + inc.id + ": " + LABELS.types[inc.type]) + "&body=" + encodeURIComponent(lines.join("\n"));
 }
-ACTIONS["add-statement"] = function (el) {
-  var inc = findIncident(currentRoute().parts[1]);
-  if (!inc) return;
-  var s = { id: uid(), role: el.getAttribute("data-role"), printedName: "", department: "", title: "", statement: "", signature: "", signedAt: null, signedVia: "", status: "pending", createdAt: nowISO() };
+function addStatement(inc, role) {
+  var s = { id: uid(), role: role === "witness" ? "witness" : "principal", printedName: "", department: "", title: "", statement: "", signature: "", signedAt: null, signedVia: "", status: "pending", createdAt: nowISO() };
   inc.statements.push(s);
   updateIncident(inc);
-  go("#/statement/" + encodeURIComponent(inc.id) + "/" + s.id);
+  return s;
+}
+FORMS["add-statement"] = function (form) {
+  var inc = findIncident(currentRoute().parts[1]);
+  if (!inc) return;
+  var s = addStatement(inc, form.elements.role.value);
+  var mode = form.elements.mode.value;
+  if (mode === "paper") go("#/incidents/" + encodeURIComponent(inc.id) + "/statements/" + s.id + "/paper");
+  else if (mode === "form") go("#/incidents/" + encodeURIComponent(inc.id) + "/statements/" + s.id + "/form");
+  else go("#/statement/" + encodeURIComponent(inc.id) + "/" + s.id);
 };
 ACTIONS["remove-statement"] = function (el) {
   var inc = findIncident(currentRoute().parts[1]);

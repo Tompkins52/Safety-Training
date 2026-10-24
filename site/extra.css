@@ -171,3 +171,8 @@ body.statement-mode .page { max-width: 860px; }
 
 .field-label { font-weight: 600; font-size: 0.95rem; color: #2b3642; margin-bottom: 6px; }
 label > small.muted { display: block; font-weight: 400; margin: 2px 0 4px; }
+.statement-add { display: flex; gap: 10px 18px; flex-wrap: wrap; align-items: flex-end; margin: 4px 0 18px; padding: 14px 16px; background: var(--concrete); border-radius: var(--radius); }
+.statement-add label { font-size: 0.85rem; margin: 0; }
+.statement-add select { margin-top: 4px; padding: 7px 9px; min-width: 220px; }
+.statement-add .btn-sm { margin-bottom: 2px; }
+.statements-card h3 { margin-top: 10px; }

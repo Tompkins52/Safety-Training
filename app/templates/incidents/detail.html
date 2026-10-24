@@ -91,65 +91,72 @@
   </section>
 </div>
 
-{% for role, role_label in statement_roles.items() %}
-{% set number = 5 if role == 'principal' else 6 %}
-{% set rows = incident.principal_statements if role == 'principal' else incident.witness_statements %}
-<section class="card section-card" id="section-{{ number }}">
-  <div class="card-head">
-    <h2><span class="section-no">{{ number }}</span>{{ role_label }}{% if role == 'witness' %}s{% endif %}</h2>
-    {% if can_investigate %}<a class="btn btn-sm btn-ghost" href="{{ url_for('incidents.blank_statement', incident_id=incident.id, role=role) }}">Print blank form</a>{% endif %}
-  </div>
-  <p class="muted small">{% if role == 'principal' %}The principal party gives their own account and signs it without seeing the rest of the report: on this device, through an emailed link, or on a printed form. Add one statement per party.{% else %}Each witness gives their own account and signs it without seeing the rest of the report: on this device, through an emailed link, or on a printed form.{% endif %}</p>
-  {% for s in rows %}
-  <div class="statement-row">
-    <div>
-      <strong>{{ s.printed_name or '(name not entered yet)' }}</strong>
-      {% set meta = [s.department, s.title]|select|list %}{% if meta %}<br><small class="muted">{{ meta|join(', ') }}</small>{% endif %}
-      {% if s.email %}<br><small class="muted">{{ s.email }}</small>{% endif %}
-      {% if s.received_by and s.signed_via == 'paper' %}<br><small class="muted">Received by {{ s.received_by }}</small>{% endif %}
-      {% if s.statement_text %}<details class="statement-text"><summary>Statement text</summary><p class="pre small">{{ s.statement_text }}</p></details>{% endif %}
-    </div>
-    <div>{{ statement_badge(s) }}</div>
-    <div class="statement-actions">
-      {% if can_investigate and not s.is_signed %}
-        <a class="btn btn-sm btn-primary" href="{{ url_for('incidents.sign_statement', incident_id=incident.id, statement_id=s.id) }}">Sign on this device</a>
-        <a class="btn btn-sm btn-ghost" href="{{ url_for('incidents.paper_statement', incident_id=incident.id, statement=s.id) }}">Enter from paper</a>
-        {% if s.email %}
-        <form method="post" action="{{ url_for('incidents.resend_statement_link', incident_id=incident.id, statement_id=s.id) }}" class="inline-form">
-          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-          <button class="btn btn-sm btn-ghost" type="submit">Resend link</button>
-        </form>
-        {% endif %}
-        <form method="post" action="{{ url_for('incidents.delete_statement', incident_id=incident.id, statement_id=s.id) }}" class="inline-form" onsubmit="return confirm('Remove this statement from the report?');">
-          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-          <button class="btn btn-sm btn-ghost" type="submit">Remove</button>
-        </form>
-      {% endif %}
-    </div>
-  </div>
-  {% else %}
-  <p class="empty">No {{ role_label|lower }} yet.</p>
-  {% endfor %}
+<section class="card section-card statements-card" id="section-5">
+  <div class="card-head"><h2>Statements</h2></div>
+  <p class="muted small">Each principal party and each eyewitness gives their own account and signs it without seeing the rest of the report: on this device, through an emailed link, or on a printed form. Choose the type of statement, then add as many as you need.</p>
   {% if can_investigate %}
-  <div class="statement-add">
-    <form method="post" action="{{ url_for('incidents.add_statement', incident_id=incident.id) }}" class="inline-form">
-      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-      <input type="hidden" name="role" value="{{ role }}">
-      <input type="hidden" name="mode" value="device">
-      <button class="btn btn-sm btn-secondary" type="submit">Sign on this device</button>
-    </form>
-    <form method="post" action="{{ url_for('incidents.add_statement', incident_id=incident.id) }}" class="inline-form">
-      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-      <input type="hidden" name="role" value="{{ role }}">
-      <input type="hidden" name="mode" value="link">
-      <label for="email-{{ role }}">Send a link to<input type="email" id="email-{{ role }}" name="email" placeholder="name@example.gov" required></label>
-      <button class="btn btn-sm btn-ghost" type="submit">Send a link</button>
-    </form>
-    <a class="btn btn-sm btn-ghost" href="{{ url_for('incidents.paper_statement', incident_id=incident.id, role=role) }}">Received on paper</a>
-  </div>
+  <form method="post" action="{{ url_for('incidents.add_statement', incident_id=incident.id) }}" class="statement-add" id="add-statement">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label for="statement-role">Type of statement
+      <select id="statement-role" name="role">
+        <option value="principal">Principal statement (Section 5)</option>
+        <option value="witness">Eyewitness statement (Section 6)</option>
+      </select>
+    </label>
+    <label for="statement-mode">How it will be given
+      <select id="statement-mode" name="mode" data-toggles="statement-link">
+        <option value="device">Sign on this device</option>
+        <option value="link">Send a link by email</option>
+        <option value="paper">Received on paper</option>
+      </select>
+    </label>
+    <label for="statement-email" data-cond="statement-link">Send the link to
+      <input type="email" id="statement-email" name="email" placeholder="name@example.gov">
+    </label>
+    <button class="btn btn-sm btn-secondary" type="submit">Add statement</button>
+  </form>
   {% endif %}
+  {% for role, role_label in statement_roles.items() %}
+  {% set number = 5 if role == 'principal' else 6 %}
+  {% set rows = incident.principal_statements if role == 'principal' else incident.witness_statements %}
+  <div class="statement-group" id="section-{{ number }}-list">
+    <div class="card-head">
+      <h3><span class="section-no">{{ number }}</span>{{ role_label }}{% if role == 'witness' %}s{% endif %}{% if rows %} <span class="tag">{{ rows|length }}</span>{% endif %}</h3>
+      {% if can_investigate %}<a class="btn btn-sm btn-ghost" href="{{ url_for('incidents.blank_statement', incident_id=incident.id, role=role) }}">Print blank form</a>{% endif %}
+    </div>
+    {% for s in rows %}
+    <div class="statement-row">
+      <div>
+        <strong>{{ s.printed_name or '(name not entered yet)' }}</strong>
+        {% set meta = [s.department, s.title]|select|list %}{% if meta %}<br><small class="muted">{{ meta|join(', ') }}</small>{% endif %}
+        {% if s.email %}<br><small class="muted">{{ s.email }}</small>{% endif %}
+        {% if s.received_by and s.signed_via == 'paper' %}<br><small class="muted">Received by {{ s.received_by }}</small>{% endif %}
+        {% if s.statement_text %}<details class="statement-text"><summary>Statement text</summary><p class="pre small">{{ s.statement_text }}</p></details>{% endif %}
+      </div>
+      <div>{{ statement_badge(s) }}</div>
+      <div class="statement-actions">
+        {% if can_investigate and not s.is_signed %}
+          <a class="btn btn-sm btn-primary" href="{{ url_for('incidents.sign_statement', incident_id=incident.id, statement_id=s.id) }}">Sign on this device</a>
+          <a class="btn btn-sm btn-ghost" href="{{ url_for('incidents.paper_statement', incident_id=incident.id, statement=s.id) }}">Enter from paper</a>
+          {% if s.email %}
+          <form method="post" action="{{ url_for('incidents.resend_statement_link', incident_id=incident.id, statement_id=s.id) }}" class="inline-form">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <button class="btn btn-sm btn-ghost" type="submit">Resend link</button>
+          </form>
+          {% endif %}
+          <form method="post" action="{{ url_for('incidents.delete_statement', incident_id=incident.id, statement_id=s.id) }}" class="inline-form" onsubmit="return confirm('Remove this statement from the report?');">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <button class="btn btn-sm btn-ghost" type="submit">Remove</button>
+          </form>
+        {% endif %}
+      </div>
+    </div>
+    {% else %}
+    <p class="empty">No {{ role_label|lower }} yet.{% if role == 'principal' %} Add one per party.{% endif %}</p>
+    {% endfor %}
+  </div>
+  {% endfor %}
 </section>
-{% endfor %}
 
 <section class="card section-card" id="section-7">
   <div class="card-head">

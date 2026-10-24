@@ -391,8 +391,10 @@ def add_statement(incident_id):
     incident = _get_incident(incident_id, investigate=True)
     role = _text("role")
     mode = _text("mode")
-    if role not in STATEMENT_ROLES or mode not in ("device", "link"):
+    if role not in STATEMENT_ROLES or mode not in ("device", "link", "paper"):
         abort(400)
+    if mode == "paper":
+        return redirect(url_for("incidents.paper_statement", incident_id=incident.id, role=role))
     if mode == "device":
         statement = Statement(incident_id=incident.id, role=role, status="pending")
         db.session.add(statement)

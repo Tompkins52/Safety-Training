@@ -11,7 +11,7 @@
 .statement-text { margin-top: 8px; }
 .statement-text summary { cursor: pointer; font-family: var(--font-cond); font-weight: 600; color: var(--blue); }
 .statement-text p { margin: 6px 0 0; }
-.statement-add { display: flex; gap: 10px 18px; flex-wrap: wrap; align-items: flex-end; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--rule-soft); }
+.statement-add { display: flex; gap: 10px 18px; flex-wrap: wrap; align-items: flex-end; margin: 4px 0 18px; padding: 14px 16px; background: var(--concrete); border-radius: var(--radius); }
 .statement-add label { font-size: 0.85rem; }
 .statement-add input[type="email"] { margin-top: 4px; padding: 6px 9px; min-width: 220px; }
 .statement-add .btn-sm { margin-bottom: 1px; }
@@ -31,3 +31,6 @@
 @media print {
   .report-section h3 .section-no { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
+.statement-add select { margin-top: 4px; padding: 7px 9px; min-width: 220px; }
+.statement-group { margin-top: 14px; }
+.statement-group .card-head h3 { margin: 0; }
