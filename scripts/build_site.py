@@ -131,6 +131,8 @@ def build(out_dir):
         css += "\n" + fh.read()
     with open(os.path.join(SITE, "extra.css"), encoding="utf-8") as fh:
         css += "\n\n/* Browser edition */\n" + fh.read()
+    with open(os.path.join(SITE, "home.css"), encoding="utf-8") as fh:
+        css += "\n\n/* Browser edition: front door */\n" + fh.read()
     fonts_out = os.path.join(out_dir, "fonts")
     os.makedirs(fonts_out, exist_ok=True)
     for name in os.listdir(FONTS_DIR):

@@ -66,7 +66,7 @@ function renderHeader(routeName) {
     menu.innerHTML = '<a class="user-name" href="#/profile" title="Edit your details">' + esc(p.name) + "<small>" + esc(p.jobTitle || divisionName(p.division) || "") + "</small></a>" +
       '<a class="btn btn-ghost btn-sm" href="#/profile">Edit</a>';
   } else {
-    menu.innerHTML = '<a class="btn btn-ghost btn-sm" href="#/profile">Add your name</a>';
+    menu.innerHTML = '<a class="btn btn-primary btn-sm" href="#/profile">Add your name</a>';
   }
   var links = document.querySelectorAll("#main-nav a");
   for (var i = 0; i < links.length; i++) links[i].classList.toggle("active", links[i].getAttribute("data-route") === routeName);
@@ -93,7 +93,7 @@ function viewProfile(msg) {
     '<label>Supervisor name<input type="text" name="supervisorName" value="' + field(p.supervisorName) + '"></label>' +
     '<label>Supervisor email<input type="email" name="supervisorEmail" value="' + field(p.supervisorEmail) + '"><div class="inline-note">Used by the "Email my record" and "Email this report" buttons.</div></label>' +
     '<label>Training due date<input type="date" name="dueDate" value="' + field(p.dueDate) + '"><div class="inline-note">Modules you have not passed yet show as due on this date. Calendar reminders come from My record.</div></label>' +
-    '<div class="form-actions"><button class="btn btn-primary" type="submit">Save</button> <a class="btn btn-ghost" href="#/">Cancel</a>' +
+    '<div class="form-actions"><button class="btn btn-primary" type="submit">Save</button> <a class="btn btn-ghost" href="#/training">Cancel</a>' +
     (p.name ? ' <button class="btn btn-ghost" type="button" data-action="clear-profile">Clear my details</button>' : "") + "</div></form></div>";
 }
 FORMS.profile = function (form) {
@@ -103,12 +103,12 @@ FORMS.profile = function (form) {
   if (data.division) store.set("division_filter", data.division);
   if (data.newHire) store.set("track_filter", "new_hire");
   pendingMessage = { kind: "success", text: "Saved." };
-  go("#/");
+  go("#/training");
 };
 ACTIONS["clear-profile"] = function () {
   if (!confirm("Clear your name and details from this device? Your training progress stays.")) return;
   store.remove("profile"); store.remove("division_filter"); store.remove("track_filter");
-  go("#/");
+  go("#/training");
 };
 
 // ---- training page
@@ -263,7 +263,7 @@ function viewResult(slug, index) {
       (q.explanation ? '<p class="small muted">' + esc(q.explanation) + "</p>" : "") + "</div>";
   }).join("");
   var banner = a.passed
-    ? "<h2>Passed with " + pct + "%</h2><p>Your completion is saved on this device" + (p.supervisorName ? ". Email your record to " + esc(p.supervisorName) + " from My record" : "") + ". This module renews in " + (c.renewal_months || 12) + ' months.</p><div class="btn-row"><a class="btn btn-primary" href="#/certificate/' + c.slug + '">View certificate</a><a class="btn btn-ghost" href="#/">Back to training</a></div>'
+    ? "<h2>Passed with " + pct + "%</h2><p>Your completion is saved on this device" + (p.supervisorName ? ". Email your record to " + esc(p.supervisorName) + " from My record" : "") + ". This module renews in " + (c.renewal_months || 12) + ' months.</p><div class="btn-row"><a class="btn btn-primary" href="#/certificate/' + c.slug + '">View certificate</a><a class="btn btn-ghost" href="#/training">Back to training</a></div>'
     : "<h2>Not yet: " + pct + "% (" + PASS + '% needed)</h2><p>Look over the questions you missed, re-read those sections, then try again.</p><div class="btn-row"><a class="btn btn-primary" href="#/quiz/' + c.slug + '">Retake the quiz</a><a class="btn btn-ghost" href="#/course/' + c.slug + '">Back to the module</a></div>';
   return '<div class="page-head"><div><p class="eyebrow">Quiz results</p><h1>' + esc(c.title) + "</h1></div></div>" +
     '<section class="card result-banner ' + (a.passed ? "pass" : "fail") + '"><div class="result-score">' + a.score + "<span>/" + a.total + "</span></div><div>" + banner + "</div></section>" +
@@ -440,5 +440,5 @@ function viewAbout() {
 }
 
 function notFound(msg) {
-  return '<div class="auth-card"><h1>Not found</h1><p class="muted">' + esc(msg || "That page does not exist.") + '</p><a class="btn btn-primary" href="#/">Back to training</a></div>';
+  return '<div class="auth-card"><h1>Not found</h1><p class="muted">' + esc(msg || "That page does not exist.") + '</p><a class="btn btn-primary" href="#/training">Back to training</a></div>';
 }

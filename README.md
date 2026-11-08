@@ -22,7 +22,7 @@ There are two editions of the platform in this repository.
 | Supervisor completion and incident notices | "Email my record" and "Email this report" buttons | Yes, automatic |
 | Employee accounts, assignments by division, individual assignments, compliance reports | No | Yes |
 
-**Browser edition.** Open https://tompkins52.github.io/Safety-Training/ on any phone or computer. There is no account to create: the modules and quizzes open directly, and a name is only asked for when a certificate is printed. GitHub Pages serves it from the root of `main` (the files `index.html`, `app.js`, `data.js` and `styles.css` are generated; the source is in `site/`). The site is rebuilt automatically whenever course content changes on `main`. If Pages is ever switched off: Settings > Pages > Source "Deploy from a branch" > branch `main`, folder `/ (root)` > Save.
+**Browser edition.** Open https://tompkins52.github.io/Safety-Training/ on any phone or computer. There is no account to create: the front door leads straight to the modules and quizzes (`#/training`), incident reports and inspections, and a name is only asked for when a certificate is printed. GitHub Pages serves it from the root of `main` (the files `index.html`, `app.js`, `data.js` and `styles.css` are generated; the source is in `site/`). The site is rebuilt automatically whenever course content changes on `main`. If Pages is ever switched off: Settings > Pages > Source "Deploy from a branch" > branch `main`, folder `/ (root)` > Save.
 
 **Full platform, try it in five minutes.** Open the repository on GitHub, click **Code > Codespaces > Create codespace on main**, wait for the setup to finish, and the platform opens in a new browser tab with demo accounts loaded (see below). Codespaces is free for personal GitHub accounts within the monthly allowance.
 
@@ -151,7 +151,7 @@ The training content is an awareness-level annual refresher. It summarizes the s
 ## Project layout
 
 ```
-site/            browser edition source (index.html, extra.css, js/ modules bundled into app.js)
+site/            browser edition source (index.html, extra.css, home.css for the front door, js/ modules bundled into app.js)
 scripts/         build_site.py writes the browser edition (to the repo root for GitHub Pages, or to dist/)
 index.html, app.js, data.js, styles.css   generated browser edition served by GitHub Pages; do not edit by hand
 app/
