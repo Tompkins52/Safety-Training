@@ -13,7 +13,7 @@ There are two editions of the platform in this repository.
 | | Browser edition | Full platform |
 | --- | --- | --- |
 | Where it runs | GitHub Pages, nothing to install, no sign-in | A small server (or a free GitHub Codespace for a trial) |
-| Address | **https://tompkins52.github.io/Safety-Training/** | Your own address once it is hosted |
+| Address | **https://intellisafe.tompkinssoftwaresystems.com/** | Your own address once it is hosted |
 | 19 training modules and 10-question quizzes, new hire and supervisor tracks | Yes | Yes |
 | Certificates and Excel export of the training record | Yes | Yes |
 | Eight-section incident report with diagrams, statements, signatures, printable report | Yes (saved in the browser; export to JSON to hand in) | Yes (central records, statements signed through emailed links) |
@@ -22,7 +22,7 @@ There are two editions of the platform in this repository.
 | Supervisor completion and incident notices | "Email my record" and "Email this report" buttons | Yes, automatic |
 | Employee accounts, assignments by division, individual assignments, compliance reports | No | Yes |
 
-**Browser edition.** Open https://tompkins52.github.io/Safety-Training/ on any phone or computer. There is no account to create: the front door leads straight to the modules and quizzes (`#/training`), incident reports and inspections, and a name is only asked for when a certificate is printed. GitHub Pages serves it from the root of `main` (the files `index.html`, `app.js`, `data.js` and `styles.css` are generated; the source is in `site/`). The site is rebuilt automatically whenever course content changes on `main`. If Pages is ever switched off: Settings > Pages > Source "Deploy from a branch" > branch `main`, folder `/ (root)` > Save.
+**Browser edition.** Open https://intellisafe.tompkinssoftwaresystems.com/ on any phone or computer. There is no account to create: the front door leads straight to the modules and quizzes (`#/training`), incident reports and inspections, and a name is only asked for when a certificate is printed. GitHub Pages serves it from the root of `main` (the files `index.html`, `app.js`, `data.js` and `styles.css` are generated; the source is in `site/`). The site is rebuilt automatically whenever course content changes on `main`. If Pages is ever switched off: Settings > Pages > Source "Deploy from a branch" > branch `main`, folder `/ (root)` > Save.
 
 **Full platform, try it in five minutes.** Open the repository on GitHub, click **Code > Codespaces > Create codespace on main**, wait for the setup to finish, and the platform opens in a new browser tab with demo accounts loaded (see below). Codespaces is free for personal GitHub accounts within the monthly allowance.
 
