@@ -20,9 +20,10 @@ function render() {
   var r = parseRoute();
   lastRoute = r;
   var parts = r.parts;
-  var name = parts[0] || "dashboard";
+  var name = parts[0] || "home";
   var html = "", printPage = false, statementMode = false, nav = name;
-  if (name === "dashboard") html = viewDashboard();
+  if (name === "home") html = viewHome();
+  else if (name === "training" || name === "dashboard") { html = viewDashboard(); nav = "dashboard"; }
   else if (name === "profile") { html = viewProfile(); nav = "dashboard"; }
   else if (name === "course" && parts[1]) { html = viewCourse(parts[1]); nav = "dashboard"; }
   else if (name === "quiz" && parts[1]) { html = viewQuiz(parts[1]); nav = "dashboard"; }
@@ -69,11 +70,21 @@ function render() {
   else html = notFound();
   document.body.classList.toggle("print-page", printPage);
   document.body.classList.toggle("statement-mode", statementMode);
-  if (pendingMessage) { html = flash(pendingMessage.kind, pendingMessage.text) + html; pendingMessage = null; }
+  document.body.classList.toggle("home-page", name === "home");
   app.innerHTML = html;
+  // A message from the last action goes just under the page's dark band, or at the top.
+  if (pendingMessage) {
+    var holder = document.createElement("div");
+    holder.innerHTML = flash(pendingMessage.kind, pendingMessage.text);
+    var first = app.firstElementChild;
+    var band = first && !printPage && !statementMode && (first.classList.contains("page-head") || first.classList.contains("hero")) ? first : null;
+    app.insertBefore(holder.firstChild, band ? band.nextSibling : first);
+    pendingMessage = null;
+  }
   renderHeader(nav);
   bindWidgets(app);
   bindAnchors();
+  bindHome(app);
   if (location.hash.indexOf("#signatures") < 0) window.scrollTo(0, 0);
 }
 
