@@ -1,9 +1,9 @@
 // ---------------------------------------------------------------- core: data, storage, helpers
 var DATA = window.SAFETY_DATA || { courses: [], divisions: [], top10: [], inspections: [] };
 var APP = DATA.app_name || "IntelliSafe";
-var BRAND_COMPANY = DATA.brand_company || "IntelliSafe Systems LLC";
+var BRAND_COMPANY = DATA.brand_company || "Tompkins Software Systems LLC";
 var COMPANY = DATA.company || "Tompkins Software Systems LLC";
-var LICENSE = DATA.license_line || ("Licensed software by " + BRAND_COMPANY + ". Developed by " + COMPANY);
+var LICENSE = DATA.license_line || ("Licensed software by " + BRAND_COMPANY);
 var PASS = DATA.pass_percent || 80;
 var REMIND_DAYS = 30;
 var app = document.getElementById("app");
