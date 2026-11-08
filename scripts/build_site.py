@@ -119,7 +119,6 @@ def build(out_dir):
         "brand_company": BRAND_COMPANY,
         "license_line": LICENSE_LINE,
         "year": date.today().year,
-        "repo": "https://github.com/Tompkins52/Safety-Training",
     }
     with open(os.path.join(out_dir, "data.js"), "w", encoding="utf-8") as fh:
         fh.write("window.SAFETY_DATA = ")
