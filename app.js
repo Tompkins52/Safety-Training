@@ -4,9 +4,9 @@
 // ---------------------------------------------------------------- core: data, storage, helpers
 var DATA = window.SAFETY_DATA || { courses: [], divisions: [], top10: [], inspections: [] };
 var APP = DATA.app_name || "IntelliSafe";
-var BRAND_COMPANY = DATA.brand_company || "IntelliSafe Systems LLC";
+var BRAND_COMPANY = DATA.brand_company || "Tompkins Software Systems LLC";
 var COMPANY = DATA.company || "Tompkins Software Systems LLC";
-var LICENSE = DATA.license_line || ("Licensed software by " + BRAND_COMPANY + ". Developed by " + COMPANY);
+var LICENSE = DATA.license_line || ("Licensed software by " + BRAND_COMPANY);
 var PASS = DATA.pass_percent || 80;
 var REMIND_DAYS = 30;
 var app = document.getElementById("app");
@@ -904,7 +904,7 @@ function viewAbout() {
     "<ul><li>Training modules for OSHA's Top 10 most frequently cited standards, bloodborne pathogens, fire safety, electrical safety, confined spaces, ergonomics and workplace violence, pole top and bucket truck rescue for electric and public services crews, and incident reporting and investigation for supervisors and managers. A new hire track marks the modules to complete first.</li><li>A 10 question quiz at the end of every module, with completion certificates and a training record that exports to Excel.</li><li>An eight-section incident report: incident information, vehicle and equipment, personal injury with a body diagram, description, principal and eyewitness statements signed on the device, facts and analysis with direct and contributing causes and the root cause, corrective actions with verification dates, supporting references, and a management signature block.</li><li>Site inspection checklists for construction and general industry, and an annual safety program audit.</li></ul>" +
     "<h3>Browser edition and full platform</h3><p>This site is the <strong>browser edition</strong>: everything runs in your browser, nothing is sent to a server, and your progress, reports and inspections stay on this device. Use it to read the modules, take the quizzes, print certificates and complete reports and inspections.</p>" +
     '<p>The <strong>full platform</strong> adds employee accounts, assignments by division or by individual from the safety manager, new hire assignments, automatic email reminders to employees and their supervisors 30 days before training is due, completion notices, statement links emailed to principals and witnesses, incident notices, and department-wide records and Excel exports. It runs on a small server.</p>' +
-    "<h3>About " + esc(BRAND_COMPANY) + "</h3><p>" + esc(APP) + " is the safety platform of " + esc(BRAND_COMPANY) + ".</p>" +
+    "<h3>About " + esc(BRAND_COMPANY) + "</h3><p>" + esc(APP) + " is built and licensed by " + esc(BRAND_COMPANY) + ".</p>" +
     "<h3>License</h3><p><strong>" + esc(LICENSE) + ".</strong> Copyright " + esc(DATA.year || new Date().getFullYear()) + " " + esc(BRAND_COMPANY) + ". All rights reserved.</p>" +
     '<p class="muted small">Content generated ' + esc(fmtDate(DATA.generated)) + ". Training content summarizes OSHA standards for awareness-level annual refresher training. It does not replace the text of the standards, your organization's written programs and procedures, or the hands-on training and drills those programs require.</p></section>";
 }

@@ -28,9 +28,9 @@ FONTS_CSS = os.path.join(ROOT, "app", "static", "css", "fonts.css")
 FONTS_DIR = os.path.join(ROOT, "app", "static", "fonts")
 
 APP_NAME = "IntelliSafe"
-BRAND_COMPANY = "IntelliSafe Systems LLC"
+BRAND_COMPANY = "Tompkins Software Systems LLC"  # owns and licenses IntelliSafe
 COMPANY = "Tompkins Software Systems LLC"  # developer credit shown in the footer
-LICENSE_LINE = "Licensed software by " + BRAND_COMPANY + ". Developed by " + COMPANY
+LICENSE_LINE = "Licensed software by " + BRAND_COMPANY
 
 DIVISIONS = [
     {"code": "electric", "name": "Electric Services"},
